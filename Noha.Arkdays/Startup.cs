@@ -12,6 +12,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Noha.Arkdays.Models;
+using Noha.Arkdays.Services;
+using Microsoft.AspNetCore.Http;
 
 namespace Noha.Arkdays
 {
@@ -28,6 +31,10 @@ namespace Noha.Arkdays
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddDbContext<ArkdaysContext>();
+
+            services.AddTableHolder<Torappu.CharacterDB>(Path.Combine(Environment.CurrentDirectory, "..", "Data", "_tables", "character_table.json"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,25 +45,41 @@ namespace Noha.Arkdays
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            // app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
 
+
                 endpoints
-                    .Map("/assetbundle/official",
-                        endpoints.CreateApplicationBuilder().UseStaticFiles(
-                            new StaticFileOptions
-                            {
-                                FileProvider = new PhysicalFileProvider(
-                                    Path.Combine(Directory.GetCurrentDirectory(), "AssetBundles")),
-                            }).Build())
-                    .RequireHost(Constants.FileServer);
+                    .Map("/{**Path}",
+                new ApplicationBuilder(app.ApplicationServices)
+                        .Use(next => context =>
+                        {
+                            context.SetEndpoint(null);
+
+                            return next(context);
+                        })
+                        .UseStaticFiles(new StaticFileOptions
+                        {
+                            FileProvider = new PhysicalFileProvider(
+                                Path.Combine(Directory.GetCurrentDirectory(), "..", "Data")),
+                            ServeUnknownFileTypes = true,
+                        }).Build())
+                        .RequireHost(Constants.FileServer);
+
+                endpoints.MapFallback(async ctx =>
+                {
+                    ctx.Response.StatusCode = 404;
+                    await ctx.Response.Body.WriteAsync(
+                        System.Text.Encoding.ASCII.GetBytes(
+                            "{\"statusCode\":404,\"error\":\"Not Found\",\"message\":\"API endpoint not found\"}"));
+                });
             });
         }
     }

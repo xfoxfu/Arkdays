@@ -9,8 +9,8 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build fetcher",
-      "program": "${workspaceFolder}/Noha.Arkdays.AssetsFetcher/bin/Debug/net5.0/Noha.Arkdays.AssetsFetcher.dll",
-      "args": [],
+      "program": "${workspaceFolder}/Noha.Arkdays.CLITools/bin/Debug/net5.0/Noha.Arkdays.CLITools.dll",
+      "args": ["generate-types", "-i", "DummyDll", "-o", "Noha.Arkdays.Types"],
       "cwd": "${workspaceFolder}",
       "stopAtEntry": false,
       "console": "internalConsole"

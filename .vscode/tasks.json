@@ -2,12 +2,24 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "build types",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/Noha.Arkdays.Types/Noha.Arkdays.Types.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
       "label": "build fetcher",
       "command": "dotnet",
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/Noha.Arkdays.AssetsFetcher/Noha.Arkdays.AssetsFetcher.csproj",
+        "${workspaceFolder}/Noha.Arkdays.CLITools/Noha.Arkdays.CLITools.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],

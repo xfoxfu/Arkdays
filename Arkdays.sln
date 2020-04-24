@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noha.Arkdays", "Noha.Arkdays\Noha.Arkdays.csproj", "{1AF9F86A-35B6-44E5-9B50-F57AD75F49FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noha.Arkdays.AssetsFetcher", "Noha.Arkdays.AssetsFetcher\Noha.Arkdays.AssetsFetcher.csproj", "{AAB9EECA-67A3-4660-82B8-D7428D23EE2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noha.Arkdays.CLITools", "Noha.Arkdays.CLITools\Noha.Arkdays.CLITools.csproj", "{AAB9EECA-67A3-4660-82B8-D7428D23EE2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
