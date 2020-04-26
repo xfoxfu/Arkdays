@@ -1,14 +1,14 @@
 
 namespace Torappu
 {
-	public class PlayerConsumableItem
-	{
-		public long ts;
+    public class PlayerConsumableItem
+    {
+        public long ts { get; set; }
 
-		public int count;
+        public int count { get; set; }
 
-		public PlayerConsumableItem()
-		{
-		}
-	}
+        public PlayerConsumableItem()
+        {
+        }
+    }
 }

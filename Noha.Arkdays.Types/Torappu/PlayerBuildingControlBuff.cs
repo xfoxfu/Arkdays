@@ -1,21 +1,13 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingControlBuff
-	{
-		public class Global
-		{
-			public int apCost;
+    public class PlayerBuildingControlBuff
+    {
+        public class Global
+        {
+            public int apCost { get; set; }
+        }
 
-			public Global()
-			{
-			}
-		}
-
-		public Global global;
-
-		public PlayerBuildingControlBuff()
-		{
-		}
-	}
+        public Global global { get; set; }
+    }
 }

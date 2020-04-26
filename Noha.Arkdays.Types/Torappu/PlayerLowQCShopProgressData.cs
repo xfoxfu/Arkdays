@@ -1,12 +1,12 @@
 
 namespace Torappu
 {
-	public class PlayerLowQCShopProgressData : PlayerCommonShopProgressData
-	{
-		public string curGroupId;
+    public class PlayerLowQCShopProgressData : PlayerCommonShopProgressData
+    {
+        public string curGroupId { get; set; }
 
-		public PlayerLowQCShopProgressData()
-		{
-		}
-	}
+        public PlayerLowQCShopProgressData()
+        {
+        }
+    }
 }

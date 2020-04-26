@@ -1,14 +1,14 @@
 
 namespace Torappu
 {
-	public class PlayerTicketItem
-	{
-		public long ts;
+    public class PlayerTicketItem
+    {
+        public long ts { get; set; }
 
-		public int count;
+        public int count { get; set; }
 
-		public PlayerTicketItem()
-		{
-		}
-	}
+        public PlayerTicketItem()
+        {
+        }
+    }
 }

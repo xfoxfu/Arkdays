@@ -1,14 +1,14 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingShopOutputItem
-	{
-		public ItemType type;
+    public class PlayerBuildingShopOutputItem
+    {
+        public ItemType type { get; set; }
 
-		public int count;
+        public int count { get; set; }
 
-		public PlayerBuildingShopOutputItem()
-		{
-		}
-	}
+        public PlayerBuildingShopOutputItem()
+        {
+        }
+    }
 }

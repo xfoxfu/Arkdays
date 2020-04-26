@@ -1,14 +1,10 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingFurnitureInfo
-	{
-		public int count;
+    public class PlayerBuildingFurnitureInfo
+    {
+        public int count { get; set; }
 
-		public int inUse;
-
-		public PlayerBuildingFurnitureInfo()
-		{
-		}
-	}
+        public int inUse { get; set; }
+    }
 }

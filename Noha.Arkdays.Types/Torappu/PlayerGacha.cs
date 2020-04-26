@@ -2,49 +2,49 @@ using System.Collections.Generic;
 
 namespace Torappu
 {
-	public class PlayerGacha
-	{
-		public class PlayerNewbeeGachaPool
-		{
-			public bool openFlag;
+    public class PlayerGacha
+    {
+        public class PlayerNewbeeGachaPool
+        {
+            public bool openFlag { get; set; }
 
-			public int cnt;
+            public int cnt { get; set; }
 
-			public PlayerNewbeeGachaPool()
-			{
-			}
-		}
+            public PlayerNewbeeGachaPool()
+            {
+            }
+        }
 
-		public class PlayerGachaPool
-		{
-			public int cnt;
+        public class PlayerGachaPool
+        {
+            public int cnt { get; set; }
 
-			public int maxCnt;
+            public int maxCnt { get; set; }
 
-			public bool avail;
+            public bool avail { get; set; }
 
-			public PlayerGachaPool()
-			{
-			}
-		}
+            public PlayerGachaPool()
+            {
+            }
+        }
 
-		public class PlayerFreeLimitGacha
-		{
-			public int leastFree;
+        public class PlayerFreeLimitGacha
+        {
+            public int leastFree { get; set; }
 
-			public PlayerFreeLimitGacha()
-			{
-			}
-		}
+            public PlayerFreeLimitGacha()
+            {
+            }
+        }
 
-		public PlayerNewbeeGachaPool newbee;
+        public PlayerNewbeeGachaPool newbee { get; set; }
 
-		public Dictionary<string, PlayerGachaPool> normal;
+        public Dictionary<string, PlayerGachaPool> normal { get; set; }
 
-		public Dictionary<string, PlayerFreeLimitGacha> limit;
+        public Dictionary<string, PlayerFreeLimitGacha> limit { get; set; }
 
-		public PlayerGacha()
-		{
-		}
-	}
+        public PlayerGacha()
+        {
+        }
+    }
 }

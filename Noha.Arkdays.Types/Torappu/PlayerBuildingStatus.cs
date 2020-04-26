@@ -1,12 +1,12 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingStatus
-	{
-		public PlayerBuildingLabor labor;
+    public class PlayerBuildingStatus
+    {
+        public PlayerBuildingLabor labor { get; set; }
 
-		public PlayerBuildingStatus()
-		{
-		}
-	}
+        public PlayerBuildingStatus()
+        {
+        }
+    }
 }

@@ -3,6 +3,6 @@ namespace Torappu
     public class LoginRequestV002 : LoginRequest
     {
         // Fields
-        public string networkVersion;
+        public string networkVersion { get; set; }
     }
 }

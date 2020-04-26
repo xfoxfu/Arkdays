@@ -1,18 +1,18 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingTradingNext
-	{
-		public long order;
+    public class PlayerBuildingTradingNext
+    {
+        public long order { get; set; }
 
-		public double processPoint;
+        public double processPoint { get; set; }
 
-		public double speed;
+        public double speed { get; set; }
 
-		public int maxPoint;
+        public int maxPoint { get; set; }
 
-		public PlayerBuildingTradingNext()
-		{
-		}
-	}
+        public PlayerBuildingTradingNext()
+        {
+        }
+    }
 }

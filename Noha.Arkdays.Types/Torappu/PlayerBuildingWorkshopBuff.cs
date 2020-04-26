@@ -7,11 +7,11 @@ namespace Torappu
     {
         public class Cost
         {
-            public string type;
+            public string type { get; set; }
 
-            public long limit;
+            public long limit { get; set; }
 
-            public long reduction;
+            public long reduction { get; set; }
 
             public Cost()
             {
@@ -20,22 +20,22 @@ namespace Torappu
 
         public class CostRe
         {
-            public string type;
+            public string type { get; set; }
 
-            public long from;
+            public long from { get; set; }
 
-            public long change;
+            public long change { get; set; }
 
             public CostRe()
             {
             }
         }
 
-        public Dictionary<string, float> rate;
+        public Dictionary<string, float> rate { get; set; }
 
-        public Cost cost;
+        public Cost cost { get; set; }
 
-        public CostRe costRe;
+        public CostRe costRe { get; set; }
 
         public PlayerBuildingWorkshopBuff()
         {

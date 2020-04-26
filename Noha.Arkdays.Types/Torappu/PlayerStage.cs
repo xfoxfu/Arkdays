@@ -1,20 +1,20 @@
 
 namespace Torappu
 {
-	public class PlayerStage
-	{
-		public string stageId;
+    public class PlayerStage
+    {
+        public string stageId { get; set; }
 
-		public int completeTimes;
+        public int completeTimes { get; set; }
 
-		public PlayerStageState state;
+        public PlayerStageState state { get; set; }
 
-		public bool hasBattleReplay;
+        public bool hasBattleReplay { get; set; }
 
-		public int noCostCnt;
+        public int noCostCnt { get; set; }
 
-		public PlayerStage()
-		{
-		}
-	}
+        public PlayerStage()
+        {
+        }
+    }
 }

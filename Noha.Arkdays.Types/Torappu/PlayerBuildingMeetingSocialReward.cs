@@ -1,14 +1,14 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingMeetingSocialReward
-	{
-		public bool daily;
+    public class PlayerBuildingMeetingSocialReward
+    {
+        public bool daily { get; set; }
 
-		public bool search;
+        public bool search { get; set; }
 
-		public PlayerBuildingMeetingSocialReward()
-		{
-		}
-	}
+        public PlayerBuildingMeetingSocialReward()
+        {
+        }
+    }
 }

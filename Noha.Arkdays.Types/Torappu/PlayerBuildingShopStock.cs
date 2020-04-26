@@ -2,26 +2,26 @@ using System;
 
 namespace Torappu
 {
-	public class PlayerBuildingShopStock
-	{
-		public float buffSpeed;
+    public class PlayerBuildingShopStock
+    {
+        public float buffSpeed { get; set; }
 
-		public PlayerRoomState state;
+        public PlayerRoomState state { get; set; }
 
-		public string formulaId;
+        public string formulaId { get; set; }
 
-		public int itemCnt;
+        public int itemCnt { get; set; }
 
-		public double processPoint;
+        public double processPoint { get; set; }
 
-		public DateTime lastUpdateTime;
+        public DateTime lastUpdateTime { get; set; }
 
-		public long saveTime;
+        public long saveTime { get; set; }
 
-		public DateTime completeWorkTime;
+        public DateTime completeWorkTime { get; set; }
 
-		public PlayerBuildingShopStock()
-		{
-		}
-	}
+        public PlayerBuildingShopStock()
+        {
+        }
+    }
 }

@@ -1,107 +1,58 @@
 using System;
-
 namespace Torappu
 {
     public class CharacterData
     {
         public class AttributesKeyFrame : KeyFrames<AttributesData>
         {
-
         }
-
         public class AttributesDeltaKeyFrame : KeyFrames<AttributesDeltaData, AttributesData>
         {
-
         }
-
         public struct UnlockCondition
         {
-            public EvolvePhase phase;
-
-            public int level;
-
-
+            public EvolvePhase phase { get; set; }
+            public int level { get; set; }
         }
-
         public class TalentDataBundle
         {
-
-            public TalentData[] candidates;
-
-
-
-
-
-
-
-
+            public TalentData[] candidates { get; set; }
         }
-
         public class TraitData
         {
-            public UnlockCondition unlockCondition;
-
-            public int requiredPotentialRank;
-
-            public Blackboard blackboard;
-
-            public string overrideDescripton;
-
-            public string prefabKey;
-
-            public string rangeId;
-
+            public UnlockCondition unlockCondition { get; set; }
+            public int requiredPotentialRank { get; set; }
+            public Blackboard blackboard { get; set; }
+            public string overrideDescripton { get; set; }
+            public string prefabKey { get; set; }
+            public string rangeId { get; set; }
         }
-
         public class TraitDataBundle
         {
-
-            public TraitData[] candidates;
-
-
-
-
+            public TraitData[] candidates { get; set; }
         }
-
         public class PhaseData
         {
-            public string characterPrefabKey;
-
-            public string rangeId;
-
-            public int maxLevel;
-
-            public AttributesKeyFrame attributesKeyFrames;
-
-            public ItemBundle[] evolveCost;
-
+            public string characterPrefabKey { get; set; }
+            public string rangeId { get; set; }
+            public int maxLevel { get; set; }
+            public AttributesKeyFrame attributesKeyFrames { get; set; }
+            public ItemBundle[] evolveCost { get; set; }
         }
-
         public class MainSkill
         {
             public class SpecializeLevelData
             {
-                public UnlockCondition unlockCond;
-
-                public int lvlUpTime;
-
-                public ItemBundle[] levelUpCost;
-
+                public UnlockCondition unlockCond { get; set; }
+                public int lvlUpTime { get; set; }
+                public ItemBundle[] levelUpCost { get; set; }
             }
-
-            public string skillId;
-
-            public string overridePrefabKey;
-
-            public string overrideTokenKey;
-
-            public SpecializeLevelData[] specializeLevelUpData;
-
-            public UnlockCondition initialUnlockCond;
-
-
+            public string skillId { get; set; }
+            public string overridePrefabKey { get; set; }
+            public string overrideTokenKey { get; set; }
+            public SpecializeLevelData[] specializeLevelUpData { get; set; }
+            public UnlockCondition initialUnlockCond { get; set; }
         }
-
         public class PotentialRank
         {
             public enum TypeEnum
@@ -109,81 +60,44 @@ namespace Torappu
                 BUFF,
                 CUSTOM
             }
-
-            public TypeEnum type;
-
-            public string description;
-
-            public ExternalBuff buff;
-
-            public ItemBundle[] equivalentCost;
-
+            public TypeEnum type { get; set; }
+            public string description { get; set; }
+            public ExternalBuff buff { get; set; }
+            public ItemBundle[] equivalentCost { get; set; }
         }
-
         public class PotentialCost
         {
-            public string itemId;
-
-            public float percent;
-
+            public string itemId { get; set; }
+            public float percent { get; set; }
         }
-
         public class SkillLevelCost
         {
-            public UnlockCondition unlockCond;
-
-            public ItemBundle[] lvlUpCost;
-
+            public UnlockCondition unlockCond { get; set; }
+            public ItemBundle[] lvlUpCost { get; set; }
         }
-
-        public string name;
-
-        public string description;
-
-        public bool canUseGeneralPotentialItem;
-
-        public string potentialItemId;
-
-        public int team;
-
-        public string displayNumber;
-
-        public string tokenKey;
-
-        public string appellation;
-
-        public BuildableType position;
-
-        public string[] tagList;
-
-        public string displayLogo;
-
-        public string itemUsage;
-
-        public string itemDesc;
-
-        public string itemObtainApproach;
-
-        public int maxPotentialLevel;
-
-        public RarityRank rarity;
-
-        public ProfessionCategory profession;
-
-        public TraitDataBundle trait;
-
-        public PhaseData[] phases;
-
-        public MainSkill[] skills;
-
-        public TalentDataBundle[] talents;
-
-        public PotentialRank[] potentialRanks;
-
-        public AttributesDeltaKeyFrame favorKeyFrames;
-
-        public SkillLevelCost[] allSkillLvlup;
-
-
+        public string name { get; set; }
+        public string description { get; set; }
+        public bool canUseGeneralPotentialItem { get; set; }
+        public string potentialItemId { get; set; }
+        public int team { get; set; }
+        public string displayNumber { get; set; }
+        public string tokenKey { get; set; }
+        public string appellation { get; set; }
+        public BuildableType position { get; set; }
+        public string[] tagList { get; set; }
+        public string displayLogo { get; set; }
+        public string itemUsage { get; set; }
+        public string itemDesc { get; set; }
+        public string itemObtainApproach { get; set; }
+        public int maxPotentialLevel { get; set; }
+        public RarityRank rarity { get; set; }
+        public ProfessionCategory profession { get; set; }
+        public TraitDataBundle trait { get; set; }
+        public PhaseData[] phases { get; set; }
+        public MainSkill[] skills { get; set; }
+        public TalentDataBundle[] talents { get; set; }
+        public PotentialRank[] potentialRanks { get; set; }
+        public AttributesDeltaKeyFrame favorKeyFrames { get; set; }
+        public SkillLevelCost[] allSkillLvlup { get; set; }
     }
 }

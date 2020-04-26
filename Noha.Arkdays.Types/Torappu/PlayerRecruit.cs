@@ -11,9 +11,9 @@ namespace Torappu
             {
                 public class TagItem
                 {
-                    public int tagId;
+                    public int tagId { get; set; }
 
-                    public bool pick;
+                    public bool pick { get; set; }
 
                     public TagItem()
                     {
@@ -28,33 +28,33 @@ namespace Torappu
                     FAST_FINISH
                 }
 
-                public State state;
+                public State state { get; set; }
 
-                public int[] tags;
+                public int[] tags { get; set; }
 
-                public TagItem[] selectTags;
+                public TagItem[] selectTags { get; set; }
 
-                public DateTime startTs;
+                public DateTime startTs { get; set; }
 
-                public DateTime maxFinishTs;
+                public DateTime maxFinishTs { get; set; }
 
-                public DateTime realFinishTs;
+                public DateTime realFinishTs { get; set; }
 
-                public int durationInSec;
+                public int durationInSec { get; set; }
 
                 public SlotModel()
                 {
                 }
             }
 
-            public Dictionary<string, SlotModel> slots;
+            public Dictionary<string, SlotModel> slots { get; set; }
 
             public NormalModel()
             {
             }
         }
 
-        public NormalModel normal;
+        public NormalModel normal { get; set; }
 
         public PlayerRecruit()
         {

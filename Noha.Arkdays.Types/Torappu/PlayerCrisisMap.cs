@@ -1,14 +1,14 @@
 
 namespace Torappu
 {
-	public class PlayerCrisisMap
-	{
-		public int rank;
+    public class PlayerCrisisMap
+    {
+        public int rank { get; set; }
 
-		public int confirmed;
+        public int confirmed { get; set; }
 
-		public PlayerCrisisMap()
-		{
-		}
-	}
+        public PlayerCrisisMap()
+        {
+        }
+    }
 }

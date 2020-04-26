@@ -2,20 +2,20 @@ using System.Collections.Generic;
 
 namespace Torappu
 {
-	public class PlayerTroop
-	{
-		public int troopCapacity;
+    public class PlayerTroop
+    {
+        public int troopCapacity { get; set; }
 
-		public int curSquadCount;
+        public int curSquadCount { get; set; }
 
-		public int curCharInstCount;
+        public int curCharInstCount { get; set; }
 
-		public Dictionary<string, PlayerSquad> squads;
+        public Dictionary<string, PlayerSquad> squads { get; set; }
 
-		public Dictionary<string, PlayerCharacter> chars;
+        public Dictionary<string, PlayerCharacter> chars { get; set; }
 
-		public PlayerTroop()
-		{
-		}
-	}
+        public PlayerTroop()
+        {
+        }
+    }
 }

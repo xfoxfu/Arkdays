@@ -4,11 +4,11 @@ namespace Torappu
 {
     public class PlayerDungeon
     {
-        public Dictionary<string, PlayerStage> stages;
+        public Dictionary<string, PlayerStage> stages { get; set; }
 
-        public Dictionary<string, PlayerZone> zones;
+        public Dictionary<string, PlayerZone> zones { get; set; }
 
-        public PlayerCampaign campaigns;
+        public PlayerCampaign campaigns { get; set; }
 
         public PlayerDungeon()
         {

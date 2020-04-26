@@ -6,25 +6,25 @@ namespace Torappu
     {
         public class BubbleContainer
         {
-            public PlayerBuildingCharBubble normal;
+            public PlayerBuildingCharBubble normal { get; set; }
 
-            public PlayerBuildingCharBubble assist;
+            public PlayerBuildingCharBubble assist { get; set; }
         }
 
-        public string charId;
+        public string charId { get; set; }
 
-        public DateTime lastApAddTime;
+        public DateTime lastApAddTime { get; set; }
 
-        public long ap;
+        public long ap { get; set; }
 
-        public string roomSlotId;
+        public string roomSlotId { get; set; }
 
-        public int index;
+        public int index { get; set; }
 
-        public int changeScale;
+        public int changeScale { get; set; }
 
-        public BubbleContainer bubble;
+        public BubbleContainer bubble { get; set; }
 
-        public string skinIdInVisit;
+        public string skinIdInVisit { get; set; }
     }
 }

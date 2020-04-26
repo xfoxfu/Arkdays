@@ -1,16 +1,16 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingMeetingClueChar
-	{
-		public string charId;
+    public class PlayerBuildingMeetingClueChar
+    {
+        public string charId { get; set; }
 
-		public int level;
+        public int level { get; set; }
 
-		public int evolvePhase;
+        public int evolvePhase { get; set; }
 
-		public PlayerBuildingMeetingClueChar()
-		{
-		}
-	}
+        public PlayerBuildingMeetingClueChar()
+        {
+        }
+    }
 }

@@ -1,39 +1,39 @@
 
 namespace Torappu
 {
-	public class PlayerCharacter
-	{
-		public int instId;
+    public class PlayerCharacter
+    {
+        public int instId { get; set; }
 
-		public string charId;
+        public string charId { get; set; }
 
-		public int level;
+        public int level { get; set; }
 
-		public int exp;
+        public int exp { get; set; }
 
-		public EvolvePhase evolvePhase;
+        public EvolvePhase evolvePhase { get; set; }
 
-		public int potentialRank;
+        public int potentialRank { get; set; }
 
-		public int defaultSkillIndex;
+        public int defaultSkillIndex { get; set; }
 
-		public int favorPoint;
+        public int favorPoint { get; set; }
 
-		public int mainSkillLvl;
+        public int mainSkillLvl { get; set; }
 
-		public long gainTime;
+        public long gainTime { get; set; }
 
-		public string skin;
+        public string skin { get; set; }
 
-		public PlayerCharSkill[] skills;
+        public PlayerCharSkill[] skills { get; set; }
 
-		public PlayerCharacter()
-		{
-		}
+        public PlayerCharacter()
+        {
+        }
 
-		public int GetFinalSkillLvl(int skillIndex)
-		{
-			return default(int);
-		}
-	}
+        public int GetFinalSkillLvl(int skillIndex)
+        {
+            return default(int);
+        }
+    }
 }

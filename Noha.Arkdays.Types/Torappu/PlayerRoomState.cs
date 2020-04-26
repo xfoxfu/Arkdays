@@ -1,9 +1,9 @@
 
 namespace Torappu
 {
-	public enum PlayerRoomState
-	{
-		STOP,
-		RUN
-	}
+    public enum PlayerRoomState
+    {
+        STOP,
+        RUN
+    }
 }

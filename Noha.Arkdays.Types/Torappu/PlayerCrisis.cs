@@ -2,35 +2,35 @@ using System.Collections.Generic;
 
 namespace Torappu
 {
-	public class PlayerCrisis
-	{
-		public struct BoxItem
-		{
-			public string id;
+    public class PlayerCrisis
+    {
+        public struct BoxItem
+        {
+            public string id { get; set; }
 
-			public ItemType type;
+            public ItemType type { get; set; }
 
-			public int count;
-		}
+            public int count { get; set; }
+        }
 
-		public string currentSeason;
+        public string currentSeason { get; set; }
 
-		public Dictionary<string, PlayerCrisisMap> map;
+        public Dictionary<string, PlayerCrisisMap> map { get; set; }
 
-		public PlayerCrisisShop shop;
+        public PlayerCrisisShop shop { get; set; }
 
-		public PlayerCrisisTraining training;
+        public PlayerCrisisTraining training { get; set; }
 
-		public Dictionary<string, PlayerCrisisSeason> season;
+        public Dictionary<string, PlayerCrisisSeason> season { get; set; }
 
-		public long lastSyncTs;
+        public long lastSyncTs { get; set; }
 
-		public long nextSyncTs;
+        public long nextSyncTs { get; set; }
 
-		public List<BoxItem> box;
+        public List<BoxItem> box { get; set; }
 
-		public PlayerCrisis()
-		{
-		}
-	}
+        public PlayerCrisis()
+        {
+        }
+    }
 }

@@ -1,16 +1,12 @@
 
 namespace Torappu
 {
-	public class MissionCalcState
-	{
-		public int target;
+    public class MissionCalcState
+    {
+        public int target { get; set; }
 
-		public int value;
+        public int value { get; set; }
 
-		public string compare;
-
-		public MissionCalcState()
-		{
-		}
-	}
+        public string compare { get; set; }
+    }
 }

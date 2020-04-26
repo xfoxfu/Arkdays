@@ -2,16 +2,16 @@ using System;
 
 namespace Torappu
 {
-	public class PlayerCharSkill
-	{
-		public bool unlock;
+    public class PlayerCharSkill
+    {
+        public bool unlock { get; set; }
 
-		public string skillId;
+        public string skillId { get; set; }
 
-		public int specializeLevel;
+        public int specializeLevel { get; set; }
 
-		public PlayerCharSkill()
-		{
-		}
-	}
+        public PlayerCharSkill()
+        {
+        }
+    }
 }

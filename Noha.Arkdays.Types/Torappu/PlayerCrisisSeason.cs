@@ -1,20 +1,20 @@
 
 namespace Torappu
 {
-	public class PlayerCrisisSeason
-	{
-		public int coin;
+    public class PlayerCrisisSeason
+    {
+        public int coin { get; set; }
 
-		public int tCoin;
+        public int tCoin { get; set; }
 
-		public PlayerCrisisPermanent permanent;
+        public PlayerCrisisPermanent permanent { get; set; }
 
-		public PlayerCrisisTemporary temporary;
+        public PlayerCrisisTemporary temporary { get; set; }
 
-		public PlayerCrisisSocialInfo sInfo;
+        public PlayerCrisisSocialInfo sInfo { get; set; }
 
-		public PlayerCrisisSeason()
-		{
-		}
-	}
+        public PlayerCrisisSeason()
+        {
+        }
+    }
 }

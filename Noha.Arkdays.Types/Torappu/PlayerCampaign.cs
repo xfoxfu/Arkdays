@@ -7,22 +7,22 @@ namespace Torappu
     {
         public class Instance
         {
-            public int maxKills;
+            public int maxKills { get; set; }
 
-            public int[] rewardStatus;
+            public int[] rewardStatus { get; set; }
 
             public Instance()
             {
             }
         }
 
-        public int campaignCurrentFee;
+        public int campaignCurrentFee { get; set; }
 
-        public int campaignTotalFee;
+        public int campaignTotalFee { get; set; }
 
-        public string activeGroupId;
+        public string activeGroupId { get; set; }
 
-        public Dictionary<string, Instance> instances;
+        public Dictionary<string, Instance> instances { get; set; }
 
         public PlayerCampaign()
         {

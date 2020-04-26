@@ -4,13 +4,13 @@ namespace Torappu
     public class SyncDataRequest
     {
         // Fields
-        public PlatformKey platform;
+        public PlatformKey platform { get; set; }
     }
 
     // Namespace: Torappu
     public class SyncDataResponse : PlayerInitResponse
     {
         // Fields
-        public long ts;
+        public long ts { get; set; }
     }
 }

@@ -1,14 +1,14 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingTradingBuff
-	{
-		public float speed;
+    public class PlayerBuildingTradingBuff
+    {
+        public float speed { get; set; }
 
-		public int limit;
+        public int limit { get; set; }
 
-		public PlayerBuildingTradingBuff()
-		{
-		}
-	}
+        public PlayerBuildingTradingBuff()
+        {
+        }
+    }
 }

@@ -1,10 +1,10 @@
 
 namespace Torappu
 {
-	public enum PlayerRoomSlotState
-	{
-		EMPTY,
-		UPGRADING,
-		BUILT
-	}
+    public enum PlayerRoomSlotState
+    {
+        EMPTY,
+        UPGRADING,
+        BUILT
+    }
 }

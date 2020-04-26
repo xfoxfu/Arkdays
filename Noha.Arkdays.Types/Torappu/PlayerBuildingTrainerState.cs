@@ -1,11 +1,11 @@
 
 namespace Torappu
 {
-	public enum PlayerBuildingTrainerState
-	{
-		EMPTY,
-		TRAINING,
-		FINISH,
-		WAITING
-	}
+    public enum PlayerBuildingTrainerState
+    {
+        EMPTY,
+        TRAINING,
+        FINISH,
+        WAITING
+    }
 }

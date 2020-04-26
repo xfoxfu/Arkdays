@@ -2,16 +2,12 @@ using System.Collections.Generic;
 
 namespace Torappu
 {
-	public class MissionDailyRewards
-	{
-		public int dailyPoint;
+    public class MissionDailyRewards
+    {
+        public int dailyPoint { get; set; }
 
-		public int weeklyPoint;
+        public int weeklyPoint { get; set; }
 
-		public Dictionary<string, Dictionary<string, int>> rewards;
-
-		public MissionDailyRewards()
-		{
-		}
-	}
+        public Dictionary<string, Dictionary<string, int>> rewards { get; set; }
+    }
 }

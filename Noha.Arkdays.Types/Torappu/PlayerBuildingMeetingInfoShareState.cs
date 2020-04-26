@@ -1,14 +1,14 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingMeetingInfoShareState
-	{
-		public long ts;
+    public class PlayerBuildingMeetingInfoShareState
+    {
+        public long ts { get; set; }
 
-		public int reward;
+        public int reward { get; set; }
 
-		public PlayerBuildingMeetingInfoShareState()
-		{
-		}
-	}
+        public PlayerBuildingMeetingInfoShareState()
+        {
+        }
+    }
 }

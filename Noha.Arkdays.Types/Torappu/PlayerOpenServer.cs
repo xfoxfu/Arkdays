@@ -1,14 +1,14 @@
 
 namespace Torappu
 {
-	public class PlayerOpenServer
-	{
-		public OpenServerChainLogin chainLogin;
+    public class PlayerOpenServer
+    {
+        public OpenServerChainLogin chainLogin { get; set; }
 
-		public OpenServerCheckIn checkIn;
+        public OpenServerCheckIn checkIn { get; set; }
 
-		public PlayerOpenServer()
-		{
-		}
-	}
+        public PlayerOpenServer()
+        {
+        }
+    }
 }

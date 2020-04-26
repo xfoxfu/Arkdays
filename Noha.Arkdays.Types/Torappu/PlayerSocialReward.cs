@@ -1,18 +1,18 @@
 
 namespace Torappu
 {
-	public class PlayerSocialReward
-	{
-		public bool canReceive;
+    public class PlayerSocialReward
+    {
+        public bool canReceive { get; set; }
 
-		public int first;
+        public int first { get; set; }
 
-		public int assistAmount;
+        public int assistAmount { get; set; }
 
-		public int comfortAmount;
+        public int comfortAmount { get; set; }
 
-		public PlayerSocialReward()
-		{
-		}
-	}
+        public PlayerSocialReward()
+        {
+        }
+    }
 }

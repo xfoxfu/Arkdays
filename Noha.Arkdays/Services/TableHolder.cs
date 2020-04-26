@@ -13,14 +13,22 @@ namespace Noha.Arkdays.Services
 
         public TableHolder(string json)
         {
-            _Value = JsonSerializer.Deserialize<T>(json);
+            _Value = JsonSerializer.Deserialize<T>(json)!;
+            if (_Value == null)
+            {
+                throw new NullReferenceException($"The deserialized table {nameof(T)} cannot be null");
+            }
         }
 
         public TableHolder(Stream stream)
         {
             using (var reader = new StreamReader(stream))
             {
-                _Value = JsonSerializer.Deserialize<T>(reader.ReadToEnd());
+                _Value = JsonSerializer.Deserialize<T>(reader.ReadToEnd())!;
+                if (_Value == null)
+                {
+                    throw new NullReferenceException($"The deserialized table {nameof(T)} cannot be null");
+                }
             }
         }
     }

@@ -1,14 +1,14 @@
 
 namespace Torappu
 {
-	public class PlayerDexNav
-	{
-		public PlayerEnemyHandBook enemy;
+    public class PlayerDexNav
+    {
+        public PlayerEnemyHandBook enemy { get; set; }
 
-		public PlayerFormulaUnlockRecord formula;
+        public PlayerFormulaUnlockRecord formula { get; set; }
 
-		public PlayerDexNav()
-		{
-		}
-	}
+        public PlayerDexNav()
+        {
+        }
+    }
 }

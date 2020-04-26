@@ -12,9 +12,5 @@ namespace Torappu
         public int serviceLicenseVersion { get; set; }
 
         public PlayerDataDelta playerDataDelta { get; set; }
-
-        public LoginResponse()
-        {
-        }
     }
 }

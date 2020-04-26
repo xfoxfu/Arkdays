@@ -1,14 +1,10 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingControl
-	{
-		public PlayerBuildingControlBuff buff;
+    public class PlayerBuildingControl
+    {
+        public PlayerBuildingControlBuff buff { get; set; }
 
-		public int apCost;
-
-		public PlayerBuildingControl()
-		{
-		}
-	}
+        public int apCost { get; set; }
+    }
 }

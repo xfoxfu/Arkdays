@@ -3,8 +3,8 @@ namespace Torappu
 {
     public class PlayerBuildingFurniturePositionInfo
     {
-        public string id;
+        public string id { get; set; }
 
-        public PlayerBuildingGridPosition coordinate;
+        public PlayerBuildingGridPosition coordinate { get; set; }
     }
 }

@@ -1,14 +1,10 @@
 
 namespace Torappu
 {
-	public class AssistCharList
-	{
-		public int charInstId;
+    public class AssistCharList
+    {
+        public int charInstId { get; set; }
 
-		public int skillIndex;
-
-		public AssistCharList()
-		{
-		}
-	}
+        public int skillIndex { get; set; }
+    }
 }

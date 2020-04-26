@@ -3,26 +3,26 @@ using System.Collections.Generic;
 
 namespace Torappu
 {
-	public class PlayerBuildingTrading
-	{
-		public PlayerBuildingTradingBuff buff;
+    public class PlayerBuildingTrading
+    {
+        public PlayerBuildingTradingBuff buff { get; set; }
 
-		public PlayerRoomState state;
+        public PlayerRoomState state { get; set; }
 
-		public DateTime lastUpdateTime;
+        public DateTime lastUpdateTime { get; set; }
 
-		public BuildingData.OrderType strategy;
+        public BuildingData.OrderType strategy;
 
-		public int stockLimit;
+        public int stockLimit { get; set; }
 
-		public int apCost;
+        public int apCost { get; set; }
 
-		public List<PlayerBuildingTradingOrder> stock;
+        public List<PlayerBuildingTradingOrder> stock { get; set; }
 
-		public PlayerBuildingTradingNext next;
+        public PlayerBuildingTradingNext next { get; set; }
 
-		public PlayerBuildingTrading()
-		{
-		}
-	}
+        public PlayerBuildingTrading()
+        {
+        }
+    }
 }

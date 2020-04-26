@@ -11,9 +11,9 @@ namespace Torappu
 
         public const string DELETED_FIELD = "deleted";
 
-        public JObject modified;
+        public JObject modified { get; set; }
 
-        public JObject deleted;
+        public JObject deleted { get; set; }
 
         public bool IsEmpty()
         {

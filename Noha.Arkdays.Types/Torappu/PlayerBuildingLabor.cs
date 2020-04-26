@@ -2,20 +2,16 @@ using System;
 
 namespace Torappu
 {
-	public class PlayerBuildingLabor
-	{
-		public float buffSpeed;
+    public class PlayerBuildingLabor
+    {
+        public float buffSpeed { get; set; }
 
-		public int value;
+        public int value { get; set; }
 
-		public int maxValue;
+        public int maxValue { get; set; }
 
-		public DateTime lastUpdateTime;
+        public DateTime lastUpdateTime { get; set; }
 
-		public double processPoint;
-
-		public PlayerBuildingLabor()
-		{
-		}
-	}
+        public double processPoint { get; set; }
+    }
 }

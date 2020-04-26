@@ -1,47 +1,31 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingDormitory
-	{
-		public class Buff
-		{
-			public class APCost
-			{
-				public class SingleTarget
-				{
-					public string target;
+    public class PlayerBuildingDormitory
+    {
+        public class Buff
+        {
+            public class APCost
+            {
+                public class SingleTarget
+                {
+                    public string target { get; set; }
 
-					public int value;
+                    public int value { get; set; }
+                }
 
-					public SingleTarget()
-					{
-					}
-				}
+                public int all { get; set; }
 
-				public int all;
+                public SingleTarget single { get; set; }
+            }
 
-				public SingleTarget single;
+            public APCost apCost { get; set; }
+        }
 
-				public APCost()
-				{
-				}
-			}
+        public Buff buff { get; set; }
 
-			public APCost apCost;
+        public int comfort { get; set; }
 
-			public Buff()
-			{
-			}
-		}
-
-		public Buff buff;
-
-		public int comfort;
-
-		public PlayerBuildingDIYSolution diySolution;
-
-		public PlayerBuildingDormitory()
-		{
-		}
-	}
+        public PlayerBuildingDIYSolution diySolution { get; set; }
+    }
 }

@@ -7,9 +7,9 @@ namespace Torappu
     {
         public class KeyFrame
         {
-            public int level;
+            public int level { get; set; }
 
-            public TInput data;
+            public TInput data { get; set; }
 
         }
 

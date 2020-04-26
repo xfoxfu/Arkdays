@@ -1,20 +1,20 @@
 
 namespace Torappu
 {
-	public class PlayerPushFlags
-	{
-		public bool hasGifts;
+    public class PlayerPushFlags
+    {
+        public bool hasGifts { get; set; }
 
-		public bool hasFriendRequest;
+        public bool hasFriendRequest { get; set; }
 
-		public bool hasClues;
+        public bool hasClues { get; set; }
 
-		public bool hasFreeLevelGP;
+        public bool hasFreeLevelGP { get; set; }
 
-		public long status;
+        public long status { get; set; }
 
-		public PlayerPushFlags()
-		{
-		}
-	}
+        public PlayerPushFlags()
+        {
+        }
+    }
 }

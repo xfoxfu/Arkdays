@@ -1,12 +1,8 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingHireBuff
-	{
-		public float speed;
-
-		public PlayerBuildingHireBuff()
-		{
-		}
-	}
+    public class PlayerBuildingHireBuff
+    {
+        public float speed { get; set; }
+    }
 }

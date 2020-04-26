@@ -1,12 +1,12 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingPower
-	{
-		public PlayerBuildingPowerBuff buff;
+    public class PlayerBuildingPower
+    {
+        public PlayerBuildingPowerBuff buff { get; set; }
 
-		public PlayerBuildingPower()
-		{
-		}
-	}
+        public PlayerBuildingPower()
+        {
+        }
+    }
 }

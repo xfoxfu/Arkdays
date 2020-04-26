@@ -4,8 +4,8 @@ namespace Torappu
 {
     public struct GridPosition
     {
-        public int row;
+        public int row { get; set; }
 
-        public int col;
+        public int col { get; set; }
     }
 }

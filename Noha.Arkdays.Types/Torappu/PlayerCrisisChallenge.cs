@@ -2,27 +2,27 @@ using System.Collections.Generic;
 
 namespace Torappu
 {
-	public class PlayerCrisisChallenge
-	{
-		public class PlayerChallengeTask
-		{
-			public long fts;
+    public class PlayerCrisisChallenge
+    {
+        public class PlayerChallengeTask
+        {
+            public long fts { get; set; }
 
-			public long rts;
+            public long rts { get; set; }
 
-			public PlayerChallengeTask()
-			{
-			}
-		}
+            public PlayerChallengeTask()
+            {
+            }
+        }
 
-		public Dictionary<int, long> pointList;
+        public Dictionary<int, long> pointList { get; set; }
 
-		public Dictionary<string, PlayerChallengeTask> taskList;
+        public Dictionary<string, PlayerChallengeTask> taskList { get; set; }
 
-		public int topPoint;
+        public int topPoint { get; set; }
 
-		public PlayerCrisisChallenge()
-		{
-		}
-	}
+        public PlayerCrisisChallenge()
+        {
+        }
+    }
 }

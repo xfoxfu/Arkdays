@@ -3,36 +3,36 @@ using System.Collections.Generic;
 
 namespace Torappu
 {
-	public class PlayerBuildingMeeting
-	{
-		public List<string> visitedUser;
+    public class PlayerBuildingMeeting
+    {
+        public List<string> visitedUser { get; set; }
 
-		public PlayerBuildingMeetingBuff buff;
+        public PlayerBuildingMeetingBuff buff { get; set; }
 
-		public int state;
+        public int state { get; set; }
 
-		public int processPoint;
+        public int processPoint { get; set; }
 
-		public float speed;
+        public float speed { get; set; }
 
-		public List<PlayerBuildingMeetingClue> ownStock;
+        public List<PlayerBuildingMeetingClue> ownStock { get; set; }
 
-		public List<PlayerBuildingMeetingClue> receiveStock;
+        public List<PlayerBuildingMeetingClue> receiveStock { get; set; }
 
-		public Dictionary<string, string> board;
+        public Dictionary<string, string> board { get; set; }
 
-		public PlayerBuildingMeetingSocialReward socialReward;
+        public PlayerBuildingMeetingSocialReward socialReward { get; set; }
 
-		public int received;
+        public int received { get; set; }
 
-		public PlayerBuildingMeetingInfoShareState infoShare;
+        public PlayerBuildingMeetingInfoShareState infoShare { get; set; }
 
-		public DateTime lastUpdateTime;
+        public DateTime lastUpdateTime { get; set; }
 
-		public PlayerBuildingMeetingClue dailyReward;
+        public PlayerBuildingMeetingClue dailyReward { get; set; }
 
-		public PlayerBuildingMeeting()
-		{
-		}
-	}
+        public PlayerBuildingMeeting()
+        {
+        }
+    }
 }

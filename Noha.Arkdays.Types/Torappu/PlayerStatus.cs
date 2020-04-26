@@ -3,88 +3,88 @@ using System.Collections.Generic;
 
 namespace Torappu
 {
-	public class PlayerStatus
-	{
-		public string nickName;
+    public class PlayerStatus
+    {
+        public string nickName { get; set; }
 
-		public string nickNumber;
+        public string nickNumber { get; set; }
 
-		public string serverName;
+        public string serverName { get; set; }
 
-		public int ap;
+        public int ap { get; set; }
 
-		public DateTime lastApAddTime;
+        public DateTime lastApAddTime { get; set; }
 
-		public DateTime lastRefreshTs;
+        public DateTime lastRefreshTs { get; set; }
 
-		public int level;
+        public int level { get; set; }
 
-		public int exp;
+        public int exp { get; set; }
 
-		public int maxAp;
+        public int maxAp { get; set; }
 
-		public int practiceTicket;
+        public int practiceTicket { get; set; }
 
-		public long gold;
+        public long gold { get; set; }
 
-		public int diamondShard;
+        public int diamondShard { get; set; }
 
-		public int recruitLicense;
+        public int recruitLicense { get; set; }
 
-		public int gachaTicket;
+        public int gachaTicket { get; set; }
 
-		public int tenGachaTicket;
+        public int tenGachaTicket { get; set; }
 
-		public int instantFinishTicket;
+        public int instantFinishTicket { get; set; }
 
-		public int hggShard;
+        public int hggShard { get; set; }
 
-		public int lggShard;
+        public int lggShard { get; set; }
 
-		public int socialPoint;
+        public int socialPoint { get; set; }
 
-		public int buyApRemainTimes;
+        public int buyApRemainTimes { get; set; }
 
-		public bool apLimitUpFlag;
+        public bool apLimitUpFlag { get; set; }
 
-		public long registerTs;
+        public long registerTs { get; set; }
 
-		public string secretary;
+        public string secretary { get; set; }
 
-		public string secretarySkinId;
+        public string secretarySkinId { get; set; }
 
-		public string resume;
+        public string resume { get; set; }
 
-		public DateTime monthlySubscriptionEndTime;
+        public DateTime monthlySubscriptionEndTime { get; set; }
 
-		public DateTime monthlySubscriptionStartTime;
+        public DateTime monthlySubscriptionStartTime { get; set; }
 
-		public int progress;
+        public int progress { get; set; }
 
-		public string mainStageProgress;
+        public string mainStageProgress { get; set; }
 
-		public int iosDiamond;
+        public int iosDiamond { get; set; }
 
-		public int androidDiamond;
+        public int androidDiamond { get; set; }
 
-		public int payDiamond;
+        public int payDiamond { get; set; }
 
-		public int freeDiamond;
+        public int freeDiamond { get; set; }
 
-		public Dictionary<string, bool> flags;
+        public Dictionary<string, bool> flags { get; set; }
 
-		public List<PlayerFriendAssist> friendAssist;
+        public List<PlayerFriendAssist> friendAssist { get; set; }
 
-		public int diamond
-		{
-			get
-			{
-				return default(int);
-			}
-		}
+        public int diamond
+        {
+            get
+            {
+                return default(int);
+            }
+        }
 
-		public PlayerStatus()
-		{
-		}
-	}
+        public PlayerStatus()
+        {
+        }
+    }
 }

@@ -2,21 +2,21 @@ using System;
 
 namespace Torappu
 {
-	public class TalentData
-	{
-		public CharacterData.UnlockCondition unlockCondition;
+    public class TalentData
+    {
+        public CharacterData.UnlockCondition unlockCondition;
 
-		public int requiredPotentialRank;
+        public int requiredPotentialRank { get; set; }
 
-		public string prefabKey;
+        public string prefabKey { get; set; }
 
-		public string name;
+        public string name { get; set; }
 
-		public string description;
+        public string description { get; set; }
 
-		public string rangeId;
+        public string rangeId { get; set; }
 
-		public Blackboard blackboard;
+        public Blackboard blackboard { get; set; }
 
-	}
+    }
 }

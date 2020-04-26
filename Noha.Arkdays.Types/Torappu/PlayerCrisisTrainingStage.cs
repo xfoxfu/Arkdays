@@ -1,12 +1,12 @@
 
 namespace Torappu
 {
-	public class PlayerCrisisTrainingStage
-	{
-		public int point;
+    public class PlayerCrisisTrainingStage
+    {
+        public int point { get; set; }
 
-		public PlayerCrisisTrainingStage()
-		{
-		}
-	}
+        public PlayerCrisisTrainingStage()
+        {
+        }
+    }
 }

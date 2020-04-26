@@ -1,18 +1,18 @@
 
 namespace Torappu
 {
-	public class PlayerCrisisTemporary
-	{
-		public string schedule;
+    public class PlayerCrisisTemporary
+    {
+        public string schedule { get; set; }
 
-		public PlayerCrisisChallenge challenge;
+        public PlayerCrisisChallenge challenge { get; set; }
 
-		public int point;
+        public int point { get; set; }
 
-		public long nextSyncTs;
+        public long nextSyncTs { get; set; }
 
-		public PlayerCrisisTemporary()
-		{
-		}
-	}
+        public PlayerCrisisTemporary()
+        {
+        }
+    }
 }

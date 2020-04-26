@@ -1,9 +1,9 @@
 
 namespace Torappu
 {
-	public enum PlayerBuildingHiringState
-	{
-		EMPTY,
-		HIRING
-	}
+    public enum PlayerBuildingHiringState
+    {
+        EMPTY,
+        HIRING
+    }
 }

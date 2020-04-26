@@ -1,20 +1,20 @@
 
 namespace Torappu
 {
-	public class PlayerGiftProgressData
-	{
-		public PlayerGiftProgressPerData oneTime;
+    public class PlayerGiftProgressData
+    {
+        public PlayerGiftProgressPerData oneTime { get; set; }
 
-		public PlayerGiftProgressPerData level;
+        public PlayerGiftProgressPerData level { get; set; }
 
-		public PlayerGiftProgressPerData weekly;
+        public PlayerGiftProgressPerData weekly { get; set; }
 
-		public PlayerGiftProgressPerData monthly;
+        public PlayerGiftProgressPerData monthly { get; set; }
 
-		public PlayerGiftProgressPerData choose;
+        public PlayerGiftProgressPerData choose { get; set; }
 
-		public PlayerGiftProgressData()
-		{
-		}
-	}
+        public PlayerGiftProgressData()
+        {
+        }
+    }
 }

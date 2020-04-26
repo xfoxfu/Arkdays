@@ -6,13 +6,13 @@ namespace Torappu
     {
         public class MileStoneRewardTicketItem
         {
-            public long ts;
+            public long ts { get; set; }
 
-            public int count;
+            public int count { get; set; }
         }
 
-        public Dictionary<string, int> points;
+        public Dictionary<string, int> points { get; set; }
 
-        public Dictionary<string, MileStoneRewardTicketItem> rewards;
+        public Dictionary<string, MileStoneRewardTicketItem> rewards { get; set; }
     }
 }

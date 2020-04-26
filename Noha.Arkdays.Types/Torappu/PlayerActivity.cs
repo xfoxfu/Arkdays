@@ -6,137 +6,98 @@ namespace Torappu
     {
         public class PlayerDefaultActivity
         {
-            public int coin;
+            public int coin { get; set; }
 
-            public Dictionary<string, int> shop;
+            public Dictionary<string, int> shop { get; set; }
 
-            public PlayerDefaultActivity()
-            {
-            }
         }
 
         public class PlayerMissionOnlyTypeActivity
         {
-            public PlayerMissionOnlyTypeActivity()
-            {
-            }
         }
 
         public class PlayerCheckinOnlyTypeActivity
         {
-            public List<int> history;
+            public List<int> history { get; set; }
 
-            public PlayerCheckinOnlyTypeActivity()
-            {
-            }
         }
 
         public class PlayerCollectionTypeActivity
         {
             public class PlayerCollectionInfo
             {
-                public string ts;
+                public string ts { get; set; }
 
-                public PlayerCollectionInfo()
-                {
-                }
             }
 
-            public Dictionary<string, int> point;
+            public Dictionary<string, int> point { get; set; }
 
-            public Dictionary<string, PlayerCollectionInfo> history;
+            public Dictionary<string, PlayerCollectionInfo> history { get; set; }
 
-            public PlayerCollectionTypeActivity()
-            {
-            }
         }
 
         public class PlayerAVGOnlyTypeActivity
         {
-            public bool isOpen;
+            public bool isOpen { get; set; }
 
-            public PlayerAVGOnlyTypeActivity()
-            {
-            }
         }
 
         public class PlayerLoginOnlyTypeActivity
         {
-            public int reward;
+            public int reward { get; set; }
 
-            public PlayerLoginOnlyTypeActivity()
-            {
-            }
         }
 
         public class PlayerAct3D0Activity
         {
             public class BoxState
             {
-                public Dictionary<string, int> content;
+                public Dictionary<string, int> content { get; set; }
 
-                public BoxState()
-                {
-                }
             }
 
             public class MileStone
             {
-                public int point;
+                public int point { get; set; }
 
-                public Dictionary<string, int> rewards;
+                public Dictionary<string, int> rewards { get; set; }
 
-                public MileStone()
-                {
-                }
             }
 
-            public string faction;
+            public string faction { get; set; }
 
-            public int gachaCoin;
+            public int gachaCoin { get; set; }
 
-            public int ticket;
+            public int ticket { get; set; }
 
-            public Dictionary<string, int> clue;
+            public Dictionary<string, int> clue { get; set; }
 
-            public Dictionary<string, BoxState> box;
+            public Dictionary<string, BoxState> box { get; set; }
 
-            public MileStone milestone;
+            public MileStone milestone { get; set; }
 
-            public PlayerAct3D0Activity()
-            {
-            }
         }
 
         public class PlayerAct4D0Activity
         {
             public class MileStone
             {
-                public int point;
+                public int point { get; set; }
 
-                public Dictionary<string, int> rewards;
+                public Dictionary<string, int> rewards { get; set; }
 
-                public MileStone()
-                {
-                }
             }
 
-            public Dictionary<string, int> story;
+            public Dictionary<string, int> story { get; set; }
 
-            public MileStone milestone;
+            public MileStone milestone { get; set; }
 
-            public PlayerAct4D0Activity()
-            {
-            }
         }
 
         public class PlayerAct5D0Activity
         {
-            public MileStonePlayerInfo milestone;
+            public MileStonePlayerInfo milestone { get; set; }
 
-            public PlayerAct5D0Activity()
-            {
-            }
         }
 
         public class PlayerAct5D1Activity
@@ -145,89 +106,71 @@ namespace Torappu
             {
                 public class ProgressInfo
                 {
-                    public int count;
+                    public int count { get; set; }
 
-                    public int order;
+                    public int order { get; set; }
 
-                    public ProgressInfo()
-                    {
-                    }
                 }
 
-                public Dictionary<string, int> info;
+                public Dictionary<string, int> info { get; set; }
 
-                public Dictionary<string, ProgressInfo> progressInfo;
+                public Dictionary<string, ProgressInfo> progressInfo { get; set; }
 
-                public PlayerAct5D1Shop()
-                {
-                }
             }
 
             public class PlayerActRuneStage
             {
-                public string schedule;
+                public string schedule { get; set; }
 
-                public int available;
+                public int available { get; set; }
 
-                public int scores;
+                public int scores { get; set; }
 
-                public Dictionary<string, int> rune;
+                public Dictionary<string, int> rune { get; set; }
 
-                public PlayerActRuneStage()
-                {
-                }
             }
 
-            public int coin;
+            public int coin { get; set; }
 
-            public int pt;
+            public int pt { get; set; }
 
-            public PlayerAct5D1Shop shop;
+            public PlayerAct5D1Shop shop { get; set; }
 
-            public Dictionary<string, PlayerActRuneStage> runeStage;
+            public Dictionary<string, PlayerActRuneStage> runeStage { get; set; }
 
-            public Dictionary<string, List<string>> stageEnemy;
+            public Dictionary<string, List<string>> stageEnemy { get; set; }
 
-            public PlayerAct5D1Activity()
-            {
-            }
         }
 
         public class PlayerAct9D0Activity
         {
-            public int coin;
+            public int coin { get; set; }
 
-            public List<string> favorList;
+            public List<string> favorList { get; set; }
 
-            public PlayerAct9D0Activity()
-            {
-            }
         }
 
-        public Dictionary<string, PlayerDefaultActivity> defaultActivityList;
+        public Dictionary<string, PlayerDefaultActivity> defaultActivityList { get; set; }
 
-        public Dictionary<string, PlayerMissionOnlyTypeActivity> missionOnlyActivityList;
+        public Dictionary<string, PlayerMissionOnlyTypeActivity> missionOnlyActivityList { get; set; }
 
-        public Dictionary<string, PlayerCheckinOnlyTypeActivity> checkinOnlyActivityList;
+        public Dictionary<string, PlayerCheckinOnlyTypeActivity> checkinOnlyActivityList { get; set; }
 
-        public Dictionary<string, PlayerCollectionTypeActivity> collectionActivityList;
+        public Dictionary<string, PlayerCollectionTypeActivity> collectionActivityList { get; set; }
 
-        public Dictionary<string, PlayerAVGOnlyTypeActivity> avgOnlyActivityList;
+        public Dictionary<string, PlayerAVGOnlyTypeActivity> avgOnlyActivityList { get; set; }
 
-        public Dictionary<string, PlayerLoginOnlyTypeActivity> loginOnlyActivityList;
+        public Dictionary<string, PlayerLoginOnlyTypeActivity> loginOnlyActivityList { get; set; }
 
-        public Dictionary<string, PlayerAct3D0Activity> act3D0ActivityList;
+        public Dictionary<string, PlayerAct3D0Activity> act3D0ActivityList { get; set; }
 
-        public Dictionary<string, PlayerAct4D0Activity> act4D0ActivityList;
+        public Dictionary<string, PlayerAct4D0Activity> act4D0ActivityList { get; set; }
 
-        public Dictionary<string, PlayerAct5D0Activity> act5D0ActivityList;
+        public Dictionary<string, PlayerAct5D0Activity> act5D0ActivityList { get; set; }
 
-        public Dictionary<string, PlayerAct5D1Activity> act5D1ActivityList;
+        public Dictionary<string, PlayerAct5D1Activity> act5D1ActivityList { get; set; }
 
-        public Dictionary<string, PlayerAct9D0Activity> act9D0ActivityList;
+        public Dictionary<string, PlayerAct9D0Activity> act9D0ActivityList { get; set; }
 
-        public PlayerActivity()
-        {
-        }
     }
 }

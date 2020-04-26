@@ -1,16 +1,16 @@
 
 namespace Torappu
 {
-	public class PlayerSocial
-	{
-		public string yesterdayCrisisSeasonId;
+    public class PlayerSocial
+    {
+        public string yesterdayCrisisSeasonId { get; set; }
 
-		public AssistCharList[] assistCharList;
+        public AssistCharList[] assistCharList { get; set; }
 
-		public PlayerSocialReward yesterdayReward;
+        public PlayerSocialReward yesterdayReward { get; set; }
 
-		public PlayerSocial()
-		{
-		}
-	}
+        public PlayerSocial()
+        {
+        }
+    }
 }

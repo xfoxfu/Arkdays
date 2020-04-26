@@ -2,7 +2,7 @@ using System;
 
 namespace Torappu
 {
-	public class AttributesDeltaData : AttributesData
-	{
-	}
+    public class AttributesDeltaData : AttributesData
+    {
+    }
 }

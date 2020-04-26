@@ -4,8 +4,8 @@ namespace Torappu
 {
     public class MissionPlayerState
     {
-        public MissionHoldingState state;
+        public MissionHoldingState state { get; set; }
 
-        public List<MissionCalcState> progress;
+        public List<MissionCalcState> progress { get; set; }
     }
 }

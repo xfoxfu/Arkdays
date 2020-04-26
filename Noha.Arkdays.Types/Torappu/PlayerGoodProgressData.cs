@@ -1,14 +1,14 @@
 
 namespace Torappu
 {
-	public class PlayerGoodProgressData
-	{
-		public int count;
+    public class PlayerGoodProgressData
+    {
+        public int count { get; set; }
 
-		public int order;
+        public int order { get; set; }
 
-		public PlayerGoodProgressData()
-		{
-		}
-	}
+        public PlayerGoodProgressData()
+        {
+        }
+    }
 }

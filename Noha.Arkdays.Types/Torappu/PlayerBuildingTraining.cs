@@ -2,20 +2,20 @@ using System;
 
 namespace Torappu
 {
-	public class PlayerBuildingTraining
-	{
-		public PlayerBuildingTrainingBuff buff;
+    public class PlayerBuildingTraining
+    {
+        public PlayerBuildingTrainingBuff buff { get; set; }
 
-		public DateTime lastUpdateTime;
+        public DateTime lastUpdateTime { get; set; }
 
-		public PlayerBuildingTrainer trainer;
+        public PlayerBuildingTrainer trainer { get; set; }
 
-		public PlayerBuildingTrainee trainee;
+        public PlayerBuildingTrainee trainee { get; set; }
 
-		public DateTime completeWorkTime;
+        public DateTime completeWorkTime { get; set; }
 
-		public PlayerBuildingTraining()
-		{
-		}
-	}
+        public PlayerBuildingTraining()
+        {
+        }
+    }
 }

@@ -1,9 +1,9 @@
 
 namespace Torappu
 {
-	public class ExternalBuff
-	{
-		public AttributeModifierData attributes;
+    public class ExternalBuff
+    {
+        public AttributeModifierData attributes { get; set; }
 
-	}
+    }
 }

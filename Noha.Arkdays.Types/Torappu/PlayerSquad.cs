@@ -1,16 +1,16 @@
 
 namespace Torappu
 {
-	public class PlayerSquad
-	{
-		public int squadId;
+    public class PlayerSquad
+    {
+        public int squadId { get; set; }
 
-		public string name;
+        public string name { get; set; }
 
-		public PlayerSquadItem[] slots;
+        public PlayerSquadItem[] slots { get; set; }
 
-		public PlayerSquad()
-		{
-		}
-	}
+        public PlayerSquad()
+        {
+        }
+    }
 }

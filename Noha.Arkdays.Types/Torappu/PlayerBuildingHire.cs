@@ -2,26 +2,22 @@ using System;
 
 namespace Torappu
 {
-	public class PlayerBuildingHire
-	{
-		public PlayerBuildingHireBuff buff;
+    public class PlayerBuildingHire
+    {
+        public PlayerBuildingHireBuff buff { get; set; }
 
-		public int recruitSlotId;
+        public int recruitSlotId { get; set; }
 
-		public PlayerBuildingHiringState state;
+        public PlayerBuildingHiringState state { get; set; }
 
-		public double processPoint;
+        public double processPoint { get; set; }
 
-		public float speed;
+        public float speed { get; set; }
 
-		public DateTime lastUpdateTime;
+        public DateTime lastUpdateTime { get; set; }
 
-		public int refreshCount;
+        public int refreshCount { get; set; }
 
-		public DateTime completeWorkTime;
-
-		public PlayerBuildingHire()
-		{
-		}
-	}
+        public DateTime completeWorkTime { get; set; }
+    }
 }

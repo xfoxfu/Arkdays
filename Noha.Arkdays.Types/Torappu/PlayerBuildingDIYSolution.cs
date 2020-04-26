@@ -4,12 +4,12 @@ namespace Torappu
 {
     public class PlayerBuildingDIYSolution
     {
-        public string wallPaper;
+        public string wallPaper { get; set; }
 
-        public string floor;
+        public string floor { get; set; }
 
-        public List<PlayerBuildingFurniturePositionInfo> carpet;
+        public List<PlayerBuildingFurniturePositionInfo> carpet { get; set; }
 
-        public List<PlayerBuildingFurniturePositionInfo> other;
+        public List<PlayerBuildingFurniturePositionInfo> other { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-
 namespace Torappu
 {
     public class BuildingData
@@ -16,34 +15,21 @@ namespace Torappu
             SPECIAL = 0x20,
             ALL = 0x3F
         }
-
         public static class RoomTypeString
         {
             public const string CONTROL = "CONTROL";
-
             public const string POWER = "POWER";
-
             public const string MANUFACTURE = "MANUFACTURE";
-
             public const string SHOP = "SHOP";
-
             public const string DORMITORY = "DORMITORY";
-
             public const string MEETING = "MEETING";
-
             public const string HIRE = "HIRE";
-
             public const string ELEVATOR = "ELEVATOR";
-
             public const string CORRIDOR = "CORRIDOR";
-
             public const string TRADING = "TRADING";
-
             public const string WORKSHOP = "WORKSHOP";
-
             public const string TRAINING = "TRAINING";
         }
-
         public enum RoomType
         {
             NONE = 0,
@@ -62,21 +48,18 @@ namespace Torappu
             FUNCTIONAL = 3710,
             ALL = 0xFFF
         }
-
         public enum OrderType
         {
             O_COMPOUND,
             O_GOLD,
             O_DIAMOND
         }
-
         public enum FurnitureCategory
         {
             FURNITURE,
             WALL,
             FLOOR
         }
-
         public enum FurnitureType
         {
             FLOOR,
@@ -92,12 +75,9 @@ namespace Torappu
             CEILING,
             CEILINGLAMP
         }
-
         public interface IRoomBean
         {
-            object GetPhaseParam(int phase);
         }
-
         public enum FurnitureLocation
         {
             NONE,
@@ -108,34 +88,22 @@ namespace Torappu
             POSTER,
             CEILINGDECAL
         }
-
         public struct ObstaclePoint
         {
-            public GridPosition offset;
-
-            public byte edgeWalkableMask;
+            public GridPosition offset { get; set; }
+            public byte edgeWalkableMask { get; set; }
         }
-
         public struct ObstacleRect
         {
-            public GridPosition pos;
-
-            public GridPosition size;
-
-            public byte edgeWalkableMask;
+            public GridPosition pos { get; set; }
+            public GridPosition size { get; set; }
+            public byte edgeWalkableMask { get; set; }
         }
-
         public class ObstacleData
         {
-            public List<ObstaclePoint> floorObstacles;
-
-            public List<ObstaclePoint> backwallObstacles;
-
-            public ObstacleData()
-            {
-            }
+            public List<ObstaclePoint> floorObstacles { get; set; }
+            public List<ObstaclePoint> backwallObstacles { get; set; }
         }
-
         public enum FormulaItemType
         {
             NONE,
@@ -148,154 +116,76 @@ namespace Torappu
             F_ASC,
             F_SKILL
         }
-
         public class PrefabInfo
         {
-            public string id;
-
-            public string blueprintRoomOverrideId;
-
-            public GridPosition size;
-
-            public GridPosition floorGridSize;
-
-            public GridPosition backWallGridSize;
-
-            public string obstacleId;
-
-            public PrefabInfo()
-            {
-            }
+            public string id { get; set; }
+            public string blueprintRoomOverrideId { get; set; }
+            public GridPosition size { get; set; }
+            public GridPosition floorGridSize { get; set; }
+            public GridPosition backWallGridSize { get; set; }
+            public string obstacleId { get; set; }
         }
-
         public class RoomUnlockCond
         {
             public class CondItem
             {
-                public RoomType type;
-
-                public int level;
-
-                public int count;
-
-                public CondItem()
-                {
-                }
+                public RoomType type { get; set; }
+                public int level { get; set; }
+                public int count { get; set; }
             }
-
-            public string id;
-
-            public Dictionary<int, CondItem> number;
-
-            public RoomUnlockCond()
-            {
-            }
+            public string id { get; set; }
+            public Dictionary<int, CondItem> number { get; set; }
         }
-
         public class RoomData
         {
             public class BuildCost
             {
-                public ItemBundle[] items;
-
-                public long time;
-
-                public int labor;
-
-                public BuildCost()
-                {
-                }
+                public ItemBundle[] items { get; set; }
+                public long time { get; set; }
+                public int labor { get; set; }
             }
-
             public class PhaseData
             {
-                public string overrideName;
-
-                public string overridePrefabId;
-
-                public string unlockCondId;
-
-                public BuildCost buildCost;
-
-                public int electricity;
-
-                public int maxStationedNum;
-
-                public long manpowerCost;
-
-                public PhaseData()
-                {
-                }
+                public string overrideName { get; set; }
+                public string overridePrefabId { get; set; }
+                public string unlockCondId { get; set; }
+                public BuildCost buildCost { get; set; }
+                public int electricity { get; set; }
+                public int maxStationedNum { get; set; }
+                public long manpowerCost { get; set; }
             }
-
-            public RoomType id;
-
-            public string name;
-
-            public string description;
-
-            public string defaultPrefabId;
-
-            public bool canLevelDown;
-
-            public int maxCount;
-
-            public RoomCategory category;
-
-            public GridPosition size;
-
-            public PhaseData[] phases;
-
-            public RoomData()
-            {
-            }
+            public RoomType id { get; set; }
+            public string name { get; set; }
+            public string description { get; set; }
+            public string defaultPrefabId { get; set; }
+            public bool canLevelDown { get; set; }
+            public int maxCount { get; set; }
+            public RoomCategory category { get; set; }
+            public GridPosition size { get; set; }
+            public PhaseData[] phases { get; set; }
         }
-
         public class LayoutData
         {
             public class RoomSlot
             {
-                public string id;
-
-                public string cleanCostId;
-
-                public int costLabor;
-
-                public int provideLabor;
-
-                public GridPosition size;
-
-                public GridPosition offset;
-
-                public RoomCategory category;
-
-                public string storeyId;
-
-                public RoomSlot()
-                {
-                }
+                public string id { get; set; }
+                public string cleanCostId { get; set; }
+                public int costLabor { get; set; }
+                public int provideLabor { get; set; }
+                public GridPosition size { get; set; }
+                public GridPosition offset { get; set; }
+                public RoomCategory category { get; set; }
+                public string storeyId { get; set; }
             }
-
             public class SlotCleanCost
             {
                 public class CountCost
                 {
-                    public ItemBundle[] items;
-
-                    public CountCost()
-                    {
-                    }
+                    public ItemBundle[] items { get; set; }
                 }
-
-                public string id;
-
-                public Dictionary<int, CountCost> number;
-
-                public SlotCleanCost()
-                {
-                }
+                public string id { get; set; }
+                public Dictionary<int, CountCost> number { get; set; }
             }
-
             public class StoreyData
             {
                 public enum Type
@@ -303,35 +193,17 @@ namespace Torappu
                     UPGROUND,
                     DOWNGROUND
                 }
-
-                public string id;
-
-                public int yOffset;
-
-                public int unlockControlLevel;
-
-                public Type type;
-
-                public StoreyData()
-                {
-                }
+                public string id { get; set; }
+                public int yOffset { get; set; }
+                public int unlockControlLevel { get; set; }
+                public Type type { get; set; }
             }
-
             public const string DEFAULT_LAYOUT_ID = "v0";
-
-            public string id;
-
-            public Dictionary<string, RoomSlot> slots;
-
-            public Dictionary<string, SlotCleanCost> cleanCosts;
-
-            public Dictionary<string, StoreyData> storeys;
-
-            public LayoutData()
-            {
-            }
+            public string id { get; set; }
+            public Dictionary<string, RoomSlot> slots { get; set; }
+            public Dictionary<string, SlotCleanCost> cleanCosts { get; set; }
+            public Dictionary<string, StoreyData> storeys { get; set; }
         }
-
         public enum BuffCategory
         {
             NONE,
@@ -339,691 +211,323 @@ namespace Torappu
             OUTPUT,
             RECOVERY
         }
-
         public class BuildingCharacter
         {
-            public string charId;
-
-            public long maxManpower;
-
-            public List<BuildingBuffCharSlot> buffChar;
-
-            public BuildingCharacter()
-            {
-            }
+            public string charId { get; set; }
+            public long maxManpower { get; set; }
+            public List<BuildingBuffCharSlot> buffChar { get; set; }
         }
-
         public class BuildingBuffCharSlot
         {
             public class SlotItem
             {
-                public string buffId;
-
-                public CharacterData.UnlockCondition cond;
-
-                public SlotItem()
-                {
-                }
+                public string buffId { get; set; }
+                public CharacterData.UnlockCondition cond { get; set; }
             }
-
-            public List<SlotItem> buffData;
-
-            public BuildingBuffCharSlot()
-            {
-            }
+            public List<SlotItem> buffData { get; set; }
         }
-
         public class BuildingBuff
         {
-            public string buffId;
-
-            public string buffName;
-
-            public string buffIcon;
-
-            public string skillIcon;
-
-            public int sortId;
-
-            public string buffColor;
-
-            public string textColor;
-
-            public BuffCategory buffCategory;
-
-            public RoomType roomType;
-
-            public string description;
-
-            public BuildingBuff()
-            {
-            }
+            public string buffId { get; set; }
+            public string buffName { get; set; }
+            public string buffIcon { get; set; }
+            public string skillIcon { get; set; }
+            public int sortId { get; set; }
+            public string buffColor { get; set; }
+            public string textColor { get; set; }
+            public BuffCategory buffCategory { get; set; }
+            public RoomType roomType { get; set; }
+            public string description { get; set; }
         }
-
         public abstract class RoomBeanParam
         {
-            protected RoomBeanParam()
-            {
-            }
         }
-
         public class RoomBean<TParam> : IRoomBean where TParam : RoomBeanParam
         {
-            public List<TParam> phases;
-
-            public RoomBean()
-            {
-            }
-
-            public object GetPhaseParam(int level)
-            {
-                return null;
-            }
+            public List<TParam> phases { get; set; }
         }
-
         public class ControlRoomBean : RoomBean<ControlRoomPhase>
         {
-            public int basicCostBuff;
-
-            public ControlRoomBean()
-            {
-            }
+            public int basicCostBuff { get; set; }
         }
-
         public class ControlRoomPhase : RoomBeanParam
         {
-            public ControlRoomPhase()
-            {
-            }
         }
-
         public class ManufactRoomBean : RoomBean<ManufactPhase>
         {
-            public float basicSpeedBuff;
-
-            public ManufactRoomBean()
-            {
-            }
+            public float basicSpeedBuff { get; set; }
         }
-
         public class ManufactPhase : RoomBeanParam
         {
-            public float speed;
-
-            public int outputCapacity;
-
-            public ManufactPhase()
-            {
-            }
+            public float speed { get; set; }
+            public int outputCapacity { get; set; }
         }
-
         public class ShopPhase : RoomBeanParam
         {
-            public int counterNum;
-
-            public float speed;
-
-            public int moneyCapacity;
-
-            public ShopPhase()
-            {
-            }
+            public int counterNum { get; set; }
+            public float speed { get; set; }
+            public int moneyCapacity { get; set; }
         }
-
         public class HireRoomBean : RoomBean<HirePhase>
         {
-            public float basicSpeedBuff;
-
-            public HireRoomBean()
-            {
-            }
+            public float basicSpeedBuff { get; set; }
         }
-
         public class HirePhase : RoomBeanParam
         {
-            public float economizeRate;
-
-            public int resSpeed;
-
-            public int refreshTimes;
-
-            public HirePhase()
-            {
-            }
+            public float economizeRate { get; set; }
+            public int resSpeed { get; set; }
+            public int refreshTimes { get; set; }
         }
-
         public class DormPhase : RoomBeanParam
         {
-            public int manpowerRecover;
-
-            public int decorationLimit;
-
-            public DormPhase()
-            {
-            }
+            public int manpowerRecover { get; set; }
+            public int decorationLimit { get; set; }
         }
-
         public class MeetingRoomBean : RoomBean<MeetingPhase>
         {
-            public float basicSpeedBuff;
-
-            public MeetingRoomBean()
-            {
-            }
+            public float basicSpeedBuff { get; set; }
         }
-
         public class MeetingPhase : RoomBeanParam
         {
-            public int friendSlotInc;
-
-            public int maxVisitorNum;
-
-            public int gatheringSpeed;
-
-            public MeetingPhase()
-            {
-            }
+            public int friendSlotInc { get; set; }
+            public int maxVisitorNum { get; set; }
+            public int gatheringSpeed { get; set; }
         }
-
         public class TradingRoomBean : RoomBean<TradingPhase>
         {
-            public float basicSpeedBuff;
-
-            public TradingRoomBean()
-            {
-            }
+            public float basicSpeedBuff { get; set; }
         }
-
         public class TradingPhase : RoomBeanParam
         {
-            public float orderSpeed;
-
-            public int orderLimit;
-
-            public int orderRarity;
-
-            public TradingPhase()
-            {
-            }
+            public float orderSpeed { get; set; }
+            public int orderLimit { get; set; }
+            public int orderRarity { get; set; }
         }
-
         public class WorkshopPhase : RoomBeanParam
         {
-            public float manpowerFactor;
-
-            public WorkshopPhase()
-            {
-            }
+            public float manpowerFactor { get; set; }
         }
-
         public class TrainingBean : RoomBean<TrainingPhase>
         {
-            public float basicSpeedBuff;
-
-            public TrainingBean()
-            {
-            }
+            public float basicSpeedBuff { get; set; }
         }
-
         public class TrainingPhase : RoomBeanParam
         {
-            public int specSkillLvlLimit;
-
-            public TrainingPhase()
-            {
-            }
+            public int specSkillLvlLimit { get; set; }
         }
-
         public class PowerRoomBean : RoomBean<PowerPhase>
         {
-            public float basicSpeedBuff;
-
-            public PowerRoomBean()
-            {
-            }
+            public float basicSpeedBuff { get; set; }
         }
-
         public class PowerPhase : RoomBeanParam
         {
-            public PowerPhase()
-            {
-            }
         }
-
         public class CustomData
         {
             public class FurnitureData
             {
-                public string id;
-
-                public string name;
-
-                public string iconId;
-
-                public FurnitureType type;
-
-                public FurnitureLocation location;
-
-                public FurnitureCategory category;
-
-                public int rarity;
-
-                public string themeId;
-
-                public int width;
-
-                public int depth;
-
-                public int height;
-
-                public int comfort;
-
-                public string usage;
-
-                public string description;
-
-                public string obtainApproach;
-
-                public string processedProductId;
-
-                public int processedProductCount;
-
-                public int processedByProductPercentage;
-
-                public List<WorkshopExtraWeightItem> processedByProductGroup;
-
-                public bool canBeDestroy;
-
-                public FurnitureData()
-                {
-                }
+                public string id { get; set; }
+                public string name { get; set; }
+                public string iconId { get; set; }
+                public FurnitureType type { get; set; }
+                public FurnitureLocation location { get; set; }
+                public FurnitureCategory category { get; set; }
+                public int rarity { get; set; }
+                public string themeId { get; set; }
+                public int width { get; set; }
+                public int depth { get; set; }
+                public int height { get; set; }
+                public int comfort { get; set; }
+                public string usage { get; set; }
+                public string description { get; set; }
+                public string obtainApproach { get; set; }
+                public string processedProductId { get; set; }
+                public int processedProductCount { get; set; }
+                public int processedByProductPercentage { get; set; }
+                public List<WorkshopExtraWeightItem> processedByProductGroup { get; set; }
+                public bool canBeDestroy { get; set; }
             }
-
             public class ThemeData
             {
-                public string id;
-
-                public string name;
-
-                public string desc;
-
-                public List<ThemeQuickSetupItem> quickSetup;
-
-                public ThemeData()
-                {
-                }
+                public string id { get; set; }
+                public string name { get; set; }
+                public string desc { get; set; }
+                public List<ThemeQuickSetupItem> quickSetup { get; set; }
             }
-
             public class GroupData
             {
-                public string id;
-
-                public string name;
-
-                public string themeId;
-
-                public int comfort;
-
-                public int count;
-
-                public List<string> furniture;
-
-                public GroupData()
-                {
-                }
+                public string id { get; set; }
+                public string name { get; set; }
+                public string themeId { get; set; }
+                public int comfort { get; set; }
+                public int count { get; set; }
+                public List<string> furniture { get; set; }
             }
-
             public class ThemeQuickSetupItem
             {
-                public string furnitureId;
-
-                public int pos0;
-
-                public int pos1;
-
-                public ThemeQuickSetupItem()
-                {
-                }
+                public string furnitureId { get; set; }
+                public int pos0 { get; set; }
+                public int pos1 { get; set; }
             }
-
             public class FurnitureTypeData
             {
-                public FurnitureType type;
-
-                public string name;
-
-                public FurnitureTypeData()
-                {
-                }
+                public FurnitureType type { get; set; }
+                public string name { get; set; }
             }
-
             public class DormitoryDefaultFurnitureItem
             {
-                public string furnitureId;
-
-                public int xOffset;
-
-                public int yOffset;
-
-                public string defaultPrefabId;
-
-                public DormitoryDefaultFurnitureItem()
-                {
-                }
+                public string furnitureId { get; set; }
+                public int xOffset { get; set; }
+                public int yOffset { get; set; }
+                public string defaultPrefabId { get; set; }
             }
-
-            public Dictionary<string, FurnitureData> furnitures;
-
-            public Dictionary<string, ThemeData> themes;
-
-            public Dictionary<string, GroupData> groups;
-
-            public Dictionary<string, FurnitureTypeData> types;
-
-            public Dictionary<string, List<DormitoryDefaultFurnitureItem>> defaultFurnitures;
-
-            public CustomData()
-            {
-            }
+            public Dictionary<string, FurnitureData> furnitures { get; set; }
+            public Dictionary<string, ThemeData> themes { get; set; }
+            public Dictionary<string, GroupData> groups { get; set; }
+            public Dictionary<string, FurnitureTypeData> types { get; set; }
+            public Dictionary<string, List<DormitoryDefaultFurnitureItem>> defaultFurnitures { get; set; }
         }
-
         public class ManufactFormula
         {
             public class UnlockRoom
             {
-                public RoomType roomId;
-
-                public int roomLevel;
-
-                public int roomCount;
-
-                public UnlockRoom()
-                {
-                }
+                public RoomType roomId { get; set; }
+                public int roomLevel { get; set; }
+                public int roomCount { get; set; }
             }
-
             public class UnlockStage
             {
-                public string stageId;
-
-                public int rank;
-
-                public UnlockStage()
-                {
-                }
+                public string stageId { get; set; }
+                public int rank { get; set; }
             }
-
-            public string formulaId;
-
-            public string itemId;
-
-            public int count;
-
-            public int weight;
-
-            public long costPoint;
-
-            public FormulaItemType formulaType;
-
-            public string buffType;
-
-            public List<ItemBundle> costs;
-
-            public List<UnlockRoom> requireRooms;
-
-            public List<UnlockStage> requireStages;
-
-            public ManufactFormula()
-            {
-            }
+            public string formulaId { get; set; }
+            public string itemId { get; set; }
+            public int count { get; set; }
+            public int weight { get; set; }
+            public long costPoint { get; set; }
+            public FormulaItemType formulaType { get; set; }
+            public string buffType { get; set; }
+            public List<ItemBundle> costs { get; set; }
+            public List<UnlockRoom> requireRooms { get; set; }
+            public List<UnlockStage> requireStages { get; set; }
         }
-
         public class WorkshopExtraWeightItem
         {
-            public int weight;
-
-            public string itemId;
-
-            public int itemCount;
-
-            public WorkshopExtraWeightItem()
-            {
-            }
+            public int weight { get; set; }
+            public string itemId { get; set; }
+            public int itemCount { get; set; }
         }
-
         public class WorkshopFormula
         {
             public class UnlockRoom
             {
-                public RoomType roomId;
-
-                public int roomLevel;
-
-                public int roomCount;
-
-                public UnlockRoom()
-                {
-                }
+                public RoomType roomId { get; set; }
+                public int roomLevel { get; set; }
+                public int roomCount { get; set; }
             }
-
             public class UnlockStage
             {
-                public string stageId;
-
-                public int rank;
-
-                public UnlockStage()
-                {
-                }
+                public string stageId { get; set; }
+                public int rank { get; set; }
             }
-
-            public int sortId;
-
-            public string formulaId;
-
-            public int rarity;
-
-            public string itemId;
-
-            public int count;
-
-            public long goldCost;
-
-            public long apCost;
-
-            public FormulaItemType formulaType;
-
-            public string buffType;
-
-            public float extraOutcomeRate;
-
-            public List<WorkshopExtraWeightItem> extraOutcomeGroup;
-
-            public List<ItemBundle> costs;
-
-            public List<UnlockRoom> requireRooms;
-
-            public List<UnlockStage> requireStages;
-
-            public WorkshopFormula()
-            {
-            }
+            public int sortId { get; set; }
+            public string formulaId { get; set; }
+            public int rarity { get; set; }
+            public string itemId { get; set; }
+            public int count { get; set; }
+            public long goldCost { get; set; }
+            public long apCost { get; set; }
+            public FormulaItemType formulaType { get; set; }
+            public string buffType { get; set; }
+            public float extraOutcomeRate { get; set; }
+            public List<WorkshopExtraWeightItem> extraOutcomeGroup { get; set; }
+            public List<ItemBundle> costs { get; set; }
+            public List<UnlockRoom> requireRooms { get; set; }
+            public List<UnlockStage> requireStages { get; set; }
         }
-
         public class ShopFormula
         {
             public class UnlockRoom
             {
-                public RoomType roomId;
-
-                public int roomLevel;
-
-                public UnlockRoom()
-                {
-                }
+                public RoomType roomId { get; set; }
+                public int roomLevel { get; set; }
             }
-
-            public string formulaId;
-
-            public string itemId;
-
-            public FormulaItemType formulaType;
-
-            public long costPoint;
-
-            public ItemBundle gainItem;
-
-            public List<UnlockRoom> requireRooms;
-
-            public ShopFormula()
-            {
-            }
+            public string formulaId { get; set; }
+            public string itemId { get; set; }
+            public FormulaItemType formulaType { get; set; }
+            public long costPoint { get; set; }
+            public ItemBundle gainItem { get; set; }
+            public List<UnlockRoom> requireRooms { get; set; }
         }
-
         public class CreditFormula
         {
             public class ValueModel
             {
-                public int basic;
-
-                public int addition;
-
-                public ValueModel()
-                {
-                }
+                public int basic { get; set; }
+                public int addition { get; set; }
             }
-
-            public Dictionary<int, ValueModel> initiative;
-
-            public Dictionary<int, ValueModel> passive;
-
-            public CreditFormula()
-            {
-            }
+            public Dictionary<int, ValueModel> initiative { get; set; }
+            public Dictionary<int, ValueModel> passive { get; set; }
         }
-
         public const string CONTROL_STOREY_ID = "1F";
-
-        public string controlSlotId;
-
-        public string meetingSlotId;
-
-        public int initMaxLabor;
-
-        public int laborRecoverTime;
-
-        public int manufactInputCapacity;
-
-        public int shopCounterCapacity;
-
-        public int comfortLimit;
-
-        public int creditInitiativeLimit;
-
-        public int creditPassiveLimit;
-
-        public int creditComfortFactor;
-
-        public int creditGuaranteed;
-
-        public int creditCeiling;
-
-        public string manufactUnlockTips;
-
-        public string shopUnlockTips;
-
-        public float manufactStationBuff;
-
-        public int comfortManpowerRecoverFactor;
-
-        public int manpowerDisplayFactor;
-
-        public Dictionary<string, int> shopOutputRatio;
-
-        public Dictionary<string, int> shopStackRatio;
-
-        public int basicFavorPerDay;
-
-        public int humanResourceLimit;
-
-        public long tiredApThreshold;
-
-        public int processedCountRatio;
-
-        public int tradingStrategyUnlockLevel;
-
-        public int tradingReduceTimeUnit;
-
-        public int tradingLaborCostUnit;
-
-        public int manufactReduceTimeUnit;
-
-        public int manufactLaborCostUnit;
-
-        public int laborAssistUnlockLevel;
-
-        public int apToLaborUnlockLevel;
-
-        public int apToLaborRatio;
-
-        public int socialResourceLimit;
-
-        public int socialSlotNum;
-
-        public int furniDuplicationLimit;
-
-        public int[] manufactManpowerCostByNum;
-
-        public int[] tradingManpowerCostByNum;
-
-        public Dictionary<string, RoomUnlockCond> roomUnlockConds;
-
-        public Dictionary<string, RoomData> rooms;
-
-        public Dictionary<string, LayoutData> layouts;
-
-        public Dictionary<string, PrefabInfo> prefabs;
-
-        public ControlRoomBean controlData;
-
-        public ManufactRoomBean manufactData;
-
-        public RoomBean<ShopPhase> shopData;
-
-        public HireRoomBean hireData;
-
-        public RoomBean<DormPhase> dormData;
-
-        public MeetingRoomBean meetingData;
-
-        public TradingRoomBean tradingData;
-
-        public RoomBean<WorkshopPhase> workshopData;
-
-        public TrainingBean trainingData;
-
-        public PowerRoomBean powerData;
-
-        public Dictionary<string, BuildingCharacter> chars;
-
-        public Dictionary<string, BuildingBuff> buffs;
-
-        public CustomData customData;
-
-        public Dictionary<string, ManufactFormula> manufactFormulas;
-
-        public Dictionary<string, ShopFormula> shopFormulas;
-
-        public Dictionary<string, WorkshopFormula> workshopFormulas;
-
-        public CreditFormula creditFormula;
-
-        public Dictionary<string, int> goldItems;
-
-        public List<int> assistantUnlock;
-
-        public BuildingData()
-        {
-        }
+        public string controlSlotId { get; set; }
+        public string meetingSlotId { get; set; }
+        public int initMaxLabor { get; set; }
+        public int laborRecoverTime { get; set; }
+        public int manufactInputCapacity { get; set; }
+        public int shopCounterCapacity { get; set; }
+        public int comfortLimit { get; set; }
+        public int creditInitiativeLimit { get; set; }
+        public int creditPassiveLimit { get; set; }
+        public int creditComfortFactor { get; set; }
+        public int creditGuaranteed { get; set; }
+        public int creditCeiling { get; set; }
+        public string manufactUnlockTips { get; set; }
+        public string shopUnlockTips { get; set; }
+        public float manufactStationBuff { get; set; }
+        public int comfortManpowerRecoverFactor { get; set; }
+        public int manpowerDisplayFactor { get; set; }
+        public Dictionary<string, int> shopOutputRatio { get; set; }
+        public Dictionary<string, int> shopStackRatio { get; set; }
+        public int basicFavorPerDay { get; set; }
+        public int humanResourceLimit { get; set; }
+        public long tiredApThreshold { get; set; }
+        public int processedCountRatio { get; set; }
+        public int tradingStrategyUnlockLevel { get; set; }
+        public int tradingReduceTimeUnit { get; set; }
+        public int tradingLaborCostUnit { get; set; }
+        public int manufactReduceTimeUnit { get; set; }
+        public int manufactLaborCostUnit { get; set; }
+        public int laborAssistUnlockLevel { get; set; }
+        public int apToLaborUnlockLevel { get; set; }
+        public int apToLaborRatio { get; set; }
+        public int socialResourceLimit { get; set; }
+        public int socialSlotNum { get; set; }
+        public int furniDuplicationLimit { get; set; }
+        public int[] manufactManpowerCostByNum { get; set; }
+        public int[] tradingManpowerCostByNum { get; set; }
+        public Dictionary<string, RoomUnlockCond> roomUnlockConds { get; set; }
+        public Dictionary<string, RoomData> rooms { get; set; }
+        public Dictionary<string, LayoutData> layouts { get; set; }
+        public Dictionary<string, PrefabInfo> prefabs { get; set; }
+        public ControlRoomBean controlData { get; set; }
+        public ManufactRoomBean manufactData { get; set; }
+        public RoomBean<ShopPhase> shopData { get; set; }
+        public HireRoomBean hireData { get; set; }
+        public RoomBean<DormPhase> dormData { get; set; }
+        public MeetingRoomBean meetingData { get; set; }
+        public TradingRoomBean tradingData { get; set; }
+        public RoomBean<WorkshopPhase> workshopData { get; set; }
+        public TrainingBean trainingData { get; set; }
+        public PowerRoomBean powerData { get; set; }
+        public Dictionary<string, BuildingCharacter> chars { get; set; }
+        public Dictionary<string, BuildingBuff> buffs { get; set; }
+        public CustomData customData { get; set; }
+        public Dictionary<string, ManufactFormula> manufactFormulas { get; set; }
+        public Dictionary<string, ShopFormula> shopFormulas { get; set; }
+        public Dictionary<string, WorkshopFormula> workshopFormulas { get; set; }
+        public CreditFormula creditFormula { get; set; }
+        public Dictionary<string, int> goldItems { get; set; }
+        public List<int> assistantUnlock { get; set; }
     }
 }

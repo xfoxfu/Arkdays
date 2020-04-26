@@ -6,23 +6,23 @@ namespace Torappu.Network
     {
         public class Content
         {
-            public string configVer;
+            public string configVer { get; set; }
 
-            public string funcVer;
+            public string funcVer { get; set; }
 
-            public Dictionary<string, Config> configs;
+            public Dictionary<string, Config> configs { get; set; }
         }
 
         public class Config
         {
-            public bool useOverride;
+            public bool useOverride { get; set; }
 
-            public UrlConfiguration network;
+            public UrlConfiguration network { get; set; }
         }
 
-        public string sign;
+        public string sign { get; set; }
 
-        public string content;
+        public string content { get; set; }
 
     }
 }

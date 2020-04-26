@@ -1,16 +1,12 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingDIYPreset
-	{
-		public string name;
+    public class PlayerBuildingDIYPreset
+    {
+        public string name { get; set; }
 
-		public PlayerBuildingDIYSolution solution;
+        public PlayerBuildingDIYSolution solution { get; set; }
 
-		public string thumbnail;
-
-		public PlayerBuildingDIYPreset()
-		{
-		}
-	}
+        public string thumbnail { get; set; }
+    }
 }

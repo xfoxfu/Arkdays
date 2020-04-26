@@ -1,14 +1,14 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingTrainer
-	{
-		public PlayerBuildingTrainerState state;
+    public class PlayerBuildingTrainer
+    {
+        public PlayerBuildingTrainerState state { get; set; }
 
-		public int charInstId;
+        public int charInstId { get; set; }
 
-		public PlayerBuildingTrainer()
-		{
-		}
-	}
+        public PlayerBuildingTrainer()
+        {
+        }
+    }
 }

@@ -1,11 +1,11 @@
 
 namespace Torappu
 {
-	public enum PlayerStageState
-	{
-		UNLOCKED,
-		PLAYED,
-		PASS,
-		COMPLETE
-	}
+    public enum PlayerStageState
+    {
+        UNLOCKED,
+        PLAYED,
+        PASS,
+        COMPLETE
+    }
 }

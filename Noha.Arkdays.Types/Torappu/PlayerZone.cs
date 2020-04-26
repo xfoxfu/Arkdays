@@ -1,12 +1,12 @@
 
 namespace Torappu
 {
-	public class PlayerZone
-	{
-		public int completeTimes;
+    public class PlayerZone
+    {
+        public int completeTimes { get; set; }
 
-		public PlayerZone()
-		{
-		}
-	}
+        public PlayerZone()
+        {
+        }
+    }
 }

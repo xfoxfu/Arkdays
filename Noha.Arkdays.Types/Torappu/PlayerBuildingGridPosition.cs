@@ -1,14 +1,10 @@
 
 namespace Torappu
 {
-	public class PlayerBuildingGridPosition
-	{
-		public int x;
+    public class PlayerBuildingGridPosition
+    {
+        public int x { get; set; }
 
-		public int y;
-
-		public PlayerBuildingGridPosition()
-		{
-		}
-	}
+        public int y { get; set; }
+    }
 }

@@ -1,14 +1,14 @@
 
 namespace Torappu
 {
-	public class PlayerGoodItemData
-	{
-		public string id;
+    public class PlayerGoodItemData
+    {
+        public string id { get; set; }
 
-		public int count;
+        public int count { get; set; }
 
-		public PlayerGoodItemData()
-		{
-		}
-	}
+        public PlayerGoodItemData()
+        {
+        }
+    }
 }

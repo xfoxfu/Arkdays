@@ -2,28 +2,28 @@ using System.Collections.Generic;
 
 namespace Torappu
 {
-	public class PlayerBuildingMeetingClue
-	{
-		public string id;
+    public class PlayerBuildingMeetingClue
+    {
+        public string id { get; set; }
 
-		public string type;
+        public string type { get; set; }
 
-		public int number;
+        public int number { get; set; }
 
-		public int uid;
+        public int uid { get; set; }
 
-		public int nickNum;
+        public int nickNum { get; set; }
 
-		public string name;
+        public string name { get; set; }
 
-		public List<PlayerBuildingMeetingClueChar> chars;
+        public List<PlayerBuildingMeetingClueChar> chars { get; set; }
 
-		public int inUse;
+        public int inUse { get; set; }
 
-		public long ts;
+        public long ts { get; set; }
 
-		public PlayerBuildingMeetingClue()
-		{
-		}
-	}
+        public PlayerBuildingMeetingClue()
+        {
+        }
+    }
 }

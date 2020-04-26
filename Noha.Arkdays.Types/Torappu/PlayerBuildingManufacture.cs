@@ -2,32 +2,28 @@ using System;
 
 namespace Torappu
 {
-	public class PlayerBuildingManufacture
-	{
-		public PlayerBuildingManufactureBuff buff;
+    public class PlayerBuildingManufacture
+    {
+        public PlayerBuildingManufactureBuff buff { get; set; }
 
-		public PlayerRoomState state;
+        public PlayerRoomState state { get; set; }
 
-		public string formulaId;
+        public string formulaId { get; set; }
 
-		public int remainSolutionCnt;
+        public int remainSolutionCnt { get; set; }
 
-		public int outputSolutionCnt;
+        public int outputSolutionCnt { get; set; }
 
-		public DateTime lastUpdateTime;
+        public DateTime lastUpdateTime { get; set; }
 
-		public double processPoint;
+        public double processPoint { get; set; }
 
-		public long saveTime;
+        public long saveTime { get; set; }
 
-		public DateTime completeWorkTime;
+        public DateTime completeWorkTime { get; set; }
 
-		public int capacity;
+        public int capacity { get; set; }
 
-		public int apCost;
-
-		public PlayerBuildingManufacture()
-		{
-		}
-	}
+        public int apCost { get; set; }
+    }
 }
