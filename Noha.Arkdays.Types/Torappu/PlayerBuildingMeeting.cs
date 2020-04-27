@@ -27,6 +27,7 @@ namespace Torappu
 
         public PlayerBuildingMeetingInfoShareState infoShare { get; set; }
 
+        [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
         public DateTime lastUpdateTime { get; set; }
 
         public PlayerBuildingMeetingClue dailyReward { get; set; }

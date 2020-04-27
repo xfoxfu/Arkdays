@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Torappu
 {
-    public struct PlayerDataDelta
+    public class PlayerDataDelta
     {
         public const string DELTA_FIELD = "playerDataDelta";
 
@@ -11,13 +11,14 @@ namespace Torappu
 
         public const string DELETED_FIELD = "deleted";
 
-        public JObject modified { get; set; }
+        public PlayerDataModel modified { get; set; }
 
         public JObject deleted { get; set; }
 
-        public bool IsEmpty()
+        public PlayerDataDelta()
         {
-            return default(bool);
+            modified = null;
+            deleted = null;
         }
     }
 }

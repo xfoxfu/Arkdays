@@ -9,6 +9,7 @@ namespace Torappu
 
         public PlayerRoomState state { get; set; }
 
+        [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
         public DateTime lastUpdateTime { get; set; }
 
         public BuildingData.OrderType strategy;

@@ -12,6 +12,7 @@ namespace Torappu
 
         public int[] charInstIds { get; set; }
 
+        [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
         public DateTime completeConstructTime { get; set; }
 
         public PlayerBuildingRoomSlot()

@@ -1,4 +1,6 @@
 using System;
+using System.Text.Json.Serialization;
+using Noha.Arkdays.Types;
 
 namespace Torappu
 {
@@ -10,6 +12,7 @@ namespace Torappu
 
         public int maxValue { get; set; }
 
+        [JsonConverter(typeof(JsonDateNumberConverter))]
         public DateTime lastUpdateTime { get; set; }
 
         public double processPoint { get; set; }

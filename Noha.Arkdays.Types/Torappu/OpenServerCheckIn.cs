@@ -6,6 +6,9 @@ namespace Torappu
     {
         public bool isAvailable { get; set; }
 
-        public List<bool> history { get; set; }
+        /// <summary>
+        /// Actually is `List<bool>`
+        /// </summary>
+        public List<int> history { get; set; }
     }
 }

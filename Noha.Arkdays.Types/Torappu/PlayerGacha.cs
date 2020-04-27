@@ -6,6 +6,7 @@ namespace Torappu
     {
         public class PlayerNewbeeGachaPool
         {
+            [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonBoolNumberConverter))]
             public bool openFlag { get; set; }
 
             public int cnt { get; set; }

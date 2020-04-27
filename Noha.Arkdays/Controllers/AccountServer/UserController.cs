@@ -22,8 +22,8 @@ namespace Noha.Arkdays.Controllers.AccountServer
                 isAuthenticate = true,
                 isMinor = false,
                 needAuthenticate = false,
-                issuedAt = new System.DateTime(),
-                expiresIn = new System.DateTime().AddYears(1),
+                // issuedAt = new System.DateTime(),
+                // expiresIn = new System.DateTime().AddYears(1),
             });
         }
 

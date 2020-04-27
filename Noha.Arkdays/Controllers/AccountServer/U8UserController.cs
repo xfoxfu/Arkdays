@@ -23,5 +23,11 @@ namespace Noha.Arkdays.Controllers.AccountServer
                 extension = "{\"isGuest\":0}"
             };
         }
+
+        [HttpPost("verifyAccount")]
+        public object VerifyAccount()
+        {
+            return new { uid = "114514" };
+        }
     }
 }

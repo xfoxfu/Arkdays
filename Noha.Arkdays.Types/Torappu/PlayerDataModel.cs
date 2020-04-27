@@ -30,7 +30,7 @@ namespace Torappu
 
         public Dictionary<string, int> inventory { get; set; }
 
-        public Dictionary<string, Dictionary<int, PlayerConsumableItem>> consumable { get; set; }
+        public Dictionary<string, Dictionary<string, PlayerConsumableItem>> consumable { get; set; }
 
         public Dictionary<string, PlayerTicketItem> ticket { get; set; }
 

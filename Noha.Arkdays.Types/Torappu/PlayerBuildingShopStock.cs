@@ -14,10 +14,12 @@ namespace Torappu
 
         public double processPoint { get; set; }
 
+        [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
         public DateTime lastUpdateTime { get; set; }
 
         public long saveTime { get; set; }
 
+        [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
         public DateTime completeWorkTime { get; set; }
 
         public PlayerBuildingShopStock()

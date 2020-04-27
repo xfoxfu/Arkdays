@@ -50,6 +50,7 @@ namespace Torappu
             public string skillId { get; set; }
             public string overridePrefabKey { get; set; }
             public string overrideTokenKey { get; set; }
+            [System.Text.Json.Serialization.JsonPropertyName("levelUpCostCond")]
             public SpecializeLevelData[] specializeLevelUpData { get; set; }
             public UnlockCondition initialUnlockCond { get; set; }
         }

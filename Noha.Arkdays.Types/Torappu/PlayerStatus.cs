@@ -13,8 +13,10 @@ namespace Torappu
 
         public int ap { get; set; }
 
+        [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
         public DateTime lastApAddTime { get; set; }
 
+        [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
         public DateTime lastRefreshTs { get; set; }
 
         public int level { get; set; }
@@ -45,6 +47,7 @@ namespace Torappu
 
         public int buyApRemainTimes { get; set; }
 
+        [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonBoolNumberConverter))]
         public bool apLimitUpFlag { get; set; }
 
         public long registerTs { get; set; }
@@ -55,8 +58,10 @@ namespace Torappu
 
         public string resume { get; set; }
 
+        [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
         public DateTime monthlySubscriptionEndTime { get; set; }
 
+        [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
         public DateTime monthlySubscriptionStartTime { get; set; }
 
         public int progress { get; set; }
@@ -71,7 +76,10 @@ namespace Torappu
 
         public int freeDiamond { get; set; }
 
-        public Dictionary<string, bool> flags { get; set; }
+        /// <summary>
+        /// Actually is `Dictionary<string, bool>`
+        /// </summary>
+        public Dictionary<string, int> flags { get; set; }
 
         public List<PlayerFriendAssist> friendAssist { get; set; }
 

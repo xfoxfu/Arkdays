@@ -13,6 +13,7 @@ namespace Torappu
 
         public string charId { get; set; }
 
+        [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
         public DateTime lastApAddTime { get; set; }
 
         public long ap { get; set; }

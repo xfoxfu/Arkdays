@@ -4,7 +4,7 @@ namespace Torappu
 {
     public abstract class PlayerInitResponse
     {
-        public JObject user { get; set; }
+        public PlayerDataModel user { get; set; }
 
         protected PlayerInitResponse()
         {

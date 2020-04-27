@@ -34,10 +34,13 @@ namespace Torappu
 
                 public TagItem[] selectTags { get; set; }
 
+                [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
                 public DateTime startTs { get; set; }
 
+                [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
                 public DateTime maxFinishTs { get; set; }
 
+                [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
                 public DateTime realFinishTs { get; set; }
 
                 public int durationInSec { get; set; }

@@ -14,10 +14,12 @@ namespace Torappu
 
         public float speed { get; set; }
 
+        [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
         public DateTime lastUpdateTime { get; set; }
 
         public int refreshCount { get; set; }
 
+        [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
         public DateTime completeWorkTime { get; set; }
     }
 }

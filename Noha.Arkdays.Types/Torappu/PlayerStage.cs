@@ -9,6 +9,7 @@ namespace Torappu
 
         public PlayerStageState state { get; set; }
 
+        [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonBoolNumberConverter))]
         public bool hasBattleReplay { get; set; }
 
         public int noCostCnt { get; set; }

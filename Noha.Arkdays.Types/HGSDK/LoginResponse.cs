@@ -10,7 +10,9 @@ namespace HGSDK
         public bool isAuthenticate { get; set; }
         public bool isMinor { get; set; }
         public bool needAuthenticate { get; set; }
+        // [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
         public DateTime issuedAt { get; set; }
+        // [System.Text.Json.Serialization.JsonConverter(typeof(Noha.Arkdays.Types.JsonDateNumberConverter))]
         public DateTime expiresIn { get; set; }
     }
 }
