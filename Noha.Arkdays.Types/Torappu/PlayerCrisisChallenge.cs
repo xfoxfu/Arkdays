@@ -15,7 +15,7 @@ namespace Torappu
             }
         }
 
-        public Dictionary<int, long> pointList { get; set; }
+        public Dictionary<string, long> pointList { get; set; }
 
         public Dictionary<string, PlayerChallengeTask> taskList { get; set; }
 

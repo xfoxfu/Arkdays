@@ -79,5 +79,16 @@ namespace Noha.Arkdays.Controllers.GameServer
                 furnitureRewards = new List<CommonFinishBattleResponse.RewardModel>(),
             };
         }
+
+        [HttpPost("finishStoryStage")]
+        public StoryOnlyStartBattleResponse FinishStoryStage([FromBody] StoryOnlyStartBattleResponse req)
+        {
+            return new StoryOnlyStartBattleResponse
+            {
+                result = 0,
+                rewards = new List<CommonFinishBattleResponse.RewardModel>(),
+                unlockStages = new string[] { },
+            };
+        }
     }
 }

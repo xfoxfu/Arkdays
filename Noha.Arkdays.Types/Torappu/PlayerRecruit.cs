@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Torappu
 {
@@ -13,6 +14,7 @@ namespace Torappu
                 {
                     public int tagId { get; set; }
 
+                    [JsonConverter(typeof(Noha.Arkdays.Types.JsonBoolNumberConverter))]
                     public bool pick { get; set; }
 
                     public TagItem()
