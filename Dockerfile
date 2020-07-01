@@ -13,6 +13,8 @@ COPY ./Noha.Arkdays/ ./Noha.Arkdays/
 COPY ./Noha.Arkdays.Types/ ./Noha.Arkdays.Types/
 COPY ./Noha.Arkdays.CLITools/ ./Noha.Arkdays.CLITools/
 RUN dotnet publish -c Release -o dist
+RUN dotnet run -p Noha.Arkdays.CLITools -- hot-update
+RUN dotnet run -p Noha.Arkdays.CLITools -- download-table
 
 COPY ./Data ./Data/
 

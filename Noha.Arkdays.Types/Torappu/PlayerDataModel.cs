@@ -4,6 +4,7 @@ namespace Torappu
 {
     public class PlayerDataModel
     {
+        [System.Text.Json.Serialization.JsonPropertyName("event")]
         public PlayerEvents events { get; set; }
 
         public PlayerPushFlags pushFlags { get; set; }

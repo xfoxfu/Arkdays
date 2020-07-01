@@ -149,27 +149,27 @@ namespace Torappu
             public List<string> favorList { get; set; }
 
         }
-
+        [System.Text.Json.Serialization.JsonPropertyName("DEFAULT")]
         public Dictionary<string, PlayerDefaultActivity> defaultActivityList { get; set; }
-
+        [System.Text.Json.Serialization.JsonPropertyName("MISSION_ONLY")]
         public Dictionary<string, PlayerMissionOnlyTypeActivity> missionOnlyActivityList { get; set; }
-
+        [System.Text.Json.Serialization.JsonPropertyName("CHECKIN_ONLY")]
         public Dictionary<string, PlayerCheckinOnlyTypeActivity> checkinOnlyActivityList { get; set; }
-
+        [System.Text.Json.Serialization.JsonPropertyName("COLLECTION")]
         public Dictionary<string, PlayerCollectionTypeActivity> collectionActivityList { get; set; }
-
+        [System.Text.Json.Serialization.JsonPropertyName("AVG_ONLY")]
         public Dictionary<string, PlayerAVGOnlyTypeActivity> avgOnlyActivityList { get; set; }
-
+        [System.Text.Json.Serialization.JsonPropertyName("LOGIN_ONLY")]
         public Dictionary<string, PlayerLoginOnlyTypeActivity> loginOnlyActivityList { get; set; }
-
+        [System.Text.Json.Serialization.JsonPropertyName("TYPE_ACT3D0")]
         public Dictionary<string, PlayerAct3D0Activity> act3D0ActivityList { get; set; }
-
+        [System.Text.Json.Serialization.JsonPropertyName("TYPE_ACT4D0")]
         public Dictionary<string, PlayerAct4D0Activity> act4D0ActivityList { get; set; }
-
+        [System.Text.Json.Serialization.JsonPropertyName("TYPE_ACT5D0")]
         public Dictionary<string, PlayerAct5D0Activity> act5D0ActivityList { get; set; }
-
+        [System.Text.Json.Serialization.JsonPropertyName("TYPE_ACT5D1")]
         public Dictionary<string, PlayerAct5D1Activity> act5D1ActivityList { get; set; }
-
+        [System.Text.Json.Serialization.JsonPropertyName("TYPE_ACT9D0")]
         public Dictionary<string, PlayerAct9D0Activity> act9D0ActivityList { get; set; }
 
     }

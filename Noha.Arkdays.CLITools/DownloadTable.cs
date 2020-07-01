@@ -36,34 +36,37 @@ namespace Noha.Arkdays.CLITools
                 BaseAddress = new System.Uri(options.Source),
             };
 
-            await Download("activity_table.json");
-            await Download("audio_data.json");
-            await Download("building_data.json");
-            await Download("character_table.json");
-            await Download("charword_table.json");
-            await Download("checkin_table.json");
-            await Download("clue_data.json");
-            await Download("crisis_table.json");
-            await Download("data_version.txt");
-            await Download("enemy_handbook_table.json");
-            await Download("favor_table.json");
-            await Download("gacha_table.json");
-            await Download("gamedata_const.json");
-            await Download("handbook_info_table.json");
-            await Download("handbook_table.json");
-            await Download("handbook_team_table.json");
-            await Download("item_table.json");
-            await Download("mission_table.json");
-            await Download("open_server_table.json");
-            await Download("range_table.json");
-            await Download("shop_client_table.json");
-            await Download("skill_table.json");
-            await Download("skin_table.json");
-            await Download("stage_table.json");
-            await Download("story_table.json");
-            await Download("tip_table.json");
-            await Download("token_table.json");
-            await Download("zone_table.json");
+            await Task.WhenAll(new[]{
+                Download("activity_table.json"),
+                Download("audio_data.json"),
+                Download("building_data.json"),
+                Download("character_table.json"),
+                Download("charword_table.json"),
+                Download("checkin_table.json"),
+                Download("clue_data.json"),
+                Download("crisis_table.json"),
+                Download("data_version.txt"),
+                Download("enemy_handbook_table.json"),
+                Download("favor_table.json"),
+                Download("gacha_table.json"),
+                Download("gamedata_const.json"),
+                Download("handbook_info_table.json"),
+                Download("handbook_table.json"),
+                Download("handbook_team_table.json"),
+                Download("item_table.json"),
+                Download("mission_table.json"),
+                Download("open_server_table.json"),
+                Download("range_table.json"),
+                Download("shop_client_table.json"),
+                Download("skill_table.json"),
+                Download("skin_table.json"),
+                Download("stage_table.json"),
+                Download("story_table.json"),
+                Download("tip_table.json"),
+                Download("token_table.json"),
+                Download("zone_table.json"),
+            });
+
         }
 
         public static async Task Download(string name)

@@ -126,7 +126,16 @@ namespace Noha.Arkdays.Controllers.GameServer
                         return Convert.ToString(value++);
                     }),
             };
+            _syncDataHolder.Value.ts = Utils.Time.GetTimeStamp();
+            _syncDataHolder.Value.user.events.building = DateTime.UtcNow;
+            _syncDataHolder.Value.user.events.status = Utils.Time.GetTimeStamp();
             return _syncDataHolder.Value;
+        }
+
+        [HttpPost("syncStatus")]
+        public string SyncStatus()
+        {
+            return $"{{\"ts\":{Utils.Time.GetTimeStamp()},\"result\":{{\"4\":{{\"announcementVersion\":\"270\",\"announcementPopUpVersion\":\"525\"}},\"16\":{{\"goodPurchaseState\":{{\"result\":{{\"safetyZone_2019\":-1,\"spirit_2019\":-1,\"chen_2019_R1\":-1,\"wooden_2019\":-1,\"penguin_2019\":-1,\"elite_2019\":-1,\"restaurant_2020\":-1,\"artdeco_2020\":-1,\"beerhouse_2020\":-1,\"dormW_2020\":-1,\"GP_NpOne_1_NpOne_1_v1\":1,\"GP_Once_5\":1,\"GP_Once_6\":1,\"GP_Once_7\":1,\"GP_Once_8\":1,\"GP_Once_9\":1,\"GP_Once_10\":1,\"GP_Once_1\":1}}}}}}}},\"playerDataDelta\":{{\"modified\":{{\"status\":{{\"lastOnlineTs\":1588429466,\"resume\":\"相关功能优化中，签名暂无法保存，请等待后续开放。（修改任务不受影响）\"}},\"activity\":{{\"TYPE_ACT9D0\":{{\"act9d0\":{{\"coin\":0,\"favorList\":[\"char_113_cqbw\",\"char_400_weedy\",\"char_401_elysm\",\"char_250_phatom\",\"char_254_vodfox\",\"char_333_sidero\",\"char_301_cutter\"]}}}}}},\"pushFlags\":{{\"hasGifts\":0,\"hasFriendRequest\":0,\"hasClues\":0}}}},\"deleted\":{{}}}}}}";
         }
     }
 }

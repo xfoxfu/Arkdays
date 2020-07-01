@@ -31,6 +31,10 @@ namespace Noha.Arkdays
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            // .AddJsonOptions(opt =>
+            // {
+            //     opt.JsonSerializerOptions.IgnoreNullValues = true;
+            // });
 
             services.AddDbContext<ArkdaysContext>();
 
