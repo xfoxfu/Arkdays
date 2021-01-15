@@ -11,6 +11,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SQLite" Version="3.1.3" />
+    <PackageReference Include="RocksDbSharp" Version="6.2.2" />
   </ItemGroup>
 
   <ItemGroup>

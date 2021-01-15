@@ -50,6 +50,8 @@ namespace Noha.Arkdays
                 Path.Combine(Environment.CurrentDirectory, "..", "Data", "_tables", "stage_table.json"));
             services.AddTableHolder<Torappu.SyncDataResponse>(
                 Path.Combine(Environment.CurrentDirectory, "..", "Data", "playerdata.json"));
+
+            services.AddRocksDatabase("arkdays.db");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
