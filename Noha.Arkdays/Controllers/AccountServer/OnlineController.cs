@@ -2,16 +2,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using HGSDK;
 using System.Threading.Tasks;
+using System.Dynamic;
 
 namespace Noha.Arkdays.Controllers.AccountServer
 {
-    [ApiController]
+    [Controller]
     [Host(Constants.AccountServer)]
     [Route("online/v1")]
     public class OnlineController : ControllerBase
     {
         [HttpPost("ping")]
-        public PingResponse Ping([FromBody] PingRequest req)
+        public dynamic Ping([FromBody] PingRequest req)
         {
             return new PingResponse
             {

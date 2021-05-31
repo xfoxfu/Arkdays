@@ -38,18 +38,18 @@ namespace Noha.Arkdays
 
             services.AddDbContext<ArkdaysContext>();
 
-            services.AddTableHolder<Torappu.CharacterDB>(
-                Path.Combine(Environment.CurrentDirectory, "..", "Data", "_tables", "character_table.json"));
-            services.AddTableHolder<Torappu.StoryDB>(
-                Path.Combine(Environment.CurrentDirectory, "..", "Data", "_tables", "story_table.json"));
-            services.AddTableHolder<Torappu.SkinTable>(
-                Path.Combine(Environment.CurrentDirectory, "..", "Data", "_tables", "skin_table.json"));
-            services.AddTableHolder<Torappu.ZoneTable>(
-                Path.Combine(Environment.CurrentDirectory, "..", "Data", "_tables", "zone_table.json"));
-            services.AddTableHolder<Torappu.StageTable>(
-                Path.Combine(Environment.CurrentDirectory, "..", "Data", "_tables", "stage_table.json"));
-            services.AddTableHolder<Torappu.SyncDataResponse>(
-                Path.Combine(Environment.CurrentDirectory, "..", "Data", "playerdata.json"));
+            // services.AddTableHolder<Torappu.CharacterDB>(
+            //     Path.Combine(Environment.CurrentDirectory, "..", "Data", "_tables", "character_table.json"));
+            // services.AddTableHolder<Torappu.StoryDB>(
+            //     Path.Combine(Environment.CurrentDirectory, "..", "Data", "_tables", "story_table.json"));
+            // services.AddTableHolder<Torappu.SkinTable>(
+            //     Path.Combine(Environment.CurrentDirectory, "..", "Data", "_tables", "skin_table.json"));
+            // services.AddTableHolder<Torappu.ZoneTable>(
+            //     Path.Combine(Environment.CurrentDirectory, "..", "Data", "_tables", "zone_table.json"));
+            // services.AddTableHolder<Torappu.StageTable>(
+            //     Path.Combine(Environment.CurrentDirectory, "..", "Data", "_tables", "stage_table.json"));
+            // services.AddTableHolder<Torappu.SyncDataResponse>(
+            //     Path.Combine(Environment.CurrentDirectory, "..", "Data", "playerdata.json"));
 
             services.AddRocksDatabase("arkdays.db");
         }
