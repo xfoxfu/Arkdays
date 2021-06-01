@@ -16,22 +16,31 @@ const clientConf = got.extend({
     "X-Unity-Version": "2017.4.39f1",
   },
 });
-const fetchConf = async (url: string, target?: string): Promise<void> => {
+const fetch = async (
+  prefix: string,
+  url: string,
+  target?: string,
+): Promise<string> => {
   const value = (await clientConf.get(url)).body;
   await writeFile(
-    join(targetDir, "conf", target ?? url.substr(url.lastIndexOf("/"))),
+    join(targetDir, prefix, target ?? url.substr(url.lastIndexOf("/"))),
     value,
   );
+  return value;
 };
 
 const main = async () => {
   await mkdirP(join(targetDir, "conf"));
   await Promise.all([
-    fetchConf("config/prod/official/network_config"),
-    fetchConf("config/prod/official/remote_config"),
-    fetchConf("config/prod/official/IOS/version"),
+    fetch("conf", "config/prod/official/network_config"),
+    fetch("conf", "config/prod/official/remote_config"),
+    fetch("conf", "config/prod/official/IOS/version"),
   ]);
-  console.log("conf fetched");
+  await fetch(
+    "fs",
+    "https://ak-fs.hypergryph.com/announce/IOS/preannouncement.meta.json",
+  );
+  console.log("files fetched");
 };
 
 main()

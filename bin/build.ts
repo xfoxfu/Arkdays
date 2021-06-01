@@ -142,9 +142,15 @@ const write = (layer: IExport, indent = ""): string => {
       result += indent + `  }\n`;
     } else {
       result += indent + `  export enum ${name} {\n`;
+      let fieldId = 0;
       for (const prop of klass.fields) {
         if (prop.name === "value__") continue;
-        result += indent + `    ${prop.name} = "${prop.name}",\n`;
+        if (["Torappu.PreAnnounceData.PreAnnounceType"].includes(klass.name)) {
+          result += indent + `    ${prop.name} = ${fieldId},\n`;
+        } else {
+          result += indent + `    ${prop.name} = "${prop.name}",\n`;
+        }
+        fieldId += 1;
       }
       result += indent + `  }\n`;
     }

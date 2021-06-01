@@ -37572,9 +37572,9 @@ export namespace Torappu {
   }
   export namespace PreAnnounceData {
     export enum PreAnnounceType {
-      ALWAYS_OPEN = "ALWAYS_OPEN",
-      OPEN_ONCE = "OPEN_ONCE",
-      NEVER_AUTO_OPEN = "NEVER_AUTO_OPEN",
+      ALWAYS_OPEN = 0,
+      OPEN_ONCE = 1,
+      NEVER_AUTO_OPEN = 2,
     }
   }
   export namespace AttributeModifierData {

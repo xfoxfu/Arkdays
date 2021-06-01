@@ -5,13 +5,15 @@ import { readFile } from "fs/promises";
 import { join } from "path";
 import type { Torappu } from "../types";
 
-const setStore = async (store: Map<string, unknown>, path: string) => {
-  store.set(
-    path,
-    JSON.parse(
-      (await readFile(join(__dirname, "..", "..", "assets", path))).toString(),
-    ),
-  );
+const setStore = async (
+  store: Map<string, unknown>,
+  path: string,
+  parse = true,
+) => {
+  const content = (
+    await readFile(join(__dirname, "..", "..", "assets", path))
+  ).toString();
+  store.set(path, parse ? JSON.parse(content) : content);
 };
 
 @Injectable()
@@ -24,6 +26,7 @@ export class TableService {
     await setStore(store, "conf/network_config");
     await setStore(store, "conf/remote_config");
     await setStore(store, "conf/version");
+    await setStore(store, "fs/preannouncement.meta.json");
 
     return new TableService(store);
   }
@@ -36,5 +39,9 @@ export class TableService {
   }
   public get confVersion(): Torappu.Resource.HotUpdater.VersionInfo {
     return this.store.get("conf/version");
+  }
+
+  public get fsPreAnnounceMeta(): Torappu.PreAnnounceData {
+    return this.store.get("fs/preannouncement.meta.json");
   }
 }
