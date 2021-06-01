@@ -12,7 +12,8 @@
     "start:debug": "tsnd --inspect=5858 src/main",
     "start:dev": "tsnd src/main",
     "start:prod": "node dist/main.js",
-    "start": "ts-node src/main"
+    "start": "ts-node src/main",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -46,15 +47,10 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.0.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && pnpm lint"
-    }
-  },
   "lint-staged": {
-    "*.{js,json,css,md,ts}": [
+    "src/*.{js,json,css,md,ts}": [
       "prettier --write",
-      "git add"
+      "eslint"
     ]
   },
   "prettier": {
