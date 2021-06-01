@@ -3,6 +3,8 @@ import { ConfigModule } from "@nestjs/config";
 import { AppConfigService } from "./config.service";
 import { StoreService } from "./store.service";
 import { TableService } from "./table.service";
+import { AccountService, GameDataService } from "./entity";
+import { TokenService } from "./entity/token.service";
 
 @Global()
 @Module({
@@ -19,7 +21,17 @@ import { TableService } from "./table.service";
       provide: TableService,
       useFactory: TableService.initialize,
     },
+    AccountService,
+    GameDataService,
+    TokenService,
   ],
-  exports: [AppConfigService, StoreService, TableService],
+  exports: [
+    AppConfigService,
+    StoreService,
+    TableService,
+    AccountService,
+    GameDataService,
+    TokenService,
+  ],
 })
 export class CommonModule {}

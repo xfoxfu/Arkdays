@@ -1,16 +1,20 @@
-import { Controller, Post } from "@nestjs/common";
+import { Body, Controller, Post } from "@nestjs/common";
 import { ServerDomains } from "../consts";
 import type { Torappu, U8 } from "../types";
 
 @Controller({ host: [ServerDomains.AccountServer], path: "/u8/user/v1" })
 export class U8UserController {
   @Post("getToken")
-  public GetToken(): Partial<U8.SDK.U8LoginResult> {
+  public GetToken(@Body() req: U8.SDK.SDKMeta): Partial<U8.SDK.U8LoginResult> {
+    const payload = JSON.parse(req.extension) as {
+      uid: string;
+      access_token: string;
+    };
     return {
       result: 0,
-      uid: "114514",
-      channelUid: "1919810",
-      token: "70cfc1ef80771c97a01628259f6f3af5",
+      uid: payload.uid,
+      channelUid: "0",
+      token: payload.access_token,
       isGuest: false,
       extension: '{"isGuest":0}',
     };

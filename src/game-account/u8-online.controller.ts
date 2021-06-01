@@ -1,10 +1,10 @@
 import { Body, Controller, Post } from "@nestjs/common";
-import { ServerDomains } from "../consts";
+import { Routes, ServerDomains } from "../consts";
 import type { HgSDK } from "../types";
 
-@Controller({ host: [ServerDomains.AccountServer], path: "/u8/online/v1" })
+@Controller({ host: [ServerDomains.AccountServer] })
 export class U8OnlineController {
-  @Post("ping")
+  @Post(Routes.SDK_PING)
   public Ping(@Body() _: HgSDK.PingRequest): HgSDK.PingResponse {
     return {
       result: 0,
@@ -13,7 +13,7 @@ export class U8OnlineController {
     };
   }
 
-  @Post("loginout")
+  @Post(Routes.SDK_LOGINOUT)
   public LoginOut(@Body() _: HgSDK.LoginoutRequest): HgSDK.LoginoutResponse {
     return {
       result: 0,
