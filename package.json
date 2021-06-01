@@ -27,6 +27,7 @@
   "homepage": "https://github.com/xfoxfu/Arkdays#readme",
   "devDependencies": {
     "@types/express": "^4.17.12",
+    "@types/level": "^6.0.0",
     "@types/node": "^15.6.1",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
@@ -42,8 +43,10 @@
   },
   "dependencies": {
     "@nestjs/common": "^7.6.17",
+    "@nestjs/config": "^0.6.3",
     "@nestjs/core": "^7.6.17",
     "@nestjs/platform-express": "^7.6.17",
+    "level": "^7.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.0.0"
   },

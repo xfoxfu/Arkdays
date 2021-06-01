@@ -5,38 +5,29 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": ".NET Core Launch (console)",
-      "type": "coreclr",
+      "type": "node",
       "request": "launch",
-      "preLaunchTask": "build fetcher",
-      "program": "${workspaceFolder}/Noha.Arkdays.CLITools/bin/Debug/net5.0/Noha.Arkdays.CLITools.dll",
-      "args": ["generate-types", "-i", "DummyDll", "-o", "Noha.Arkdays.Types"],
-      "cwd": "${workspaceFolder}",
-      "stopAtEntry": false,
-      "console": "internalConsole"
+      "name": "nodemon",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "nodemon",
+        "-x",
+        "node -r ts-node/register -r tsconfig-paths/register --inspect",
+        "src/main.ts"
+      ],
+      "restart": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229
     },
     {
-      "name": ".NET Core Launch (web)",
-      "type": "coreclr",
+      "type": "node",
       "request": "launch",
-      "preLaunchTask": "build",
-      // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/Noha.Arkdays/bin/Debug/netcoreapp5.0/Noha.Arkdays.dll",
-      "args": [],
-      "cwd": "${workspaceFolder}/Noha.Arkdays",
-      "stopAtEntry": false,
-      "env": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "sourceFileMap": {
-        "/Views": "${workspaceFolder}/Views"
-      }
-    },
-    {
-      "name": ".NET Core Attach",
-      "type": "coreclr",
-      "request": "attach",
-      "processId": "${command:pickProcess}"
+      "name": "Launch",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["run", "start:debug"],
+      "port": 9229,
+      "restart": true
     }
   ]
 }

@@ -5,6 +5,4 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   await app.listen(3000);
 }
-bootstrap()
-  .then(() => process.exit(0))
-  .catch(console.error);
+bootstrap().catch(console.error);
