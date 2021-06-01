@@ -12,7 +12,14 @@ import { TableService } from "./table.service";
       load: [AppConfigService.loadConfig],
     }),
   ],
-  providers: [AppConfigService, StoreService, TableService],
+  providers: [
+    AppConfigService,
+    StoreService,
+    {
+      provide: TableService,
+      useFactory: TableService.initialize,
+    },
+  ],
   exports: [AppConfigService, StoreService, TableService],
 })
 export class CommonModule {}

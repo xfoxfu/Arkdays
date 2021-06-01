@@ -7,7 +7,6 @@ const mkdirP = (path: string) => mkdir(path).catch(() => {});
 const targetDir = join(__dirname, "..", "assets");
 
 const clientConf = got.extend({
-  prefixUrl: "https://ak-conf.hypergryph.com",
   headers: {
     Accept: "*/*",
     "User-Agent": "arknights/398 CFNetwork/1240.0.4 Darwin/20.5.0",
@@ -31,10 +30,20 @@ const fetch = async (
 
 const main = async () => {
   await mkdirP(join(targetDir, "conf"));
+  await mkdirP(join(targetDir, "fs"));
   await Promise.all([
-    fetch("conf", "config/prod/official/network_config"),
-    fetch("conf", "config/prod/official/remote_config"),
-    fetch("conf", "config/prod/official/IOS/version"),
+    fetch(
+      "conf",
+      "https://ak-conf.hypergryph.com/config/prod/official/network_config",
+    ),
+    fetch(
+      "conf",
+      "https://ak-conf.hypergryph.com/config/prod/official/remote_config",
+    ),
+    fetch(
+      "conf",
+      "https://ak-conf.hypergryph.com/config/prod/official/IOS/version",
+    ),
   ]);
   await fetch(
     "fs",

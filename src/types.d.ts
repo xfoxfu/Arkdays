@@ -27578,7 +27578,7 @@ export namespace Torappu {
         // <>f__am$cache1: System.Action;
         // <>f__am$cache2: System.Action;
         // <>f__am$cache3: System.Action;
-        // <>f__am$cache4: System.Action<HGSDK.UserGuestLoginResponse>;
+        // <>f__am$cache4: System.Action<HgSDK.UserGuestLoginResponse>;
         // <>f__am$cache5: System.Func<Torappu.Network.ResponseError,System.Boolean>;
         // <>f__am$cache6: System.Action;
         // <>f__am$cache7: System.Action;
@@ -39879,5 +39879,666 @@ export namespace U8 {
       // m_lock: System.Object;
     }
     export namespace U8SDKInterface {}
+  }
+}
+export namespace HgSDK {
+  export interface U8PluginAndroid {}
+  export interface HGStoreKit {
+    DEFAULT_PRODUCT_QUALITY: System.Int32;
+    // m_isInited: System.Boolean;
+    // m_handler: HgSDK.HGStoreKit.HGStoreKitHandler;
+    // m_payRequest: HgSDK.HGStoreKit.HGStorePayRequest;
+    // m_refreshReceiptCallbacks: System.Collections.Generic.List<HgSDK.HGStoreKit.RefreshReceiptCallback>;
+    // m_isErrorHalted: System.Boolean;
+    // m_isFetchingProducts: System.Boolean;
+    // _c__Hotfix0_ctor: XLua.DelegateBridge;
+    // __Hotfix0_InitIfNot: XLua.DelegateBridge;
+    // __Hotfix0__ErrorAndHalt: XLua.DelegateBridge;
+    // __Hotfix0__CheckIfComponentValid: XLua.DelegateBridge;
+  }
+  export interface U8Plugin {
+    // m_sdk: HgSDK.HGSDK;
+    // m_options: HgSDK.HGSDK.SDKOptions;
+    // m_pluginPayParam: U8.SDK.ExternalPluginPayParams;
+    // m_payFailMsg: System.Object;
+  }
+  export interface U8PluginDefault {}
+  export interface HGConsts {
+    CONFIRM_ORDER_RESULT_SUC: System.Int32;
+    CONFIRM_ORDER_RESULT_NOT_YET: System.Int32;
+  }
+  export enum ResultCode {
+    OK = "OK",
+    HTTP_ERROR = "HTTP_ERROR",
+    REQUEST_TIMEOUT = "REQUEST_TIMEOUT",
+    RESPONSE_PARSE_ERROR = "RESPONSE_PARSE_ERROR",
+    PAY_PRODUCT_INVALID = "PAY_PRODUCT_INVALID",
+    PAY_SDK_CANT_INIT_IAP = "PAY_SDK_CANT_INIT_IAP",
+    PAY_INVALID_PRODUCT_IN_STORE = "PAY_INVALID_PRODUCT_IN_STORE",
+    PAY_STORE_FAILURE = "PAY_STORE_FAILURE",
+    PAY_CANCELED = "PAY_CANCELED",
+    PAY_SERVER_INTERNAL_ERROR = "PAY_SERVER_INTERNAL_ERROR",
+    PAY_RECEIPT_UPLOAD_FAILED = "PAY_RECEIPT_UPLOAD_FAILED",
+    PAY_IAP_CONFIG_EXCEPTION = "PAY_IAP_CONFIG_EXCEPTION",
+    PAY_HAS_PENDING_ORDERS = "PAY_HAS_PENDING_ORDERS",
+    UNKNOWN = "UNKNOWN",
+  }
+  export interface HGError {
+    NULL: HgSDK.HGError;
+    code: HgSDK.ResultCode;
+    error: System.String;
+  }
+  export interface HGSDK {
+    VERSION: System.String;
+    TYPE_LOGIN: System.Int32;
+    TYPE_LOGOUT: System.Int32;
+    _sdkOptions: HgSDK.HGSDK.SDKOptions;
+    // _options: HgSDK.UI.UIManager.Options;
+    // _loginPrefab: HgSDK.UI.SDKLoginPage;
+    // _payPrefab: HgSDK.UI.SDKPayPage;
+    // _popupPrefab: HgSDK.UI.HGSDKPopupPage;
+    // _settingAccountPrefab: HgSDK.UI.HGSettingViewAccount;
+    _urls: HgSDK.HGSDK.Urls;
+    // m_token: System.String;
+    // m_uid: System.String;
+    // m_loginResult: HgSDK.HGSDK.LoginResult;
+    // m_isGuest: System.Boolean;
+    // m_hasLogin: System.Boolean;
+    // m_uiManager: HgSDK.UI.UIManager;
+    // m_pingManager: HgSDK.HGSDK.PingManager;
+    // m_captchaAllowNextTsMap: Torappu.ListDict<System.String,System.Int64>;
+    // m_Ts: System.Int64;
+    // m_u8Plugin: HgSDK.U8Plugin;
+    // <>f__am$cache0: System.Action;
+    // <>f__am$cache1: System.Action<HgSDK.UI.HGSDKPopupPage>;
+    // <>f__am$cache2: System.Func<Torappu.Network.ResponseError,System.Boolean>;
+    // <>f__am$cache3: System.Func<Torappu.Network.ResponseError,System.Boolean>;
+    // <>f__am$cache4: System.Func<Torappu.Network.ResponseError,System.Boolean>;
+    // <>f__am$cache5: System.Action<Torappu.Network.Response<HgSDK.LoginoutResponse>>;
+    // <>f__am$cache6: System.Action<HgSDK.UI.HGSDKPopupPage>;
+    // <>f__am$cache7: System.Action<HgSDK.UI.HGSDKPopupPage>;
+    // _c__Hotfix0_ctor: XLua.DelegateBridge;
+    // __Hotfix0_OnInit: XLua.DelegateBridge;
+    // __Hotfix0_Start: XLua.DelegateBridge;
+    // __Hotfix0_Update: XLua.DelegateBridge;
+    // __Hotfix0_get_lastUsedUid: XLua.DelegateBridge;
+    // __Hotfix0_get_lastUsedAccountToken: XLua.DelegateBridge;
+    // __Hotfix0_get_lastUsedGuestToken: XLua.DelegateBridge;
+    // __Hotfix0_get_lastIdentityVerified: XLua.DelegateBridge;
+    // __Hotfix0_get_lastIsMinor: XLua.DelegateBridge;
+    // __Hotfix0_get_deviceId: XLua.DelegateBridge;
+    // __Hotfix0_get_SDKUrl: XLua.DelegateBridge;
+    // __Hotfix0_get_sdkCamera: XLua.DelegateBridge;
+    // __Hotfix0_get_cachedUsername: XLua.DelegateBridge;
+    // __Hotfix0_set_cachedUsername: XLua.DelegateBridge;
+    // __Hotfix0_get_sdkUid: XLua.DelegateBridge;
+    // __Hotfix0_get_sdkToken: XLua.DelegateBridge;
+    // __Hotfix0_get_loginResult: XLua.DelegateBridge;
+    // __Hotfix0_get_isGuest: XLua.DelegateBridge;
+    // __Hotfix0_get_hasCachedUser: XLua.DelegateBridge;
+    // __Hotfix0_get_urls: XLua.DelegateBridge;
+    // __Hotfix0_CheckIfGuest: XLua.DelegateBridge;
+    // __Hotfix0_ProcessPaymentState_PayProcess: XLua.DelegateBridge;
+    // __Hotfix0_get_externalPlugin: XLua.DelegateBridge;
+    // __Hotfix0_PreventGuestDelete: XLua.DelegateBridge;
+    // __Hotfix0_ConfirmLoginInfo: XLua.DelegateBridge;
+    // __Hotfix0_TryHookDeleteAllPlayerPrefs: XLua.DelegateBridge;
+    // __Hotfix0_TryInjectSetting: XLua.DelegateBridge;
+    // __Hotfix0_ClearLoginInfo: XLua.DelegateBridge;
+    // __Hotfix0_SaveCaptchaTs: XLua.DelegateBridge;
+    // __Hotfix0_GetCaptchaTs: XLua.DelegateBridge;
+    // __Hotfix0_TryToCallLoginoutWhenLogin: XLua.DelegateBridge;
+    // __Hotfix0_TryToCallLoginoutWhenLogout: XLua.DelegateBridge;
+    // __Hotfix0_Login: XLua.DelegateBridge;
+    // __Hotfix0_Logout: XLua.DelegateBridge;
+    // __Hotfix0_Pay: XLua.DelegateBridge;
+    // __Hotfix0_OpenChangePhoneSettingView: XLua.DelegateBridge;
+    // __Hotfix0_OpenChagePwdSettingView: XLua.DelegateBridge;
+    // __Hotfix0_OpenAgreementSettingView: XLua.DelegateBridge;
+    // __Hotfix0_CallLoginService: XLua.DelegateBridge;
+    // __Hotfix0__CallLoginService: XLua.DelegateBridge;
+    // __Hotfix0_CallAuthService: XLua.DelegateBridge;
+    // __Hotfix0_CallSendSmsCodeWithType: XLua.DelegateBridge;
+    // __Hotfix0__CallSendSmsCode: XLua.DelegateBridge;
+    // __Hotfix0_CallRegisterService: XLua.DelegateBridge;
+    // __Hotfix0__CallRegisterService: XLua.DelegateBridge;
+    // __Hotfix0_CallSmsCodeLoginService: XLua.DelegateBridge;
+    // __Hotfix0__CallSmsCodeLoginService: XLua.DelegateBridge;
+    // __Hotfix0_CallGuestRegisterCaptcha: XLua.DelegateBridge;
+    // __Hotfix0_CallGuestLoginService: XLua.DelegateBridge;
+    // __Hotfix0_CallPayCreateOrderAppstore: XLua.DelegateBridge;
+    // __Hotfix0_CallLegacyPayConfirmOrderAppstore: XLua.DelegateBridge;
+    // __Hotfix0_CallPayConfirmOrderAppstore: XLua.DelegateBridge;
+    // __Hotfix0_CallIdentityVerifyService: XLua.DelegateBridge;
+    // __Hotfix0__CallIdentityVerifyService: XLua.DelegateBridge;
+    // __Hotfix0_CallCheckIdCardServie: XLua.DelegateBridge;
+    // __Hotfix0_CallGuestUpgradeService: XLua.DelegateBridge;
+    // __Hotfix0_CallUpdateAgreementService: XLua.DelegateBridge;
+    // __Hotfix0_CallChangePwdService: XLua.DelegateBridge;
+    // __Hotfix0_CallChangePhoneCheckService: XLua.DelegateBridge;
+    // __Hotfix0_CallChangePhoneService: XLua.DelegateBridge;
+    // __Hotfix0_Alert: XLua.DelegateBridge;
+    // __Hotfix0_Toast: XLua.DelegateBridge;
+    // __Hotfix0_ShowReentrantLoading: XLua.DelegateBridge;
+    // __Hotfix0_HideReentrantLoading: XLua.DelegateBridge;
+    // __Hotfix0__GenRandomString: XLua.DelegateBridge;
+    // __Hotfix0__SendSDKRequest: XLua.DelegateBridge;
+    // __Hotfix0__OnLoginSuc: XLua.DelegateBridge;
+    // __Hotfix0__OnAuthOrLoginFail: XLua.DelegateBridge;
+    // __Hotfix0__OnRegisterFailed: XLua.DelegateBridge;
+    // __Hotfix0__OnGuestLoginFailed: XLua.DelegateBridge;
+    // __Hotfix0__ReloadPingMgrIfNeeded: XLua.DelegateBridge;
+    // __Hotfix0__GetAvailableToken: XLua.DelegateBridge;
+    // __Hotfix0__CallLoginoutService: XLua.DelegateBridge;
+  }
+  export interface LoginRequest {
+    account: System.String;
+    password: System.String;
+    deviceId: System.String;
+    platform: Torappu.PlatformKey;
+    captcha: System.String;
+  }
+  export interface LoginResponse {
+    result: System.Int32;
+    uid: System.String;
+    role: System.Int32;
+    token: System.String;
+    isAuthenticate: System.Boolean;
+    isMinor: System.Boolean;
+    needAuthenticate: System.Boolean;
+    issuedAt: System.DateTime;
+    expiresIn: System.DateTime;
+    isLatestUserAgreement: System.Boolean;
+    captcha: Newtonsoft.Json.Linq.JObject;
+  }
+  export interface AuthRequest {
+    token: System.String;
+  }
+  export interface AuthResponse {
+    uid: System.String;
+    isAuthenticate: System.Boolean;
+    isMinor: System.Boolean;
+    needAuthenticate: System.Boolean;
+    isLatestUserAgreement: System.Boolean;
+  }
+  export interface PayCreateOrderAppstoreRequest {
+    token: System.String;
+    version: System.String;
+    orderId: System.String;
+    time: System.Int64;
+  }
+  export interface PayCreateOrderAppstoreResponse {
+    err: System.String;
+    orderId: System.String;
+    appUsername: System.String;
+  }
+  export interface PayConfirmOrderAppstoreRequest {
+    token: System.String;
+    version: System.String;
+    orderId: System.String;
+    receiptData: System.String;
+  }
+  export interface PayConfirmOrderAppstoreResponse {
+    status: System.Int32;
+  }
+  export interface AppstoreOrder {
+    txId: System.String;
+    orderId: System.String;
+  }
+  export interface PayConfirmOrderAppstoreNewRequest {
+    token: System.String;
+    version: System.String;
+    curOrderId: System.String;
+    infoList: System.Collections.Generic.List<HgSDK.AppstoreOrder>;
+    receiptData: System.String;
+  }
+  export interface PayConfirmOrderAppstoreNewResponse {
+    status: System.Int32;
+  }
+  export interface UserSendSmsCodeRequest {
+    account: System.String;
+    type: System.Int32;
+    captcha: System.String;
+  }
+  export interface UserSendSmsCodeResponse {
+    result: System.Int32;
+    code: System.String;
+    captcha: Newtonsoft.Json.Linq.JObject;
+  }
+  export interface UserGuestLoginRequest {
+    deviceId: System.String;
+    captcha: System.String;
+  }
+  export interface UserGuestLoginResponse {
+    result: System.Int32;
+    message: System.String;
+    uid: System.String;
+    role: System.Int32;
+    token: System.String;
+    issueAt: System.Int64;
+    expiresIn: System.Int64;
+    isLatestUserAgreement: System.Boolean;
+    captchaTips: System.String;
+    captcha: Newtonsoft.Json.Linq.JObject;
+  }
+  export interface UserGuestCaptchaRequest {
+    random: System.String;
+  }
+  export interface UserGuestCaptchaResponse {
+    result: System.Int32;
+    data: Newtonsoft.Json.Linq.JObject;
+  }
+  export interface UserRegisterRequest {
+    account: System.String;
+    password: System.String;
+    smsCode: System.String;
+    platform: Torappu.PlatformKey;
+    deviceId: System.String;
+    captcha: System.String;
+  }
+  export interface UserRegisterResponse {
+    result: System.Int32;
+    uid: System.String;
+    role: System.Int32;
+    token: System.String;
+    issuedAt: System.Int64;
+    expiresIn: System.Int64;
+    errMsg: System.String;
+    needAuthenticate: System.Boolean;
+    isLatestUserAgreement: System.Boolean;
+    captcha: Newtonsoft.Json.Linq.JObject;
+  }
+  export interface UserLoginBySmsRequest {
+    account: System.String;
+    smsCode: System.String;
+    deviceId: System.String;
+    platform: Torappu.PlatformKey;
+    captcha: System.String;
+  }
+  export interface UserLoginBySmsResponse {
+    result: System.Int32;
+    uid: System.String;
+    role: System.Int32;
+    token: System.String;
+    isAuthenticate: System.Boolean;
+    isMinor: System.Boolean;
+    needAuthenticate: System.Boolean;
+    issuedAt: System.Int64;
+    expiresIn: System.Int64;
+    isLatestUserAgreement: System.Boolean;
+    captcha: Newtonsoft.Json.Linq.JObject;
+  }
+  export interface UserIdentityAuthRequest {
+    token: System.String;
+    name: System.String;
+    idCardNum: System.String;
+    captcha: System.String;
+  }
+  export interface UserIdentityAuthResponse {
+    result: System.Int32;
+    isMinor: System.Boolean;
+    message: System.String;
+    captcha: Newtonsoft.Json.Linq.JObject;
+  }
+  export interface CheckIdCardRequest {
+    token: System.String;
+    idCardNum: System.String;
+  }
+  export interface CheckIdCardResponse {
+    result: System.Int32;
+    isMinor: System.Boolean;
+    message: System.String;
+  }
+  export interface PingRequest {
+    token: System.String;
+  }
+  export interface PingResponse {
+    result: System.Int32;
+    interval: System.Int32;
+    message: System.String;
+  }
+  export interface UpdateAgreementRequest {
+    token: System.String;
+  }
+  export interface UpdateAgreementResponse {
+    result: System.Int32;
+  }
+  export interface ChangePwdRequest {
+    token: System.String;
+    newPassword: System.String;
+    phoneCode: System.String;
+  }
+  export interface ChangePwdResponse {
+    result: System.Int32;
+    errMsg: System.String;
+  }
+  export interface ChangePhoneCheckRequest {
+    token: System.String;
+  }
+  export interface ChangePhoneCheckResponse {
+    result: System.Int32;
+    errMsg: System.String;
+  }
+  export interface ChangePhoneRequest {
+    token: System.String;
+    phoneCode: System.String;
+    newPhone: System.String;
+    newPhoneCode: System.String;
+  }
+  export interface ChangePhoneResponse {
+    result: System.Int32;
+    errMsg: System.String;
+  }
+  export interface LoginoutRequest {
+    token: System.String;
+    type: System.Int32;
+  }
+  export interface LoginoutResponse {
+    result: System.Int32;
+  }
+  export interface StringRes {
+    SDK_INTERNAL_ERROR: System.String;
+    ALERT_LOGIN_ERROR_ACCOUNT_OR_PWD: System.String;
+    ALERT_LOGIN_IOS_NOT_ACTIVATED: System.String;
+    ALERT_LOGIN_ACCOUNT_NOT_ACTIVATED: System.String;
+    ALERT_LOGIN_PHONE_NUMBER_NOT_EXIST: System.String;
+    ALERT_LOGIN_AUTH_CAPTCHA_FAILED: System.String;
+    ALERT_USERNAME_OR_PASSWORD_INVALID: System.String;
+    ALERT_LOGIN_TOKEN_TIMEOUT: System.String;
+    ERROR_NETWORK_LOGIN: System.String;
+    ERROR_LOGIN_SMS_CODE_USER_UNREGISTER: System.String;
+    ERROR_LOGIN_SMS_CODE_INVALID: System.String;
+    ERROR_LOGIN_UNKNOWN_ERROR: System.String;
+    ERROR_NETWORK_PING: System.String;
+    ERROR_PING_UNKNOWN_ERROR: System.String;
+    ALERT_INVALID_PHONE_NUMBER: System.String;
+    ERROR_SEND_CAPTCHA_NETWORK: System.String;
+    ERROR_SEND_CAPTCHA_TOO_FAST: System.String;
+    ERROR_CAPTCHA_MSG_CENTER_FAILED: System.String;
+    ERROR_CAPTCHA_UNKNOWN_ERROR: System.String;
+    ERROR_CAPTCHA_AUTH_CAPTCHA_FAILED: System.String;
+    ALERT_IDENTITY_AUTH_SUC: System.String;
+    ALERT_IDENTIFY_MINOR_USER: System.String;
+    ERROR_IDENTITY_AUTH_INVALID_CARD: System.String;
+    ERROR_IDENTITY_AUTH_NETWORK: System.String;
+    ERROR_REGISTER_ALREADY_EXIST_USER: System.String;
+    ERROR_REGISTER_NETWORK: System.String;
+    ERROR_REGISTER_SMS_CODE_INVALID: System.String;
+    ERROR_REGISTER_SUC_GUEST_UPGRADE_FAIL: System.String;
+    ERROR_REGISTER_ALREADY_EXIST_BEFORE_PAY: System.String;
+    ERROR_REGISTER_SUC_GUEST_UPGRADE_FAIL_BEFORE_PAY: System.String;
+    ERROR_GUEST_UPGRADE_NOT_EXIST: System.String;
+    CONFIRM_ACCOUNT_LOGIN_CLEAR_GUEST: System.String;
+    TOAST_GUEST_SHOULD_USE_UPGRADE: System.String;
+    ERROR_GUEST_LOGIN_NETWORK: System.String;
+    FORMAT_SEND_CAPTCHA: System.String;
+    FORMAT_SEND_CAPTCHA_CD: System.String;
+    TEXT_LOGIN: System.String;
+    TEXT_BIND_AND_LOGIN: System.String;
+    USER_TITLE_PLAYER: System.String;
+    USER_TITLE_GUEST: System.String;
+    ERROR_CHANGE_PWD: System.String;
+    ERROR_CHANGE_PHONE: System.String;
+    ERROR_CREATE_ORDER_APPSTORE: System.String;
+    ERROR_PAY_NOT_COMPLETE_APPSTORE: System.String;
+    ERROR_PAY_CONFIRM_FAILED_APPSTORE: System.String;
+    RECEIPT_MAKEUP_NETWORK_ERROR: System.String;
+    RECEIPT_MAKEUP_NETWORK_TIMEOUT: System.String;
+    DEBUG_PAY_CONFIRM: System.String;
+    TEXT_MINOR_POLICYJUDGE_POSITIVE: System.String;
+    TEXT_MINOR_POLICYJUDGE_NEGATIVE: System.String;
+    ALERT_GUEST_CAPTCHA_SERVICE_FAILED: System.String;
+    TEXT_REGISTRATION_TAB: System.String;
+    TEXT_PRIVACY_TAB: System.String;
+    TEXT_AGREEMENT_TOGGLE: System.String;
+    TOAST_CHANGE_PHONE_FAIL: System.String;
+    TOAST_CHANGE_PWD_FAIL: System.String;
+    ERROR_CHANGE_PHONE_TOO_OFTEN: System.String;
+    ALERT_CHANGE_PWD_REMIND: System.String;
+    ALERT_CHANGE_PWD_SUC: System.String;
+    ALERT_CHANGE_PHONE_REMIND: System.String;
+    ALERT_CHANGE_PHONE_SUC: System.String;
+    SETTING_AGREEMENT_NAME: System.String;
+    ERROR_HG_ORDER_CENTER_BROKEN: System.String;
+    ERROR_HG_STORE_CONFIG_ERROR: System.String;
+    ERROR_HG_STORE_SHOULD_LOGIN: System.String;
+    ERROR_HG_STORE_HAS_PENDING_ORDER: System.String;
+    ERROR_HG_STORE_ITUNES_CANT_PAY: System.String;
+    ERROR_HG_STORE_IS_PAYING: System.String;
+    ERROR_HG_STORE_INVALID_PRODUCT: System.String;
+    ERROR_HG_STORE_TRANSACTION_IO: System.String;
+    ERROR_HG_STORE_HAS_UNFINISHED_ORDERS: System.String;
+    ERROR_HG_STORE_RECEIPT_UPLOAD_ERROR: System.String;
+    ERROR_HG_STORE_RECONFIRMED_PENDING_ORDERS: System.String;
+    ERROR_HG_STORE_CONFIRM_STORE_ORDER_FAILED: System.String;
+    ERROR_HG_STORE_PURCHASE_PURCHASING: System.String;
+    ERROR_HG_STORE_FETCH_RECEIPT_FAILED: System.String;
+  }
+  export interface Util {
+    PHONE_NUMBER_LOOSE_REGEX: RegExp;
+  }
+  export namespace U8PluginAndroid {}
+  export namespace HGStoreKit {
+    export interface RefreshReceiptCallback {
+      // onSucceeded: System.Action;
+      // onFailed: System.Action;
+    }
+    export interface HGStoreKitHandler {
+      // onError: System.Action<System.String>;
+    }
+    export interface HGStorePayRequest {
+      uid: System.String;
+      orderId: System.String;
+      productId: System.String;
+      transactionId: System.String;
+      handler: HgSDK.HGStoreKit.HGStorePayHandler;
+    }
+    export interface HGStorePayHandler {
+      // onSucceeded: System.Action;
+      // onCancelled: System.Action;
+      // onFailed: System.Action<System.String>;
+    }
+  }
+  export namespace U8Plugin {
+    export interface PayAddition {
+      asUrl: System.String;
+      isMinor: System.Boolean;
+      usePollingConfirm: System.Boolean;
+    }
+  }
+  export namespace U8PluginDefault {
+    export interface PayRequest {
+      orderId: System.String;
+      uid: System.String;
+      worldId: System.Int32;
+      storeId: System.Int32;
+      productId: System.String;
+      productName: System.String;
+      amount: System.Int32;
+      extraData: System.String;
+      payTime: System.Int64;
+    }
+    export interface PayResponse {
+      result: System.Int32;
+    }
+  }
+  export namespace HGSDK {
+    export interface UIPage {
+      // m_tween: DG.Tweening.Tween;
+      // m_canvasGroup: UnityEngine.CanvasGroup;
+      // <sdk>k__BackingField: HgSDK.HGSDK;
+      // <manager>k__BackingField: HgSDK.UI.UIManager;
+      // _c__Hotfix0_ctor: XLua.DelegateBridge;
+      // __Hotfix0_get_sdk: XLua.DelegateBridge;
+      // __Hotfix0_set_sdk: XLua.DelegateBridge;
+      // __Hotfix0_get_manager: XLua.DelegateBridge;
+      // __Hotfix0_set_manager: XLua.DelegateBridge;
+      // __Hotfix0_get_sdkCamera: XLua.DelegateBridge;
+      // __Hotfix0_get_cachedUsername: XLua.DelegateBridge;
+      // __Hotfix0_set_cachedUsername: XLua.DelegateBridge;
+      // __Hotfix0_GetAvailableToken: XLua.DelegateBridge;
+      // __Hotfix0_get_fadeDuration: XLua.DelegateBridge;
+      // __Hotfix0_get_canvasGroup: XLua.DelegateBridge;
+      // __Hotfix0_Open: XLua.DelegateBridge;
+      // __Hotfix0_Close: XLua.DelegateBridge;
+      // __Hotfix0_OnRegister: XLua.DelegateBridge;
+      // __Hotfix0_BlockRaycast: XLua.DelegateBridge;
+      // __Hotfix0_CloseMe: XLua.DelegateBridge;
+      // __Hotfix0_OnDestroy: XLua.DelegateBridge;
+    }
+    export interface LoginResult {
+      uid: System.String;
+      token: System.String;
+      isIdentityVerified: System.Boolean;
+      isMinor: System.Boolean;
+      needAuthenticate: System.Boolean;
+      isNeedUpdateAgreement: System.Boolean;
+    }
+    export interface LoginProceedInfo {
+      captcha: System.String;
+      captchaTips: System.String;
+    }
+    export interface PayResult {
+      EMPTY: HgSDK.HGSDK.PayResult;
+      status: U8.SDK.PayResultStatus;
+      outTradeNo: System.String;
+    }
+    export interface SDKRequestBundle<T> {
+      data: T;
+      needSign: System.Boolean;
+    }
+    export interface PingManager {
+      PINGABLE_SCENES: System.String[];
+      // m_sdk: HgSDK.HGSDK;
+      // m_options: HgSDK.HGSDK.PingManager.Options;
+      // m_nextPingInterval: System.Int32;
+      // m_accumTimeSinceLastPing: System.Single;
+      // m_cachedLatestInterval: System.Nullable<System.Int32>;
+      // _c__Hotfix0_ctor: XLua.DelegateBridge;
+      // __Hotfix0_get_intervalSinceLastPingAsInt: XLua.DelegateBridge;
+      // __Hotfix0_FirstPing: XLua.DelegateBridge;
+      // __Hotfix0_UpdatePing: XLua.DelegateBridge;
+      // __Hotfix0__DoPeriodicPing: XLua.DelegateBridge;
+      // __Hotfix0__CallPingService: XLua.DelegateBridge;
+      // __Hotfix0__CheckPingable: XLua.DelegateBridge;
+      // __Hotfix0__SetNoPeriodicPing: XLua.DelegateBridge;
+      // __Hotfix0__SetNextPeriodicPing: XLua.DelegateBridge;
+      // __Hotfix0__HandleToastEvent: XLua.DelegateBridge;
+      // __Hotfix0__ShowToastCoroutine: XLua.DelegateBridge;
+      // __Hotfix0__DoQuit: XLua.DelegateBridge;
+    }
+    export interface Urls {
+      registerLicenseUrl: System.String;
+      privacyLicenseUrl: System.String;
+      forgotPasswdUrl: System.String;
+    }
+    export interface SDKOptions {
+      appID: System.String;
+      appKey: System.String;
+      channelID: System.String;
+      worldId: System.String;
+    }
+    export interface GuestLoginHandler {
+      // onSuc: System.Action<HgSDK.HGSDK.LoginResult,System.String>;
+      // onFail: System.Action;
+      // onProceed: System.Action<HgSDK.HGSDK.LoginProceedInfo>;
+    }
+    export interface ChangePwdRequestParams {
+      token: System.String;
+      newPwd: System.String;
+      phoneCode: System.String;
+    }
+    export interface ChangePhoneRequestParams {
+      token: System.String;
+      phoneCode: System.String;
+      newPhone: System.String;
+      newPhoneCode: System.String;
+    }
+    export enum SendSmsCodeType {
+      REGISTER = "REGISTER",
+      LOGIN = "LOGIN",
+      CHANGE_NEW_PHONE = "CHANGE_NEW_PHONE",
+      CHAGNE_PWD = "CHAGNE_PWD",
+      CHANGE_ORI_PHONE = "CHANGE_ORI_PHONE",
+    }
+    export interface HandleMessageRequest<MessageRequest, RequestResponce> {
+      // m_requestParam: MessageRequest;
+      // requestFuc: System.Func<MessageRequest,HGSDK.HGSDK.RequestWithMessageHandler<RequestResponce>>;
+      // onSuc: System.Action<RequestResponce>;
+      // onFail: System.Action;
+      // onMessageFail: System.Action;
+      // _c__Hotfix0_ctor: XLua.DelegateBridge;
+      // __Hotfix0_Request: XLua.DelegateBridge;
+      // __Hotfix0__CallRequest: XLua.DelegateBridge;
+      // __Hotfix0__HandleMessage: XLua.DelegateBridge;
+      // __Hotfix0__OnGT3Message: XLua.DelegateBridge;
+    }
+    export interface RequestWithMessageParam {
+      // m_message: System.String;
+    }
+    export interface RequestWithMessageHandler<RequestResponce> {
+      // onNeedGT3Message: System.Action<HgSDK.HGSDK.LoginProceedInfo>;
+      // onSuc: System.Action<RequestResponce>;
+      // onFail: System.Action;
+    }
+    export interface LoginParam {
+      accout: System.String;
+      password: System.String;
+    }
+    export interface SendSmsCodeParam {
+      phoneNumber: System.String;
+      act: System.Int32;
+    }
+    export interface RegisterParam {
+      account: System.String;
+      password: System.String;
+      smsCode: System.String;
+    }
+    export interface SmsCodeLoginParam {
+      account: System.String;
+      smsCode: System.String;
+    }
+    export interface UserIdentityAuthParam {
+      name: System.String;
+      cardNum: System.String;
+    }
+    export namespace UIPage {}
+    export namespace PingManager {
+      export interface Options {
+        defaultIntervalIfFailed: System.Int32;
+        pingInBattleScene: System.Boolean;
+      }
+      export interface PingServiceHandler {
+        // onProceed: System.Action<HgSDK.PingResponse>;
+        // onBlock: System.Action<Torappu.Network.ResponseError>;
+      }
+    }
+    export namespace HandleMessageRequest {}
+  }
+  export namespace Test {
+    export interface DebugAccountMgr {
+      STORAGE_FILE: System.String;
+      // m_history: System.Collections.Generic.List<HgSDK.Test.DebugAccountMgr.AccountInfo>;
+      // m_sdk: HgSDK.HGSDK;
+      // <>f__am$cache0: System.Comparison<HgSDK.Test.DebugAccountMgr.AccountInfo>;
+      // _c__Hotfix0_ctor: XLua.DelegateBridge;
+      // __Hotfix0_Register: XLua.DelegateBridge;
+      // __Hotfix0_TraceGameInfo: XLua.DelegateBridge;
+      // __Hotfix0_DeleteAccount: XLua.DelegateBridge;
+      // __Hotfix0__DoSave: XLua.DelegateBridge;
+      // __Hotfix0_ApplyAccount: XLua.DelegateBridge;
+      // __Hotfix0_get_accIter: XLua.DelegateBridge;
+      // __Hotfix0__Init: XLua.DelegateBridge;
+    }
+    export namespace DebugAccountMgr {
+      export interface AccountInfo {
+        lastUse: System.Int64;
+        isGuest: System.Boolean;
+        info: HgSDK.HGSDK.LoginResult;
+        platformUid: System.String;
+        userName: System.String;
+        account: System.String;
+      }
+    }
   }
 }

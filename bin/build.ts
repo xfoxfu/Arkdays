@@ -61,6 +61,7 @@ for (const image of data) {
 const write = (layer: IExport, indent = ""): string => {
   if (layer.name.startsWith("<") || layer.fullName.endsWith(".UI")) return "";
   let result = "";
+  if (layer.fullName === ".HGSDK") layer.name = "HgSDK";
   result += indent + `export namespace ${layer.name} {\n`;
   for (const [name, klass] of Object.entries(layer.klass)) {
     if (name.startsWith("<")) continue;
@@ -135,6 +136,10 @@ const write = (layer: IExport, indent = ""): string => {
         if (prop.type === "System.Text.RegularExpressions.Regex") {
           prop.type = "RegExp";
         }
+        if (prop.type.startsWith("HGSDK.")) {
+          prop.type = prop.type.replace("HGSDK.", "HgSDK.");
+        }
+        prop.type = prop.type.replace("<HGSDK.", "<HgSDK.");
         prop.type = prop.type.replace("[,]", "[][]");
         prop.type = prop.type.replace("[,,]", "[][][]");
         result += indent + `    ${comment}${prop.name}: ${prop.type};\n`;
@@ -212,5 +217,6 @@ export namespace Newtonsoft {
 }
 ` +
     write(ret.child["Torappu"]) +
-    write(ret.child["U8"]),
+    write(ret.child["U8"]) +
+    write(ret.child["HGSDK"]),
 );

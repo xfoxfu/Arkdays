@@ -20,7 +20,7 @@ const setStore = async (
 export class TableService {
   public constructor(private readonly store: Map<string, any>) {}
 
-  public async initialize(): Promise<TableService> {
+  public static initialize = async (): Promise<TableService> => {
     const store = new Map();
 
     await setStore(store, "conf/network_config");
@@ -29,7 +29,7 @@ export class TableService {
     await setStore(store, "fs/preannouncement.meta.json");
 
     return new TableService(store);
-  }
+  };
 
   public get confNetworkConfig(): Torappu.Network.NetworkRouterConfig {
     return this.store.get("conf/network_config");
