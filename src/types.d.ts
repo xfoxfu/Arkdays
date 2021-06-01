@@ -26,15 +26,15 @@ export namespace System {
   export type UInt32 = number;
   export type UInt64 = number;
   export namespace Collections {
-      export namespace Generic {
-          export type List<T> = Array<T>;
-          export type IList<T> = Array<T>;
-          export type Queue<T> = Array<T>;
-          export type HashSet<T> = Set<T>;
-          export type Dictionary<K extends string | number, V> = Record<K, V>;
-          export type IDictionary<K extends string | number, V> = Record<K, V>;
-          export type KeyValuePair<K extends string | number, V> = Record<K, V>;
-      }
+    export namespace Generic {
+      export type List<T> = Array<T>;
+      export type IList<T> = Array<T>;
+      export type Queue<T> = Array<T>;
+      export type HashSet<T> = Set<T>;
+      export type Dictionary<K extends string | number, V> = Record<K, V>;
+      export type IDictionary<K extends string | number, V> = Record<K, V>;
+      export type KeyValuePair<K extends string | number, V> = Record<K, V>;
+    }
   }
 }
 export namespace Newtonsoft {
@@ -45,8 +45,7 @@ export namespace Newtonsoft {
   }
 }
 export namespace Torappu {
-  export interface UpdateFullInspectorRootDirectory {
-  }
+  export interface UpdateFullInspectorRootDirectory {}
   export interface GameAnalytics {
     // s_cachedPlatformStr: System.String;
     // s_cachedDeviceIdMap: System.Collections.Generic.Dictionary<System.String,System.String>;
@@ -231,11 +230,10 @@ export namespace Torappu {
     key: TKey;
     // value: ActionArray;
   }
-  export interface ActionDict<TKey,TPair> {
+  export interface ActionDict<TKey, TPair> {
     _items: System.Collections.Generic.List<TPair>;
   }
-  export interface ITweenHandler {
-  }
+  export interface ITweenHandler {}
   export interface DOTweenWrapper {
     // m_internalTween: DG.Tweening.Tween;
   }
@@ -244,18 +242,15 @@ export namespace Torappu {
     // m_tweenList: System.Collections.Generic.List<Torappu.BattleTweenMgr.Tween>;
     // <>f__am$cache0: System.Func<Torappu.BattleTweenMgr.Tween>;
   }
-  export interface BattleSearchUtils {
-  }
+  export interface BattleSearchUtils {}
   export interface TestLogConsole {
     // area: UnityEngine.Rect;
     // m_itemList: System.Collections.Generic.List<Torappu.TestLogConsole.Item>;
     // m_collasped: System.Boolean;
     // m_scrollPos: UnityEngine.Vector2;
   }
-  export interface BuildingBenefits {
-  }
-  export interface BuildingBuffUtil {
-  }
+  export interface BuildingBenefits {}
+  export interface BuildingBuffUtil {}
   export interface BuildingRoomInfoModel {
     EMPTY: Torappu.BuildingRoomInfoModel;
     slotId: System.String;
@@ -344,8 +339,7 @@ export namespace Torappu {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_GetCount4Display: XLua.DelegateBridge;
   }
-  export interface BuildingToDoNotifyUtil {
-  }
+  export interface BuildingToDoNotifyUtil {}
   export interface AttributesCalculator {
     // s_sharedBuffList: System.Collections.Generic.List<Torappu.ExternalBuff>;
   }
@@ -386,16 +380,11 @@ export namespace Torappu {
     // __Hotfix0__EnableEffect: XLua.DelegateBridge;
     // __Hotfix0__DisableEffect: XLua.DelegateBridge;
   }
-  export interface GameDataException {
-  }
-  export interface ResourceException {
-  }
-  export interface SecurityException {
-  }
-  export interface AudioExtensions {
-  }
-  export interface CollectionExtensions {
-  }
+  export interface GameDataException {}
+  export interface ResourceException {}
+  export interface SecurityException {}
+  export interface AudioExtensions {}
+  export interface CollectionExtensions {}
   export interface DateTimeExtensions {
     // __Hotfix0_IsEmpty: XLua.DelegateBridge;
     // __Hotfix0_StartOfGameDay: XLua.DelegateBridge;
@@ -404,12 +393,9 @@ export namespace Torappu {
     // __Hotfix0_EndOfGameWeek: XLua.DelegateBridge;
     // __Hotfix0_GameDayOfWeek: XLua.DelegateBridge;
   }
-  export interface DOTweenExtensions {
-  }
-  export interface ObjectExtensions {
-  }
-  export interface RandomExtensions {
-  }
+  export interface DOTweenExtensions {}
+  export interface ObjectExtensions {}
+  export interface RandomExtensions {}
   export interface GameFlowController {
     ASYNC_SCENE_LOAD_MAX_PROGRESS: System.Single;
     LOADING_MODE_MIN_WAITING_TIME: System.Single;
@@ -464,8 +450,7 @@ export namespace Torappu {
     // __Hotfix0__RegisterInitListener: XLua.DelegateBridge;
     // __Hotfix0_get_redirectBundle: XLua.DelegateBridge;
   }
-  export interface ISceneParam {
-  }
+  export interface ISceneParam {}
   export interface SceneBundle {
     fromScene: System.String;
     toScene: System.String;
@@ -670,29 +655,20 @@ export namespace Torappu {
     // planeNormal: UnityEngine.Vector3;
     // source: UnityEngine.Transform;
   }
-  export interface EnemyIconHub {
-  }
-  export interface PortraitHub {
-  }
-  export interface SkillIconHub {
-  }
-  export interface ISpriteHub {
-  }
-  export interface MonoISpriteHub {
-  }
+  export interface EnemyIconHub {}
+  export interface PortraitHub {}
+  export interface SkillIconHub {}
+  export interface ISpriteHub {}
+  export interface MonoISpriteHub {}
   export interface SpriteHub {
     _caseSensitive: System.Boolean;
     // _sprites: UnityEngine.Sprite[];
     // m_spriteHub: System.Collections.Generic.Dictionary<System.String,UnityEngine.Sprite>;
   }
-  export interface IOnPrefabUpdated {
-  }
-  export interface ReflectMethodAttribute {
-  }
-  export interface IPtrObject {
-  }
-  export interface IReusableObject {
-  }
+  export interface IOnPrefabUpdated {}
+  export interface ReflectMethodAttribute {}
+  export interface IPtrObject {}
+  export interface IReusableObject {}
   export interface ObjectPtr<T> {
     obj: T;
     cachedUid: System.UInt32;
@@ -1714,8 +1690,7 @@ export namespace Torappu {
     top: System.Int32;
     bottom: System.Int32;
   }
-  export interface ISafeAreaListener {
-  }
+  export interface ISafeAreaListener {}
   export interface SafeAreaController {
     MAX_NOTCH_PADDING: System.Int32;
     SAFE_PADDING_PREF_KEY: System.String;
@@ -1757,8 +1732,7 @@ export namespace Torappu {
     // __Hotfix0_OnInit: XLua.DelegateBridge;
     // __Hotfix0_OnDuplicated: XLua.DelegateBridge;
   }
-  export interface ISingletonNotAutoCreate {
-  }
+  export interface ISingletonNotAutoCreate {}
   export interface SingletonMonoBehaviour<T> {
     // s_instance: T;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -1776,8 +1750,8 @@ export namespace Torappu {
   export interface SortingLayerWrapper {
     sortingLayerId: System.Int32;
   }
-  export interface ArrayDict<TKey,TValue> {
-    _items: Torappu.ArrayDict.SerializableKV<TKey,TValue>[];
+  export interface ArrayDict<TKey, TValue> {
+    _items: Torappu.ArrayDict.SerializableKV<TKey, TValue>[];
     _test: TValue[];
   }
   export interface CountDownTask {
@@ -1883,8 +1857,7 @@ export namespace Torappu {
     // m_list: System.Collections.Generic.List<Torappu.Heap.InternalHeapNode<T>>;
     // m_dataMap: System.Collections.Generic.Dictionary<T,Torappu.Heap.InternalHeapNode<T>>;
   }
-  export interface ListCounterPool<TItem> {
-  }
+  export interface ListCounterPool<TItem> {}
   export interface ListPool<T> {
     // m_options: Torappu.ListPool.Options<T>;
     // m_objectPool: Torappu.ObjectPool.ObjectPool<Torappu.ReusableList<T>>;
@@ -1903,7 +1876,7 @@ export namespace Torappu {
   export interface ListSet<TItem> {
     // m_items: System.Collections.Generic.List<TItem>;
   }
-  export interface LRUCache<K,V> {
+  export interface LRUCache<K, V> {
     // m_capacity: System.Int32;
     // m_cacheMap: System.Collections.Generic.Dictionary<K,System.Collections.Generic.LinkedListNode<System.Collections.Generic.KeyValuePair<K,V>>>;
     // m_lruQueue: System.Collections.Generic.LinkedList<System.Collections.Generic.KeyValuePair<K,V>>;
@@ -1911,8 +1884,7 @@ export namespace Torappu {
   export interface MeshColorizer {
     // _color: UnityEngine.Color;
   }
-  export interface IPeriodicTicker {
-  }
+  export interface IPeriodicTicker {}
   export interface PeriodicTicker {
     // m_tickPeriod: System.Int32;
     // m_tickCount: System.Int32;
@@ -1921,8 +1893,7 @@ export namespace Torappu {
     // m_periodTime: Torappu.FP;
     // m_remainingTime: Torappu.FP;
   }
-  export interface PrecisePeriodicTimer {
-  }
+  export interface PrecisePeriodicTimer {}
   export interface TimeSyncPeriodicTimer {
     // m_periodTime: Torappu.FP;
     // m_getTimeFunc: System.Func<Torappu.FP>;
@@ -1939,8 +1910,7 @@ export namespace Torappu {
   export interface PerspectiveCameraScaler {
     STANDARD_RATIO_THRESHOLD: System.Single;
   }
-  export interface IPlayerDataListener {
-  }
+  export interface IPlayerDataListener {}
   export interface PlayerDataTracker {
     // m_listeners: System.Collections.Generic.List<Torappu.IPlayerDataListener>;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -1968,8 +1938,7 @@ export namespace Torappu {
     _sprites: Torappu.ProfessionSpriteHub.DataPair[];
     // m_spriteHub: System.Collections.Generic.Dictionary<Torappu.ProfessionCategory,UnityEngine.Sprite>;
   }
-  export interface IRefCountInstance {
-  }
+  export interface IRefCountInstance {}
   export interface RefCountReference {
     // m_signature: System.Int64;
     // m_selfRefCount: System.Int32;
@@ -2030,8 +1999,7 @@ export namespace Torappu {
     // m_syncObj: System.Object;
     // m_queue: System.Collections.Generic.Queue<T>;
   }
-  export interface ITimeWatcher {
-  }
+  export interface ITimeWatcher {}
   export interface TimeTracer {
     DEFAULT_GROUP: System.Int32;
     INVALID_GROUP: System.Int32;
@@ -2093,12 +2061,9 @@ export namespace Torappu {
   export interface TweenRotate {
     // m_transform: UnityEngine.Transform;
   }
-  export interface AdapterUtil {
-  }
-  export interface ArrayUtil {
-  }
-  export interface EffectUtil {
-  }
+  export interface AdapterUtil {}
+  export interface ArrayUtil {}
+  export interface EffectUtil {}
   export interface FileUtil {
     SIZE_SUFFIXS: System.String[];
     DEFAULT_PRETTY_SIZE_FORMAT_STR: System.String;
@@ -2189,8 +2154,7 @@ export namespace Torappu {
     // m_originTargetFps: System.Int32;
     // m_originVSync: System.Int32;
   }
-  export interface GameObjectUtil {
-  }
+  export interface GameObjectUtil {}
   export interface GraphicUtil {
     // s_corners: UnityEngine.Vector3[];
     // <>f__am$cache0: System.Comparison<UnityEngine.Camera>;
@@ -2211,12 +2175,9 @@ export namespace Torappu {
     // __Hotfix0_WorldToRectLocalPoint: XLua.DelegateBridge;
     // __Hotfix0_ConvertScreenToCanvasLogic: XLua.DelegateBridge;
   }
-  export interface GUIUtils {
-  }
-  export interface InputUtil {
-  }
-  export interface LogUtil {
-  }
+  export interface GUIUtils {}
+  export interface InputUtil {}
+  export interface LogUtil {}
   export interface MathUtil {
     LARGE_EPS: System.Single;
     HUGE_EPS: System.Single;
@@ -2235,15 +2196,12 @@ export namespace Torappu {
     // <>f__mg$cache8: System.Func<Torappu.FP,Torappu.FP,System.Boolean>;
     // <>f__mg$cache9: System.Func<Torappu.FP,Torappu.FP,System.Boolean>;
   }
-  export interface Misc {
-  }
+  export interface Misc {}
   export interface NativeUtil {
     // m_bundleIdentifier: System.String;
   }
-  export interface RandomFactory {
-  }
-  export interface RandomUtil {
-  }
+  export interface RandomFactory {}
+  export interface RandomUtil {}
   export interface ResourceUrls {
     CHR_ILLUST_PATH: System.String;
     CHR_DYN_ILLUST_PATH: System.String;
@@ -2535,13 +2493,11 @@ export namespace Torappu {
     // __Hotfix0_GetStageItemUseConfirmPanel: XLua.DelegateBridge;
     // __Hotfix0_GetTermDesciptionPrefabResPath: XLua.DelegateBridge;
   }
-  export interface SpineUtil {
-  }
+  export interface SpineUtil {}
   export interface StringUtil {
     // CHINESE_CULTURE: System.Globalization.CultureInfo;
   }
-  export interface UnityUtils {
-  }
+  export interface UnityUtils {}
   export interface ZipUtils {
     BUFFER_LENGTH: System.Int32;
     DEFAULT_ENTRY: System.String;
@@ -2864,12 +2820,9 @@ export namespace Torappu {
     // __Hotfix0_TryGetChapterId: XLua.DelegateBridge;
     // __Hotfix0_TryGetMainlineBgName: XLua.DelegateBridge;
   }
-  export interface IHotfixable {
-  }
-  export interface ILuaCallCSharp {
-  }
-  export interface ICSharpCallLua {
-  }
+  export interface IHotfixable {}
+  export interface ILuaCallCSharp {}
+  export interface ICSharpCallLua {}
   export interface PerformanceTest {
     // _mat: UnityEngine.Material;
     // _buttomLeft: UnityEngine.Vector2;
@@ -2971,16 +2924,14 @@ export namespace Torappu {
     SIDE_B = "SIDE_B",
     E_NUM = "E_NUM",
   }
-  export interface PlayerSideEquality {
-  }
+  export interface PlayerSideEquality {}
   export enum PlayerSideMask {
     ALL = "ALL",
     SIDE_A = "SIDE_A",
     SIDE_B = "SIDE_B",
     NONE = "NONE",
   }
-  export interface PlayerSideCategories {
-  }
+  export interface PlayerSideCategories {}
   export enum MotionMode {
     WALK = "WALK",
     FLY = "FLY",
@@ -3170,8 +3121,7 @@ export namespace Torappu {
     RELIC_STABLE_UNLOCK_ENEMY_KILL: System.String;
     RELIC_STABLE_UNLOCK_STABLE_CHOICE: System.String;
   }
-  export interface SharedUtils {
-  }
+  export interface SharedUtils {}
   export interface BlackboardKeys {
     DURATION: System.String;
     DISTANCE: System.String;
@@ -3271,10 +3221,8 @@ export namespace Torappu {
     TILE_BIND_KEY: System.String;
     EXCEPT_BLACKBOARD_KEYS_FROM_SCALE: System.String[];
   }
-  export interface IItemWithWeight {
-  }
-  export interface ISharedItemModel {
-  }
+  export interface IItemWithWeight {}
+  export interface ISharedItemModel {}
   export interface SpineFormatConst {
     SPINE_FRONT_PREFAB_NAME: System.String;
     SPINE_BACK_PREFAB_NAME: System.String;
@@ -3305,8 +3253,7 @@ export namespace Torappu {
   export interface GetChainLogInRewardResponse {
     reward: Torappu.ActivityItemModel;
   }
-  export interface GetChainLogInFinalRewardsRequest {
-  }
+  export interface GetChainLogInFinalRewardsRequest {}
   export interface GetChainLogInFinalRewardsResponse {
     rewards: System.Collections.Generic.List<Torappu.ActivityItemModel>;
   }
@@ -3341,8 +3288,7 @@ export namespace Torappu {
   export interface PlayerRawJsonResponse {
     content: Newtonsoft.Json.Linq.JObject;
   }
-  export interface IAlertResponse {
-  }
+  export interface IAlertResponse {}
   export interface PlayerPushMessage {
     path: System.String;
     payload: Newtonsoft.Json.Linq.JObject;
@@ -3366,10 +3312,8 @@ export namespace Torappu {
   export interface BindNickNameResponse {
     result: System.Int32;
   }
-  export interface BuildingRequest {
-  }
-  export interface BuildingSyncRequest {
-  }
+  export interface BuildingRequest {}
+  export interface BuildingSyncRequest {}
   export interface BuildingSyncResponse {
     ts: System.Int64;
   }
@@ -3413,8 +3357,7 @@ export namespace Torappu {
     roomSlotId: System.String;
     solution: Torappu.PlayerBuildingDIYSolution;
   }
-  export interface BuildingDIYChangeDIYResponse {
-  }
+  export interface BuildingDIYChangeDIYResponse {}
   export interface BuildingDIYSavePresetSolutionRequest {
     solutionId: System.Int32;
     name: System.String;
@@ -3437,8 +3380,7 @@ export namespace Torappu {
   export interface BuildingDIYGetPresetThumbnailUrlResponse {
     url: System.Collections.Generic.List<System.String>;
   }
-  export interface BuildingGetFurnitureGoodListRequest {
-  }
+  export interface BuildingGetFurnitureGoodListRequest {}
   export interface BuildingGetFurnitureGoodListResponse {
     goods: System.Collections.Generic.List<Torappu.BuildingGetFurnitureGoodListResponse.Good>;
     groups: System.Collections.Generic.List<Torappu.BuildingGetFurnitureGoodListResponse.Group>;
@@ -3448,8 +3390,7 @@ export namespace Torappu {
     buyCount: System.Int32;
     costType: Torappu.BuildingBuyFurnitureGoodRequest.CostType;
   }
-  export interface BuildingBuyFurnitureGoodResponse {
-  }
+  export interface BuildingBuyFurnitureGoodResponse {}
   export interface BuildingSettleManufactRequest {
     roomSlotIdList: System.Collections.Generic.List<System.String>;
     supplement: System.Int32;
@@ -3460,8 +3401,7 @@ export namespace Torappu {
   export interface BuildingSettleSaleRequest {
     roomSlotIdList: System.Collections.Generic.List<System.String>;
   }
-  export interface BuildingSettleSaleResponse {
-  }
+  export interface BuildingSettleSaleResponse {}
   export interface BuildingChangeManufactRequest {
     roomSlotId: System.String;
     targetFormulaId: System.String;
@@ -3483,27 +3423,21 @@ export namespace Torappu {
     roomSlotId: System.String;
     charInstIdList: System.Collections.Generic.List<System.Int32>;
   }
-  export interface BuildingAssignCharResponse {
-  }
+  export interface BuildingAssignCharResponse {}
   export interface CharBuildIncIntimacyRequest {
     charInstId: System.Int32;
   }
-  export interface CharBuildIncIntimacyResponse {
-  }
+  export interface CharBuildIncIntimacyResponse {}
   export interface CharBuildIncAssistIntimacyRequest {
     charInstId: System.Int32;
   }
-  export interface CharBuildIncAssistIntimacyResponse {
-  }
+  export interface CharBuildIncAssistIntimacyResponse {}
   export interface UpdateSpecializationRequest {
     skillIndex: System.Int32;
   }
-  export interface UpdateSpecializationResponse {
-  }
-  export interface CompleteUpgradeSpecializationRequest {
-  }
-  export interface CompleteUpgradeSpecializationResponse {
-  }
+  export interface UpdateSpecializationResponse {}
+  export interface CompleteUpgradeSpecializationRequest {}
+  export interface CompleteUpgradeSpecializationResponse {}
   export interface BuildingWorkshopSynthesisRequest {
     formulaId: System.String;
     times: System.Int32;
@@ -3524,20 +3458,17 @@ export namespace Torappu {
     slotId: System.String;
     orderId: System.Int64;
   }
-  export interface BuildingTradingDeliveryResponse {
-  }
+  export interface BuildingTradingDeliveryResponse {}
   export interface BuildingTradingChangeStrategyRequest {
     slotId: System.String;
     strategy: Torappu.BuildingData.OrderType;
   }
-  export interface BuildingTradingChangeStrategyResponse {
-  }
+  export interface BuildingTradingChangeStrategyResponse {}
   export interface BuildingTradingDeleteOrderRequest {
     slotId: System.String;
     orderId: System.Int64;
   }
-  export interface BuildingTradingDeleteOrderResponse {
-  }
+  export interface BuildingTradingDeleteOrderResponse {}
   export interface BuildingTradingLaborAccelRequest {
     slotId: System.String;
     orderId: System.Int64;
@@ -3550,16 +3481,13 @@ export namespace Torappu {
     slotId: System.String;
     cost: System.Int32;
   }
-  export interface BuildingManufactLaborAccelResponse {
-  }
+  export interface BuildingManufactLaborAccelResponse {}
   export interface BuildingBuyLaborRequest {
     costAp: System.Int32;
     ts: System.Int64;
   }
-  export interface BuildingBuyLaborResponse {
-  }
-  export interface BuildingGainAllIntimacyRequest {
-  }
+  export interface BuildingBuyLaborResponse {}
+  export interface BuildingGainAllIntimacyRequest {}
   export interface BuildingGainAllIntimacyResponse {
     normal: System.Int32;
     assist: System.Int32;
@@ -3568,10 +3496,12 @@ export namespace Torappu {
     slotList: System.Collections.Generic.List<System.String>;
   }
   export interface BuildingDeliveryBatchOrderResponse {
-    delivered: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.List<Torappu.ItemBundle>>;
+    delivered: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Collections.Generic.List<Torappu.ItemBundle>
+    >;
   }
-  export interface BuildingAssistReportRequest {
-  }
+  export interface BuildingAssistReportRequest {}
   export interface BuildingManuFactureItemReport {
     count: System.Int32;
     time: System.Int32;
@@ -3586,9 +3516,18 @@ export namespace Torappu {
   }
   export interface BuildingDailyReport {
     ts: System.Int64;
-    manufacture: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingManuFactureItemReport>;
-    trading: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingTradingReport>;
-    dormitory: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingDormReport>;
+    manufacture: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.BuildingManuFactureItemReport
+    >;
+    trading: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.BuildingTradingReport
+    >;
+    dormitory: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.BuildingDormReport
+    >;
   }
   export interface BuildingAssistReportResponse {
     reports: System.Collections.Generic.List<Torappu.BuildingDailyReport>;
@@ -3597,73 +3536,58 @@ export namespace Torappu {
     type: System.Int32;
     charInstId: System.Int32;
   }
-  export interface BuildingSetAssistResponse {
-  }
+  export interface BuildingSetAssistResponse {}
   export interface BuildingMeetingClueDeleteOwnClueRequest {
     clueId: System.String;
   }
-  export interface BuildingMeetingClueDeleteOwnClueResponse {
-  }
+  export interface BuildingMeetingClueDeleteOwnClueResponse {}
   export interface BuildingMeetingClueDeleteReceiveClueRequest {
     clueId: System.String;
   }
-  export interface BuildingMeetingClueDeleteReceiveClueResponse {
-  }
+  export interface BuildingMeetingClueDeleteReceiveClueResponse {}
   export interface BuildingMeetingCluePutClueToTheBoardRequest {
     clueId: System.String;
   }
-  export interface BuildingMeetingCluePutClueToTheBoardResponse {
-  }
+  export interface BuildingMeetingCluePutClueToTheBoardResponse {}
   export interface BuildingMeetingClueSendClueRequest {
     friendId: System.String;
     clueId: System.String;
   }
-  export interface BuildingMeetingClueSendClueResponse {
-  }
+  export interface BuildingMeetingClueSendClueResponse {}
   export interface BuildingMeetingClueGetMeetingRoomRewardRequest {
     type: System.Collections.Generic.List<System.Int32>;
   }
   export interface BuildingMeetingClueGetMeetingRoomRewardResponse {
     rewards: System.Collections.Generic.List<Torappu.ItemBundle>;
   }
-  export interface BuildingMeetingClueUpdateWaitingClueRequest {
-  }
+  export interface BuildingMeetingClueUpdateWaitingClueRequest {}
   export interface BuildingMeetingClueUpdateWaitingClueResponse {
     box: System.Collections.Generic.List<Torappu.BuildingMeetingClueUpdateWaitingClueResponse.Clue>;
   }
   export interface BuildingMeetingClueReceiveClueToStockRequest {
     clues: System.Collections.Generic.List<System.String>;
   }
-  export interface BuildingMeetingClueReceiveClueToStockResponse {
-  }
-  export interface BuildingMeetingClueStartInfoShareRequest {
-  }
-  export interface BuildingMeetingClueStartInfoShareResponse {
-  }
+  export interface BuildingMeetingClueReceiveClueToStockResponse {}
+  export interface BuildingMeetingClueStartInfoShareRequest {}
+  export interface BuildingMeetingClueStartInfoShareResponse {}
   export interface BuildingMeetingClueTakeClueFromBoardRequest {
     type: System.String;
   }
-  export interface BuildingMeetingClueTakeClueFromBoardResponse {
-  }
-  export interface BuildingMeetingClueGetInfoShareVisitorsRequest {
-  }
+  export interface BuildingMeetingClueTakeClueFromBoardResponse {}
+  export interface BuildingMeetingClueGetInfoShareVisitorsRequest {}
   export interface BuildingMeetingClueGetInfoShareVisitorsResponse {
     num: System.Int32;
   }
-  export interface BuildingMeetingClueReceiveInfoShareRewardRequest {
-  }
+  export interface BuildingMeetingClueReceiveInfoShareRewardRequest {}
   export interface BuildingMeetingClueReceiveInfoShareRewardResponse {
     list: System.Collections.Generic.List<Torappu.BuildingMeetingClueReceiveInfoShareRewardResponse.VisitorInfo>;
   }
-  export interface BuildingGetRecentVisitorsRequest {
-  }
+  export interface BuildingGetRecentVisitorsRequest {}
   export interface BuildingGetRecentVisitorsResponse {
     visitors: System.Collections.Generic.List<Torappu.BuildingGetRecentVisitorsResponse.Visitor>;
   }
-  export interface BuildingMeetingClueGetDailyClueRequest {
-  }
-  export interface BuildingMeetingClueGetDailyClueResponse {
-  }
+  export interface BuildingMeetingClueGetDailyClueRequest {}
+  export interface BuildingMeetingClueGetDailyClueResponse {}
   export interface CampaignConfirmBreakRewardRequest {
     stageId: System.String;
     index: System.Int32;
@@ -3675,14 +3599,10 @@ export namespace Torappu {
   export interface CampaignGetCommonMissionRewardRequest {
     id: System.String;
   }
-  export interface CampaignGetCommonMissionRewardResponse {
-  }
-  export interface CampaignStartBattleRequest {
-  }
-  export interface CampaignStartBattleResponse {
-  }
-  export interface CampaignFinishBattleRequest {
-  }
+  export interface CampaignGetCommonMissionRewardResponse {}
+  export interface CampaignStartBattleRequest {}
+  export interface CampaignStartBattleResponse {}
+  export interface CampaignFinishBattleRequest {}
   export interface CampaignFinishBattleResponse {
     currentFeeBefore: System.Int32;
     currentFeeAfter: System.Int32;
@@ -3701,27 +3621,23 @@ export namespace Torappu {
     charInstId: System.Int32;
     targetLevel: System.Int32;
   }
-  export interface UpgradeSkillResponse {
-  }
+  export interface UpgradeSkillResponse {}
   export interface UpgradeSpecializationRequest {
     charInstId: System.Int32;
     skillIndex: System.Int32;
     targetLevel: System.Int32;
   }
-  export interface UpgradeSpecializationResponse {
-  }
+  export interface UpgradeSpecializationResponse {}
   export interface ChangeCharSkinRequest {
     charInstId: System.Int32;
     skinId: System.String;
   }
-  export interface ChangeCharSkinResponse {
-  }
+  export interface ChangeCharSkinResponse {}
   export interface ChangeCharTemplateRequest {
     charInstId: System.Int32;
     templateId: System.String;
   }
-  export interface ChangeCharTemplateResponse {
-  }
+  export interface ChangeCharTemplateResponse {}
   export interface GetSpCharMissionRewardRequest {
     charId: System.String;
     missionId: System.String;
@@ -3732,8 +3648,7 @@ export namespace Torappu {
   export interface CheatRequest {
     cmd: System.String;
   }
-  export interface CheatResponse {
-  }
+  export interface CheatResponse {}
   export interface CrisisStartBattleRequest {
     stageId: System.String;
     stageType: Torappu.CrisisStageType;
@@ -3761,8 +3676,7 @@ export namespace Torappu {
     ts: System.Int64;
     data: Torappu.CrisisServerData;
   }
-  export interface CrisisGetShopDataRequest {
-  }
+  export interface CrisisGetShopDataRequest {}
   export enum CrisisShopTitleType {
     SEASON = "SEASON",
     REMASTERED = "REMASTERED",
@@ -3796,7 +3710,10 @@ export namespace Torappu {
   export interface CrisisGetShopDataResponse {
     permanent: System.Collections.Generic.List<Torappu.CrisisLongTermShopItemData>;
     season: System.Collections.Generic.List<Torappu.CrisisSeasonShopItemData>;
-    progressGoodList: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.List<Torappu.CrisisProgressShopItemViewModel>>;
+    progressGoodList: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Collections.Generic.List<Torappu.CrisisProgressShopItemViewModel>
+    >;
   }
   export interface CrisisBuyShopRequest {
     goodId: System.String;
@@ -3840,10 +3757,8 @@ export namespace Torappu {
     stageId: System.String;
     runeId: System.Collections.Generic.List<System.String>;
   }
-  export interface CrisisUnlockRuneResponse {
-  }
-  export interface CrisisSeasonGetAllItemsRequest {
-  }
+  export interface CrisisUnlockRuneResponse {}
+  export interface CrisisSeasonGetAllItemsRequest {}
   export interface CrisisSeasonGetAllItemsResponse {
     items: System.Collections.Generic.List<Torappu.RewardItemModel>;
   }
@@ -3851,18 +3766,14 @@ export namespace Torappu {
     charInstId: System.Int32;
     destEvolvePhase: Torappu.EvolvePhase;
   }
-  export interface EvolveCharResponse {
-  }
+  export interface EvolveCharResponse {}
   export interface CommonFinishBattleRequest {
     data: System.String;
     battleData: Torappu.CommonFinishBattleRequest.BattleDataInRequest;
   }
-  export interface IFinishBattleWithLog {
-  }
-  export interface IStartBattleReqWithSign {
-  }
-  export interface IStartBattleRespWithSign {
-  }
+  export interface IFinishBattleWithLog {}
+  export interface IStartBattleReqWithSign {}
+  export interface IStartBattleRespWithSign {}
   export interface CommonFinishBattleResponse {
     result: System.Int32;
     apFailReturn: System.Int32;
@@ -3872,8 +3783,7 @@ export namespace Torappu {
     diamondMaterialRewards: System.Collections.Generic.List<Torappu.CommonFinishBattleResponse.RewardModel>;
     furnitureRewards: System.Collections.Generic.List<Torappu.CommonFinishBattleResponse.RewardModel>;
   }
-  export interface DefaultFinishBattleRequest {
-  }
+  export interface DefaultFinishBattleRequest {}
   export interface DefaultFinishBattleResponse {
     goldScale: System.Single;
     expScale: System.Single;
@@ -3885,8 +3795,7 @@ export namespace Torappu {
   export interface FinishStoryRequest {
     storyId: System.String;
   }
-  export interface FinishStoryResponse {
-  }
+  export interface FinishStoryResponse {}
   export enum FriendServiceType {
     SEARCH_FRIEND = "SEARCH_FRIEND",
     GET_FRIEND_LIST = "GET_FRIEND_LIST",
@@ -3904,8 +3813,7 @@ export namespace Torappu {
   export interface DeleteFriendRequest {
     friendId: System.String;
   }
-  export interface DeleteFriendResponse {
-  }
+  export interface DeleteFriendResponse {}
   export interface SendFriendRequest {
     friendId: System.String;
     afterBattle: System.Int32;
@@ -3923,7 +3831,7 @@ export namespace Torappu {
   export interface GetSortListInfoRequest {
     type: Torappu.FriendServiceType;
     sortKeyList: System.Collections.Generic.List<System.String>;
-    param: System.Collections.Generic.Dictionary<System.String,System.String>;
+    param: System.Collections.Generic.Dictionary<System.String, System.String>;
   }
   export interface GetSortListInfoResponse {
     // result: System.Collections.Generic.List<Torappu.UI.Friend.FriendSortViewModel>;
@@ -3954,8 +3862,7 @@ export namespace Torappu {
   export interface SetAssistCharListRequest {
     assistCharList: System.Collections.Generic.List<Torappu.RequestAssistChar>;
   }
-  export interface SetAssistCharListResponse {
-  }
+  export interface SetAssistCharListResponse {}
   export interface SetFriendAliasRequest {
     friendId: System.String;
     alias: System.String;
@@ -3974,8 +3881,7 @@ export namespace Torappu {
     customIndex: System.String;
     templateGroup: System.String;
   }
-  export interface SetCardShowMedalResponse {
-  }
+  export interface SetCardShowMedalResponse {}
   export interface CancelNormalGachaRequest {
     slotId: System.Int32;
   }
@@ -3985,25 +3891,20 @@ export namespace Torappu {
   export interface RefreshTagsGachaRequest {
     slotId: System.Int32;
   }
-  export interface RefreshTagsGachaResponse {
-  }
-  export interface SyncNormalGachaRequest {
-  }
-  export interface SyncNormalGachaResponse {
-  }
+  export interface RefreshTagsGachaResponse {}
+  export interface SyncNormalGachaRequest {}
+  export interface SyncNormalGachaResponse {}
   export interface BuyRecruitSlotRequest {
     slotId: System.Int32;
   }
-  export interface BuyRecruitSlotResponse {
-  }
+  export interface BuyRecruitSlotResponse {}
   export interface NormalGachaRequest {
     slotId: System.Int32;
     tagList: System.Int32[];
     specialTagId: System.Int32;
     duration: System.Int64;
   }
-  export interface NormalGachaResponse {
-  }
+  export interface NormalGachaResponse {}
   export interface FinishNormalGachaRequest {
     slotId: System.Int32;
   }
@@ -4024,8 +3925,7 @@ export namespace Torappu {
     isNew: System.Boolean;
     itemGet: Torappu.ItemBundle[];
   }
-  export interface IGachaResultHolder {
-  }
+  export interface IGachaResultHolder {}
   export interface AdvancedGachaRequest {
     poolId: System.String;
     useTkt: Torappu.GachaType;
@@ -4082,25 +3982,20 @@ export namespace Torappu {
     squad: Torappu.CommonStartBattleRequest.SquadModel;
     stageType: Torappu.StageType;
   }
-  export interface HandBookAddonStageBattleStartResponse {
-  }
-  export interface HandBookAddonStageBattleFinishRequest {
-  }
+  export interface HandBookAddonStageBattleStartResponse {}
+  export interface HandBookAddonStageBattleFinishRequest {}
   export interface HandBookAddonStageBattleFinishResponse {
     firstRewards: System.Collections.Generic.List<Torappu.CommonFinishBattleResponse.RewardModel>;
   }
-  export interface BuyApRequest {
-  }
+  export interface BuyApRequest {}
   export interface BuyApResponse {
     result: System.Int32;
   }
   export interface ExchangeDiamondShardRequest {
     count: System.Int32;
   }
-  export interface ExchangeDiamondShardResponse {
-  }
-  export interface CheckInRequest {
-  }
+  export interface ExchangeDiamondShardResponse {}
+  export interface CheckInRequest {}
   export interface CheckInResponse {
     signInRewards: Torappu.CheckInResponse.ItemModel[];
     subscriptionRewards: Torappu.CheckInResponse.ItemModel[];
@@ -4121,19 +4016,23 @@ export namespace Torappu {
   }
   export interface PlayerSyncStatusRequest {
     modules: System.Int64;
-    paramDict: System.Collections.Generic.Dictionary<System.Int64,Torappu.PlayerSyncParam>;
+    paramDict: System.Collections.Generic.Dictionary<
+      System.Int64,
+      Torappu.PlayerSyncParam
+    >;
   }
   export interface PlayerSyncStatusResponse {
     ts: System.Int64;
-    result: System.Collections.Generic.Dictionary<System.Int64,Newtonsoft.Json.Linq.JObject>;
+    result: System.Collections.Generic.Dictionary<
+      System.Int64,
+      Newtonsoft.Json.Linq.JObject
+    >;
   }
-  export interface PlayerSyncParam {
-  }
+  export interface PlayerSyncParam {}
   export interface PlayerSyncGoodPurchaseParam {
     goodIdMap: Torappu.ShopPurchaseState;
   }
-  export interface PlayerSyncResult {
-  }
+  export interface PlayerSyncResult {}
   export interface PlayerSyncAnnounceVersionResult {
     announcementPopUpVersion: System.String;
     announcementVersion: System.String;
@@ -4327,8 +4226,7 @@ export namespace Torappu {
   export interface RemoveAllRecievedMailRequest {
     sysMailIdList: System.Collections.Generic.List<System.Int64>;
   }
-  export interface RemoveAllRecievedMailResponse {
-  }
+  export interface RemoveAllRecievedMailResponse {}
   export interface ReceiveAllCommonMailRequest {
     mailIdList: System.Collections.Generic.List<System.Int64>;
   }
@@ -4344,41 +4242,33 @@ export namespace Torappu {
   export interface GetMetaInfoListResponse {
     result: System.Collections.Generic.List<Torappu.MailMetaInfo>;
   }
-  export interface GetMailServiceUtil {
-  }
-  export interface MarkStoryAcceKnownRequest {
-  }
-  export interface MarkStoryAcceKnownResponce {
-  }
+  export interface GetMailServiceUtil {}
+  export interface MarkStoryAcceKnownRequest {}
+  export interface MarkStoryAcceKnownResponce {}
   export interface ConfirmMissionRequest {
     missionId: System.String;
   }
-  export interface ConfirmMissionResponse {
-  }
+  export interface ConfirmMissionResponse {}
   export interface ExchangeMissionRewardsRequest {
     targetRewardsId: System.String;
   }
-  export interface ExchangeMissionRewardsResponse {
-  }
+  export interface ExchangeMissionRewardsResponse {}
   export interface ConfirmMissionGroupRequest {
     missionGroupId: System.String;
   }
-  export interface ConfirmMissionGroupResponse {
-  }
+  export interface ConfirmMissionGroupResponse {}
   export interface ChangeAvatarRequest {
     type: System.String;
     id: System.String;
   }
-  export interface ChangeAvatarResponse {
-  }
+  export interface ChangeAvatarResponse {}
   export interface RetroUnlockRetroBlockRequest {
     retroId: System.String;
   }
   export interface RetroUnlockRetroBlockResponse {
     result: System.Int32;
   }
-  export interface IRoguelikeStartBattleResponse {
-  }
+  export interface IRoguelikeStartBattleResponse {}
   export interface RoguelikeSelectInitialRelicRequest {
     select: System.String;
   }
@@ -4400,12 +4290,9 @@ export namespace Torappu {
   export interface RoguelikeMoveToRequest {
     to: Torappu.RoguelikeNodePosition;
   }
-  export interface RoguelikeMoveToResponse {
-  }
-  export interface RoguelikeFinishNodeRequest {
-  }
-  export interface RoguelikeFinishNodeResponse {
-  }
+  export interface RoguelikeMoveToResponse {}
+  export interface RoguelikeFinishNodeRequest {}
+  export interface RoguelikeFinishNodeResponse {}
   export interface RoguelikeBuyGoodsRequest {
     select: System.Collections.Generic.List<System.String>;
   }
@@ -4427,8 +4314,7 @@ export namespace Torappu {
   export interface RoguelikeActivateTicketRequest {
     ticketIndex: System.String;
   }
-  export interface RoguelikeActivateTicketResponse {
-  }
+  export interface RoguelikeActivateTicketResponse {}
   export interface RoguelikeRecruitCharRequest {
     ticketIndex: System.String;
     instId: System.String;
@@ -4454,14 +4340,12 @@ export namespace Torappu {
   export interface RoguelikeFinishBattleRequest {
     battleLog: System.String;
   }
-  export interface RoguelikeFinishBattleResponse {
-  }
+  export interface RoguelikeFinishBattleResponse {}
   export interface RuneStartBattleRequest {
     rune: System.Collections.Generic.List<System.String>;
     isPractice: System.Boolean;
   }
-  export interface RuneStartBattleResponse {
-  }
+  export interface RuneStartBattleResponse {}
   export interface RuneFinishBattleRequest {
     battleLog: System.String;
   }
@@ -4474,19 +4358,16 @@ export namespace Torappu {
     charInstId: System.Int32;
     skinId: System.String;
   }
-  export interface ChangeSecretaryResponse {
-  }
+  export interface ChangeSecretaryResponse {}
   export interface SellCharRequest {
     charInstIdList: System.Int32[];
   }
-  export interface SellCharResponse {
-  }
+  export interface SellCharResponse {}
   export interface SetDefaultSkillRequest {
     charInstId: System.Int32;
     defaultSkillIndex: System.Int32;
   }
-  export interface SetDefaultSkillResponse {
-  }
+  export interface SetDefaultSkillResponse {}
   export interface BuyCashGoodRequest {
     goodId: System.String;
   }
@@ -4496,8 +4377,7 @@ export namespace Torappu {
   export interface BuySkinGoodRequest {
     goodId: System.String;
   }
-  export interface BuySkinGoodRepsonse {
-  }
+  export interface BuySkinGoodRepsonse {}
   export interface BuyFurnGroupRequest {
     groupId: System.String;
     goods: System.Collections.Generic.List<Torappu.BuyFurnGroupRequest.FurnItemInfo>;
@@ -4567,8 +4447,7 @@ export namespace Torappu {
   export interface DecomposePotentialItemResponse {
     items: System.Collections.Generic.List<Torappu.RewardItemModel>;
   }
-  export interface IShopGetResposne {
-  }
+  export interface IShopGetResposne {}
   export interface ShopSlot {
     price: System.Int32;
     displayName: System.String;
@@ -4642,25 +4521,24 @@ export namespace Torappu {
     plusNum: System.Int32;
     desc: System.String;
   }
-  export interface GetCashGoodListRequest {
-  }
+  export interface GetCashGoodListRequest {}
   export interface GetCashGoodListResponse {
     goodList: System.Collections.Generic.List<Torappu.CashShopObject>;
   }
-  export interface GetHighGoodListRequest {
-  }
+  export interface GetHighGoodListRequest {}
   export interface GetHighGoodListResponse {
     goodList: System.Collections.Generic.List<Torappu.QCObject>;
-    progressGoodList: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.List<Torappu.QCProgressGoodItem>>;
+    progressGoodList: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Collections.Generic.List<Torappu.QCProgressGoodItem>
+    >;
   }
-  export interface GetExtraGoodListRequest {
-  }
+  export interface GetExtraGoodListRequest {}
   export interface GetExtraGoodListResponse {
     goodList: System.Collections.Generic.List<Torappu.QCObject>;
     shopEndTime: System.Int64;
   }
-  export interface GetLowGoodListRequest {
-  }
+  export interface GetLowGoodListRequest {}
   export interface GetLowGoodListResponse {
     goodList: System.Collections.Generic.List<Torappu.QCObject>;
     groups: System.Collections.Generic.List<System.String>;
@@ -4675,8 +4553,7 @@ export namespace Torappu {
     price: Torappu.ItemBundle;
     sortId: System.Int32;
   }
-  export interface GetLMTGSGoodListRequest {
-  }
+  export interface GetLMTGSGoodListRequest {}
   export interface GetLMTGSGoodListResponse {
     goodList: System.Collections.Generic.List<Torappu.LMTGSGood>;
   }
@@ -4689,8 +4566,7 @@ export namespace Torappu {
     price: System.Int32;
     sortId: System.Int32;
   }
-  export interface GetEPGSGoodListRequest {
-  }
+  export interface GetEPGSGoodListRequest {}
   export interface GetEPGSGoodListResponse {
     goodList: System.Collections.Generic.List<Torappu.EPGSGood>;
   }
@@ -4703,8 +4579,7 @@ export namespace Torappu {
     price: System.Int32;
     sortId: System.Int32;
   }
-  export interface GetREPGoodListRequest {
-  }
+  export interface GetREPGoodListRequest {}
   export interface GetREPGoodListResponse {
     goodList: System.Collections.Generic.List<Torappu.EPGSGood>;
   }
@@ -4718,16 +4593,17 @@ export namespace Torappu {
     discount: System.Single;
     originPrice: System.Int32;
   }
-  export interface GetSocialGoodListRequest {
-  }
+  export interface GetSocialGoodListRequest {}
   export interface GetSocialGoodListResponse {
     goodList: System.Collections.Generic.List<Torappu.SocialShopData>;
-    charPurchase: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+    charPurchase: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int32
+    >;
     costSocialPoint: System.Int32;
     creditGroup: System.String;
   }
-  export interface ShopCashGoodPurchaseRequest {
-  }
+  export interface ShopCashGoodPurchaseRequest {}
   export interface ShopCashGoodPurchaseResponse {
     receiveCashGoodResult: System.Collections.Generic.List<Torappu.ShopCashGoodPurchaseResponse.Good>;
   }
@@ -4743,8 +4619,7 @@ export namespace Torappu {
     alertMinor: System.Boolean;
     errMsg: System.String;
   }
-  export interface PayGetUnConfirmedOrderListRequest {
-  }
+  export interface PayGetUnConfirmedOrderListRequest {}
   export interface PayGetUnconfirmedOrderListResponse {
     orderIdList: System.Collections.Generic.List<System.String>;
   }
@@ -4796,10 +4671,12 @@ export namespace Torappu {
     groupId: System.String;
     startDateTime: System.Int64;
     endDateTime: System.Int64;
-    packages: System.Collections.Generic.Dictionary<System.String,Torappu.PeriodicityGPItem>;
+    packages: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PeriodicityGPItem
+    >;
   }
-  export interface GetGPGoodListRequest {
-  }
+  export interface GetGPGoodListRequest {}
   export interface GetGPGoodListResponse {
     weeklyGroup: Torappu.PeriodicityGroup;
     monthlyGroup: Torappu.PeriodicityGroup;
@@ -4820,10 +4697,9 @@ export namespace Torappu {
     goodIdMap: Torappu.ShopPurchaseState;
   }
   export interface GetGoodPurchaseStateResponse {
-    result: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+    result: System.Collections.Generic.Dictionary<System.String, System.Int32>;
   }
-  export interface ReceiveSocialPointRequest {
-  }
+  export interface ReceiveSocialPointRequest {}
   export interface ReceiveSocialPointResponse {
     reward: System.Collections.Generic.List<Torappu.RewardItemModel>;
   }
@@ -4837,15 +4713,14 @@ export namespace Torappu {
     charInstId: System.Int32;
     S_skillIndex: System.Int32;
     S_currentTmpl: System.String;
-    S_tmpl: Torappu.ListDict<System.String,Torappu.RequestSquadSlot.Patch>;
+    S_tmpl: Torappu.ListDict<System.String, Torappu.RequestSquadSlot.Patch>;
   }
   export interface SquadFormationRequest {
     squadId: System.String;
     slots: Torappu.RequestSquadSlot[];
     changeSkill: System.Boolean;
   }
-  export interface SquadFormationResponse {
-  }
+  export interface SquadFormationResponse {}
   export interface SquadRenameRequest {
     squadId: System.String;
     name: System.String;
@@ -4876,8 +4751,7 @@ export namespace Torappu {
   export interface UnlockStageFog {
     stageId: System.String;
   }
-  export interface UnlockStageFogResponse {
-  }
+  export interface UnlockStageFogResponse {}
   export interface CommonStartBattleRequest {
     usePracticeTicket: System.Boolean;
     stageId: System.String;
@@ -4936,8 +4810,7 @@ export namespace Torappu {
     charInstId: System.Int32;
     expMats: Torappu.UpgradeCharRequest.ExpMat[];
   }
-  export interface UpgradeCharResponse {
-  }
+  export interface UpgradeCharResponse {}
   export interface VisitBuildingRequest {
     friendId: System.String;
   }
@@ -4952,10 +4825,8 @@ export namespace Torappu {
     itemId: System.String;
     instId: System.Int32;
   }
-  export interface EvolveCharUseItemResponse {
-  }
-  export interface VoucherSkinGetGoodListRequest {
-  }
+  export interface EvolveCharUseItemResponse {}
+  export interface VoucherSkinGetGoodListRequest {}
   export interface VoucherSkinGetGoodListResponse {
     goodList: System.Collections.Generic.List<Torappu.ShopSkinItemViewModel>;
   }
@@ -4964,8 +4835,7 @@ export namespace Torappu {
     itemId: System.String;
     instId: System.Int32;
   }
-  export interface VoucherSkinUseResponse {
-  }
+  export interface VoucherSkinUseResponse {}
   export interface PlayerStatus {
     nickName: System.String;
     nickNumber: System.String;
@@ -5001,7 +4871,7 @@ export namespace Torappu {
     androidDiamond: System.Int32;
     payDiamond: System.Int32;
     freeDiamond: System.Int32;
-    flags: System.Collections.Generic.Dictionary<System.String,System.Boolean>;
+    flags: System.Collections.Generic.Dictionary<System.String, System.Boolean>;
     friendAssist: System.Collections.Generic.List<Torappu.PlayerFriendAssist>;
   }
   export interface AvatarInfo {
@@ -5011,13 +4881,12 @@ export namespace Torappu {
   export interface PlayerSquadTmpl {
     skillIndex: System.Int32;
   }
-  export interface ISquadMemberTmplInfo {
-  }
+  export interface ISquadMemberTmplInfo {}
   export interface PlayerSquadMemberProto {
     charInstId: System.Int32;
     // m_skillIndex: System.Int32;
     currentTmpl: System.String;
-    tmpl: Torappu.ListDict<System.String,Torappu.PlayerSquadTmpl>;
+    tmpl: Torappu.ListDict<System.String, Torappu.PlayerSquadTmpl>;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_GetSkillIndex: XLua.DelegateBridge;
     // __Hotfix0_InternalSkillIndex: XLua.DelegateBridge;
@@ -5063,7 +4932,7 @@ export namespace Torappu {
     mainSkillLvl: System.Int32;
     gainTime: System.Int64;
     currentTmpl: System.String;
-    tmpl: Torappu.ListDict<System.String,Torappu.PlayerCharPatch>;
+    tmpl: Torappu.ListDict<System.String, Torappu.PlayerCharPatch>;
     // m_skills: Torappu.PlayerCharSkill[];
     // m_defaultSkillIndex: System.Int32;
     // m_skinId: System.String;
@@ -5084,35 +4953,95 @@ export namespace Torappu {
     skills: Torappu.PlayerCharSkill[];
   }
   export interface MileStonePlayerInfo {
-    points: System.Collections.Generic.Dictionary<System.String,System.Int32>;
-    rewards: System.Collections.Generic.Dictionary<System.String,Torappu.MileStonePlayerInfo.MileStoneRewardTicketItem>;
+    points: System.Collections.Generic.Dictionary<System.String, System.Int32>;
+    rewards: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.MileStonePlayerInfo.MileStoneRewardTicketItem
+    >;
   }
   export interface PlayerOpenServer {
     chainLogin: Torappu.OpenServerChainLogin;
     checkIn: Torappu.OpenServerCheckIn;
   }
   export interface PlayerHandBookAddon {
-    stage: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerHandBookAddon.GetInfo>;
-    story: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerHandBookAddon.GetInfo>;
+    stage: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerHandBookAddon.GetInfo
+    >;
+    story: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerHandBookAddon.GetInfo
+    >;
   }
   export interface PlayerActivity {
-    defaultActivityList: Torappu.ListDict<System.String,Torappu.PlayerActivity.PlayerDefaultActivity>;
-    missionOnlyActivityList: Torappu.ListDict<System.String,Torappu.PlayerActivity.PlayerMissionOnlyTypeActivity>;
-    checkinOnlyActivityList: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerActivity.PlayerCheckinOnlyTypeActivity>;
-    collectionActivityList: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerActivity.PlayerCollectionTypeActivity>;
-    avgOnlyActivityList: Torappu.ListDict<System.String,Torappu.PlayerActivity.PlayerAVGOnlyTypeActivity>;
-    loginOnlyActivityList: Torappu.ListDict<System.String,Torappu.PlayerActivity.PlayerLoginOnlyTypeActivity>;
-    miniStoryActivityList: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerActivity.PlayerMiniStoryActivity>;
-    roguelikeActivityList: Torappu.ListDict<System.String,Torappu.PlayerActivity.PlayerRoguelikeActivity>;
-    prayOnlyActivityList: Torappu.ListDict<System.String,Torappu.PlayerActivity.PlayerPrayOnlyActivity>;
-    multiplayActivityList: Torappu.ListDict<System.String,Torappu.PlayerActivity.PlayerMultiplayActivity>;
-    act3D0ActivityList: Torappu.ListDict<System.String,Torappu.PlayerActivity.PlayerAct3D0Activity>;
-    act4D0ActivityList: Torappu.ListDict<System.String,Torappu.PlayerActivity.PlayerAct4D0Activity>;
-    act5D0ActivityList: Torappu.ListDict<System.String,Torappu.PlayerActivity.PlayerAct5D0Activity>;
-    act5D1ActivityList: Torappu.ListDict<System.String,Torappu.PlayerActivity.PlayerAct5D1Activity>;
-    act9D0ActivityList: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerActivity.PlayerAct9D0Activity>;
-    act17D7ActivityList: Torappu.ListDict<System.String,Torappu.PlayerActivity.PlayerAct17D7Activity>;
-    gridGachaActivityList: Torappu.ListDict<System.String,Torappu.PlayerActivity.PlayerGridGachaActivity>;
+    defaultActivityList: Torappu.ListDict<
+      System.String,
+      Torappu.PlayerActivity.PlayerDefaultActivity
+    >;
+    missionOnlyActivityList: Torappu.ListDict<
+      System.String,
+      Torappu.PlayerActivity.PlayerMissionOnlyTypeActivity
+    >;
+    checkinOnlyActivityList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerActivity.PlayerCheckinOnlyTypeActivity
+    >;
+    collectionActivityList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerActivity.PlayerCollectionTypeActivity
+    >;
+    avgOnlyActivityList: Torappu.ListDict<
+      System.String,
+      Torappu.PlayerActivity.PlayerAVGOnlyTypeActivity
+    >;
+    loginOnlyActivityList: Torappu.ListDict<
+      System.String,
+      Torappu.PlayerActivity.PlayerLoginOnlyTypeActivity
+    >;
+    miniStoryActivityList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerActivity.PlayerMiniStoryActivity
+    >;
+    roguelikeActivityList: Torappu.ListDict<
+      System.String,
+      Torappu.PlayerActivity.PlayerRoguelikeActivity
+    >;
+    prayOnlyActivityList: Torappu.ListDict<
+      System.String,
+      Torappu.PlayerActivity.PlayerPrayOnlyActivity
+    >;
+    multiplayActivityList: Torappu.ListDict<
+      System.String,
+      Torappu.PlayerActivity.PlayerMultiplayActivity
+    >;
+    act3D0ActivityList: Torappu.ListDict<
+      System.String,
+      Torappu.PlayerActivity.PlayerAct3D0Activity
+    >;
+    act4D0ActivityList: Torappu.ListDict<
+      System.String,
+      Torappu.PlayerActivity.PlayerAct4D0Activity
+    >;
+    act5D0ActivityList: Torappu.ListDict<
+      System.String,
+      Torappu.PlayerActivity.PlayerAct5D0Activity
+    >;
+    act5D1ActivityList: Torappu.ListDict<
+      System.String,
+      Torappu.PlayerActivity.PlayerAct5D1Activity
+    >;
+    act9D0ActivityList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerActivity.PlayerAct9D0Activity
+    >;
+    act17D7ActivityList: Torappu.ListDict<
+      System.String,
+      Torappu.PlayerActivity.PlayerAct17D7Activity
+    >;
+    gridGachaActivityList: Torappu.ListDict<
+      System.String,
+      Torappu.PlayerActivity.PlayerGridGachaActivity
+    >;
   }
   export interface OpenServerChainLogin {
     isAvailable: System.Boolean;
@@ -5124,9 +5053,15 @@ export namespace Torappu {
     history: System.Collections.Generic.List<System.Boolean>;
   }
   export interface PlayerDungeon {
-    stages: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerStage>;
-    zones: Torappu.ListDict<System.String,Torappu.PlayerZone>;
-    cowLevel: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerSpecialStage>;
+    stages: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerStage
+    >;
+    zones: Torappu.ListDict<System.String, Torappu.PlayerZone>;
+    cowLevel: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerSpecialStage
+    >;
   }
   export interface PlayerSpecialStage {
     id: System.String;
@@ -5148,17 +5083,32 @@ export namespace Torappu {
     campaignTotalFee: System.Int32;
     activeGroupId: System.String;
     open: Torappu.PlayerCampaign.StageOpenInfo;
-    missions: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerCampaign.MissionState>;
-    instances: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerCampaign.Stage>;
+    missions: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerCampaign.MissionState
+    >;
+    instances: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerCampaign.Stage
+    >;
   }
   export interface PlayerRecruit {
     normal: Torappu.PlayerRecruit.NormalModel;
   }
   export interface PlayerGacha {
     newbee: Torappu.PlayerGacha.PlayerNewbeeGachaPool;
-    normal: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerGacha.PlayerGachaPool>;
-    limit: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerGacha.PlayerFreeLimitGacha>;
-    linkage: System.Collections.Generic.Dictionary<System.String,Torappu.ListDict<System.String,Newtonsoft.Json.Linq.JObject>>;
+    normal: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerGacha.PlayerGachaPool
+    >;
+    limit: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerGacha.PlayerFreeLimitGacha
+    >;
+    linkage: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.ListDict<System.String, Newtonsoft.Json.Linq.JObject>
+    >;
   }
   export enum NameCardMedalType {
     EMPTY = "EMPTY",
@@ -5186,10 +5136,25 @@ export namespace Torappu {
     troopCapacity: System.Int32;
     curSquadCount: System.Int32;
     curCharInstCount: System.Int32;
-    squads: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerSquad>;
-    chars: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerCharacter>;
-    addon: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerHandBookAddon>;
-    charMission: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.Dictionary<System.String,Torappu.PlayerTroop.CharMissionState>>;
+    squads: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerSquad
+    >;
+    chars: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerCharacter
+    >;
+    addon: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerHandBookAddon
+    >;
+    charMission: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.PlayerTroop.CharMissionState
+      >
+    >;
   }
   export interface PlayerGoodItemData {
     id: System.String;
@@ -5208,7 +5173,10 @@ export namespace Torappu {
   }
   export interface PlayerHighQCShopProgressData {
     info: System.Collections.Generic.List<Torappu.PlayerGoodItemData>;
-    progressInfo: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerGoodProgressData>;
+    progressInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerGoodProgressData
+    >;
   }
   export interface PlayerLMTGSProgressData {
     info: System.Collections.Generic.List<Torappu.PlayerGoodItemData>;
@@ -5227,7 +5195,10 @@ export namespace Torappu {
   }
   export interface PlayerFurnitureShopData {
     info: System.Collections.Generic.List<Torappu.PlayerGoodItemData>;
-    groupInfo: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+    groupInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int32
+    >;
   }
   export interface PlayerGiftProgressData {
     oneTime: Torappu.PlayerGiftProgressPerData;
@@ -5239,7 +5210,10 @@ export namespace Torappu {
   export interface PlayerTemplateShop {
     coin: System.Int32;
     info: System.Collections.Generic.List<Torappu.PlayerGoodItemData>;
-    progressInfo: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerGoodProgressData>;
+    progressInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerGoodProgressData
+    >;
   }
   export interface PlayerShop {
     lowQCShop: Torappu.PlayerLowQCShopProgressData;
@@ -5307,20 +5281,29 @@ export namespace Torappu {
     inUse: System.Int32;
   }
   export interface PlayerEnemyHandBook {
-    enemies: System.Collections.Generic.Dictionary<System.String,System.Int32>;
-    stage: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.List<System.String>>;
+    enemies: System.Collections.Generic.Dictionary<System.String, System.Int32>;
+    stage: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Collections.Generic.List<System.String>
+    >;
   }
   export interface PlayerFormulaUnlockRecord {
-    manufacture: System.Collections.Generic.Dictionary<System.String,System.Int32>;
-    workshop: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+    manufacture: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int32
+    >;
+    workshop: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int32
+    >;
   }
   export interface PlayerDexNav {
     enemy: Torappu.PlayerEnemyHandBook;
     formula: Torappu.PlayerFormulaUnlockRecord;
   }
   export interface PlayerSkins {
-    characterSkins: Torappu.ListDict<System.String,System.Int32>;
-    skinTs: Torappu.ListDict<System.String,System.Int64>;
+    characterSkins: Torappu.ListDict<System.String, System.Int32>;
+    skinTs: Torappu.ListDict<System.String, System.Int64>;
   }
   export interface PlayerPerMedal {
     id: System.String;
@@ -5338,23 +5321,32 @@ export namespace Torappu {
   }
   export interface PlayerMedalCustom {
     currentIndex: System.String;
-    customs: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerMedalCustomLayout>;
+    customs: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerMedalCustomLayout
+    >;
   }
   export interface PlayerMedal {
-    medals: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerPerMedal>;
+    medals: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerPerMedal
+    >;
     custom: Torappu.PlayerMedalCustom;
   }
   export interface PlayerRetro {
     coin: System.Int32;
     supplement: System.Boolean;
-    block: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerRetroBlock>;
+    block: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerRetroBlock
+    >;
   }
   export interface PlayerRetroBlock {
     locked: System.Boolean;
     open: System.Boolean;
   }
   export interface PlayerCollection {
-    team: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+    team: System.Collections.Generic.Dictionary<System.String, System.Int32>;
   }
   export interface PlayerBuildingManufactureBuff {
     speed: System.Single;
@@ -5410,9 +5402,9 @@ export namespace Torappu {
     apCost: System.Int32;
   }
   export interface PlayerBuildingWorkshopBuff {
-    rate: Torappu.ListDict<System.String,System.Single>;
+    rate: Torappu.ListDict<System.String, System.Single>;
     frate: System.Collections.Generic.List<Torappu.PlayerBuildingWorkshopBuff.Frate>;
-    goldFree: Torappu.ListDict<System.String,System.Int32>;
+    goldFree: Torappu.ListDict<System.String, System.Int32>;
     cost: Torappu.PlayerBuildingWorkshopBuff.Cost;
     costRe: Torappu.PlayerBuildingWorkshopBuff.CostRe;
     costForce: Torappu.PlayerBuildingWorkshopBuff.CostForce;
@@ -5455,7 +5447,7 @@ export namespace Torappu {
     speed: System.Single;
     ownStock: System.Collections.Generic.List<Torappu.PlayerBuildingMeetingClue>;
     receiveStock: System.Collections.Generic.List<Torappu.PlayerBuildingMeetingClue>;
-    board: System.Collections.Generic.Dictionary<System.String,System.String>;
+    board: System.Collections.Generic.Dictionary<System.String, System.String>;
     socialReward: Torappu.PlayerBuildingMeetingSocialReward;
     received: System.Int32;
     infoShare: Torappu.PlayerBuildingMeetingInfoShareState;
@@ -5564,25 +5556,40 @@ export namespace Torappu {
     completeWorkTime: System.DateTime;
   }
   export interface PlayerBuildingRoom {
-    manufact: Torappu.ListDict<System.String,Torappu.PlayerBuildingManufacture>;
-    shop: Torappu.ListDict<System.String,Torappu.PlayerBuildingShop>;
-    power: Torappu.ListDict<System.String,Torappu.PlayerBuildingPower>;
-    control: Torappu.ListDict<System.String,Torappu.PlayerBuildingControl>;
-    meeting: Torappu.ListDict<System.String,Torappu.PlayerBuildingMeeting>;
-    hire: Torappu.ListDict<System.String,Torappu.PlayerBuildingHire>;
-    dorm: Torappu.ListDict<System.String,Torappu.PlayerBuildingDormitory>;
-    training: Torappu.ListDict<System.String,Torappu.PlayerBuildingTraining>;
-    workshop: Torappu.ListDict<System.String,Torappu.PlayerBuildingWorkshop>;
-    trading: Torappu.ListDict<System.String,Torappu.PlayerBuildingTrading>;
+    manufact: Torappu.ListDict<
+      System.String,
+      Torappu.PlayerBuildingManufacture
+    >;
+    shop: Torappu.ListDict<System.String, Torappu.PlayerBuildingShop>;
+    power: Torappu.ListDict<System.String, Torappu.PlayerBuildingPower>;
+    control: Torappu.ListDict<System.String, Torappu.PlayerBuildingControl>;
+    meeting: Torappu.ListDict<System.String, Torappu.PlayerBuildingMeeting>;
+    hire: Torappu.ListDict<System.String, Torappu.PlayerBuildingHire>;
+    dorm: Torappu.ListDict<System.String, Torappu.PlayerBuildingDormitory>;
+    training: Torappu.ListDict<System.String, Torappu.PlayerBuildingTraining>;
+    workshop: Torappu.ListDict<System.String, Torappu.PlayerBuildingWorkshop>;
+    trading: Torappu.ListDict<System.String, Torappu.PlayerBuildingTrading>;
   }
   export interface PlayerBuilding {
     status: Torappu.PlayerBuildingStatus;
-    chars: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerBuildingChar>;
+    chars: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerBuildingChar
+    >;
     assist: System.Collections.Generic.List<System.Int32>;
-    roomSlots: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerBuildingRoomSlot>;
+    roomSlots: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerBuildingRoomSlot
+    >;
     rooms: Torappu.PlayerBuildingRoom;
-    furniture: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerBuildingFurnitureInfo>;
-    diyPresetSolutions: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerBuildingDIYPreset>;
+    furniture: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerBuildingFurnitureInfo
+    >;
+    diyPresetSolutions: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerBuildingDIYPreset
+    >;
   }
   export interface MissionCalcState {
     target: System.Int32;
@@ -5602,14 +5609,19 @@ export namespace Torappu {
   export interface MissionDailyRewards {
     dailyPoint: System.Int32;
     weeklyPoint: System.Int32;
-    rewards: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.Dictionary<System.String,System.Int32>>;
+    rewards: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Collections.Generic.Dictionary<System.String, System.Int32>
+    >;
   }
-  export interface MissionPlayerDataGroup {
-  }
+  export interface MissionPlayerDataGroup {}
   export interface MissionPlayerData {
     missions: Torappu.MissionPlayerDataGroup;
     missionRewards: Torappu.MissionDailyRewards;
-    missionGroups: System.Collections.Generic.Dictionary<System.String,Torappu.MissionPlayerData.MissionGroupState>;
+    missionGroups: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.MissionPlayerData.MissionGroupState
+    >;
   }
   export interface PlayerCrisisMap {
     rank: System.Int32;
@@ -5618,14 +5630,20 @@ export namespace Torappu {
   export interface PlayerCrisisShop {
     coin: System.Int32;
     info: System.Collections.Generic.List<Torappu.PlayerGoodItemData>;
-    progressInfo: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerGoodProgressData>;
+    progressInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerGoodProgressData
+    >;
   }
   export interface PlayerCrisisTrainingStage {
     point: System.Int32;
   }
   export interface PlayerCrisisTraining {
     currentStage: System.Collections.Generic.List<System.String>;
-    stage: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerCrisisTrainingStage>;
+    stage: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerCrisisTrainingStage
+    >;
     nextSyncTs: System.Int64;
   }
   export interface PlayerCrisisSeason {
@@ -5645,12 +5663,18 @@ export namespace Torappu {
     rewardTs: System.Int64;
   }
   export interface PlayerCrisisChallenge {
-    pointList: System.Collections.Generic.Dictionary<System.Int32,System.Int64>;
-    taskList: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerCrisisChallenge.PlayerChallengeTask>;
+    pointList: System.Collections.Generic.Dictionary<
+      System.Int32,
+      System.Int64
+    >;
+    taskList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerCrisisChallenge.PlayerChallengeTask
+    >;
     topPoint: System.Int32;
   }
   export interface PlayerCrisisPermanent {
-    rune: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+    rune: System.Collections.Generic.Dictionary<System.String, System.Int32>;
     challenge: Torappu.PlayerCrisisChallenge;
     point: System.Int32;
     nextSyncTs: System.Int64;
@@ -5663,17 +5687,26 @@ export namespace Torappu {
   }
   export interface PlayerCrisis {
     currentSeason: System.String;
-    map: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerCrisisMap>;
+    map: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerCrisisMap
+    >;
     shop: Torappu.PlayerCrisisShop;
     training: Torappu.PlayerCrisisTraining;
-    season: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerCrisisSeason>;
+    season: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerCrisisSeason
+    >;
     lastSyncTs: System.Int64;
     nextSyncTs: System.Int64;
     box: System.Collections.Generic.List<Torappu.PlayerCrisis.BoxItem>;
   }
   export interface PlayerStoryReview {
-    groups: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerStoryReviewUnlockInfo>;
-    tags: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+    groups: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerStoryReviewUnlockInfo
+    >;
+    tags: System.Collections.Generic.Dictionary<System.String, System.Int32>;
   }
   export interface PlayerStoryReviewUnlockInfo {
     rts: System.Int64;
@@ -5753,10 +5786,16 @@ export namespace Torappu {
   }
   export interface PlayerRoguelikeZone {
     zoneId: System.String;
-    nodes: System.Collections.Generic.Dictionary<System.Int32,Torappu.PlayerRoguelikeNode>;
+    nodes: System.Collections.Generic.Dictionary<
+      System.Int32,
+      Torappu.PlayerRoguelikeNode
+    >;
   }
   export interface PlayerRoguelikeDungeon {
-    zones: System.Collections.Generic.Dictionary<System.Int32,Torappu.PlayerRoguelikeZone>;
+    zones: System.Collections.Generic.Dictionary<
+      System.Int32,
+      Torappu.PlayerRoguelikeZone
+    >;
   }
   export interface PlayerRoguelikeRecord {
     passedZone: System.Int32;
@@ -5782,7 +5821,10 @@ export namespace Torappu {
     events: Torappu.PlayerEvents;
     pushFlags: Torappu.PlayerPushFlags;
     status: Torappu.PlayerStatus;
-    monthlySub: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerMonthlySubPer>;
+    monthlySub: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerMonthlySubPer
+    >;
     troop: Torappu.PlayerTroop;
     dungeon: Torappu.PlayerDungeon;
     checkIn: Torappu.PlayerCheckIn;
@@ -5793,11 +5835,23 @@ export namespace Torappu {
     skin: Torappu.PlayerSkins;
     medal: Torappu.PlayerMedal;
     collectionReward: Torappu.PlayerCollection;
-    inventory: System.Collections.Generic.Dictionary<System.String,System.Int32>;
-    consumable: System.Collections.Generic.Dictionary<System.String,Torappu.ListDict<System.Int32,Torappu.PlayerConsumableItem>>;
-    ticket: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerTicketItem>;
+    inventory: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int32
+    >;
+    consumable: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.ListDict<System.Int32, Torappu.PlayerConsumableItem>
+    >;
+    ticket: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerTicketItem
+    >;
     shop: Torappu.PlayerShop;
-    tshop: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerTemplateShop>;
+    tshop: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerTemplateShop
+    >;
     recruit: Torappu.PlayerRecruit;
     carousel: Torappu.PlayerCarousel;
     gacha: Torappu.PlayerGacha;
@@ -5809,8 +5863,7 @@ export namespace Torappu {
     roguelike: Torappu.PlayerRoguelike;
     campaign: Torappu.PlayerCampaign;
   }
-  export interface ILuaPlayerData {
-  }
+  export interface ILuaPlayerData {}
   export interface PlayerData {
     FAKE_CHAR_INST_ID_ROOT: System.Int32;
     FAKE_CHAR_INST_ID_OFFSET: System.Int32;
@@ -5846,20 +5899,41 @@ export namespace Torappu {
     deleted: Newtonsoft.Json.Linq.JObject;
   }
   export interface Act3D0Data {
-    campBasicInfo: Torappu.ListDict<System.String,Torappu.Act3D0Data.CampBasicInfo>;
-    limitedPoolList: System.Collections.Generic.Dictionary<System.String,Torappu.Act3D0Data.LimitedPoolDetailInfo>;
-    infinitePoolList: System.Collections.Generic.Dictionary<System.String,Torappu.Act3D0Data.InfinitePoolDetailInfo>;
-    infinitePercent: System.Collections.Generic.Dictionary<System.String,Torappu.Act3D0Data.InfinitePoolPercent>;
-    campItemMapInfo: System.Collections.Generic.Dictionary<System.String,Torappu.Act3D0Data.CampItemMapInfo>;
-    clueInfo: System.Collections.Generic.Dictionary<System.String,Torappu.Act3D0Data.ClueInfo>;
+    campBasicInfo: Torappu.ListDict<
+      System.String,
+      Torappu.Act3D0Data.CampBasicInfo
+    >;
+    limitedPoolList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.Act3D0Data.LimitedPoolDetailInfo
+    >;
+    infinitePoolList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.Act3D0Data.InfinitePoolDetailInfo
+    >;
+    infinitePercent: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.Act3D0Data.InfinitePoolPercent
+    >;
+    campItemMapInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.Act3D0Data.CampItemMapInfo
+    >;
+    clueInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.Act3D0Data.ClueInfo
+    >;
     mileStoneInfo: System.Collections.Generic.List<Torappu.Act3D0Data.MileStoneInfo>;
     mileStoneTokenId: System.String;
     coinTokenId: System.String;
     etTokenId: System.String;
     gachaBoxInfo: System.Collections.Generic.List<Torappu.Act3D0Data.GachaBoxInfo>;
-    campInfo: System.Collections.Generic.Dictionary<System.String,Torappu.Act3D0Data.CampInfo>;
-    zoneDesc: Torappu.ListDict<System.String,Torappu.Act3D0Data.ZoneDescInfo>;
-    favorUpList: Torappu.ListDict<System.String,Torappu.CommonFavorUpInfo>;
+    campInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.Act3D0Data.CampInfo
+    >;
+    zoneDesc: Torappu.ListDict<System.String, Torappu.Act3D0Data.ZoneDescInfo>;
+    favorUpList: Torappu.ListDict<System.String, Torappu.CommonFavorUpInfo>;
   }
   export interface Act4D0Data {
     mileStoneItemList: System.Collections.Generic.List<Torappu.Act4D0Data.MileStoneItemInfo>;
@@ -5868,14 +5942,20 @@ export namespace Torappu {
     stageInfo: System.Collections.Generic.List<Torappu.Act4D0Data.StageJumpInfo>;
     tokenItem: Torappu.ItemBundle;
     charStoneId: System.String;
-    apSupplyOutOfDateDict: System.Collections.Generic.Dictionary<System.String,System.Int64>;
+    apSupplyOutOfDateDict: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int64
+    >;
     extraDropZones: System.Collections.Generic.List<System.String>;
   }
   export interface Act5D0Data {
     mileStoneInfo: System.Collections.Generic.List<Torappu.MileStoneInfo>;
     mileStoneTokenId: System.String;
-    zoneDesc: Torappu.ListDict<System.String,Torappu.Act5D0Data.ZoneDescInfo>;
-    missionExtraList: Torappu.ListDict<System.String,Torappu.Act5D0Data.MissionExtraInfo>;
+    zoneDesc: Torappu.ListDict<System.String, Torappu.Act5D0Data.ZoneDescInfo>;
+    missionExtraList: Torappu.ListDict<
+      System.String,
+      Torappu.Act5D0Data.MissionExtraInfo
+    >;
     spReward: System.String;
   }
   export interface MileStoneInfo {
@@ -5889,11 +5969,17 @@ export namespace Torappu {
   export interface Act5D1Data {
     stageCommonData: System.Collections.Generic.List<Torappu.Act5D1Data.RuneStageData>;
     runeStageData: System.Collections.Generic.List<Torappu.Act5D1Data.RuneRecurrentStateData>;
-    runeUnlockDict: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.List<Torappu.Act5D1Data.RuneUnlockData>>;
+    runeUnlockDict: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Collections.Generic.List<Torappu.Act5D1Data.RuneUnlockData>
+    >;
     runeReleaseData: System.Collections.Generic.List<Torappu.Act5D1Data.RuneReleaseData>;
     missionData: System.Collections.Generic.List<Torappu.MissionData>;
     missionGroup: System.Collections.Generic.List<Torappu.MissionGroup>;
-    useBenefitMissionDict: System.Collections.Generic.Dictionary<System.String,System.Boolean>;
+    useBenefitMissionDict: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Boolean
+    >;
     shopData: Torappu.Act5D1Data.ShopData;
     coinItemId: System.String;
     ptItemId: System.String;
@@ -5903,22 +5989,52 @@ export namespace Torappu {
   export interface Act9D0Data {
     tokenItemId: System.String;
     keyItemId: System.String;
-    zoneDescList: Torappu.ListDict<System.String,Torappu.Act9D0Data.ZoneDescInfo>;
-    favorUpList: Torappu.ListDict<System.String,Torappu.Act9D0Data.FavorUpInfo>;
-    subMissionInfo: System.Collections.Generic.Dictionary<System.String,Torappu.Act9D0Data.SubMissionInfo>;
+    zoneDescList: Torappu.ListDict<
+      System.String,
+      Torappu.Act9D0Data.ZoneDescInfo
+    >;
+    favorUpList: Torappu.ListDict<
+      System.String,
+      Torappu.Act9D0Data.FavorUpInfo
+    >;
+    subMissionInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.Act9D0Data.SubMissionInfo
+    >;
     hasSubMission: System.Boolean;
-    apSupplyOutOfDateDict: System.Collections.Generic.Dictionary<System.String,System.Int64>;
-    newsInfoList: System.Collections.Generic.Dictionary<System.String,Torappu.Act9D0Data.ActivityNewsInfo>;
-    newsServerInfoList: System.Collections.Generic.Dictionary<System.String,Torappu.Act9D0Data.ActivityNewsServerInfo>;
-    miscHub: System.Collections.Generic.Dictionary<System.String,System.String>;
+    apSupplyOutOfDateDict: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int64
+    >;
+    newsInfoList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.Act9D0Data.ActivityNewsInfo
+    >;
+    newsServerInfoList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.Act9D0Data.ActivityNewsServerInfo
+    >;
+    miscHub: System.Collections.Generic.Dictionary<
+      System.String,
+      System.String
+    >;
   }
   export interface DefaultCheckInData {
-    checkInList: System.Collections.Generic.Dictionary<System.Int32,Torappu.DefaultCheckInData.CheckInDailyInfo>;
-    apSupplyOutOfDateDict: System.Collections.Generic.Dictionary<System.String,System.Int64>;
+    checkInList: System.Collections.Generic.Dictionary<
+      System.Int32,
+      Torappu.DefaultCheckInData.CheckInDailyInfo
+    >;
+    apSupplyOutOfDateDict: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int64
+    >;
   }
   export interface ActivityCollectionData {
     collections: System.Collections.Generic.List<Torappu.ActivityCollectionData.CollectionInfo>;
-    apSupplyOutOfDateDict: System.Collections.Generic.Dictionary<System.String,System.Int64>;
+    apSupplyOutOfDateDict: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int64
+    >;
   }
   export interface DefaultShopData {
     goodId: System.String;
@@ -5942,25 +6058,49 @@ export namespace Torappu {
   export interface ActivityLoginData {
     description: System.String;
     itemList: System.Collections.Generic.List<Torappu.ItemBundle>;
-    apSupplyOutOfDateDict: System.Collections.Generic.Dictionary<System.String,System.Int64>;
+    apSupplyOutOfDateDict: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int64
+    >;
   }
   export interface ActivityMiniStoryData {
     tokenItemId: System.String;
-    zoneDescList: Torappu.ListDict<System.String,Torappu.ActivityMiniStoryData.ZoneDescInfo>;
-    favorUpList: Torappu.ListDict<System.String,Torappu.ActivityMiniStoryData.FavorUpInfo>;
+    zoneDescList: Torappu.ListDict<
+      System.String,
+      Torappu.ActivityMiniStoryData.ZoneDescInfo
+    >;
+    favorUpList: Torappu.ListDict<
+      System.String,
+      Torappu.ActivityMiniStoryData.FavorUpInfo
+    >;
     extraDropZoneList: System.Collections.Generic.List<System.String>;
   }
   export interface ActivityMultiplayData {
-    stages: System.Collections.Generic.Dictionary<System.String,Torappu.ActivityMultiplayData.StageData>;
-    stageGroups: System.Collections.Generic.Dictionary<System.String,Torappu.ActivityMultiplayData.StageGroupData>;
-    missionExtras: System.Collections.Generic.Dictionary<System.String,Torappu.ActivityMultiplayData.MissionExtraData>;
+    stages: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.ActivityMultiplayData.StageData
+    >;
+    stageGroups: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.ActivityMultiplayData.StageGroupData
+    >;
+    missionExtras: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.ActivityMultiplayData.MissionExtraData
+    >;
     roomMessages: System.Collections.Generic.List<Torappu.ActivityMultiplayData.RoomMessageData>;
     constData: Torappu.ActivityMultiplayData.ConstData;
     unlockConds: System.Collections.Generic.List<Torappu.ActivityTable.CustomUnlockCond>;
   }
   export interface ActivityRoguelikeData {
-    outBuffInfos: Torappu.ListDict<System.String,Torappu.ActivityRoguelikeData.OuterBuffUnlockInfoData>;
-    apSupplyOutOfDateDict: System.Collections.Generic.Dictionary<System.String,System.Int64>;
+    outBuffInfos: Torappu.ListDict<
+      System.String,
+      Torappu.ActivityRoguelikeData.OuterBuffUnlockInfoData
+    >;
+    apSupplyOutOfDateDict: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int64
+    >;
     outerBuffToken: System.String;
     shopToken: System.String;
     relicUnlockTime: System.Int64;
@@ -6025,14 +6165,23 @@ export namespace Torappu {
     displayEndTime: System.Int64;
   }
   export interface ActivityTable {
-    basicInfo: Torappu.ListDict<System.String,Torappu.ActivityTable.BasicData>;
-    zoneToActivity: Torappu.ListDict<System.String,System.String>;
+    basicInfo: Torappu.ListDict<System.String, Torappu.ActivityTable.BasicData>;
+    zoneToActivity: Torappu.ListDict<System.String, System.String>;
     missionData: System.Collections.Generic.List<Torappu.MissionData>;
     missionGroup: System.Collections.Generic.List<Torappu.MissionGroup>;
     activity: Torappu.ActivityTable.ActivityDetailTable;
-    activityItems: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.List<System.String>>;
-    syncPoints: Torappu.ListDict<System.String,System.Collections.Generic.List<System.Int64>>;
-    dynActs: System.Collections.Generic.Dictionary<System.String,Newtonsoft.Json.Linq.JObject>;
+    activityItems: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Collections.Generic.List<System.String>
+    >;
+    syncPoints: Torappu.ListDict<
+      System.String,
+      System.Collections.Generic.List<System.Int64>
+    >;
+    dynActs: System.Collections.Generic.Dictionary<
+      System.String,
+      Newtonsoft.Json.Linq.JObject
+    >;
   }
   export enum AnnounceGroup {
     ACTIVITY = "ACTIVITY",
@@ -6103,8 +6252,7 @@ export namespace Torappu {
     silenceImmune: System.Boolean;
     sleepImmune: System.Boolean;
   }
-  export interface AttributesDeltaData {
-  }
+  export interface AttributesDeltaData {}
   export interface AttributeModifierData {
     abnormalFlags: System.Collections.Generic.List<Torappu.AbnormalFlag>;
     abnormalImmunes: System.Collections.Generic.List<Torappu.AbnormalFlag>;
@@ -6113,8 +6261,7 @@ export namespace Torappu {
     abnormalComboImmunes: System.Collections.Generic.List<Torappu.AbnormalCombo>;
     attributeModifiers: Torappu.AttributeModifierData.AttributeModifier[];
   }
-  export interface Blackboard {
-  }
+  export interface Blackboard {}
   export interface BuffData {
     attributes: Torappu.AttributeModifierData;
     buffKey: System.String;
@@ -6165,8 +6312,8 @@ export namespace Torappu {
     manufactStationBuff: System.Single;
     comfortManpowerRecoverFactor: System.Int32;
     manpowerDisplayFactor: System.Int32;
-    shopOutputRatio: Torappu.ListDict<System.String,System.Int32>;
-    shopStackRatio: Torappu.ListDict<System.String,System.Int32>;
+    shopOutputRatio: Torappu.ListDict<System.String, System.Int32>;
+    shopStackRatio: Torappu.ListDict<System.String, System.Int32>;
     basicFavorPerDay: System.Int32;
     humanResourceLimit: System.Int32;
     tiredApThreshold: System.Int64;
@@ -6184,10 +6331,22 @@ export namespace Torappu {
     furniDuplicationLimit: System.Int32;
     manufactManpowerCostByNum: System.Int32[];
     tradingManpowerCostByNum: System.Int32[];
-    roomUnlockConds: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingData.RoomUnlockCond>;
-    rooms: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingData.RoomData>;
-    layouts: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingData.LayoutData>;
-    prefabs: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingData.PrefabInfo>;
+    roomUnlockConds: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.BuildingData.RoomUnlockCond
+    >;
+    rooms: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.BuildingData.RoomData
+    >;
+    layouts: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.BuildingData.LayoutData
+    >;
+    prefabs: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.BuildingData.PrefabInfo
+    >;
     controlData: Torappu.BuildingData.ControlRoomBean;
     manufactData: Torappu.BuildingData.ManufactRoomBean;
     shopData: Torappu.BuildingData.RoomBean<Torappu.BuildingData.ShopPhase>;
@@ -6198,14 +6357,32 @@ export namespace Torappu {
     workshopData: Torappu.BuildingData.RoomBean<Torappu.BuildingData.WorkshopPhase>;
     trainingData: Torappu.BuildingData.TrainingBean;
     powerData: Torappu.BuildingData.PowerRoomBean;
-    chars: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingData.BuildingCharacter>;
-    buffs: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingData.BuildingBuff>;
+    chars: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.BuildingData.BuildingCharacter
+    >;
+    buffs: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.BuildingData.BuildingBuff
+    >;
     customData: Torappu.BuildingData.CustomData;
-    manufactFormulas: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingData.ManufactFormula>;
-    shopFormulas: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingData.ShopFormula>;
-    workshopFormulas: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingData.WorkshopFormula>;
+    manufactFormulas: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.BuildingData.ManufactFormula
+    >;
+    shopFormulas: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.BuildingData.ShopFormula
+    >;
+    workshopFormulas: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.BuildingData.WorkshopFormula
+    >;
     creditFormula: Torappu.BuildingData.CreditFormula;
-    goldItems: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+    goldItems: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int32
+    >;
     assistantUnlock: System.Collections.Generic.List<System.Int32>;
   }
   export enum CampaignStageType {
@@ -6219,7 +6396,10 @@ export namespace Torappu {
     isSmallScale: System.Int32;
     breakLadders: System.Collections.Generic.List<Torappu.CampaignData.BreakRewardLadder>;
     isCustomized: System.Boolean;
-    dropGains: System.Collections.Generic.Dictionary<Torappu.CampaignStageType,Torappu.CampaignData.DropGainInfo>;
+    dropGains: System.Collections.Generic.Dictionary<
+      Torappu.CampaignStageType,
+      Torappu.CampaignData.DropGainInfo
+    >;
   }
   export interface CampaignGroupData {
     groupId: System.String;
@@ -6272,12 +6452,30 @@ export namespace Torappu {
     firstRotateRegion: System.String;
   }
   export interface CampaignTable {
-    campaigns: System.Collections.Generic.Dictionary<System.String,Torappu.CampaignData>;
-    campaignGroups: System.Collections.Generic.Dictionary<System.String,Torappu.CampaignGroupData>;
-    campaignRegions: System.Collections.Generic.Dictionary<System.String,Torappu.CampaignRegionData>;
-    campaignZones: System.Collections.Generic.Dictionary<System.String,Torappu.CampaignZoneData>;
-    campaignMissions: System.Collections.Generic.Dictionary<System.String,Torappu.CampaignMissionData>;
-    stageIndexInZoneMap: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+    campaigns: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.CampaignData
+    >;
+    campaignGroups: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.CampaignGroupData
+    >;
+    campaignRegions: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.CampaignRegionData
+    >;
+    campaignZones: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.CampaignZoneData
+    >;
+    campaignMissions: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.CampaignMissionData
+    >;
+    stageIndexInZoneMap: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int32
+    >;
     campaignConstTable: Torappu.CampaignConstTable;
     campaignRotateStageOpenTimes: System.Collections.Generic.List<Torappu.CampaignRotateOpenTimeData>;
     campaignTrainingStageOpenTimes: System.Collections.Generic.List<Torappu.CampaignTrainingOpenTimeData>;
@@ -6402,15 +6600,39 @@ export namespace Torappu {
     rewards: System.Collections.Generic.List<Torappu.ItemBundle>;
   }
   export interface CharMetaTable {
-    spCharGroups: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.List<System.String>>;
-    spCharMissions: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.Dictionary<System.String,Torappu.SpCharMissionData>>;
-    spCharLaunchTimes: System.Collections.Generic.Dictionary<System.String,System.Int64>;
+    spCharGroups: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Collections.Generic.List<System.String>
+    >;
+    spCharMissions: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.SpCharMissionData
+      >
+    >;
+    spCharLaunchTimes: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int64
+    >;
   }
   export interface CharPatchData {
-    infos: System.Collections.Generic.Dictionary<System.String,Torappu.CharPatchData.PatchInfo>;
-    patchChars: System.Collections.Generic.Dictionary<System.String,Torappu.CharacterData>;
-    unlockConds: System.Collections.Generic.Dictionary<System.String,Torappu.CharPatchData.UnlockCond>;
-    patchDetailInfoList: System.Collections.Generic.Dictionary<System.String,Torappu.CharPatchData.PatchDetailInfo>;
+    infos: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.CharPatchData.PatchInfo
+    >;
+    patchChars: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.CharacterData
+    >;
+    unlockConds: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.CharPatchData.UnlockCond
+    >;
+    patchDetailInfoList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.CharPatchData.PatchDetailInfo
+    >;
   }
   export interface CharVoucherInfo {
     charList: System.Collections.Generic.List<Torappu.ItemBundle>;
@@ -6421,7 +6643,10 @@ export namespace Torappu {
     endTs: System.Int64;
   }
   export interface CharVoucherData {
-    charVoucherInfo: System.Collections.Generic.Dictionary<System.String,Torappu.CharVoucherInfo>;
+    charVoucherInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.CharVoucherInfo
+    >;
   }
   export interface CharWordData {
     ILLUST_SHOW_TYPES: System.Collections.Generic.HashSet<Torappu.CharWordShowType>;
@@ -6513,27 +6738,36 @@ export namespace Torappu {
     items: System.Collections.Generic.List<Torappu.MonthlySignInData>;
   }
   export interface CheckInTable {
-    groups: System.Collections.Generic.Dictionary<System.String,Torappu.MonthlySignInGroupData>;
-    MonthlySubItem: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.List<Torappu.ItemBundle>>;
+    groups: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.MonthlySignInGroupData
+    >;
+    MonthlySubItem: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Collections.Generic.List<Torappu.ItemBundle>
+    >;
     currentMonthlySubId: System.String;
   }
-  export interface KeyFrames<TInput,TOutput> {
-  }
-  export interface IntKeyFrames {
-  }
-  export interface FloatKeyFrames {
-  }
-  export interface StringKeyFrames {
-  }
-  export interface ITimeValidInfo {
-  }
-  export interface CommonDataUtil {
-  }
+  export interface KeyFrames<TInput, TOutput> {}
+  export interface IntKeyFrames {}
+  export interface FloatKeyFrames {}
+  export interface StringKeyFrames {}
+  export interface ITimeValidInfo {}
+  export interface CommonDataUtil {}
   export interface CrisisServerData {
-    runeInfoList: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.List<Torappu.CrisisRuneData>>;
+    runeInfoList: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Collections.Generic.List<Torappu.CrisisRuneData>
+    >;
     seasonInfo: System.Collections.Generic.List<Torappu.CrisisServerData.SeasonInfo>;
     trainingInfo: Torappu.CrisisServerData.TrainingInfo;
-    stageRune: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.Dictionary<System.String,Torappu.RuneTable.PackedRuneData>>;
+    stageRune: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.RuneTable.PackedRuneData
+      >
+    >;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_GetSeasonInfo: XLua.DelegateBridge;
   }
@@ -6565,14 +6799,20 @@ export namespace Torappu {
   export interface CrisisPermStageGroup {
     stageId: System.String;
     runeList: System.Collections.Generic.List<Torappu.CrisisPermStageRuneInfo>;
-    stagePointLevelInfo: System.Collections.Generic.Dictionary<System.Int32,Torappu.CrisisLevelChallengeInfo>;
+    stagePointLevelInfo: System.Collections.Generic.Dictionary<
+      System.Int32,
+      Torappu.CrisisLevelChallengeInfo
+    >;
     stageChallengeInfo: System.Collections.Generic.List<Torappu.CrisisMissionRuneInfo>;
   }
   export interface CrisisTempStageGroup {
     runeGroupId: System.String;
     stageId: System.String;
     runeList: System.Collections.Generic.List<System.String>;
-    stagePointLevelInfo: System.Collections.Generic.Dictionary<System.Int32,Torappu.CrisisLevelChallengeInfo>;
+    stagePointLevelInfo: System.Collections.Generic.Dictionary<
+      System.Int32,
+      Torappu.CrisisLevelChallengeInfo
+    >;
     stageChallengeInfo: System.Collections.Generic.List<Torappu.CrisisMissionRuneInfo>;
   }
   export interface CrisisMissionRuneInfo {
@@ -6608,7 +6848,10 @@ export namespace Torappu {
     seasonInfo: System.Collections.Generic.List<Torappu.CrisisClientData.SeasonInfo>;
     tempAppraise: Torappu.StringKeyFrames;
     permAppraise: Torappu.StringKeyFrames;
-    mapRankInfo: System.Collections.Generic.Dictionary<System.Int32,Torappu.CrisisMapRankInfo>;
+    mapRankInfo: System.Collections.Generic.Dictionary<
+      System.Int32,
+      Torappu.CrisisMapRankInfo
+    >;
     meta: System.String;
     unlockCoinLv3: System.Int32;
     hardPointPerm: System.Int32;
@@ -6617,10 +6860,14 @@ export namespace Torappu {
     crisisRuneCoinUnlockItemDesc: System.String;
   }
   export interface EnemyDatabase {
-    enemies: System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<System.String,System.Collections.Generic.List<Torappu.EnemyDatabase.EnemyLevel>>>;
+    enemies: System.Collections.Generic.List<
+      System.Collections.Generic.KeyValuePair<
+        System.String,
+        System.Collections.Generic.List<Torappu.EnemyDatabase.EnemyLevel>
+      >
+    >;
   }
-  export interface IUndefinable {
-  }
+  export interface IUndefinable {}
   export interface Undefinable<T> {
     DEFAULT: Torappu.Undefinable<T>;
     // m_defined: System.Boolean;
@@ -6647,7 +6894,10 @@ export namespace Torappu {
     resistance: System.String;
     ability: System.String;
     isInvalidKilled: System.Boolean;
-    overrideKillCntInfos: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+    overrideKillCntInfos: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int32
+    >;
   }
   export interface EPBreakBuffData {
     elementBreakDuration: System.Single;
@@ -6661,14 +6911,12 @@ export namespace Torappu {
     percent: System.Int32;
     battlePhase: System.Int32;
   }
-  export interface FavorDataFrames {
-  }
+  export interface FavorDataFrames {}
   export interface FavorTable {
     maxFavor: System.Int32;
     favorFrames: Torappu.FavorDataFrames;
   }
-  export interface IGachaTimeData {
-  }
+  export interface IGachaTimeData {}
   export interface GachaTag {
     tagId: System.Int32;
     tagName: System.String;
@@ -6721,7 +6969,10 @@ export namespace Torappu {
     recruitTimeTable: Torappu.SpecialRecruitPool.SpecialRecruitCostData[];
   }
   export interface PotentialMaterialConverterConfig {
-    items: System.Collections.Generic.Dictionary<System.Int32,Torappu.ItemBundle>;
+    items: System.Collections.Generic.Dictionary<
+      System.Int32,
+      Torappu.ItemBundle
+    >;
   }
   export interface GachaData {
     gachaPoolClient: Torappu.GachaPoolClientData[];
@@ -6730,8 +6981,14 @@ export namespace Torappu {
     gachaTags: Torappu.GachaTag[];
     recruitPool: Torappu.RecruitPool;
     potentialMaterialConverter: Torappu.PotentialMaterialConverterConfig;
-    recruitRarityTable: System.Collections.Generic.Dictionary<System.Int32,Torappu.GachaData.RecruitRange>;
-    specialTagRarityTable: System.Collections.Generic.Dictionary<System.Int32,System.Collections.Generic.List<System.Int32>>;
+    recruitRarityTable: System.Collections.Generic.Dictionary<
+      System.Int32,
+      Torappu.GachaData.RecruitRange
+    >;
+    specialTagRarityTable: System.Collections.Generic.Dictionary<
+      System.Int32,
+      System.Collections.Generic.List<System.Int32>
+    >;
     recruitDetail: System.String;
     carousel: System.Collections.Generic.List<Torappu.GachaData.CarouselData>;
     freeGacha: System.Collections.Generic.List<Torappu.GachaData.FreeLimitGachaData>;
@@ -6784,7 +7041,10 @@ export namespace Torappu {
     creditLimit: System.Int32;
     monthlySubRemainTimeLimitDays: System.Int32;
     friendAssistRarityLimit: System.Collections.Generic.List<System.Int32>;
-    richTextStyles: System.Collections.Generic.Dictionary<System.String,System.String>;
+    richTextStyles: System.Collections.Generic.Dictionary<
+      System.String,
+      System.String
+    >;
     charAssistRefreshTime: System.Collections.Generic.List<Torappu.GameDataConsts.CharAssistRefreshTimeState>;
     normalRecruitLockedString: System.Collections.Generic.List<System.String>;
     commonPotentialLvlUpCount: System.Int32;
@@ -6801,7 +7061,7 @@ export namespace Torappu {
     legacyItemList: Torappu.ItemBundle[];
     useAssistSocialPt: System.Int32;
     useAssistSocialPtMaxCount: System.Int32;
-    assistBeUsedSocialPt: Torappu.ListDict<System.Int32,System.Int32>;
+    assistBeUsedSocialPt: Torappu.ListDict<System.Int32, System.Int32>;
     pushForces: System.Single[];
     pushForceZeroIndex: System.Int32;
     normalGachaUnlockPrice: System.Int32[];
@@ -6822,7 +7082,10 @@ export namespace Torappu {
     isDynIllustEnabled: System.Boolean;
     voucherSkinRedeem: System.Int32;
     voucherSkinDesc: System.String;
-    termDescriptionDict: System.Collections.Generic.Dictionary<System.String,Torappu.TermDescriptionData>;
+    termDescriptionDict: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.TermDescriptionData
+    >;
   }
   export interface HandbookUnlockParam {
     unlockType: Torappu.DataUnlockType;
@@ -6910,11 +7173,26 @@ export namespace Torappu {
     type: Torappu.HandbookDisplayCondition.DisplayType;
   }
   export interface HandbookInfoTable {
-    handbookDict: System.Collections.Generic.Dictionary<System.String,Torappu.HandbookInfoData>;
-    npcDict: System.Collections.Generic.Dictionary<System.String,Torappu.NPCData>;
-    teamMissionList: System.Collections.Generic.Dictionary<System.String,Torappu.HandbookTeamMission>;
-    handbookDisplayConditionList: System.Collections.Generic.Dictionary<System.String,Torappu.HandbookDisplayCondition>;
-    handbookStageData: System.Collections.Generic.Dictionary<System.String,Torappu.HandbookStoryStageData>;
+    handbookDict: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.HandbookInfoData
+    >;
+    npcDict: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.NPCData
+    >;
+    teamMissionList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.HandbookTeamMission
+    >;
+    handbookDisplayConditionList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.HandbookDisplayCondition
+    >;
+    handbookStageData: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.HandbookStoryStageData
+    >;
   }
   export interface HandbookTeamData {
     powerId: System.String;
@@ -6995,12 +7273,30 @@ export namespace Torappu {
     MATERIAL = "MATERIAL",
   }
   export interface InventoryData {
-    items: System.Collections.Generic.Dictionary<System.String,Torappu.ItemData>;
-    expItems: System.Collections.Generic.Dictionary<System.String,Torappu.ExpItemFeature>;
-    potentialItems: System.Collections.Generic.Dictionary<System.Int32,System.Collections.Generic.Dictionary<System.String,System.String>>;
-    apSupplies: System.Collections.Generic.Dictionary<System.String,Torappu.ApSupplyFeature>;
-    uniqueInfo: System.Collections.Generic.Dictionary<System.String,System.Int32>;
-    itemTimeLimit: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+    items: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.ItemData
+    >;
+    expItems: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.ExpItemFeature
+    >;
+    potentialItems: System.Collections.Generic.Dictionary<
+      System.Int32,
+      System.Collections.Generic.Dictionary<System.String, System.String>
+    >;
+    apSupplies: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.ApSupplyFeature
+    >;
+    uniqueInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int32
+    >;
+    itemTimeLimit: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int32
+    >;
   }
   export interface ItemData {
     itemId: System.String;
@@ -7070,7 +7366,7 @@ export namespace Torappu {
     enemies: Torappu.LevelData.EnemyData[];
     enemyDbRefs: Torappu.LevelData.EnemyDataDbReference[];
     waves: Torappu.LevelData.WaveData[];
-    branches: Torappu.ListDict<System.String,Torappu.LevelData.BranchData>;
+    branches: Torappu.ListDict<System.String, Torappu.LevelData.BranchData>;
     predefines: Torappu.LevelData.PredefinedData;
     hardPredefines: Torappu.LevelData.PredefinedData;
     excludeCharIdList: System.String[];
@@ -7156,7 +7452,10 @@ export namespace Torappu {
   }
   export interface MedalData {
     medalList: System.Collections.Generic.List<Torappu.MedalPerData>;
-    medalTypeData: System.Collections.Generic.Dictionary<System.String,Torappu.MedalTypeData>;
+    medalTypeData: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.MedalTypeData
+    >;
   }
   export interface MeetingClueData {
     clues: System.Collections.Generic.List<Torappu.MeetingClueData.ClueData>;
@@ -7175,10 +7474,22 @@ export namespace Torappu {
     participantsBonus: System.Int32;
   }
   export interface MissionTable {
-    missions: System.Collections.Generic.Dictionary<System.String,Torappu.MissionData>;
-    missionGroups: System.Collections.Generic.Dictionary<System.String,Torappu.MissionGroup>;
-    periodicalRewards: System.Collections.Generic.Dictionary<System.String,Torappu.MissionDailyRewardConf>;
-    weeklyRewards: System.Collections.Generic.Dictionary<System.String,Torappu.MissionWeeklyRewardConf>;
+    missions: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.MissionData
+    >;
+    missionGroups: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.MissionGroup
+    >;
+    periodicalRewards: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.MissionDailyRewardConf
+    >;
+    weeklyRewards: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.MissionWeeklyRewardConf
+    >;
     dailyMissionPeriodInfo: System.Collections.Generic.List<Torappu.DailyMissionGroupInfo>;
   }
   export interface MissionData {
@@ -7269,7 +7580,10 @@ export namespace Torappu {
     nationId: System.String;
     groupId: System.String;
     teamId: System.String;
-    unlockDict: System.Collections.Generic.Dictionary<System.String,Torappu.NPCUnlock>;
+    unlockDict: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.NPCUnlock
+    >;
   }
   export interface OpenServerItemData {
     itemId: System.String;
@@ -7306,7 +7620,10 @@ export namespace Torappu {
   }
   export interface OpenServerSchedule {
     schedule: System.Collections.Generic.List<Torappu.OpenServerScheduleItem>;
-    dataMap: System.Collections.Generic.Dictionary<System.String,Torappu.OpenServerData>;
+    dataMap: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.OpenServerData
+    >;
     constant: Torappu.OpenServerConst;
   }
   export interface PlayerAvatarPerData {
@@ -7324,7 +7641,10 @@ export namespace Torappu {
   export interface PlayerAvatarData {
     defaultAvatarId: System.String;
     avatarList: System.Collections.Generic.List<Torappu.PlayerAvatarPerData>;
-    avatarTypeData: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerAvatarGroupData>;
+    avatarTypeData: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.PlayerAvatarGroupData
+    >;
   }
   export interface RangeData {
     RANGE_STANDARD_DIRECTION: Torappu.SharedConsts.Direction;
@@ -7374,11 +7694,23 @@ export namespace Torappu {
     detail: System.String;
   }
   export interface RetroStageTable {
-    zoneToRetro: Torappu.ListDict<System.String,System.String>;
-    stageValidInfo: System.Collections.Generic.Dictionary<System.String,Torappu.StageValidInfo>;
-    stages: System.Collections.Generic.Dictionary<System.String,Torappu.RetroStageOverrideInfo>;
-    retroActList: System.Collections.Generic.Dictionary<System.String,Torappu.RetroActData>;
-    stageList: System.Collections.Generic.Dictionary<System.String,Torappu.StageData>;
+    zoneToRetro: Torappu.ListDict<System.String, System.String>;
+    stageValidInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.StageValidInfo
+    >;
+    stages: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RetroStageOverrideInfo
+    >;
+    retroActList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RetroActData
+    >;
+    stageList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.StageData
+    >;
     initRetroCoin: System.Int32;
     retroCoinPerWeek: System.Int32;
     retroCoinMax: System.Int32;
@@ -7410,12 +7742,18 @@ export namespace Torappu {
   }
   export interface RoguelikeChoiceScene {
     scene: System.String;
-    choices: System.Collections.Generic.Dictionary<System.String,System.Boolean>;
+    choices: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Boolean
+    >;
     done: System.Boolean;
   }
   export interface RoguelikeReward {
     index: System.String;
-    items: System.Collections.Generic.Dictionary<System.String,Torappu.RoguelikeItemBundle>;
+    items: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RoguelikeItemBundle
+    >;
     done: System.Boolean;
   }
   export interface RoguelikeStageEarn {
@@ -7485,19 +7823,52 @@ export namespace Torappu {
   export interface RoguelikeTable {
     constTable: Torappu.RoguelikeConstTable;
     itemTable: Torappu.RoguelikeItemTable;
-    stages: System.Collections.Generic.Dictionary<System.String,Torappu.RoguelikeStageData>;
-    zones: System.Collections.Generic.Dictionary<System.String,Torappu.RoguelikeZoneData>;
-    choices: System.Collections.Generic.Dictionary<System.String,Torappu.RoguelikeChoiceData>;
-    choiceScenes: System.Collections.Generic.Dictionary<System.String,Torappu.RoguelikeChoiceSceneData>;
-    modes: System.Collections.Generic.Dictionary<System.String,Torappu.RoguelikeModeData>;
-    endings: System.Collections.Generic.Dictionary<System.String,Torappu.RoguelikeEndingData>;
-    outBuffs: System.Collections.Generic.Dictionary<System.String,Torappu.RoguelikeOutBuffData>;
+    stages: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RoguelikeStageData
+    >;
+    zones: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RoguelikeZoneData
+    >;
+    choices: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RoguelikeChoiceData
+    >;
+    choiceScenes: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RoguelikeChoiceSceneData
+    >;
+    modes: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RoguelikeModeData
+    >;
+    endings: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RoguelikeEndingData
+    >;
+    outBuffs: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RoguelikeOutBuffData
+    >;
   }
   export interface RoguelikeConstTable {
-    playerLevelTable: System.Collections.Generic.Dictionary<System.Int32,Torappu.RoguelikeConstTable.PlayerLevelData>;
-    recruitPopulationTable: System.Collections.Generic.Dictionary<System.Int32,Torappu.RoguelikeConstTable.RecruitData>;
-    charUpgradeTable: System.Collections.Generic.Dictionary<System.Int32,Torappu.RoguelikeConstTable.CharUpgradeData>;
-    eventTypeTable: System.Collections.Generic.Dictionary<Torappu.RoguelikeEventType,Torappu.RoguelikeConstTable.EventTypeData>;
+    playerLevelTable: System.Collections.Generic.Dictionary<
+      System.Int32,
+      Torappu.RoguelikeConstTable.PlayerLevelData
+    >;
+    recruitPopulationTable: System.Collections.Generic.Dictionary<
+      System.Int32,
+      Torappu.RoguelikeConstTable.RecruitData
+    >;
+    charUpgradeTable: System.Collections.Generic.Dictionary<
+      System.Int32,
+      Torappu.RoguelikeConstTable.CharUpgradeData
+    >;
+    eventTypeTable: System.Collections.Generic.Dictionary<
+      Torappu.RoguelikeEventType,
+      Torappu.RoguelikeConstTable.EventTypeData
+    >;
     shopDialogs: System.Collections.Generic.List<System.String>;
     shopRelicDialogs: System.Collections.Generic.List<System.String>;
     shopTicketDialogs: System.Collections.Generic.List<System.String>;
@@ -7514,10 +7885,22 @@ export namespace Torappu {
     bossIds: System.Collections.Generic.List<System.String>;
   }
   export interface RoguelikeItemTable {
-    items: System.Collections.Generic.Dictionary<System.String,Torappu.RoguelikeItemData>;
-    recruitTickets: System.Collections.Generic.Dictionary<System.String,Torappu.RoguelikeRecruitTicketFeature>;
-    upgradeTickets: System.Collections.Generic.Dictionary<System.String,Torappu.RoguelikeUpgradeTicketFeature>;
-    relics: System.Collections.Generic.Dictionary<System.String,Torappu.RoguelikeRelicFeature>;
+    items: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RoguelikeItemData
+    >;
+    recruitTickets: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RoguelikeRecruitTicketFeature
+    >;
+    upgradeTickets: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RoguelikeUpgradeTicketFeature
+    >;
+    relics: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RoguelikeRelicFeature
+    >;
   }
   export interface RoguelikeItemData {
     id: System.String;
@@ -7588,7 +7971,7 @@ export namespace Torappu {
     type: System.String;
     nextSceneId: System.String;
     icon: System.String;
-    param: System.Collections.Generic.Dictionary<System.String,System.Object>;
+    param: System.Collections.Generic.Dictionary<System.String, System.Object>;
   }
   export interface RoguelikeChoiceSceneData {
     id: System.String;
@@ -7618,7 +8001,10 @@ export namespace Torappu {
   }
   export interface RoguelikeOutBuffData {
     id: System.String;
-    buffs: System.Collections.Generic.Dictionary<System.Int32,Torappu.RoguelikeOuterBuff>;
+    buffs: System.Collections.Generic.Dictionary<
+      System.Int32,
+      Torappu.RoguelikeOuterBuff
+    >;
   }
   export interface RoguelikeWeightedValue<T> {
     weight: System.Int32;
@@ -7649,13 +8035,15 @@ export namespace Torappu {
     blackboard: Torappu.Blackboard;
     // m_inited: System.Boolean;
   }
-  export interface IRuneDataHolder {
-  }
+  export interface IRuneDataHolder {}
   export interface RuneTable {
     runeStages: System.Collections.Generic.List<Torappu.RuneTable.RuneStageExtraData>;
   }
   export interface CrisisData {
-    mapInfo: System.Collections.Generic.Dictionary<System.String,Torappu.CrisisData.RuneMapInfo>;
+    mapInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.CrisisData.RuneMapInfo
+    >;
     seasonInfo: System.Collections.Generic.List<Torappu.CrisisData.SeasonInfo>;
     trainingInfo: System.Collections.Generic.List<Torappu.CrisisData.TrainingInfo>;
     shopInfoList: System.Collections.Generic.List<Torappu.CrisisData.LongTermShopInfo>;
@@ -7702,11 +8090,17 @@ export namespace Torappu {
   }
   export interface ShopClientData {
     recommendList: System.Collections.Generic.List<Torappu.ShopRecommendItem>;
-    creditUnlockGroup: System.Collections.Generic.Dictionary<System.String,Torappu.ShopCreditUnlockGroup>;
+    creditUnlockGroup: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.ShopCreditUnlockGroup
+    >;
     shopKeeperData: Torappu.ShopClientData.ShopKeeperData;
     carousels: System.Collections.Generic.List<Torappu.ShopCarouselData>;
     chooseShopRelations: System.Collections.Generic.List<Torappu.ChooseShopRelation>;
-    shopUnlockDict: System.Collections.Generic.Dictionary<System.String,Torappu.ShopUnlockType>;
+    shopUnlockDict: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.ShopUnlockType
+    >;
     shopMonthlySubGoodId: System.String;
     limitedShopSchedule: System.Collections.Generic.List<Torappu.LMTGSShopSchedule>;
     overlaySchedule: System.Collections.Generic.List<Torappu.LMTGSShopOverlaySchedule>;
@@ -7781,8 +8175,7 @@ export namespace Torappu {
     // increment: CodeStage.AntiCheat.ObscuredTypes.ObscuredFloat;
     // m_incrementsForAllSpTypes: System.Single[];
   }
-  export interface ISkillData {
-  }
+  export interface ISkillData {}
   export interface SkillData {
     name: System.String;
     skillId: System.String;
@@ -7841,10 +8234,22 @@ export namespace Torappu {
     sortId: System.Int32;
   }
   export interface SkinTable {
-    charSkins: System.Collections.Generic.Dictionary<System.String,Torappu.CharSkinData>;
-    buildinEvolveMap: System.Collections.Generic.Dictionary<System.String,Torappu.ListDict<System.Int32,System.String>>;
-    buildinPatchMap: System.Collections.Generic.Dictionary<System.String,Torappu.ListDict<System.String,System.String>>;
-    brandList: System.Collections.Generic.Dictionary<System.String,Torappu.CharSkinBrandInfo>;
+    charSkins: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.CharSkinData
+    >;
+    buildinEvolveMap: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.ListDict<System.Int32, System.String>
+    >;
+    buildinPatchMap: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.ListDict<System.String, System.String>
+    >;
+    brandList: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.CharSkinBrandInfo
+    >;
   }
   export enum StageDropType {
     NONE = "NONE",
@@ -7944,10 +8349,16 @@ export namespace Torappu {
     entranceUpPicId: System.String;
     timelyGroupId: System.String;
     weeklyPicId: System.String;
-    apSupplyOutOfDateDict: System.Collections.Generic.Dictionary<System.String,System.Int64>;
+    apSupplyOutOfDateDict: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int64
+    >;
   }
   export interface TimelyDropInfo {
-    dropInfo: System.Collections.Generic.Dictionary<System.String,Torappu.StageData.StageDropInfo>;
+    dropInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.StageData.StageDropInfo
+    >;
   }
   export interface RuneStageGroupData {
     groupId: System.String;
@@ -7983,17 +8394,47 @@ export namespace Torappu {
     skipAccomplishPerform: System.Boolean;
   }
   export interface StageTable {
-    stages: System.Collections.Generic.Dictionary<System.String,Torappu.StageData>;
-    runeStageGroups: System.Collections.Generic.Dictionary<System.String,Torappu.RuneStageGroupData>;
-    mapThemes: System.Collections.Generic.Dictionary<System.String,Torappu.MapThemeData>;
-    tileInfo: Torappu.ListDict<System.String,Torappu.TileAppendInfo>;
-    forceOpenTable: Torappu.ListDict<System.String,Torappu.WeeklyForceOpenTable>;
-    timelyStageDropInfo: System.Collections.Generic.Dictionary<System.String,Torappu.TimelyDropTimeInfo>;
-    timelyTable: System.Collections.Generic.Dictionary<System.String,Torappu.TimelyDropInfo>;
-    stageValidInfo: System.Collections.Generic.Dictionary<System.String,Torappu.StageValidInfo>;
-    stageFogInfo: System.Collections.Generic.Dictionary<System.String,Torappu.StageFogInfo>;
-    stageStartConds: System.Collections.Generic.Dictionary<System.String,Torappu.StageStartCond>;
-    specialBattleFinishStageData: System.Collections.Generic.Dictionary<System.String,Torappu.SpecialBattleFinishStageData>;
+    stages: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.StageData
+    >;
+    runeStageGroups: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.RuneStageGroupData
+    >;
+    mapThemes: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.MapThemeData
+    >;
+    tileInfo: Torappu.ListDict<System.String, Torappu.TileAppendInfo>;
+    forceOpenTable: Torappu.ListDict<
+      System.String,
+      Torappu.WeeklyForceOpenTable
+    >;
+    timelyStageDropInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.TimelyDropTimeInfo
+    >;
+    timelyTable: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.TimelyDropInfo
+    >;
+    stageValidInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.StageValidInfo
+    >;
+    stageFogInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.StageFogInfo
+    >;
+    stageStartConds: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.StageStartCond
+    >;
+    specialBattleFinishStageData: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.SpecialBattleFinishStageData
+    >;
   }
   export interface StoryData {
     id: System.String;
@@ -8153,13 +8594,21 @@ export namespace Torappu {
     endTs: System.Int64;
   }
   export interface ZoneTable {
-    zones: System.Collections.Generic.Dictionary<System.String,Torappu.ZoneData>;
-    weeklyAdditionInfo: Torappu.ListDict<System.String,Torappu.WeeklyZoneData>;
-    zoneValidInfo: System.Collections.Generic.Dictionary<System.String,Torappu.ZoneValidInfo>;
-    mainlineAdditionInfo: System.Collections.Generic.Dictionary<System.String,Torappu.MainlineZoneData>;
+    zones: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.ZoneData
+    >;
+    weeklyAdditionInfo: Torappu.ListDict<System.String, Torappu.WeeklyZoneData>;
+    zoneValidInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.ZoneValidInfo
+    >;
+    mainlineAdditionInfo: System.Collections.Generic.Dictionary<
+      System.String,
+      Torappu.MainlineZoneData
+    >;
   }
-  export interface CryptUtils {
-  }
+  export interface CryptUtils {}
   export interface DateTimeUtil {
     EMPTY_DATETIME: System.DateTime;
     UTC_BIAS_HOURS: System.Int32;
@@ -8209,29 +8658,21 @@ export namespace Torappu {
     // __Hotfix0_ToString: XLua.DelegateBridge;
     // __Hotfix0__GetValue: XLua.DelegateBridge;
   }
-  export interface IJsonSerializeHandler {
-  }
-  export interface BoolToIntJsonConverter {
-  }
-  export interface DateTimeJsonConverter {
-  }
+  export interface IJsonSerializeHandler {}
+  export interface BoolToIntJsonConverter {}
+  export interface DateTimeJsonConverter {}
   export interface ListDictConverter {
     KEY_NAME: System.String;
     VALUE_NAME: System.String;
     // m_genericMap: System.Collections.Generic.Dictionary<System.Type,Torappu.ListDictConverter.GenericContext>;
     // m_lock: System.Object;
   }
-  export interface ObscuredIntConverter {
-  }
-  export interface ObscuredFloatConverter {
-  }
-  export interface BlackboardConverter {
-  }
-  export interface AOTGenericsForJsonConverters {
-  }
-  export interface IListDict {
-  }
-  export interface ListDict<TKey,TValue> {
+  export interface ObscuredIntConverter {}
+  export interface ObscuredFloatConverter {}
+  export interface BlackboardConverter {}
+  export interface AOTGenericsForJsonConverters {}
+  export interface IListDict {}
+  export interface ListDict<TKey, TValue> {
     // m_equals: Torappu.ListDict.Equality<TKey,TValue>;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // _c__Hotfix1_ctor: XLua.DelegateBridge;
@@ -8330,8 +8771,7 @@ export namespace Torappu {
     _enableAllForEditorMode: System.Boolean;
     _enableAllForDevelopmentBuild: System.Boolean;
   }
-  export interface FastEnumIntEqualityComparer<TEnum> {
-  }
+  export interface FastEnumIntEqualityComparer<TEnum> {}
   export interface ObscuredFP {
     // _serializedValue: CodeStage.AntiCheat.ObscuredTypes.ObscuredLong;
   }
@@ -8461,12 +8901,11 @@ export namespace Torappu {
     // <currentStateId>k__BackingField: System.Int32;
     // <currentState>k__BackingField: Torappu.StateMachine.IStateNode;
   }
-  export interface EnumStateMachine<StateType> {
-  }
+  export interface EnumStateMachine<StateType> {}
   export interface TypeStateMachine {
     // m_type2int: System.Collections.Generic.Dictionary<System.Type,System.Int32>;
   }
-  export interface HierachyStateMachine<StateType,DataType,BlackboardType> {
+  export interface HierachyStateMachine<StateType, DataType, BlackboardType> {
     // <data>k__BackingField: DataType;
   }
   export interface CampaignDataUtil {
@@ -8799,17 +9238,14 @@ export namespace Torappu {
     // <>f__mg$cache1: System.Action;
     // <>f__mg$cache2: System.Action;
   }
-  export interface IStartBattleServiceConfig {
-  }
-  export interface StartBattleServiceConfig<TRequest,TResponse> {
+  export interface IStartBattleServiceConfig {}
+  export interface StartBattleServiceConfig<TRequest, TResponse> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_SendStartBattleService: XLua.DelegateBridge;
   }
-  export interface IFinishBattleServiceSender {
-  }
-  export interface IFinishBattleServiceConfig {
-  }
-  export interface FinishBattleServiceConfig<TRequest,TResponse> {
+  export interface IFinishBattleServiceSender {}
+  export interface IFinishBattleServiceConfig {}
+  export interface FinishBattleServiceConfig<TRequest, TResponse> {
     // m_serviceCode: System.String;
   }
   export interface CrisisDataUtil {
@@ -8852,15 +9288,18 @@ export namespace Torappu {
     evolvePhase: System.Int32;
     level: System.Int32;
     favorPoint: System.Int32;
-    crisisRecord: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+    crisisRecord: System.Collections.Generic.Dictionary<
+      System.String,
+      System.Int32
+    >;
     currentTmpl: System.String;
-    tmpl: Torappu.ListDict<System.String,Torappu.SharedCharData.TmplData>;
+    tmpl: Torappu.ListDict<System.String, Torappu.SharedCharData.TmplData>;
   }
   export interface RequestAssistChar {
     charInstId: System.Int32;
     S_skillIndex: System.Int32;
     S_currentTmpl: System.String;
-    S_tmpl: Torappu.ListDict<System.String,Torappu.RequestAssistChar.Patch>;
+    S_tmpl: Torappu.ListDict<System.String, Torappu.RequestAssistChar.Patch>;
   }
   export interface FriendData {
     assistCharList: System.Collections.Generic.List<Torappu.SharedCharData>;
@@ -8876,8 +9315,8 @@ export namespace Torappu {
     secretary: System.String;
     secretarySkinId: System.String;
     resume: System.String;
-    team: System.Collections.Generic.Dictionary<System.Int32,System.Int32>;
-    teamV2: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+    team: System.Collections.Generic.Dictionary<System.Int32, System.Int32>;
+    teamV2: System.Collections.Generic.Dictionary<System.String, System.Int32>;
     medalBoard: Torappu.FriendMedalBoard;
   }
   export interface FriendMedalBoard {
@@ -8900,8 +9339,7 @@ export namespace Torappu {
     index: System.String;
     data: Torappu.MedalSetCustomDataRequest.Data;
   }
-  export interface MedalSetCustomDataResponse {
-  }
+  export interface MedalSetCustomDataResponse {}
   export interface RoguelikeDataUtil {
     // <>f__am$cache0: System.Comparison<Torappu.PlayerRoguelikeItem>;
     // __Hotfix0_EnsurePlayerRoguelike: XLua.DelegateBridge;
@@ -9268,8 +9706,14 @@ export namespace Torappu {
       // __Hotfix0__ApplyCoinName: XLua.DelegateBridge;
     }
     export interface ActivityLocalCache {
-      localIntDict: System.Collections.Generic.Dictionary<System.String,System.Int32>;
-      localStringDict: System.Collections.Generic.Dictionary<System.String,System.String>;
+      localIntDict: System.Collections.Generic.Dictionary<
+        System.String,
+        System.Int32
+      >;
+      localStringDict: System.Collections.Generic.Dictionary<
+        System.String,
+        System.String
+      >;
     }
     export interface ActLocalCacheHandler {
       // s_memCache: Torappu.Activity.ActivityLocalCache;
@@ -9430,8 +9874,7 @@ export namespace Torappu {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_Render: XLua.DelegateBridge;
     }
-    export interface ActResUtil {
-    }
+    export interface ActResUtil {}
     export interface MileStoneItemHolder {
       item: Torappu.Activity.MileStoneItem;
     }
@@ -9712,8 +10155,7 @@ export namespace Torappu {
         // __Hotfix0_get_topbarSprite: XLua.DelegateBridge;
         // __Hotfix0_get_homeSprite: XLua.DelegateBridge;
       }
-      export namespace Act0D5Entry {
-      }
+      export namespace Act0D5Entry {}
     }
     export namespace Act1 {
       export interface ActivityFirstStageController {
@@ -9826,8 +10268,7 @@ export namespace Torappu {
         // __Hotfix0__InitData: XLua.DelegateBridge;
         // __Hotfix0_RenderData: XLua.DelegateBridge;
       }
-      export interface UIActShopEvent {
-      }
+      export interface UIActShopEvent {}
       export interface ActivityFirstDetailState {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_GetCacheBean: XLua.DelegateBridge;
@@ -10018,17 +10459,12 @@ export namespace Torappu {
         // __Hotfix0_InitState: XLua.DelegateBridge;
       }
       export namespace ActivityFirstStageController {
-        export interface Bridge {
-        }
+        export interface Bridge {}
       }
-      export namespace ActivityFirstStageFloat {
-      }
-      export namespace ActivityFirstMissionShopState {
-      }
-      export namespace ActivityFirstShopComplexState {
-      }
-      export namespace ActivityFirstShopSingleState {
-      }
+      export namespace ActivityFirstStageFloat {}
+      export namespace ActivityFirstMissionShopState {}
+      export namespace ActivityFirstShopComplexState {}
+      export namespace ActivityFirstShopSingleState {}
     }
     export namespace Act10D5 {
       export interface Act10D5ResUtil {
@@ -10176,8 +10612,7 @@ export namespace Torappu {
         prop: Torappu.Activity.Act10D5.Act10D5StoryProperty;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
       }
-      export interface Act10D5StoryProperty {
-      }
+      export interface Act10D5StoryProperty {}
       export interface Act10D5StoryViewModel {
         // chapterModel: Torappu.UI.StoryReview.StoryReviewChapterViewModel;
         // availableModelList: System.Collections.Generic.List<Torappu.UI.StoryReview.StoryReviewViewModel>;
@@ -10327,21 +10762,16 @@ export namespace Torappu {
         // <selectedZoneId>k__BackingField: System.String;
         // <isAllTimeout>k__BackingField: System.Boolean;
       }
-      export interface Act10D5ZoneDescGroupViewProperty {
-      }
+      export interface Act10D5ZoneDescGroupViewProperty {}
       export namespace Act10D5StageController {
-        export interface Bridge {
-        }
+        export interface Bridge {}
         export interface Act10D5InitMeta {
           jumpToStoryState: System.Boolean;
         }
       }
-      export namespace Act10D5StageEntry {
-      }
-      export namespace Act10D5StageFloat {
-      }
-      export namespace Act10D5StoryState {
-      }
+      export namespace Act10D5StageEntry {}
+      export namespace Act10D5StageFloat {}
+      export namespace Act10D5StoryState {}
       export namespace Act10D5FavorUpView {
         export interface Act10D5FavorUpCharData {
           charId: System.String;
@@ -10357,8 +10787,7 @@ export namespace Torappu {
           // __Hotfix0_RenderView: XLua.DelegateBridge;
         }
       }
-      export namespace Act10D5StoryUnlockConfirmView {
-      }
+      export namespace Act10D5StoryUnlockConfirmView {}
     }
     export namespace Act12D6 {
       export interface Act12D6ResUtil {
@@ -10420,13 +10849,11 @@ export namespace Torappu {
         activityId: System.String;
         mode: System.String;
       }
-      export interface Act12D6CreateGameResponse {
-      }
+      export interface Act12D6CreateGameResponse {}
       export interface Act12D6GiveUpGameRequest {
         activityId: System.String;
       }
-      export interface Act12D6GiveUpGameResponse {
-      }
+      export interface Act12D6GiveUpGameResponse {}
       export interface Act12D6FinishGameRequest {
         activityId: System.String;
       }
@@ -11091,11 +11518,9 @@ export namespace Torappu {
         LOCKED = "LOCKED",
       }
       export namespace Act12D6StageController {
-        export interface Bridge {
-        }
+        export interface Bridge {}
       }
-      export namespace Act12D6StageFloat {
-      }
+      export namespace Act12D6StageFloat {}
       export namespace Act12D6GameEndState {
         export enum InternalState {
           NONE = "NONE",
@@ -11113,8 +11538,7 @@ export namespace Torappu {
           TRY_EXIT = "TRY_EXIT",
         }
       }
-      export namespace Act12D6MileStoneState {
-      }
+      export namespace Act12D6MileStoneState {}
       export namespace Act12D6GameEndRewardView {
         export interface ModeColorData {
           modeId: System.String;
@@ -11148,8 +11572,7 @@ export namespace Torappu {
           // __Hotfix0_get_count: XLua.DelegateBridge;
           // __Hotfix0_RenderView: XLua.DelegateBridge;
         }
-        export namespace RelicAdapter {
-        }
+        export namespace RelicAdapter {}
       }
       export namespace Act12d6GameEndTitleView {
         export interface EndingData {
@@ -11169,8 +11592,7 @@ export namespace Torappu {
           // __Hotfix0_RenderView: XLua.DelegateBridge;
         }
       }
-      export namespace Act12D6RetireConfirmView {
-      }
+      export namespace Act12D6RetireConfirmView {}
       export namespace Act12D6StageEntryView {
         export interface Status {
           EMPTY: Torappu.Activity.Act12D6.Act12D6StageEntryView.Status;
@@ -11181,8 +11603,7 @@ export namespace Torappu {
           isNewFlag: System.Boolean;
         }
       }
-      export namespace Act12D6MileStoneHolder {
-      }
+      export namespace Act12D6MileStoneHolder {}
       export namespace Act12D6MileStoneViewModel {
         export enum State {
           FINISH = "FINISH",
@@ -11230,8 +11651,7 @@ export namespace Torappu {
           HORIZONTAL = "HORIZONTAL",
         }
       }
-      export namespace Act13D5StageButtonPlugin {
-      }
+      export namespace Act13D5StageButtonPlugin {}
     }
     export namespace Act15D0 {
       export interface Act15D0SoundEffectTrigger {
@@ -11277,8 +11697,7 @@ export namespace Torappu {
         // __Hotfix0__EventForDotClick: XLua.DelegateBridge;
         // __Hotfix0__MoveToFocusItem: XLua.DelegateBridge;
       }
-      export namespace Act16D6Entry {
-      }
+      export namespace Act16D6Entry {}
     }
     export namespace Act17D0 {
       export interface Act17D0TopMenu {
@@ -11474,8 +11893,7 @@ export namespace Torappu {
           // __Hotfix0_OnCreate: XLua.DelegateBridge;
           // __Hotfix0__InitLayout: XLua.DelegateBridge;
         }
-        export namespace Act17D1CameraPlugin {
-        }
+        export namespace Act17D1CameraPlugin {}
       }
       export namespace BattleFinish {
         export interface Act17D1BattleFinishPlayerView {
@@ -11579,8 +11997,7 @@ export namespace Torappu {
         // __Hotfix0_get_topbarSprite: XLua.DelegateBridge;
         // __Hotfix0_get_homeSprite: XLua.DelegateBridge;
       }
-      export namespace Act1D5Entry {
-      }
+      export namespace Act1D5Entry {}
     }
     export namespace Act3D0 {
       export interface Act3D0CampResHolder {
@@ -11625,8 +12042,7 @@ export namespace Torappu {
         CONST_CLUE_RIGHT_PARAM: System.String;
         LOCK_PATH_FORMAT: System.String;
       }
-      export interface Act3d0ResUtil {
-      }
+      export interface Act3d0ResUtil {}
       export interface Act3d0Service {
         GACHA: System.String;
         SELECT_FACTION: System.String;
@@ -11644,7 +12060,10 @@ export namespace Torappu {
         activityId: System.String;
       }
       export interface Act3D0GachaInfoResponse {
-        info: System.Collections.Generic.Dictionary<System.String,Torappu.Act3D0Data.InfinitePoolPercent>;
+        info: System.Collections.Generic.Dictionary<
+          System.String,
+          Torappu.Act3D0Data.InfinitePoolPercent
+        >;
       }
       export interface Act3D0GachaResponse {
         items: System.Collections.Generic.List<Torappu.ActivityItemModel>;
@@ -11660,8 +12079,7 @@ export namespace Torappu {
         activityId: System.String;
         faction: System.String;
       }
-      export interface Act3D0SelectFactionResponse {
-      }
+      export interface Act3D0SelectFactionResponse {}
       export enum Act3D0Event {
         CAMP_SELECTED = "CAMP_SELECTED",
       }
@@ -11942,7 +12360,10 @@ export namespace Torappu {
         // _tenTimeMin: UnityEngine.GameObject;
         // _remainPart: UnityEngine.GameObject;
         // _remainCount: UnityEngine.UI.Text;
-        infinitePercent: System.Collections.Generic.Dictionary<System.String,Torappu.Act3D0Data.InfinitePoolPercent>;
+        infinitePercent: System.Collections.Generic.Dictionary<
+          System.String,
+          Torappu.Act3D0Data.InfinitePoolPercent
+        >;
         // m_focusIndex: System.Int32;
         // m_focusId: System.String;
         // m_gachaTimes: System.Int32;
@@ -12184,7 +12605,10 @@ export namespace Torappu {
         remainCount: System.Int32;
       }
       export interface Act3D0GachaBoxStateBean {
-        percent: System.Collections.Generic.Dictionary<System.String,Torappu.Act3D0Data.InfinitePoolPercent>;
+        percent: System.Collections.Generic.Dictionary<
+          System.String,
+          Torappu.Act3D0Data.InfinitePoolPercent
+        >;
         gachaBoxInfo: System.Collections.Generic.List<Torappu.Activity.Act3D0.Act3D0GachaBoxInfo>;
         defaultBoxId: System.String;
         // m_actId: System.String;
@@ -12225,11 +12649,13 @@ export namespace Torappu {
         selectedZoneId: System.String;
         zoneDescModels: System.Collections.Generic.List<Torappu.Activity.Act3D0.Act3D0ZoneDescModel>;
       }
-      export interface Act3D0ZoneDescGroupViewProperty {
-      }
+      export interface Act3D0ZoneDescGroupViewProperty {}
       export interface Act3D0CampGroupViewModel {
         activityId: System.String;
-        camps: Torappu.ListDict<System.String,Torappu.Activity.Act3D0.Act3D0CampViewModel>;
+        camps: Torappu.ListDict<
+          System.String,
+          Torappu.Activity.Act3D0.Act3D0CampViewModel
+        >;
       }
       export interface Act3D0CampViewModel {
         campId: System.String;
@@ -12248,8 +12674,7 @@ export namespace Torappu {
           // m_controller: Torappu.Activity.Act3D0.Act3D0StageController;
         }
       }
-      export namespace Act3D0StageFloat {
-      }
+      export namespace Act3D0StageFloat {}
       export namespace UIGachaBoxDrawEffectFloatPage {
         export enum Style {
           WHITE = "WHITE",
@@ -12262,12 +12687,9 @@ export namespace Torappu {
           // onFinish: System.Action;
         }
       }
-      export namespace Act3D0CampSelectState {
-      }
-      export namespace Act3D0GachaBoxState {
-      }
-      export namespace Act3D0MileStoneState {
-      }
+      export namespace Act3D0CampSelectState {}
+      export namespace Act3D0GachaBoxState {}
+      export namespace Act3D0MileStoneState {}
       export namespace Act3D0GachaBoxDetailView {
         export interface GachaBoxGroupInfo {
           name: System.String;
@@ -12290,12 +12712,9 @@ export namespace Torappu {
           // __Hotfix0_RenderView: XLua.DelegateBridge;
         }
       }
-      export namespace Act3D0GachaBoxItemView {
-      }
-      export namespace Act3D0MileStoneHolder {
-      }
-      export namespace Act3D0MileStoneObj {
-      }
+      export namespace Act3D0GachaBoxItemView {}
+      export namespace Act3D0MileStoneHolder {}
+      export namespace Act3D0MileStoneObj {}
       export namespace Act3D0ReplicateView {
         export interface Adapter {
           data: Torappu.ReplicateTable;
@@ -12320,8 +12739,7 @@ export namespace Torappu {
           // gameObject: UnityEngine.GameObject;
         }
       }
-      export namespace Act3D0CampSelectView {
-      }
+      export namespace Act3D0CampSelectView {}
       export namespace Act3D0ClueInfo {
         export enum State {
           GET = "GET",
@@ -12463,14 +12881,10 @@ export namespace Torappu {
         // __Hotfix0_OnGetReward: XLua.DelegateBridge;
         // __Hotfix0__ReceiveItemsCoroutine: XLua.DelegateBridge;
       }
-      export namespace Act3D5Entry {
-      }
-      export namespace Activity3D5HelpDailyItem {
-      }
-      export namespace Activity3D5HelpLimitItem {
-      }
-      export namespace Activity3D5Item {
-      }
+      export namespace Act3D5Entry {}
+      export namespace Activity3D5HelpDailyItem {}
+      export namespace Activity3D5HelpLimitItem {}
+      export namespace Activity3D5Item {}
     }
     export namespace Act4D0 {
       export interface Act4D0ResUtil {
@@ -12544,14 +12958,12 @@ export namespace Torappu {
         activityId: System.String;
         storyId: System.String;
       }
-      export interface Act4D0FinishStoryResponse {
-      }
+      export interface Act4D0FinishStoryResponse {}
       export interface Act4D0GetRewardRequest {
         activityId: System.String;
         rewardId: System.String;
       }
-      export interface Act4D0GetRewardResponse {
-      }
+      export interface Act4D0GetRewardResponse {}
       export interface Act4D0UnlockStoryRequest {
         activityId: System.String;
         rewardId: System.String;
@@ -12793,14 +13205,10 @@ export namespace Torappu {
           // m_controller: Torappu.Activity.Act4D0.Act4D0StageController;
         }
       }
-      export namespace Act4D0StageFloat {
-      }
-      export namespace Act4D0MileStoneState {
-      }
-      export namespace Act4D0StoryView {
-      }
-      export namespace Act4D0MileStoneHolder {
-      }
+      export namespace Act4D0StageFloat {}
+      export namespace Act4D0MileStoneState {}
+      export namespace Act4D0StoryView {}
+      export namespace Act4D0MileStoneHolder {}
       export namespace Act4D0MileStoneViewModel {
         export enum State {
           FINISH = "FINISH",
@@ -12884,8 +13292,7 @@ export namespace Torappu {
         runeId: System.String;
         activityId: System.String;
       }
-      export interface Act5D1BuyRuneResponse {
-      }
+      export interface Act5D1BuyRuneResponse {}
       export interface Act5D1GetGoodsListRequest {
         activityId: System.String;
       }
@@ -12909,7 +13316,10 @@ export namespace Torappu {
       }
       export interface Act5D1GetGoodsListResponse {
         goodList: Torappu.Activity.Act5D1.Act5D1ShopGood[];
-        progressGoodList: System.Collections.Generic.Dictionary<System.String,Torappu.Activity.Act5D1.Act5D1ProgressGoodItem[]>;
+        progressGoodList: System.Collections.Generic.Dictionary<
+          System.String,
+          Torappu.Activity.Act5D1.Act5D1ProgressGoodItem[]
+        >;
       }
       export interface Act5D1BuyGoodsRequest {
         activityId: System.String;
@@ -13595,14 +14005,10 @@ export namespace Torappu {
           // m_controller: Torappu.Activity.Act5D1.Act5D1StageController;
         }
       }
-      export namespace Act5D1StageFloat {
-      }
-      export namespace Act5D1BattleFinishView {
-      }
-      export namespace RuneBattleFinishEffView {
-      }
-      export namespace RuneBattleFinishHolder {
-      }
+      export namespace Act5D1StageFloat {}
+      export namespace Act5D1BattleFinishView {}
+      export namespace RuneBattleFinishEffView {}
+      export namespace RuneBattleFinishHolder {}
       export namespace Act5D1RuneUnlockNotify {
         export interface Param {
           runeId: System.String;
@@ -13642,8 +14048,7 @@ export namespace Torappu {
           // __Hotfix0_RenderView: XLua.DelegateBridge;
         }
       }
-      export namespace Act5D1EmptyState {
-      }
+      export namespace Act5D1EmptyState {}
       export namespace Act5D1RuneSelectState {
         export interface Adapter {
           classify: Torappu.Activity.Act5D1.RuneClassify;
@@ -13654,10 +14059,8 @@ export namespace Torappu {
           // __Hotfix0_RenderView: XLua.DelegateBridge;
         }
       }
-      export namespace Act5D1RuneMissionItem {
-      }
-      export namespace Act5D1RuneShopItem {
-      }
+      export namespace Act5D1RuneMissionItem {}
+      export namespace Act5D1RuneShopItem {}
       export namespace Act5D1ShopDetailProgressView {
         export interface PrgViewModel {
           prgId: System.String;
@@ -14001,21 +14404,16 @@ export namespace Torappu {
         selectedZoneId: System.String;
         zoneDescModels: System.Collections.Generic.List<Torappu.Activity.Act5D0.Act5D0ZoneDescModel>;
       }
-      export interface Act5D0ZoneDescGroupViewProperty {
-      }
+      export interface Act5D0ZoneDescGroupViewProperty {}
       export namespace Act5D0StageController {
         export interface Bridge {
           // m_controller: Torappu.Activity.Act5D0.Act5D0StageController;
         }
       }
-      export namespace Act5D0StageFloat {
-      }
-      export namespace Act5D0MileStoneItemObj {
-      }
-      export namespace Act5D0MissionItemObj {
-      }
-      export namespace Act5D0MissionView {
-      }
+      export namespace Act5D0StageFloat {}
+      export namespace Act5D0MileStoneItemObj {}
+      export namespace Act5D0MissionItemObj {}
+      export namespace Act5D0MissionView {}
       export namespace Act5D0MissionViewModel {
         export enum State {
           FINISH = "FINISH",
@@ -14057,8 +14455,7 @@ export namespace Torappu {
         activityId: System.String;
         newsIds: System.String[];
       }
-      export interface Act9D0ReadNewsResponse {
-      }
+      export interface Act9D0ReadNewsResponse {}
       export interface Act9D0StageController {
         _disableStageEntryPartical: System.Boolean;
         // m_favorUpTrackProperty: Torappu.UI.TrackPointViewProperty;
@@ -14547,8 +14944,7 @@ export namespace Torappu {
         // <selectedZoneId>k__BackingField: System.String;
         // <isAllTimeout>k__BackingField: System.Boolean;
       }
-      export interface Act9D0ZoneDescGroupViewProperty {
-      }
+      export interface Act9D0ZoneDescGroupViewProperty {}
       export interface Act9D0BannableObject {
         _key: System.String;
         // _sprites: System.Collections.Generic.List<UnityEngine.Sprite>;
@@ -14571,19 +14967,13 @@ export namespace Torappu {
           MISSION_UPDATED = "MISSION_UPDATED",
           BEFORE_HIDE_EFFECT = "BEFORE_HIDE_EFFECT",
         }
-        export interface Bridge {
-        }
+        export interface Bridge {}
       }
-      export namespace Act9D0StageEntry {
-      }
-      export namespace Act9D0MissionState {
-      }
-      export namespace Act9D0MissionSubState {
-      }
-      export namespace Act9D0NewsState {
-      }
-      export namespace Act9D0SubMissionDetailState {
-      }
+      export namespace Act9D0StageEntry {}
+      export namespace Act9D0MissionState {}
+      export namespace Act9D0MissionSubState {}
+      export namespace Act9D0NewsState {}
+      export namespace Act9D0SubMissionDetailState {}
       export namespace Act9D0FavorUpView {
         export interface Act9D0FavorUpCharData {
           charId: System.String;
@@ -14613,15 +15003,11 @@ export namespace Torappu {
           // __Hotfix0_KillTween: XLua.DelegateBridge;
         }
       }
-      export namespace Act9D0NewsUnreadView {
-      }
-      export namespace Act9D0SubMissionDetailView {
-      }
-      export namespace Act9D0EntryZoneDeco {
-      }
+      export namespace Act9D0NewsUnreadView {}
+      export namespace Act9D0SubMissionDetailView {}
+      export namespace Act9D0EntryZoneDeco {}
     }
-    export namespace ActivityUtil {
-    }
+    export namespace ActivityUtil {}
     export namespace ActivityResHolder {
       export interface ZoneHomeRes {
         EMPTY: Torappu.Activity.ActivityResHolder.ZoneHomeRes;
@@ -14648,7 +15034,13 @@ export namespace Torappu {
       export interface InternalData {
         isTrimed: System.Boolean;
         code: System.Int32;
-        aspects: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.Dictionary<System.String,Torappu.Activity.ActivityAssetMap.InternalData.AssetInfo>>;
+        aspects: System.Collections.Generic.Dictionary<
+          System.String,
+          System.Collections.Generic.Dictionary<
+            System.String,
+            Torappu.Activity.ActivityAssetMap.InternalData.AssetInfo
+          >
+        >;
       }
       export namespace InternalData {
         export interface AssetInfo {
@@ -14686,12 +15078,9 @@ export namespace Torappu {
         // __Hotfix0_RenderView: XLua.DelegateBridge;
       }
     }
-    export namespace MileStoneHolder {
-    }
-    export namespace MileStoneState {
-    }
-    export namespace ActCommonReplicateItem {
-    }
+    export namespace MileStoneHolder {}
+    export namespace MileStoneState {}
+    export namespace ActCommonReplicateItem {}
     export namespace ActCommonReplicateView {
       export interface Adapter {
         data: Torappu.ReplicateTable;
@@ -14710,8 +15099,7 @@ export namespace Torappu {
         // onDotClick: System.Action<System.Int32,System.Int32>;
       }
     }
-    export namespace ActivityCommonCheckinEntry {
-    }
+    export namespace ActivityCommonCheckinEntry {}
     export namespace ActivityCommonCheckinV2Item {
       export interface ItemConfigGroup {
         // mainColor: UnityEngine.Color;
@@ -14795,8 +15183,7 @@ export namespace Torappu {
       // m_secondMapST: UnityEngine.Vector4;
       // m_secondMapSTProp: System.String;
     }
-    export interface BasicEffect {
-    }
+    export interface BasicEffect {}
     export interface EffectImportData {
       _importName: System.String;
       _resourceName: System.String;
@@ -15182,8 +15569,7 @@ export namespace Torappu {
       // __Hotfix0_ClearFinishCallbackOnce: XLua.DelegateBridge;
       // __Hotfix0_StartCastingInternal: XLua.DelegateBridge;
     }
-    export interface IAbilityAttachment {
-    }
+    export interface IAbilityAttachment {}
     export interface AbilityAttachment {
       source: Torappu.Battle.Entity;
       activeBuffData: Torappu.BuffData[];
@@ -15370,8 +15756,7 @@ export namespace Torappu {
       // __Hotfix0__InitRenderersIfNot: XLua.DelegateBridge;
       // __Hotfix0_OnFaceChanged: XLua.DelegateBridge;
     }
-    export interface UnitAnimatorHooker {
-    }
+    export interface UnitAnimatorHooker {}
     export interface SimpleUnitAnimatorHooker {
       _excludeAnimKeys: System.String[];
       _replaceAnimPairs: Torappu.Battle.SimpleUnitAnimatorHooker.ReplacePair[];
@@ -15571,8 +15956,7 @@ export namespace Torappu {
       // __Hotfix0_Start: XLua.DelegateBridge;
       // __Hotfix0_OnDestroy: XLua.DelegateBridge;
     }
-    export interface AsyncUtil {
-    }
+    export interface AsyncUtil {}
     export interface CoroutineId {
       NULL: Torappu.Battle.CoroutineId;
       // coroutine: UnityEngine.Coroutine;
@@ -15584,8 +15968,7 @@ export namespace Torappu {
       // m_pendingList: System.Collections.Generic.List<Torappu.Battle.CoroutineSimulator.RuntimeHandler>;
       // m_cachedList: System.Collections.Generic.List<Torappu.Battle.CoroutineSimulator.RuntimeHandler>;
     }
-    export interface PoolManagerExtensions {
-    }
+    export interface PoolManagerExtensions {}
     export interface Attributes {
       // m_abnormalFlagModifiers: System.Collections.Generic.HashSet<Torappu.Battle.Attributes.IAttributesModifier>;
       // m_attributeModifiers: System.Collections.Generic.HashSet<Torappu.Battle.Attributes.IAttributesModifier>[];
@@ -15662,8 +16045,7 @@ export namespace Torappu {
       UNIT_CATEGORY_ENEMY: System.String;
       ON_OPERA_TRIGGER: System.String;
     }
-    export interface RandomUtil {
-    }
+    export interface RandomUtil {}
     export interface BattleController {
       INITIAL_OBJECT_CAPACITY: System.Int32;
       INITIAL_BUFF_PRELOAD_CNT: System.Int32;
@@ -16282,8 +16664,7 @@ export namespace Torappu {
     export interface DeckModifier {
       // <sourceCard>k__BackingField: Torappu.Battle.Deck.Card;
     }
-    export interface IDeckSelector {
-    }
+    export interface IDeckSelector {}
     export interface DeckSelector {
       categoryMask: Torappu.ProfessionCategory;
       filterTag: System.String;
@@ -16658,40 +17039,23 @@ export namespace Torappu {
       // <gridPosition>k__BackingField: Torappu.GridPosition;
       // <faceTo>k__BackingField: UnityEngine.Vector2;
     }
-    export interface IBattleModule {
-    }
-    export interface ILocatable {
-    }
-    export interface IMovable {
-    }
-    export interface IBuildable {
-    }
-    export interface IDrawableRange {
-    }
-    export interface IEffectSource {
-    }
-    export interface IProjectileSource {
-    }
-    export interface IAbilitySource {
-    }
-    export interface IActionNodeSource {
-    }
-    export interface IBuffSource {
-    }
-    export interface IUpdateable {
-    }
-    export interface ISpecialAudioSignalSource {
-    }
-    export interface IExcludeTarget {
-    }
-    export interface IChargeAttack {
-    }
-    export interface IAlwaysTrigger {
-    }
-    export interface IOperaAudioSource {
-    }
-    export interface IOperaEffectSource {
-    }
+    export interface IBattleModule {}
+    export interface ILocatable {}
+    export interface IMovable {}
+    export interface IBuildable {}
+    export interface IDrawableRange {}
+    export interface IEffectSource {}
+    export interface IProjectileSource {}
+    export interface IAbilitySource {}
+    export interface IActionNodeSource {}
+    export interface IBuffSource {}
+    export interface IUpdateable {}
+    export interface ISpecialAudioSignalSource {}
+    export interface IExcludeTarget {}
+    export interface IChargeAttack {}
+    export interface IAlwaysTrigger {}
+    export interface IOperaAudioSource {}
+    export interface IOperaEffectSource {}
     export interface BattleLogger {
       MAX_SNAPSHOTS_FOR_SINGLE_CHARACTER: System.Int32;
       MAX_SNAPSHOTS_FOR_SAME_ENEMY: System.Int32;
@@ -16899,8 +17263,7 @@ export namespace Torappu {
       motionMode: Torappu.MotionMode;
       allowDiagonalMove: System.Boolean;
     }
-    export interface IPathFinding {
-    }
+    export interface IPathFinding {}
     export interface SPFA {
       // m_openList: System.Collections.Generic.Queue<Torappu.Battle.Route.Node>;
       // m_map: Torappu.Battle.Map;
@@ -17014,8 +17377,7 @@ export namespace Torappu {
       // __Hotfix0_Init: XLua.DelegateBridge;
       // __Hotfix0_Interact: XLua.DelegateBridge;
     }
-    export interface ITileListener {
-    }
+    export interface ITileListener {}
     export interface Tile {
       // s_tileInstCounter: System.UInt32;
       _tileKey: System.String;
@@ -17970,7 +18332,10 @@ export namespace Torappu {
       _replaceAudioPairs: Torappu.Battle.CharacterAudioHooker.ReplacePair[];
     }
     export interface CharacterSkin {
-      _overrideEffects: System.Collections.Generic.KeyValuePair<System.String,System.String>[];
+      _overrideEffects: System.Collections.Generic.KeyValuePair<
+        System.String,
+        System.String
+      >[];
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_TryLoadEffectOverrideMap: XLua.DelegateBridge;
     }
@@ -18975,8 +19340,7 @@ export namespace Torappu {
       // m_ignoreTargetSide: System.Boolean;
       // m_inited: System.Boolean;
     }
-    export interface TokenOrHostTargetValidator {
-    }
+    export interface TokenOrHostTargetValidator {}
     export interface Character {
       // LOG_SNAPSHOT_PERIOD_RANGE: UnityEngine.Vector2;
       FIND_BLOCKEE_TICK: System.Int32;
@@ -19576,8 +19940,7 @@ export namespace Torappu {
       _config: Torappu.Battle.UnitDataFlowConfig.ModifierConfig[];
       // m_modifiers: System.Collections.Generic.List<Torappu.Battle.UnitDataFlowConfig.Modifier>;
     }
-    export interface VisualObject {
-    }
+    export interface VisualObject {}
     export interface BattleDataConverter {
       MASK_PLAYER_CHARACTER: System.UInt32;
       MASK_PLAYER_TRAP_OR_TOKEN: System.UInt32;
@@ -20174,8 +20537,7 @@ export namespace Torappu {
         export interface EffectData_Projectile {
           // inactiveOnFinish: UnityEngine.Transform[];
         }
-        export interface SourceData {
-        }
+        export interface SourceData {}
       }
       export namespace Effect {
         export interface Behaviour {
@@ -20211,8 +20573,7 @@ export namespace Torappu {
           CAMERA = "CAMERA",
         }
       }
-      export namespace OnPlayEmitter {
-      }
+      export namespace OnPlayEmitter {}
       export namespace PauseEffectIf {
         export enum CheckType {
           NOT_CHECK = "NOT_CHECK",
@@ -20220,8 +20581,7 @@ export namespace Torappu {
           CHECK_NO = "CHECK_NO",
         }
       }
-      export namespace RandomEmitter {
-      }
+      export namespace RandomEmitter {}
       export namespace ParticleEffect {
         export enum RotateType {
           NONE = "NONE",
@@ -20231,12 +20591,10 @@ export namespace Torappu {
           ANY_DIR = "ANY_DIR",
         }
       }
-      export namespace SimpleEffect {
-      }
+      export namespace SimpleEffect {}
     }
     export namespace Action {
-      export interface IDamageOrHealSourceNode {
-      }
+      export interface IDamageOrHealSourceNode {}
       export interface ActionInfoAttribute {
         Category: System.String;
         Description: System.String;
@@ -20249,8 +20607,7 @@ export namespace Torappu {
       export interface Nodes {
         // s_sharedTargets: System.Collections.Generic.List<Torappu.Battle.Entity>;
       }
-      export interface ActionUtil {
-      }
+      export interface ActionUtil {}
       export namespace ActionNode {
         export enum SourceType {
           NONE = "NONE",
@@ -21749,22 +22106,17 @@ export namespace Torappu {
             peeling: System.Int32;
           }
         }
-        export namespace CreateBuffInRange {
-        }
-        export namespace AOEDamage {
-        }
-        export namespace AOEDamageFromProjectile {
-        }
-        export namespace AOEHeal {
-        }
+        export namespace CreateBuffInRange {}
+        export namespace AOEDamage {}
+        export namespace AOEDamageFromProjectile {}
+        export namespace AOEHeal {}
         export namespace HealViaDamage {
           export enum HealType {
             FIXED = "FIXED",
             DAMAGE_SCALE = "DAMAGE_SCALE",
           }
         }
-        export namespace GainToken {
-        }
+        export namespace GainToken {}
         export namespace CheckDirection {
           export enum JudgeType {
             OPPOSITE = "OPPOSITE",
@@ -21792,8 +22144,7 @@ export namespace Torappu {
         }
       }
       export namespace TNodeAction {
-        export interface Nodes {
-        }
+        export interface Nodes {}
         export interface TNodePortIDPair {
           sourcePortName: System.String;
           targetPortName: System.String;
@@ -21813,11 +22164,10 @@ export namespace Torappu {
           key: TKey;
           // value: SerializedTNodeData;
         }
-        export interface TNodeDataDict<TKey,TPair> {
+        export interface TNodeDataDict<TKey, TPair> {
           _nodeGraph: TPair[];
         }
-        export interface TNodeGraph {
-        }
+        export interface TNodeGraph {}
         export namespace Nodes {
           export interface OnEvent {
             _data: Torappu.Battle.Action.TNodeAction.Nodes.OnEvent.Data;
@@ -23608,20 +23958,16 @@ export namespace Torappu {
         // __Hotfix0_SetData: XLua.DelegateBridge;
         // __Hotfix0_OnCastStart: XLua.DelegateBridge;
       }
-      export namespace ChannelingMeleeAttack {
-      }
+      export namespace ChannelingMeleeAttack {}
       export namespace MeleeAttackByDistance {
         export interface AtkScaleByDistConfig {
           atkScale: System.Single;
           applyExternalAtkScale: System.Boolean;
         }
       }
-      export namespace MultiMeleeAttack {
-      }
-      export namespace ChargeRangedAttack {
-      }
-      export namespace MultiRangedAttack {
-      }
+      export namespace MultiMeleeAttack {}
+      export namespace ChargeRangedAttack {}
+      export namespace MultiRangedAttack {}
       export namespace RangedAttack {
         export enum ProjectileDestinationType {
           TARGET = "TARGET",
@@ -23630,27 +23976,22 @@ export namespace Torappu {
           TARGET_ROOT_TILE = "TARGET_ROOT_TILE",
         }
       }
-      export namespace ActiveBuffAbility {
-      }
+      export namespace ActiveBuffAbility {}
       export namespace ActiveOneOfBuffAbility {
         export interface BuffDataList {
           buffDatas: Torappu.BuffData[];
         }
       }
-      export namespace ProjectileToTileAbility {
-      }
-      export namespace AbilityFirstSucceedGroup {
-      }
-      export namespace AbilityParallelGroup {
-      }
+      export namespace ProjectileToTileAbility {}
+      export namespace AbilityFirstSucceedGroup {}
+      export namespace AbilityParallelGroup {}
       export namespace AbilityRandomGroup {
         export enum SelectMethod {
           Random = "Random",
           Loop = "Loop",
         }
       }
-      export namespace AbilitySequenceGroup {
-      }
+      export namespace AbilitySequenceGroup {}
       export namespace AbstractAnimatedAbility {
         export enum TimeMode {
           FROM_ATTACK_SPEED = "FROM_ATTACK_SPEED",
@@ -23689,10 +24030,8 @@ export namespace Torappu {
           }
         }
       }
-      export namespace GlobalAuraAbility {
-      }
-      export namespace PassiveBuffAbility {
-      }
+      export namespace GlobalAuraAbility {}
+      export namespace PassiveBuffAbility {}
       export namespace PassiveOneOfBuffAbility {
         export enum SelectMethod {
           RANDOM = "RANDOM",
@@ -23718,12 +24057,9 @@ export namespace Torappu {
           // <ability>k__BackingField: Torappu.Battle.Abilities.ToggleablePassiveBuffAbility;
         }
       }
-      export namespace TriggablePassiveAbility {
-      }
-      export namespace BslimeTalent_1 {
-      }
-      export namespace BsnakeSummonHint {
-      }
+      export namespace TriggablePassiveAbility {}
+      export namespace BslimeTalent_1 {}
+      export namespace BsnakeSummonHint {}
       export namespace NightmSkill_1 {
         export interface ProjectileOptions {
           projectileKey: System.String;
@@ -23731,8 +24067,7 @@ export namespace Torappu {
           damageType: Torappu.Battle.DamageType;
         }
       }
-      export namespace NoPreOneshotAnimation {
-      }
+      export namespace NoPreOneshotAnimation {}
       export namespace ThreePartChannelingAnimation {
         export interface AnimationBundle {
           beginAnim: System.String;
@@ -23810,8 +24145,7 @@ export namespace Torappu {
         export interface InputTargetEffectOptions {
           _useInputPos: System.Boolean;
         }
-        export interface CastTargetEffectOptions {
-        }
+        export interface CastTargetEffectOptions {}
         export namespace EffectOptions {
           export enum DirectionType {
             NONE = "NONE",
@@ -23823,15 +24157,12 @@ export namespace Torappu {
         }
       }
       export namespace LuaAbilityBehaviourStub {
-        export interface LuaBinding {
-        }
+        export interface LuaBinding {}
       }
     }
-    export namespace EmptyAbility {
-    }
+    export namespace EmptyAbility {}
     export namespace Ability {
-      export interface FinishCallbackDelegate {
-      }
+      export interface FinishCallbackDelegate {}
       export interface Options {
         blackboard: Torappu.Blackboard;
         signalId: System.String;
@@ -24054,8 +24385,7 @@ export namespace Torappu {
         }
       }
     }
-    export namespace AsyncUtil {
-    }
+    export namespace AsyncUtil {}
     export namespace CoroutineSimulator {
       export interface InternalId {
         INVALID: Torappu.Battle.CoroutineSimulator.InternalId;
@@ -24073,11 +24403,9 @@ export namespace Torappu {
         }
       }
     }
-    export namespace PoolManagerExtensions {
-    }
+    export namespace PoolManagerExtensions {}
     export namespace Attributes {
-      export interface IAttributesModifier {
-      }
+      export interface IAttributesModifier {}
       export interface AbnormalComboManager {
         ABNORMAL_COMBO_TO_FLAG_MASK: System.Int64[];
         // m_abnormalComboCounter: System.Int16[];
@@ -24145,8 +24473,7 @@ export namespace Torappu {
         }
       }
     }
-    export namespace BattleLoader {
-    }
+    export namespace BattleLoader {}
     export namespace Buff {
       export interface DoubleBufferedBuffList {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -24300,10 +24627,8 @@ export namespace Torappu {
         mainTarget: Torappu.Battle.Entity;
         atkScale: Torappu.FP;
       }
-      export interface ContextPtrStack<T> {
-      }
-      export interface ContextValueStack<T> {
-      }
+      export interface ContextPtrStack<T> {}
+      export interface ContextValueStack<T> {}
       export interface ChangeGuard {
         // m_context: Torappu.Battle.Context;
       }
@@ -24565,8 +24890,7 @@ export namespace Torappu {
         refCounter: System.Int32;
         effect: Torappu.ObjectPtr<Torappu.Battle.Effects.Effect>;
       }
-      export interface FriendComponent {
-      }
+      export interface FriendComponent {}
       export enum Event {
         ON_BORN = "ON_BORN",
         ON_DEATH = "ON_DEATH",
@@ -24625,8 +24949,7 @@ export namespace Torappu {
         SPECIAL_2 = "SPECIAL_2",
         SPECIAL_3 = "SPECIAL_3",
       }
-      export namespace EPController {
-      }
+      export namespace EPController {}
     }
     export namespace BattleLogger {
       export interface CharInfo {
@@ -24662,15 +24985,35 @@ export namespace Torappu {
         charStats: Torappu.ListCounterPool<Torappu.Battle.BattleLogger.BattleStats.CharStatKey>;
         enemyStats: Torappu.ListCounterPool<Torappu.Battle.BattleLogger.BattleStats.EnemyStatKey>;
         skillTrigStats: Torappu.ListCounterPool<System.String>;
-        charAdvancedStats: Torappu.ListDict<System.String,Torappu.Battle.BattleLogger.BattleStats.CharAdvancedStats>;
-        enemyAdvancedStats: Torappu.ListDict<System.String,Torappu.Battle.BattleLogger.BattleStats.EnemyAdvancedStats>;
-        runeAdvancedStats: System.Collections.Generic.List<System.Collections.Generic.List<System.Object>>;
-        rlBuffAdvancedStats: System.Collections.Generic.List<System.Collections.Generic.List<System.Object>>;
-        extraBattleInfoStats: Torappu.ListDict<System.String,System.Int32>;
-        charList: Torappu.ListDict<System.String,System.Collections.Generic.List<System.Object>>;
-        enemyList: Torappu.ListDict<System.String,System.Collections.Generic.List<System.Object>>;
-        runeList: System.Collections.Generic.List<System.Collections.Generic.List<System.Object>>;
-        rlBuffList: System.Collections.Generic.List<System.Collections.Generic.List<System.Object>>;
+        charAdvancedStats: Torappu.ListDict<
+          System.String,
+          Torappu.Battle.BattleLogger.BattleStats.CharAdvancedStats
+        >;
+        enemyAdvancedStats: Torappu.ListDict<
+          System.String,
+          Torappu.Battle.BattleLogger.BattleStats.EnemyAdvancedStats
+        >;
+        runeAdvancedStats: System.Collections.Generic.List<
+          System.Collections.Generic.List<System.Object>
+        >;
+        rlBuffAdvancedStats: System.Collections.Generic.List<
+          System.Collections.Generic.List<System.Object>
+        >;
+        extraBattleInfoStats: Torappu.ListDict<System.String, System.Int32>;
+        charList: Torappu.ListDict<
+          System.String,
+          System.Collections.Generic.List<System.Object>
+        >;
+        enemyList: Torappu.ListDict<
+          System.String,
+          System.Collections.Generic.List<System.Object>
+        >;
+        runeList: System.Collections.Generic.List<
+          System.Collections.Generic.List<System.Object>
+        >;
+        rlBuffList: System.Collections.Generic.List<
+          System.Collections.Generic.List<System.Object>
+        >;
         beginTs: System.Int64;
         endTs: System.Int64;
         access: System.String;
@@ -24678,9 +25021,15 @@ export namespace Torappu {
         packageName: System.String;
         checkKilledCnt: System.Boolean;
         leftHp: System.Int32;
-        extraInfo: System.Collections.Generic.Dictionary<System.Int32,System.String>;
-        extraBattleInfo: Torappu.ListDict<System.String,System.Int32>;
-        clientAntiCheatLog: Torappu.ListDict<System.Int32,System.Collections.Generic.List<System.Object>>;
+        extraInfo: System.Collections.Generic.Dictionary<
+          System.Int32,
+          System.String
+        >;
+        extraBattleInfo: Torappu.ListDict<System.String, System.Int32>;
+        clientAntiCheatLog: Torappu.ListDict<
+          System.Int32,
+          System.Collections.Generic.List<System.Object>
+        >;
         idList: System.Collections.Generic.List<System.String>;
         autoReplayCancelled: System.Boolean;
       }
@@ -24751,8 +25100,7 @@ export namespace Torappu {
         extraData: System.Object;
         extraData2: System.Object;
       }
-      export interface IPrinter {
-      }
+      export interface IPrinter {}
       export interface DebugPrinter {
         // m_builder: System.Text.StringBuilder;
       }
@@ -24834,27 +25182,20 @@ export namespace Torappu {
         // <data>k__BackingField: Torappu.RouteData.CheckpointData;
         // <cursor>k__BackingField: Torappu.Battle.BasicCursor;
       }
-      export interface PosRelatedCheckpoint {
-      }
+      export interface PosRelatedCheckpoint {}
       export interface MoveCheckpoint {
         // m_offset: UnityEngine.Vector2;
         // m_nextmap: Torappu.Battle.Route.Node[][];
       }
-      export interface DisappearCheckpoint {
-      }
-      export interface AppearAtPosCheckpoint {
-      }
+      export interface DisappearCheckpoint {}
+      export interface AppearAtPosCheckpoint {}
       export interface WaitForSecondsCheckpoint {
         // m_time: Torappu.FP;
       }
-      export interface WaitForPlayTimeCheckpoint {
-      }
-      export interface WaitCurrentWaveTimeCheckpoint {
-      }
-      export interface WaitCurrentFragmentTimeCheckpoint {
-      }
-      export interface AlertCheckpoint {
-      }
+      export interface WaitForPlayTimeCheckpoint {}
+      export interface WaitCurrentWaveTimeCheckpoint {}
+      export interface WaitCurrentFragmentTimeCheckpoint {}
+      export interface AlertCheckpoint {}
     }
     export namespace Route {
       export interface Node {
@@ -24906,8 +25247,7 @@ export namespace Torappu {
         // _focusColor: UnityEngine.Color;
         // m_originColor: UnityEngine.Color;
       }
-      export namespace UniformRandomTrigger {
-      }
+      export namespace UniformRandomTrigger {}
     }
     export namespace DynamicBuffTile {
       export interface TileBuffsAndEffectsPair {
@@ -25405,10 +25745,8 @@ export namespace Torappu {
         // __Hotfix0_DoCheckReachedInternal: XLua.DelegateBridge;
         // __Hotfix0__CalculateNextPosition: XLua.DelegateBridge;
       }
-      export namespace BounceHitBehaviour {
-      }
-      export namespace VortexMultiHitBehaviour {
-      }
+      export namespace BounceHitBehaviour {}
+      export namespace VortexMultiHitBehaviour {}
       export namespace AdvancedMovement {
         export enum MoveType {
           NONE = "NONE",
@@ -25428,16 +25766,11 @@ export namespace Torappu {
         }
       }
     }
-    export namespace HarpoonProjectile {
-    }
-    export namespace LaserProjectile {
-    }
-    export namespace LassoProjectile {
-    }
-    export namespace LinkProjectile {
-    }
-    export namespace NetCatcherProjectile {
-    }
+    export namespace HarpoonProjectile {}
+    export namespace LaserProjectile {}
+    export namespace LassoProjectile {}
+    export namespace LinkProjectile {}
+    export namespace NetCatcherProjectile {}
     export namespace Projectile {
       export enum Event {
         ON_HIT_OBJECT = "ON_HIT_OBJECT",
@@ -25490,15 +25823,11 @@ export namespace Torappu {
         // <blackboard>k__BackingField: Torappu.Blackboard;
         // <projectile>k__BackingField: Torappu.Battle.Projectile;
       }
-      export interface EventToActionPair {
-      }
-      export interface EventToActionMap {
-      }
+      export interface EventToActionPair {}
+      export interface EventToActionMap {}
     }
-    export namespace BattleAudioLoader {
-    }
-    export namespace ResourceCollector {
-    }
+    export namespace BattleAudioLoader {}
+    export namespace ResourceCollector {}
     export namespace Roguelike {
       export interface RoguelikeInput {
         outerBuffs: System.Collections.Generic.List<Torappu.RoguelikeBuff>;
@@ -25694,101 +26023,57 @@ export namespace Torappu {
         }
       }
       export namespace Internal {
-        export interface BasicLevelRune {
-        }
-        export interface LInitCostAdd {
-        }
-        export interface LCostIncreaseTimeMul {
-        }
-        export interface LMaxLifePointSet {
-        }
-        export interface LCharacterLimitAdd {
-        }
-        export interface LForbidLocation {
-        }
-        export interface LGlobalBuffNew {
-        }
-        export interface LGlobalBuffMul {
-        }
-        export interface LGlobalBuffAdd {
-        }
-        export interface LHiddenGroupEnable {
-        }
-        export interface LHiddenGroupDisable {
-        }
-        export interface LPredefinesInstEnable {
-        }
-        export interface LEnemyKeyReplace {
-        }
-        export interface BasicCharacterRune {
-        }
-        export interface CAttributesMul {
-        }
-        export interface CAttributesAdd {
-        }
-        export interface CCostMul {
-        }
-        export interface CCostAdd {
-        }
-        export interface CRespawnTimeMul {
-        }
-        export interface CRespawnTimeAdd {
-        }
-        export interface CExcludedFromBattle {
-        }
+        export interface BasicLevelRune {}
+        export interface LInitCostAdd {}
+        export interface LCostIncreaseTimeMul {}
+        export interface LMaxLifePointSet {}
+        export interface LCharacterLimitAdd {}
+        export interface LForbidLocation {}
+        export interface LGlobalBuffNew {}
+        export interface LGlobalBuffMul {}
+        export interface LGlobalBuffAdd {}
+        export interface LHiddenGroupEnable {}
+        export interface LHiddenGroupDisable {}
+        export interface LPredefinesInstEnable {}
+        export interface LEnemyKeyReplace {}
+        export interface BasicCharacterRune {}
+        export interface CAttributesMul {}
+        export interface CAttributesAdd {}
+        export interface CCostMul {}
+        export interface CCostAdd {}
+        export interface CRespawnTimeMul {}
+        export interface CRespawnTimeAdd {}
+        export interface CExcludedFromBattle {}
         export interface CDeckCardNumLimit {
           // m_visitCounter: System.Int32;
           // m_limitNum: System.Int32;
         }
-        export interface CTokenInitialCntAdd {
-        }
-        export interface CSkillCdMul {
-        }
-        export interface CSkillCdAdd {
-        }
-        export interface CSkillBlackboardAdd {
-        }
-        export interface CSkillBlackboardMul {
-        }
-        export interface CBlockCntAdd {
-        }
-        export interface BasicEnemyRune {
-        }
-        export interface BasicEnemySkillRune {
-        }
-        export interface EAttribuesMul {
-        }
-        export interface EAttribuesAdd {
-        }
-        export interface EAttackRangeMul {
-        }
-        export interface EMassLevelAdd {
-        }
-        export interface ETalentBlackboardMul {
-        }
-        export interface ETalentBlackboardAdd {
-        }
-        export interface EDynamicAbilityNew {
-        }
-        export interface ESkillRangeMul {
-        }
-        export interface ESkillCdMul {
-        }
-        export interface ESkillInitCdMul {
-        }
-        export interface ESkillInitCdAdd {
-        }
-        export interface ESkillBlackboardMul {
-        }
-        export interface ESkillBlackboardAdd {
-        }
+        export interface CTokenInitialCntAdd {}
+        export interface CSkillCdMul {}
+        export interface CSkillCdAdd {}
+        export interface CSkillBlackboardAdd {}
+        export interface CSkillBlackboardMul {}
+        export interface CBlockCntAdd {}
+        export interface BasicEnemyRune {}
+        export interface BasicEnemySkillRune {}
+        export interface EAttribuesMul {}
+        export interface EAttribuesAdd {}
+        export interface EAttackRangeMul {}
+        export interface EMassLevelAdd {}
+        export interface ETalentBlackboardMul {}
+        export interface ETalentBlackboardAdd {}
+        export interface EDynamicAbilityNew {}
+        export interface ESkillRangeMul {}
+        export interface ESkillCdMul {}
+        export interface ESkillInitCdMul {}
+        export interface ESkillInitCdAdd {}
+        export interface ESkillBlackboardMul {}
+        export interface ESkillBlackboardAdd {}
         export interface BasicMapRune {
           // m_locationList: System.Collections.Generic.List<Torappu.GridPosition>;
         }
-        export interface MTileBlackboardMul {
-        }
-        export interface MTileBlackboardAdd {
-        }
+        export interface MTileBlackboardMul {}
+        export interface MTileBlackboardAdd {}
       }
     }
     export namespace Scheduler {
@@ -25964,14 +26249,10 @@ export namespace Torappu {
       }
     }
     export namespace FilterUtil {
-      export interface FilterFunc {
-      }
-      export interface FilterFuncWithPriorWeight {
-      }
-      export interface FilterFuncWithVolumne {
-      }
-      export interface FilterFuncWithTile {
-      }
+      export interface FilterFunc {}
+      export interface FilterFuncWithPriorWeight {}
+      export interface FilterFuncWithVolumne {}
+      export interface FilterFuncWithTile {}
       export enum FilterType {
         ALL = "ALL",
         DIST_TO_EXIT_ASC = "DIST_TO_EXIT_ASC",
@@ -26024,8 +26305,7 @@ export namespace Torappu {
         // __Hotfix0_CompareTo: XLua.DelegateBridge;
       }
     }
-    export namespace NearestRangeSelector {
-    }
+    export namespace NearestRangeSelector {}
     export namespace SecondaryFilterAdvancedSelector {
       export enum SecondaryFilterType {
         FLY_FIRST = "FLY_FIRST",
@@ -26044,8 +26324,7 @@ export namespace Torappu {
         INSERT_THE_LAST_AT_FRONT = "INSERT_THE_LAST_AT_FRONT",
       }
     }
-    export namespace EmpgrdTalentSelector {
-    }
+    export namespace EmpgrdTalentSelector {}
     export namespace TileSelector {
       export enum FilterType {
         ALL = "ALL",
@@ -26079,10 +26358,8 @@ export namespace Torappu {
         ON_UNIT_BORN = "ON_UNIT_BORN",
         ON_UNIT_DEAD = "ON_UNIT_DEAD",
       }
-      export interface States {
-      }
-      export interface IReplacement {
-      }
+      export interface States {}
+      export interface IReplacement {}
       export interface BlockedEnemyManager {
         // m_totalVolume: System.Int32;
         // m_blockedEnemies: System.Collections.Generic.List<Torappu.Battle.Enemy>;
@@ -26191,10 +26468,8 @@ export namespace Torappu {
           // __Hotfix0_CheckSwitchOut: XLua.DelegateBridge;
           // __Hotfix0_GetValue: XLua.DelegateBridge;
         }
-        export namespace DeadState {
-        }
-        export namespace SkillState {
-        }
+        export namespace DeadState {}
+        export namespace SkillState {}
       }
     }
     export namespace Enemy {
@@ -26205,8 +26480,7 @@ export namespace Torappu {
         spawnedCnt: System.UInt32;
         isSummon: System.Boolean;
       }
-      export interface States {
-      }
+      export interface States {}
       export interface AttackWrapper {
         // m_enemy: Torappu.Battle.Enemy;
         // m_curTarget: Torappu.Battle.Entity;
@@ -26399,18 +26673,12 @@ export namespace Torappu {
           // __Hotfix0_CheckSwitchOut: XLua.DelegateBridge;
           // __Hotfix0__PlayAnimation: XLua.DelegateBridge;
         }
-        export namespace BornState {
-        }
-        export namespace DeadState {
-        }
-        export namespace ReachExitState {
-        }
-        export namespace FallDownState {
-        }
-        export namespace DisappearState {
-        }
-        export namespace BlinkState {
-        }
+        export namespace BornState {}
+        export namespace DeadState {}
+        export namespace ReachExitState {}
+        export namespace FallDownState {}
+        export namespace DisappearState {}
+        export namespace BlinkState {}
       }
       export namespace SpecialBlockCondition {
         export enum Type {
@@ -26524,8 +26792,7 @@ export namespace Torappu {
         // _emitterLogFolder: UnityEngine.Transform;
         // m_currentSelectedLogType: Torappu.Battle.DevelopTools.AudioEmitterLog.LogType;
       }
-      export interface AudioEmitterLogSetting {
-      }
+      export interface AudioEmitterLogSetting {}
       export interface BattleDebugController {
         // _debugPanelPrefab: UnityEngine.GameObject;
       }
@@ -26554,8 +26821,7 @@ export namespace Torappu {
         // m_lastPointerPos: UnityEngine.Vector3;
         // m_isPointPressed: System.Boolean;
       }
-      export interface ToolsGroupAttribute {
-      }
+      export interface ToolsGroupAttribute {}
       export namespace BatchLevelBaker {
         export interface LevelPair {
           enabled: System.Boolean;
@@ -26569,8 +26835,7 @@ export namespace Torappu {
         }
       }
       export namespace MapEditor {
-        export interface GizmosHelper {
-        }
+        export interface GizmosHelper {}
         export interface MapEditor {
           _factory: Torappu.Battle.BattleFactory;
           _mapId: System.String;
@@ -26641,8 +26906,7 @@ export namespace Torappu {
             direction: Torappu.SharedConsts.Direction;
           }
         }
-        export namespace BattleReplayLoader {
-        }
+        export namespace BattleReplayLoader {}
         export namespace DevLevelLauncher {
           export enum DataSource {
             DEFAULT = "DEFAULT",
@@ -26693,14 +26957,12 @@ export namespace Torappu {
       }
     }
     export namespace GameMode {
-      export interface IGameMode {
-      }
+      export interface IGameMode {}
       export interface GameModeFactory {
         // __Hotfix0_Create: XLua.DelegateBridge;
         // __Hotfix0_GatherPreloadAssets: XLua.DelegateBridge;
       }
-      export interface IMultiplayerGameMode {
-      }
+      export interface IMultiplayerGameMode {}
       export namespace GameModeFactory {
         export interface DefaultGameMode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -26883,16 +27145,12 @@ export namespace Torappu {
       }
     }
     export namespace BuffTemplate {
-      export interface EventToAction {
-      }
-      export interface EventToActionMap {
-      }
+      export interface EventToAction {}
+      export interface EventToActionMap {}
     }
     export namespace TNodeBuffTemplate {
-      export interface StrToTNodeData {
-      }
-      export interface TNodeDataMap {
-      }
+      export interface StrToTNodeData {}
+      export interface TNodeDataMap {}
     }
     export namespace FixedEventHandler {
       export interface PendingEvent<T> {
@@ -27013,8 +27271,7 @@ export namespace Torappu {
       // __Hotfix0__ShowLoadingMaskForSocial: XLua.DelegateBridge;
       // __Hotfix0_Dispose: XLua.DelegateBridge;
     }
-    export namespace AiriSDKBridge {
-    }
+    export namespace AiriSDKBridge {}
     export namespace Fake {
       export enum ResultCode {
         Unknown = "Unknown",
@@ -27315,8 +27572,7 @@ export namespace Torappu {
     }
   }
   export namespace Audio {
-    export interface AudioHelper {
-    }
+    export interface AudioHelper {}
     export interface AudioChannel {
       loadedClipCount: System.Int32;
       // onChannelRecycled: System.Action;
@@ -27365,8 +27621,7 @@ export namespace Torappu {
       // m_coroutine: UnityEngine.Coroutine;
       // m_scheduling: System.Boolean;
     }
-    export interface ISceneParamWithMusic {
-    }
+    export interface ISceneParamWithMusic {}
     export interface SceneMusicPlayer {
       SCENES_DISABLE_AUTO_PLAY: System.String[];
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -27468,9 +27723,18 @@ export namespace Torappu {
       HANDBOOK_CHAR_MOVE_2: System.String;
       MEDAL_DIY_PLACED: System.String;
       ROGUELIKE_STATE_CHANGED: System.String;
-      InternalSounds: System.Collections.Generic.Dictionary<Torappu.Audio.UiInternalSoundType,System.String>;
-      BuildingSounds: System.Collections.Generic.Dictionary<Torappu.Audio.UiBuildingSoundType,System.String>;
-      UiEffectSounds: System.Collections.Generic.Dictionary<Torappu.Audio.UiEffectSoundType,System.String>;
+      InternalSounds: System.Collections.Generic.Dictionary<
+        Torappu.Audio.UiInternalSoundType,
+        System.String
+      >;
+      BuildingSounds: System.Collections.Generic.Dictionary<
+        Torappu.Audio.UiBuildingSoundType,
+        System.String
+      >;
+      UiEffectSounds: System.Collections.Generic.Dictionary<
+        Torappu.Audio.UiEffectSoundType,
+        System.String
+      >;
       PERSIST_TAG_BATTLE: System.String;
       PERSIST_TAG_UI: System.String;
       PERSIST_TAG_GACHA: System.String;
@@ -27507,11 +27771,9 @@ export namespace Torappu {
         persistTag: System.String;
       }
     }
-    export namespace AudioSchedule {
-    }
+    export namespace AudioSchedule {}
     export namespace Middleware {
-      export interface AudioMiddleware {
-      }
+      export interface AudioMiddleware {}
       export interface AudioAtom {
         // <bank>k__BackingField: Torappu.Audio.Middleware.Data.Bank;
         // <name>k__BackingField: System.String;
@@ -27551,8 +27813,7 @@ export namespace Torappu {
           delay: System.Single;
           // m_bgmAtom: Torappu.Audio.Middleware.Data.BGMAudioAtom;
         }
-        export interface BGMAudioAtom {
-        }
+        export interface BGMAudioAtom {}
         export interface SoundFXBank {
           sounds: Torappu.Audio.Middleware.Data.SoundFXBank.SoundFX[];
           maxSoundAllowed: System.Int32;
@@ -27562,8 +27823,7 @@ export namespace Torappu {
           // m_totalWeight: System.Single;
           // m_fxCategory: Torappu.AudioManager.FXCategory;
         }
-        export interface SoundFXAudioAtom {
-        }
+        export interface SoundFXAudioAtom {}
         export interface SoundFXCtrlBank {
           targetBank: System.String;
           ctrlStop: System.Boolean;
@@ -27684,8 +27944,7 @@ export namespace Torappu {
       // __Hotfix0__OnStoryFailed: XLua.DelegateBridge;
       // __Hotfix0_OnInit: XLua.DelegateBridge;
     }
-    export interface AVGAssetLoader {
-    }
+    export interface AVGAssetLoader {}
     export interface AVGComponent {
       // <controller>k__BackingField: Torappu.AVG.AVGController;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -27852,10 +28111,8 @@ export namespace Torappu {
       BUILDING_WORKSHOP = "BUILDING_WORKSHOP",
       BUILDING_TRADE = "BUILDING_TRADE",
     }
-    export interface AVGSignalActions {
-    }
-    export interface AVGUtils {
-    }
+    export interface AVGSignalActions {}
+    export interface AVGUtils {}
     export interface AVGVariableConfig {
       VARIABLE_PROMPT: System.String;
       // m_variableMap: System.Collections.Generic.Dictionary<System.String,System.Object>;
@@ -27863,17 +28120,16 @@ export namespace Torappu {
     export interface Command {
       command: System.String;
       content: System.String;
-      param: System.Collections.Generic.Dictionary<System.String,System.Object>;
+      param: System.Collections.Generic.Dictionary<
+        System.String,
+        System.Object
+      >;
       lineNumber: System.Int32;
     }
-    export interface ICommandExecutor {
-    }
-    export interface IFadeTimeRatio {
-    }
-    export interface IContainsResRefs {
-    }
-    export interface AbstractResRefCollecter {
-    }
+    export interface ICommandExecutor {}
+    export interface IFadeTimeRatio {}
+    export interface IContainsResRefs {}
+    export interface AbstractResRefCollecter {}
     export interface CommandExecutorWrapper {
       // m_executor: Torappu.AVG.CommandExecutorWrapper.CommandExecuteDelegate;
       // m_signalReceiver: Torappu.AVG.CommandExecutorWrapper.RaiseSignalDelegate;
@@ -27944,7 +28200,10 @@ export namespace Torappu {
     }
     export interface AVGCharacterCutinPanel {
       _slotPool: Torappu.ObjectPool.GameObjectPoolComponent;
-      _slots: System.Collections.Generic.Dictionary<System.String,Torappu.AVG.AVGCharacterCutinSlot>;
+      _slots: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.AVG.AVGCharacterCutinSlot
+      >;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_GetExecutors: XLua.DelegateBridge;
       // __Hotfix0_OnReset: XLua.DelegateBridge;
@@ -28399,8 +28658,7 @@ export namespace Torappu {
       EXECUTOR_CAMPAIGN_FOCUS_ZONE: System.String;
       EXECUTOR_CAMPAIGN_REGISTER_ZONE_BTN: System.String;
     }
-    export interface AVGException {
-    }
+    export interface AVGException {}
     export interface CustomOperationKeys {
       SQUAD_ALLOW_ASSIST: System.String;
       SQUAD_ALLOW_MODIFY: System.String;
@@ -28417,8 +28675,7 @@ export namespace Torappu {
       CRISIS_SYS: System.String;
       STAGE_HOME_INTRO: System.String;
     }
-    export interface CustomOperationUtils {
-    }
+    export interface CustomOperationUtils {}
     export interface QuickPlayKnownNotifyView {
       QUICK_PLAY_TOAST_SIG: System.String;
       // _text: UnityEngine.UI.Text;
@@ -28434,10 +28691,8 @@ export namespace Torappu {
       // __Hotfix0_OnReadToastClick: XLua.DelegateBridge;
       // __Hotfix0_GetSwitchTween: XLua.DelegateBridge;
     }
-    export interface IAVGParser {
-    }
-    export interface IAVGVariableConverter {
-    }
+    export interface IAVGParser {}
+    export interface IAVGVariableConverter {}
     export interface AVGParser {
       ESCAPE_CHAR: System.Char;
       COMMAND_REGEX: RegExp;
@@ -28446,8 +28701,7 @@ export namespace Torappu {
       // m_errors: System.Collections.Generic.List<System.String>;
       // <variableConverter>k__BackingField: Torappu.AVG.IAVGVariableConverter;
     }
-    export interface IAVGTextTranslater {
-    }
+    export interface IAVGTextTranslater {}
     export interface VariableTranslater {
       // m_varGetter: Torappu.AVG.VariableTranslater.VariableGetterDelegate;
     }
@@ -28630,15 +28884,11 @@ export namespace Torappu {
         ON_SPEED_SET = "ON_SPEED_SET",
         ON_PRE_END = "ON_PRE_END",
       }
-      export interface ICommandPredicator {
-      }
-      export interface ICommandFlowController {
-      }
-      export interface ICommandSkipController {
-      }
+      export interface ICommandPredicator {}
+      export interface ICommandFlowController {}
+      export interface ICommandSkipController {}
     }
-    export namespace AVGLoader {
-    }
+    export namespace AVGLoader {}
     export namespace AVGSignalActions {
       export interface Signals {
         SIGNAL_BATTLE_START: System.String;
@@ -28704,20 +28954,15 @@ export namespace Torappu {
       }
     }
     export namespace Command {
-      export interface TryGetParamDelegate<T> {
-      }
+      export interface TryGetParamDelegate<T> {}
     }
     export namespace CommandExecutorWrapper {
-      export interface CommandExecuteDelegate {
-      }
-      export interface RaiseSignalDelegate {
-      }
+      export interface CommandExecuteDelegate {}
+      export interface RaiseSignalDelegate {}
     }
     export namespace ExecutorComponent {
-      export interface Executor {
-      }
-      export interface SignalReceiver {
-      }
+      export interface Executor {}
+      export interface SignalReceiver {}
     }
     export namespace AVGButton {
       export enum State {
@@ -28732,8 +28977,7 @@ export namespace Torappu {
         // <startPos>k__BackingField: UnityEngine.Vector2;
       }
     }
-    export namespace AVGCameraEffect {
-    }
+    export namespace AVGCameraEffect {}
     export namespace AVGCharacterCutinPanel {
       export interface InternalResRefCollector {
         // m_regex: RegExp;
@@ -28746,8 +28990,7 @@ export namespace Torappu {
       }
     }
     export namespace AVGImagePanel {
-      export interface InternalResRefCollector {
-      }
+      export interface InternalResRefCollector {}
     }
     export namespace AVGQuickPlay {
       export enum State {
@@ -28757,16 +29000,14 @@ export namespace Torappu {
       }
     }
     export namespace AVGShowItemPanel {
-      export interface InternalResRefCollector {
-      }
+      export interface InternalResRefCollector {}
       export interface SlotStyle {
         styleKey: System.String;
         // slotPrefab: UnityEngine.Object;
       }
     }
     export namespace AVGSkipLabel {
-      export interface SkipLabelController {
-      }
+      export interface SkipLabelController {}
     }
     export namespace AVGStoryCache {
       export enum AVGAutoMode {
@@ -28796,8 +29037,7 @@ export namespace Torappu {
       }
     }
     export namespace BackgroundPanel {
-      export interface InternalResRefCollector {
-      }
+      export interface InternalResRefCollector {}
     }
     export namespace CharacterPanel {
       export interface InternalResRefCollector {
@@ -28805,10 +29045,8 @@ export namespace Torappu {
       }
     }
     export namespace CommonExecutors {
-      export interface InternalSoundRefCollector {
-      }
-      export interface InternalMusicRefCollector {
-      }
+      export interface InternalSoundRefCollector {}
+      export interface InternalMusicRefCollector {}
     }
     export namespace DecisionPanel {
       export interface DesicionCommandPrecidator {
@@ -28832,8 +29070,7 @@ export namespace Torappu {
         // m_demo: Torappu.AVG.Demo.AVGDemo;
         // m_scroll: UnityEngine.Vector2;
       }
-      export namespace AVGTutorialUI {
-      }
+      export namespace AVGTutorialUI {}
     }
     export namespace QuickPlayKnownNotifyView {
       export interface Param {
@@ -28850,8 +29087,7 @@ export namespace Torappu {
       }
     }
     export namespace VariableTranslater {
-      export interface VariableGetterDelegate {
-      }
+      export interface VariableGetterDelegate {}
     }
     export namespace AVGCharacterCutinSlot {
       export enum FadeStyle {
@@ -28889,12 +29125,10 @@ export namespace Torappu {
         HighlightRect = "HighlightRect",
       }
     }
-    export namespace AVGTypeWriterText {
-    }
+    export namespace AVGTypeWriterText {}
   }
   export namespace TextManager {
-    export interface SimpleVariableGetter {
-    }
+    export interface SimpleVariableGetter {}
   }
   export namespace BattleTweenMgr {
     export interface Tween {
@@ -28999,8 +29233,7 @@ export namespace Torappu {
       AVG = "AVG",
       GUIDEBOOK = "GUIDEBOOK",
     }
-    export interface IBuildingContext {
-    }
+    export interface IBuildingContext {}
     export interface DynamicBuildingContext {
       // m_refCount: System.Int32;
       // m_content: Torappu.Building.DynamicBuildingContext.Content;
@@ -29121,8 +29354,7 @@ export namespace Torappu {
       // __Hotfix0_OnDestroy: XLua.DelegateBridge;
       // __Hotfix0_Update: XLua.DelegateBridge;
     }
-    export interface IBuildingMode {
-    }
+    export interface IBuildingMode {}
     export interface BuildingMode<T> {
       // <stateMachine>k__BackingField: Torappu.Building.BuildingStateMachine;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -29139,8 +29371,7 @@ export namespace Torappu {
       // __Hotfix0_ShowCoroutine: XLua.DelegateBridge;
       // __Hotfix0_HideCoroutine: XLua.DelegateBridge;
     }
-    export interface BuildingModuleHolder {
-    }
+    export interface BuildingModuleHolder {}
     export interface BuildingStateMachine {
       // m_isTransiting: System.Boolean;
       // <controller>k__BackingField: Torappu.Building.BuildingController;
@@ -29171,8 +29402,7 @@ export namespace Torappu {
       // m_path: System.Collections.Generic.List<Torappu.Building.GridMap.Node>;
       // <map>k__BackingField: Torappu.Building.GridMap;
     }
-    export interface ResourceRouter {
-    }
+    export interface ResourceRouter {}
     export interface BuildingPrefabMaker {
       VCHARACTER_PATH: System.String;
       FILTER_SEPARATORS: System.Char[];
@@ -29248,7 +29478,10 @@ export namespace Torappu {
       // m_buildingCharSearchTable: System.Collections.Generic.Dictionary<System.Int32,Torappu.Building.BuildingCharModel>;
       slotGraph: Torappu.Building.RoomSlotGraph;
       layout: System.Collections.Generic.List<Torappu.Building.RoomSlotModel>;
-      storeys: Torappu.ListDict<System.String,Torappu.Building.StoreyViewModel>;
+      storeys: Torappu.ListDict<
+        System.String,
+        Torappu.Building.StoreyViewModel
+      >;
       // <assistants>k__BackingField: System.Collections.Generic.List<Torappu.Building.BuildingAssistantModel>;
       // <visitors>k__BackingField: System.Collections.Generic.List<Torappu.Building.BuildingVisitorModel>;
       // <playerRooms>k__BackingField: Torappu.PlayerBuildingRoom;
@@ -29488,7 +29721,7 @@ export namespace Torappu {
       secsPerItem: System.Int32;
     }
     export interface ShopInfoViewModel {
-      serverOutput: Torappu.ListDict<Torappu.ItemType,System.Int32>;
+      serverOutput: Torappu.ListDict<Torappu.ItemType, System.Int32>;
       capacity: System.Int32;
       unlockStockNum: System.Int32;
       stocks: System.Collections.Generic.List<Torappu.Building.ShopStockInfoViewModel>;
@@ -29512,14 +29745,16 @@ export namespace Torappu {
       preferredType: Torappu.BuildingData.OrderType;
       isStrategyEnabled: System.Boolean;
       orderNumLimit: System.Int32;
-      orders: Torappu.ListDict<System.Int64,Torappu.Building.TradingOrderStruct>;
+      orders: Torappu.ListDict<
+        System.Int64,
+        Torappu.Building.TradingOrderStruct
+      >;
       nextOrder: System.Int64;
       gainSnapshot: Torappu.Building.TradingGainOrderSnapshot;
       // __Hotfix0_IsEmpty: XLua.DelegateBridge;
       // __Hotfix0_LoadData: XLua.DelegateBridge;
     }
-    export interface TradingInfoViewProperty {
-    }
+    export interface TradingInfoViewProperty {}
     export interface TradingGainOrderSnapshot {
       EMPTY: Torappu.Building.TradingGainOrderSnapshot;
       // m_isEmpty: System.Boolean;
@@ -29662,8 +29897,7 @@ export namespace Torappu {
     export interface BuildingUtil {
       ALMOST_VERTICAL_THRESHOLD: System.Single;
     }
-    export interface RaycastBlocker {
-    }
+    export interface RaycastBlocker {}
     export interface GameObjectSplitFrameLoadBalancer {
       // m_assetLoader: Torappu.Resource.AbstractAssetLoader;
       // m_options: Torappu.Building.GameObjectSplitFrameLoadBalancer.Options;
@@ -29672,8 +29906,7 @@ export namespace Torappu {
       // m_isPaused: System.Boolean;
     }
     export namespace BP {
-      export interface BuildingArchitecture {
-      }
+      export interface BuildingArchitecture {}
       export interface BCameraController {
         // _touchCamera: BitBenderGames.MobileTouchCamera;
         // m_tanFOV: System.Nullable<System.Single>;
@@ -29802,8 +30035,7 @@ export namespace Torappu {
         // _textLevel: UnityEngine.UI.Text;
         // _textLevelShadow: UnityEngine.UI.Text;
       }
-      export interface BCorridorRoom {
-      }
+      export interface BCorridorRoom {}
       export interface BCustomRoom {
         // _textRoomCategory: UnityEngine.UI.Text;
       }
@@ -29903,8 +30135,7 @@ export namespace Torappu {
       export interface BUncleanedRoom {
         // _infoPanel: UnityEngine.GameObject;
       }
-      export interface BWorkshopRoom {
-      }
+      export interface BWorkshopRoom {}
       export interface BRoomLevelAdapter {
         // m_level: System.Int32;
         // mainColor: UnityEngine.Color;
@@ -29925,18 +30156,14 @@ export namespace Torappu {
         // _iconCharTired: UnityEngine.GameObject;
         // _iconCharNormal: UnityEngine.GameObject;
       }
-      export namespace BuildingArchitecture {
-      }
+      export namespace BuildingArchitecture {}
       export namespace BLayoutManager {
-        export interface IListener {
-        }
+        export interface IListener {}
       }
       export namespace BlueprintMode {
-        export interface IPlugin {
-        }
+        export interface IPlugin {}
       }
-      export namespace BRoomSlot {
-      }
+      export namespace BRoomSlot {}
       export namespace BUpgradePanel {
         export interface RoomSlotModelListener {
           // m_panel: Torappu.Building.BP.BUpgradePanel;
@@ -30007,8 +30234,7 @@ export namespace Torappu {
         enableCharacterSleep: System.Boolean;
       }
     }
-    export namespace BuildingFactory {
-    }
+    export namespace BuildingFactory {}
     export namespace EditorTools {
       export interface BuildingLoader {
         _layoutId: System.String;
@@ -30028,8 +30254,7 @@ export namespace Torappu {
         // m_obstacleData: Torappu.BuildingData.ObstacleData;
       }
     }
-    export namespace BuildingMode {
-    }
+    export namespace BuildingMode {}
     export namespace BuildingStateMachine {
       export interface TransitionParam {
         DEFAULT: Torappu.Building.BuildingStateMachine.TransitionParam;
@@ -30065,8 +30290,7 @@ export namespace Torappu {
         occupyGrids: System.Collections.Generic.List<Torappu.Building.GridMap.GridNode>;
         // <dir>k__BackingField: Torappu.SharedConsts.Direction;
       }
-      export interface IGridObject {
-      }
+      export interface IGridObject {}
       export namespace GridNode {
         export enum State {
           EMPTY = "EMPTY",
@@ -30101,8 +30325,7 @@ export namespace Torappu {
       }
     }
     export namespace Vault {
-      export interface IMovable {
-      }
+      export interface IMovable {}
       export interface VMoveController {
         OBSTACLE_AVOID_TICK_PERIOD: System.Int32;
         _steeringFactor: System.Single;
@@ -30444,10 +30667,8 @@ export namespace Torappu {
           interactSlot: Torappu.Building.Vault.VFurnitureBridge.InteractSlot;
           probToPlaySpecialAnim: System.Single;
         }
-        export interface IListener {
-        }
-        export interface States {
-        }
+        export interface IListener {}
+        export interface States {}
         export namespace States {
           export enum State {
             DEFAULT = "DEFAULT",
@@ -30471,10 +30692,8 @@ export namespace Torappu {
           export interface InteractState {
             // m_waitTime: System.Single;
           }
-          export interface SleepState {
-          }
-          export interface FurnitureState {
-          }
+          export interface SleepState {}
+          export interface FurnitureState {}
           export namespace FurnitureState {
             export enum SubState {
               DEFAULT = "DEFAULT",
@@ -30482,16 +30701,14 @@ export namespace Torappu {
               INTERACT = "INTERACT",
               TERMINAL = "TERMINAL",
             }
-            export interface MoveState {
-            }
+            export interface MoveState {}
             export interface InteractState {
               // m_isAnimationFinished: System.Boolean;
               // m_coroutine: UnityEngine.Coroutine;
               // m_tween: DG.Tweening.Tween;
               // m_protectTimeToExit: System.Single;
             }
-            export namespace InteractState {
-            }
+            export namespace InteractState {}
           }
         }
       }
@@ -30542,11 +30759,9 @@ export namespace Torappu {
           hasRightDoor: System.Boolean;
         }
       }
-      export namespace VDIYRoom {
-      }
+      export namespace VDIYRoom {}
       export namespace VRoom {
-        export interface IObject {
-        }
+        export interface IObject {}
         export interface Object {
           // m_isOn: System.Boolean;
           // <room>k__BackingField: Torappu.Building.Vault.VRoom;
@@ -30558,16 +30773,14 @@ export namespace Torappu {
           prefabId: System.String;
         }
       }
-      export namespace VaultMode {
-      }
+      export namespace VaultMode {}
       export namespace VCameraController {
         export enum LOD {
           LEVEL_0 = "LEVEL_0",
           LEVEL_1 = "LEVEL_1",
           TOO_FAR = "TOO_FAR",
         }
-        export interface OnZoomUpdateEvent {
-        }
+        export interface OnZoomUpdateEvent {}
         export enum FocusMatchType {
           WIDTH = "WIDTH",
           HEIGHT = "HEIGHT",
@@ -30614,8 +30827,7 @@ export namespace Torappu {
         // m_furnitureGroupDatabase: Torappu.Building.DIY.FurnitureGroupDatabase;
         // m_inited: System.Boolean;
       }
-      export interface IDIYFeatureComponents {
-      }
+      export interface IDIYFeatureComponents {}
       export interface DIYPreset {
         itemList: System.Collections.Generic.List<Torappu.Building.DIY.DIYPresetItem>;
         // <name>k__BackingField: System.String;
@@ -30627,12 +30839,9 @@ export namespace Torappu {
         pos0: System.Int32;
         pos1: System.Int32;
       }
-      export interface IDIYPreset {
-      }
-      export interface IDIYPresetProvider {
-      }
-      export interface IDIYPresetManager {
-      }
+      export interface IDIYPreset {}
+      export interface IDIYPresetProvider {}
+      export interface IDIYPresetManager {}
       export interface DIYRoom {
         VCHARACTER_HEIGHT_BOUNDING_GRID_SIZE: System.Int32;
         _groundGridSize: System.Single;
@@ -30811,21 +31020,16 @@ export namespace Torappu {
         FLOOR = "FLOOR",
         WALL = "WALL",
       }
-      export interface IDIYRoomModifierData {
-      }
-      export interface IDIYRoomModifierDataProvider {
-      }
+      export interface IDIYRoomModifierData {}
+      export interface IDIYRoomModifierDataProvider {}
       export interface DIYRoomModifier {
         // m_listener: Torappu.Building.DIY.DIYRoomModifier.IListener;
         // m_data: Torappu.Building.DIY.IDIYRoomModifierData;
         // m_roomIndex: System.Int32;
       }
-      export interface IDIYRoomModifierProviderListener {
-      }
-      export interface IDIYRoomModifierProvider {
-      }
-      export interface IDIYRoomModifierManager {
-      }
+      export interface IDIYRoomModifierProviderListener {}
+      export interface IDIYRoomModifierProvider {}
+      export interface IDIYRoomModifierManager {}
       export interface Obstacle {
         // m_x: System.Int32;
         // m_y: System.Int32;
@@ -30834,16 +31038,13 @@ export namespace Torappu {
         // m_h: System.Int32;
         // m_d: System.Int32;
       }
-      export interface IDIYRoomTemplate {
-      }
-      export interface IDIYRoomTemplateProvider {
-      }
+      export interface IDIYRoomTemplate {}
+      export interface IDIYRoomTemplateProvider {}
       export interface DIYRoomInfo {
         // m_data: Torappu.Building.DIY.IDIYRoomTemplate;
         // m_index: System.Int32;
       }
-      export interface IDIYRoomInfoProvider {
-      }
+      export interface IDIYRoomInfoProvider {}
       export interface Furniture {
         // m_listener: Torappu.Building.DIY.Furniture.IListener;
         // m_data: Torappu.Building.DIY.IFurnitureData;
@@ -30851,12 +31052,9 @@ export namespace Torappu {
         // m_pos1: System.Int32;
         // m_roomIndex: System.Int32;
       }
-      export interface IFurnitureProviderListener {
-      }
-      export interface IFurnitureProvider {
-      }
-      export interface IFurnitureManager {
-      }
+      export interface IFurnitureProviderListener {}
+      export interface IFurnitureProvider {}
+      export interface IFurnitureManager {}
       export interface FurnitureControllerHolder {
         furnitureController: Torappu.Building.DIY.DIYRoom.IFurnitureController;
       }
@@ -30896,12 +31094,9 @@ export namespace Torappu {
         // __Hotfix0_GetFurnitureQuickSetup: XLua.DelegateBridge;
         // __Hotfix0_GetGroupDataByFurniture: XLua.DelegateBridge;
       }
-      export interface IFurnitureGroupData {
-      }
-      export interface IFurnitureQuickSetupItem {
-      }
-      export interface IFurnitureGroupDataProvider {
-      }
+      export interface IFurnitureGroupData {}
+      export interface IFurnitureQuickSetupItem {}
+      export interface IFurnitureGroupDataProvider {}
       export interface FurnitureManager {
         // m_listeners: System.Collections.Generic.List<Torappu.Building.DIY.IFurnitureProviderListener>;
         // m_furnitures: System.Collections.Generic.List<Torappu.Building.DIY.Furniture>;
@@ -30916,10 +31111,8 @@ export namespace Torappu {
       export interface FurniturePresetManager {
         SLOT_COUNT: System.Int32;
       }
-      export interface FurnitureSaver {
-      }
-      export interface IFurnitureSaver {
-      }
+      export interface FurnitureSaver {}
+      export interface IFurnitureSaver {}
       export interface FurnitureSorter {
         // m_furnitureStorageItemCache: System.Collections.Generic.Dictionary<System.String,System.Int32>;
         // m_cacheList: System.Collections.Generic.List<Torappu.Building.DIY.FurnitureSorter.CacheItem<Torappu.Building.DIY.IDIYItem>>;
@@ -30936,15 +31129,13 @@ export namespace Torappu {
         // <>f__mg$cache8: System.Func<Torappu.Building.DIY.IDIYItem,System.Int32>;
         // <>f__mg$cache9: System.Func<Torappu.Building.DIY.IDIYItem,System.Int32>;
       }
-      export interface FurnitureStorage {
-      }
+      export interface FurnitureStorage {}
       export interface FurnitureStorageItem {
         EMPTY: Torappu.Building.DIY.FurnitureStorageItem;
         furnitureId: System.String;
         totalCount: System.Int32;
       }
-      export interface IFurnitureStorage {
-      }
+      export interface IFurnitureStorage {}
       export interface FurnitureTypeDatabase {
         // m_data: System.Collections.Generic.List<Torappu.Building.DIY.FurnitureTypeDatabase.Entry>;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -30969,10 +31160,8 @@ export namespace Torappu {
         POSTER = "POSTER",
         CEILING_DECAL = "CEILING_DECAL",
       }
-      export interface IFurnitureData {
-      }
-      export interface IFurnitureDataProvider {
-      }
+      export interface IFurnitureData {}
+      export interface IFurnitureDataProvider {}
       export interface PersistentImageProxy {
         CACHE_MAP_FILE_NAME: System.String;
         // m_imageCache: System.Collections.Generic.Dictionary<System.String,UnityEngine.Texture2D>;
@@ -30980,8 +31169,7 @@ export namespace Torappu {
         // m_cacheInfoList: System.Collections.Generic.List<Torappu.Building.DIY.PersistentImageProxy.CacheInfo>;
         // m_cacheInfoFileName: System.String;
       }
-      export interface PersistentImageProxyMonitor {
-      }
+      export interface PersistentImageProxyMonitor {}
       export interface ResourceRouter {
         FURNITURE_FOLDER: System.String;
         MODIFIER_MATERIAL_FOLDER: System.String;
@@ -30992,12 +31180,9 @@ export namespace Torappu {
       export interface DIYShop {
         // m_items: System.Collections.Generic.List<Torappu.Building.DIY.DIYShop.Item>;
       }
-      export interface IDIYItem {
-      }
-      export interface IDIYShopItem {
-      }
-      export interface IDIYShop {
-      }
+      export interface IDIYItem {}
+      export interface IDIYShopItem {}
+      export interface IDIYShop {}
       export interface DIYRoomIndexConfig {
         _entries: Torappu.Building.DIY.DIYRoomIndexConfig.Entry[];
       }
@@ -31050,12 +31235,9 @@ export namespace Torappu {
         genres: Torappu.Building.DIY.FurnitureGenreConfig.FurnitureGenre[];
       }
       export namespace DIYRoom {
-        export interface IListener {
-        }
-        export interface IRefectionMaterialFilter {
-        }
-        export interface DefaultReflectFilter {
-        }
+        export interface IListener {}
+        export interface IRefectionMaterialFilter {}
+        export interface DefaultReflectFilter {}
         export interface FurnitureGridRect {
           // m_furniture: Torappu.Building.DIY.Furniture;
         }
@@ -31083,14 +31265,10 @@ export namespace Torappu {
           // m_indicator: Torappu.Building.DIY.DIYRoomIndicator;
           // m_gridLocator: Torappu.Building.DIY.GridLocator;
         }
-        export interface ISpaceOccupation {
-        }
-        export interface IFurnitureController {
-        }
-        export interface IAttachPoint {
-        }
-        export interface IAttachPointExporter {
-        }
+        export interface ISpaceOccupation {}
+        export interface IFurnitureController {}
+        export interface IAttachPoint {}
+        export interface IAttachPointExporter {}
         export interface FurnitureControlNode {
           // m_furniture: Torappu.Building.DIY.Furniture;
           // m_gameObject: UnityEngine.GameObject;
@@ -31123,11 +31301,9 @@ export namespace Torappu {
           // positionSetEvent: System.Action<Torappu.Building.DIY.DIYRoom.FurnitureControlNode,System.Int32,System.Int32>;
           // roomIndexChangeEvent: System.Action<Torappu.Building.DIY.DIYRoom.FurnitureControlNode>;
         }
-        export namespace FurnitureControlNode {
-        }
+        export namespace FurnitureControlNode {}
       }
-      export namespace DIYRoomInfoManager {
-      }
+      export namespace DIYRoomInfoManager {}
       export namespace DIYRoomModifierDatabase {
         export interface DIYRoomModifierDataAdapter {
           // m_buildingFurnitureData: Torappu.BuildingData.CustomData.FurnitureData;
@@ -31149,8 +31325,7 @@ export namespace Torappu {
           // __Hotfix0_get_furniType: XLua.DelegateBridge;
         }
       }
-      export namespace DIYRoomModifierManager {
-      }
+      export namespace DIYRoomModifierManager {}
       export namespace DIYRoomPrefabSettings {
         export interface ObstacleItem {
           x: System.Int32;
@@ -31168,12 +31343,10 @@ export namespace Torappu {
         }
       }
       export namespace DIYRoomModifier {
-        export interface IListener {
-        }
+        export interface IListener {}
       }
       export namespace Furniture {
-        export interface IListener {
-        }
+        export interface IListener {}
       }
       export namespace FurnitureDatabase {
         export interface FurnitureDataAdapter {
@@ -31199,8 +31372,7 @@ export namespace Torappu {
           // __Hotfix0_get_furniType: XLua.DelegateBridge;
           // __Hotfix0_LoadPrefabAsync: XLua.DelegateBridge;
         }
-        export namespace FurnitureDataAdapter {
-        }
+        export namespace FurnitureDataAdapter {}
       }
       export namespace FurnitureEntity {
         export interface IntPair {
@@ -31224,22 +31396,17 @@ export namespace Torappu {
           // m_item: Torappu.BuildingData.CustomData.ThemeQuickSetupItem;
           // m_diyItem: Torappu.Building.DIY.IDIYItem;
         }
-        export namespace FurnitureGroupDataAdapter {
-        }
-        export namespace FurnitureQuickSetupItemAdapter {
-        }
+        export namespace FurnitureGroupDataAdapter {}
+        export namespace FurnitureQuickSetupItemAdapter {}
       }
-      export namespace FurnitureManager {
-      }
+      export namespace FurnitureManager {}
       export namespace FurniturePresetManager {
         export interface Preset {
           buildingPreset: Torappu.PlayerBuildingDIYPreset;
         }
-        export namespace Preset {
-        }
+        export namespace Preset {}
       }
-      export namespace FurnitureSaver {
-      }
+      export namespace FurnitureSaver {}
       export namespace FurnitureSorter {
         export enum FurnitureSortingOption {
           COMFORT = "COMFORT",
@@ -31267,12 +31434,10 @@ export namespace Torappu {
         }
       }
       export namespace GridMachine {
-        export interface IGridRect {
-        }
+        export interface IGridRect {}
       }
       export namespace GridMachine3D {
-        export interface IGridCube {
-        }
+        export interface IGridCube {}
       }
       export namespace PersistentImageProxy {
         export interface CacheInfo {
@@ -31460,20 +31625,16 @@ export namespace Torappu {
           // <>f__am$cache0: System.Predicate<Torappu.Building.DIY.IFurnitureData>;
           // <>f__am$cache1: System.Predicate<Torappu.Building.DIY.IDIYRoomModifierData>;
         }
-        export interface TestOutputFurnitureState {
-        }
-        export namespace DIYTestScene {
-        }
+        export interface TestOutputFurnitureState {}
+        export namespace DIYTestScene {}
         export namespace InteractCheck {
           export interface VaultAsset<T> {
             assetPath: System.String;
             name: System.String;
             // m_inst: T;
           }
-          export interface VCharAsset {
-          }
-          export interface VFurnAsset {
-          }
+          export interface VCharAsset {}
+          export interface VFurnAsset {}
           export interface FurniSelection {
             EMPTY: Torappu.Building.DIY.Test.InteractCheck.FurniSelection;
             index: System.Int32;
@@ -31498,8 +31659,7 @@ export namespace Torappu {
             // m_diyPresets: Torappu.Building.DIY.DIYPresetItem[];
           }
         }
-        export namespace MockDIYRoomInfoManager {
-        }
+        export namespace MockDIYRoomInfoManager {}
         export namespace MockDIYRoomModifierDB {
           export interface DIYRoomModifierData {
             _id: System.String;
@@ -31646,16 +31806,14 @@ export namespace Torappu {
             roomIndex: System.Int32;
           }
         }
-        export namespace MockFurnitureSaver {
-        }
+        export namespace MockFurnitureSaver {}
         export namespace MockFurnitureStorage {
           export interface Item {
             id: System.String;
             count: System.Int32;
           }
         }
-        export namespace TestOutputFurnitureState {
-        }
+        export namespace TestOutputFurnitureState {}
       }
       export namespace DIYRoomIndexConfig {
         export interface Entry {
@@ -31697,8 +31855,7 @@ export namespace Torappu {
         ASSIST = "ASSIST",
         VISITOR = "VISITOR",
       }
-      export interface IListener {
-      }
+      export interface IListener {}
       export interface PlayerSlotStatus {
         slotId: System.String;
         roomId: Torappu.BuildingData.RoomType;
@@ -31721,12 +31878,9 @@ export namespace Torappu {
         isBlocked: System.Boolean;
       }
     }
-    export namespace BuildingDataConverter {
-    }
-    export namespace BuildingRouter {
-    }
-    export namespace BuildingServiceUtil {
-    }
+    export namespace BuildingDataConverter {}
+    export namespace BuildingRouter {}
+    export namespace BuildingServiceUtil {}
     export namespace GameObjectSplitFrameLoadBalancer {
       export interface Options {
         DEFAULT: Torappu.Building.GameObjectSplitFrameLoadBalancer.Options;
@@ -31764,8 +31918,7 @@ export namespace Torappu {
       rawIndex: System.Int32;
     }
   }
-  export namespace BuildingVisitController {
-  }
+  export namespace BuildingVisitController {}
   export namespace BuildingToDoNotifyModel {
     export interface NotifyContext {
       slots: System.Collections.Generic.List<System.String>;
@@ -31823,14 +31976,11 @@ export namespace Torappu {
     }
   }
   export namespace Bugly {
-    export interface BuglySDK {
-    }
+    export interface BuglySDK {}
   }
-  export namespace ClearAssets {
-  }
+  export namespace ClearAssets {}
   export namespace DataFromServer {
-    export interface IDataConfig {
-    }
+    export interface IDataConfig {}
     export interface ServerDataValidStatus {
       NO_DATA: Torappu.DataFromServer.ServerDataValidStatus;
       hasData: System.Boolean;
@@ -31888,8 +32038,7 @@ export namespace Torappu {
       }
     }
   }
-  export namespace DOTweenExtensions {
-  }
+  export namespace DOTweenExtensions {}
   export namespace GameFlowController {
     export interface Options {
       DEFAULT: Torappu.GameFlowController.Options;
@@ -31921,8 +32070,7 @@ export namespace Torappu {
       options: Torappu.GameFlowController.Options;
     }
   }
-  export namespace GlobalInitializerAndUpdater {
-  }
+  export namespace GlobalInitializerAndUpdater {}
   export namespace Gyro {
     export interface CameraGyroController {
       // targetCamera: UnityEngine.Transform;
@@ -31981,8 +32129,7 @@ export namespace Torappu {
       // __Hotfix0__GetInverse: XLua.DelegateBridge;
       // __Hotfix0__IsValidQuaternion: XLua.DelegateBridge;
     }
-    export namespace CameraGyroController {
-    }
+    export namespace CameraGyroController {}
   }
   export namespace GlobalResCache {
     export interface ComponentOptions {
@@ -31997,18 +32144,16 @@ export namespace Torappu {
   }
   export namespace SafeArea {
     export namespace Core {
-      export interface SafeAreaImpl {
-      }
+      export interface SafeAreaImpl {}
       export interface SafeAreaImplAndroid {
         // m_mainActivity: UnityEngine.AndroidJavaObject;
         // m_clsSafeAreaController: UnityEngine.AndroidJavaClass;
       }
     }
   }
-  export namespace SafeAreaController {
-  }
+  export namespace SafeAreaController {}
   export namespace ArrayDict {
-    export interface SerializableKV<TKey,TValue> {
+    export interface SerializableKV<TKey, TValue> {
       key: TKey;
       value: TValue;
     }
@@ -32031,12 +32176,10 @@ export namespace Torappu {
     }
   }
   export namespace DragCancellableClickHandler {
-    export interface ClickEvent {
-    }
+    export interface ClickEvent {}
   }
   export namespace EventPool {
-    export interface EventCallbackDelegate {
-    }
+    export interface EventCallbackDelegate {}
     export interface AddOrRemoveSafeCallbackSet<TEnum> {
       // m_iterCounter: System.UInt16;
       // m_internalSet: System.Collections.Generic.HashSet<Torappu.EventPool.EventCallbackDelegate>;
@@ -32093,8 +32236,7 @@ export namespace Torappu {
       // child: UnityEngine.Transform;
     }
   }
-  export namespace SplashController {
-  }
+  export namespace SplashController {}
   export namespace TaskTimer {
     export interface Options<Value> {
       interval: System.Int64;
@@ -32138,8 +32280,7 @@ export namespace Torappu {
       FIT_HEIGHT = "FIT_HEIGHT",
     }
   }
-  export namespace FileUtil {
-  }
+  export namespace FileUtil {}
   export namespace FormatUtil {
     export interface LightStringStream {
       // m_source: System.String;
@@ -32151,8 +32292,7 @@ export namespace Torappu {
       str: System.String;
       contentLength: System.Int32;
     }
-    export interface RichTextTagHandler {
-    }
+    export interface RichTextTagHandler {}
     export enum ClickableRichTextType {
       NONE = "NONE",
       STYLE = "STYLE",
@@ -32168,8 +32308,7 @@ export namespace Torappu {
       E_NUM = "E_NUM",
     }
   }
-  export namespace GameObjectUtil {
-  }
+  export namespace GameObjectUtil {}
   export namespace RandomFactory {
     export enum AlgorithmType {
       DEFAULT = "DEFAULT",
@@ -32195,8 +32334,7 @@ export namespace Torappu {
       retryIfInterrupted: System.Boolean;
     }
   }
-  export namespace WaitForAsyncTask {
-  }
+  export namespace WaitForAsyncTask {}
   export namespace YieldSemaphore {
     export interface Options<Param> {
       // condition: System.Func<Param,System.Boolean>;
@@ -32426,10 +32564,8 @@ export namespace Torappu {
       // __Hotfix0_WriteUint32: XLua.DelegateBridge;
       // __Hotfix0_WriteUint64: XLua.DelegateBridge;
     }
-    export interface IStreamReader {
-    }
-    export interface IStreamWriter {
-    }
+    export interface IStreamReader {}
+    export interface IStreamWriter {}
   }
   export namespace DB {
     export interface BsonNetConverter {
@@ -32437,8 +32573,7 @@ export namespace Torappu {
       // m_format: Newtonsoft.Json.Formatting;
       // m_serializer: Newtonsoft.Json.JsonSerializer;
     }
-    export interface ConverterFactory {
-    }
+    export interface ConverterFactory {}
     export interface CrypticConverter {
       // m_settings: Newtonsoft.Json.JsonSerializerSettings;
       // m_serializer: Newtonsoft.Json.JsonSerializer;
@@ -32462,8 +32597,7 @@ export namespace Torappu {
       text: System.String;
       bytes: System.Byte[];
     }
-    export interface IConverter {
-    }
+    export interface IConverter {}
     export interface JsonNetConverter {
       // m_settings: Newtonsoft.Json.JsonSerializerSettings;
       // m_format: Newtonsoft.Json.Formatting;
@@ -32480,7 +32614,7 @@ export namespace Torappu {
       excelEncryptType: Torappu.DB.ConverterFactory.ConverterType;
       tableAssets: Torappu.DB.AbstractTable[];
     }
-    export interface AbstractKVTable<TValue,TSingleton> {
+    export interface AbstractKVTable<TValue, TSingleton> {
       // m_sharedList: System.Collections.Generic.List<TValue>;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_System.Collections.IEnumerable.GetEnumerator: XLua.DelegateBridge;
@@ -32520,7 +32654,7 @@ export namespace Torappu {
       // __Hotfix0_OnEnable: XLua.DelegateBridge;
       // __Hotfix0_OnDisable: XLua.DelegateBridge;
     }
-    export interface ConstTable<TValue,TSingleton> {
+    export interface ConstTable<TValue, TSingleton> {
       // m_inited: System.Boolean;
       // m_data: TValue;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -32536,7 +32670,7 @@ export namespace Torappu {
       // __Hotfix0_GetDebugString: XLua.DelegateBridge;
       // __Hotfix0_OnInit: XLua.DelegateBridge;
     }
-    export interface LRUKVTable<TValue,TSingleton> {
+    export interface LRUKVTable<TValue, TSingleton> {
       _lruCapacity: System.Int32;
       // m_inited: System.Boolean;
       // m_rawBytesMap: System.Collections.Generic.Dictionary<System.String,System.Byte[]>;
@@ -32554,7 +32688,7 @@ export namespace Torappu {
       // __Hotfix0_TryGetValue: XLua.DelegateBridge;
       // __Hotfix0_GetEnumerator: XLua.DelegateBridge;
     }
-    export interface SimpleKVTable<TValue,TSingleton> {
+    export interface SimpleKVTable<TValue, TSingleton> {
       // m_inited: System.Boolean;
       // m_dataMap: System.Collections.Generic.Dictionary<System.String,TValue>;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -32589,8 +32723,7 @@ export namespace Torappu {
         // m_isValid: System.Boolean;
         // <worker>k__BackingField: Torappu.WaitForAsyncTask<System.Int32>;
       }
-      export namespace AsyncLoadTask {
-      }
+      export namespace AsyncLoadTask {}
     }
     export namespace DBOptions {
       export enum Mode {
@@ -32607,8 +32740,7 @@ export namespace Torappu {
         // exception: System.Exception;
         data: System.Object;
       }
-      export interface IAsyncLoadRequest {
-      }
+      export interface IAsyncLoadRequest {}
       export interface AsyncLoadRequest<TValue> {
         // m_dataCb: System.Action<TValue>;
         // m_converter: Torappu.DB.IConverter;
@@ -32619,16 +32751,14 @@ export namespace Torappu {
         login: System.Boolean;
       }
     }
-    export namespace ConstTable {
-    }
+    export namespace ConstTable {}
     export namespace LRUKVTable {
-      export interface Enumerator<TValue,TSingleton> {
+      export interface Enumerator<TValue, TSingleton> {
         // m_enumerator: System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<System.String,System.Byte[]>>;
         // m_table: Torappu.DB.AbstractKVTable<TValue,TSingleton>;
       }
     }
-    export namespace SimpleKVTable {
-    }
+    export namespace SimpleKVTable {}
     export namespace Test {
       export interface DBTest {
         _tables: Torappu.DB.AbstractTable[];
@@ -32638,8 +32768,14 @@ export namespace Torappu {
       export interface SettingsDef {
         name: System.String;
         list: System.Collections.Generic.List<System.Int32>;
-        args: System.Collections.Generic.Dictionary<System.String,System.Object>;
-        args2: System.Collections.Generic.Dictionary<System.String,System.Object>;
+        args: System.Collections.Generic.Dictionary<
+          System.String,
+          System.Object
+        >;
+        args2: System.Collections.Generic.Dictionary<
+          System.String,
+          System.Object
+        >;
       }
       export interface SettingsTable {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -32653,7 +32789,10 @@ export namespace Torappu {
       }
       export interface BuffData {
         key: System.String;
-        paramValues: System.Collections.Generic.Dictionary<System.String,System.String>;
+        paramValues: System.Collections.Generic.Dictionary<
+          System.String,
+          System.String
+        >;
       }
       export interface SkillData {
         key: System.String;
@@ -32662,8 +32801,14 @@ export namespace Torappu {
         info: System.String;
         animationKey: System.String;
         maxLvl: System.Int32;
-        lvlInfo: System.Collections.Generic.Dictionary<System.Int32,System.String>;
-        lvlBuffData: System.Collections.Generic.Dictionary<System.Int32,System.Collections.Generic.List<Torappu.DB.Test.BuffData>>;
+        lvlInfo: System.Collections.Generic.Dictionary<
+          System.Int32,
+          System.String
+        >;
+        lvlBuffData: System.Collections.Generic.Dictionary<
+          System.Int32,
+          System.Collections.Generic.List<Torappu.DB.Test.BuffData>
+        >;
         childSkillId: System.String;
         preSkillId: System.String;
         scale: System.Single;
@@ -32680,8 +32825,7 @@ export namespace Torappu {
       // m_timeList: System.Collections.Generic.List<Type>;
       // <>f__mg$cache0: System.Comparison<Type>;
     }
-    export namespace TimeList {
-    }
+    export namespace TimeList {}
   }
   export namespace HandbookTeamDB {
     export enum PowerLevel {
@@ -32785,8 +32929,7 @@ export namespace Torappu {
       nextOptions: Torappu.GameFlowController.Options;
       // endCb: System.Action<Torappu.Gacha.GachaController.Output>;
     }
-    export interface GachaScene {
-    }
+    export interface GachaScene {}
     export interface PanelCharacterDialog {
       _fadeinTime: System.Single;
       _text: Torappu.AVG.AVGTypeWriterText;
@@ -32970,13 +33113,10 @@ export namespace Torappu {
         PHASE_1 = "PHASE_1",
         HOLD = "HOLD",
       }
-      export namespace GachaPhase {
-      }
+      export namespace GachaPhase {}
     }
-    export namespace GachaScene {
-    }
-    export namespace PanelCharacterDialog {
-    }
+    export namespace GachaScene {}
+    export namespace PanelCharacterDialog {}
     export namespace PanelCharacterInfo {
       export interface ProfessionSpritePair {
         profession: Torappu.ProfessionCategory;
@@ -33021,8 +33161,7 @@ export namespace Torappu {
         // onEndDrag: System.Action<UnityEngine.EventSystems.PointerEventData>;
         zipperHoldStillTimer: Torappu.PeriodicTimer;
       }
-      export interface States {
-      }
+      export interface States {}
       export namespace States {
         export enum State {
           DEFAULT = "DEFAULT",
@@ -33031,8 +33170,7 @@ export namespace Torappu {
           FOLDER = "FOLDER",
           TERMINAL = "TERMINAL",
         }
-        export interface DropState {
-        }
+        export interface DropState {}
         export interface UnpackState {
           // m_isAuto: System.Boolean;
           // m_isZipperSePlaying: System.Boolean;
@@ -33042,20 +33180,15 @@ export namespace Torappu {
           // m_cachedCurProgress: System.Single;
           // m_cachedLastProgress: System.Single;
         }
-        export interface FolderState {
-        }
-        export namespace FolderState {
-        }
+        export interface FolderState {}
+        export namespace FolderState {}
       }
     }
-    export namespace GachaPhase1 {
-    }
-    export namespace LEGACY_GachaPhase0 {
-    }
+    export namespace GachaPhase1 {}
+    export namespace LEGACY_GachaPhase0 {}
   }
   export namespace Rendering {
-    export interface BaseSceneEffect {
-    }
+    export interface BaseSceneEffect {}
     export interface SceneEffectConfig {
       _effectProfile: Torappu.Rendering.SceneEffectProfile;
       // m_heightFogParam: UnityEngine.Vector4;
@@ -33487,13 +33620,11 @@ export namespace Torappu {
       // __Hotfix0_OnEnter: XLua.DelegateBridge;
       // __Hotfix0_HandleOpenState: XLua.DelegateBridge;
     }
-    export interface PageEntry {
-    }
+    export interface PageEntry {}
     export interface StateEntry {
       // _engine: Torappu.UI.StateEngine;
     }
-    export interface IContextHost {
-    }
+    export interface IContextHost {}
     export interface ControllerDefine {
       name: System.String;
       // ctrl: UnityEngine.Object;
@@ -33508,23 +33639,18 @@ export namespace Torappu {
       _valueDefines: Torappu.Lua.ValueFieldDefine[];
       // m_event: Torappu.Lua.ILuaLayoutEvent;
     }
-    export interface ILuaLayoutEvent {
-    }
-    export interface ILuaDialog {
-    }
-    export interface ILuaDialogMgr {
-    }
+    export interface ILuaLayoutEvent {}
+    export interface ILuaDialog {}
+    export interface ILuaDialogMgr {}
     export interface LuaUIContext {
       // s_mgr: Torappu.Lua.ILuaDialogMgr;
       // m_host: Torappu.Lua.IContextHost;
       // m_hostData: System.Collections.Generic.Dictionary<System.String,System.String>;
       // m_child: Torappu.Lua.ILuaDialog;
     }
-    export interface LuaUIUtil {
-    }
+    export interface LuaUIUtil {}
     export namespace LuaBattleMgr {
-      export interface ILuaServiceCallback {
-      }
+      export interface ILuaServiceCallback {}
     }
     export namespace LuaSender {
       export interface WrapHandler<ResType> {
@@ -33535,7 +33661,10 @@ export namespace Torappu {
       }
       export interface Options {
         serviceCode: System.String;
-        headers: System.Collections.Generic.Dictionary<System.String,System.String>;
+        headers: System.Collections.Generic.Dictionary<
+          System.String,
+          System.String
+        >;
         useInvisibleMask: System.Boolean;
         body: System.String;
         overrideUrl: System.String;
@@ -33547,8 +33676,7 @@ export namespace Torappu {
         isTimeout: System.Boolean;
         isCanceled: System.Boolean;
       }
-      export interface ILuaServiceCallback {
-      }
+      export interface ILuaServiceCallback {}
     }
     export namespace Test {
       export interface LuaDemo {
@@ -33559,8 +33687,7 @@ export namespace Torappu {
         // __Hotfix0_Update: XLua.DelegateBridge;
       }
     }
-    export namespace LuaUIUtil {
-    }
+    export namespace LuaUIUtil {}
   }
   export namespace Multiplayer {
     export interface BattlePhase {
@@ -33624,7 +33751,10 @@ export namespace Torappu {
       players: System.Collections.Generic.List<Torappu.Multiplayer.Servers.BattleProtocol.SceneJoinRet.UserInfo>;
       sceneID: System.String;
       started: System.Boolean;
-      lastStatus: Torappu.ListDict<System.String,Torappu.Multiplayer.BattlePlayerStatus>;
+      lastStatus: Torappu.ListDict<
+        System.String,
+        Torappu.Multiplayer.BattlePlayerStatus
+      >;
     }
     export interface MultiplayerActParam {
       actMeta: Torappu.Battle.BattleActivityMeta;
@@ -33887,11 +34017,9 @@ export namespace Torappu {
       // __Hotfix0__Close: XLua.DelegateBridge;
       // __Hotfix0_OnDestroy: XLua.DelegateBridge;
     }
-    export namespace TeamInfo {
-    }
+    export namespace TeamInfo {}
     export namespace Mode {
-      export interface IMultiplayerMode {
-      }
+      export interface IMultiplayerMode {}
       export interface RequestHandlers {
         // m_handlers: Torappu.Multiplayer.Mode.RequestHandlers.RequestHandler[];
       }
@@ -33933,8 +34061,7 @@ export namespace Torappu {
         // __Hotfix0_get_protocolSuite: XLua.DelegateBridge;
         // __Hotfix0_get_eventPool: XLua.DelegateBridge;
       }
-      export interface IMultiplayerBattleVideo {
-      }
+      export interface IMultiplayerBattleVideo {}
       export interface MultiplayerReplayMode {
         // m_mgr: Torappu.Multiplayer.MultiplayerMgr;
         // m_waiteForPlay: System.Collections.Generic.Queue<System.String>;
@@ -33975,17 +34102,18 @@ export namespace Torappu {
         // _complete: System.Action<System.String,System.String>;
       }
       export namespace RequestHandlers {
-        export interface RequestHandler {
-        }
+        export interface RequestHandler {}
       }
-      export namespace DownloadUtil {
-      }
+      export namespace DownloadUtil {}
       export namespace Replay {
         export interface MultiplayerBattleVideoJson {
           stage_id: System.String;
           stage_seed: System.Int32;
           start_ts: System.Int32;
-          players: System.Collections.Generic.Dictionary<System.String,Torappu.Multiplayer.Mode.Replay.MultiplayerBattleVideoJson.JsonPlayer>;
+          players: System.Collections.Generic.Dictionary<
+            System.String,
+            Torappu.Multiplayer.Mode.Replay.MultiplayerBattleVideoJson.JsonPlayer
+          >;
           step_seq: System.Int32;
           arr_step: Torappu.Multiplayer.Mode.Replay.MultiplayerBattleVideoJson.JsonStep[];
           arr_check_seq: System.UInt32[];
@@ -34015,8 +34143,7 @@ export namespace Torappu {
       }
     }
     export namespace Servers {
-      export interface IBattleClient {
-      }
+      export interface IBattleClient {}
       export interface BattleServer {
         // m_client: Torappu.Multiplayer.Servers.IBattleClient;
         // m_entry: Torappu.Multiplayer.Servers.BattleEntry;
@@ -34049,8 +34176,7 @@ export namespace Torappu {
         // __Hotfix0__HandleSceneEnd: XLua.DelegateBridge;
         // __Hotfix0__SetLogUpload: XLua.DelegateBridge;
       }
-      export interface BattleProtocol {
-      }
+      export interface BattleProtocol {}
       export interface GeneralProtocol {
         MSG_NOTIFY: System.UInt32;
       }
@@ -34065,10 +34191,8 @@ export namespace Torappu {
         // __Hotfix0__GetProtocol: XLua.DelegateBridge;
         // __Hotfix0_Register: XLua.DelegateBridge;
       }
-      export interface TeamProtocol {
-      }
-      export interface IServerSupport {
-      }
+      export interface TeamProtocol {}
+      export interface IServerSupport {}
       export interface Server {
         // m_net: Torappu.SocketNetwork.SocketNet;
         // m_ip: System.String;
@@ -34098,8 +34222,7 @@ export namespace Torappu {
         // __Hotfix0_OnUpdate: XLua.DelegateBridge;
         // __Hotfix0_OnConnectionLost: XLua.DelegateBridge;
       }
-      export interface ProtocolHandler {
-      }
+      export interface ProtocolHandler {}
       export interface ServerMsgProcessor {
         // m_handles: System.Collections.Generic.Dictionary<System.UInt32,Torappu.Multiplayer.Servers.ProtocolHandler>;
         // m_protocols: Torappu.SocketNetwork.INetProtocolSuite;
@@ -34108,8 +34231,7 @@ export namespace Torappu {
         // __Hotfix1_ProcMsg: XLua.DelegateBridge;
         // __Hotfix0_Register: XLua.DelegateBridge;
       }
-      export interface ITeamClient {
-      }
+      export interface ITeamClient {}
       export interface BattleEntry {
         sceneID: System.String;
         svrAddress: System.String;
@@ -34168,13 +34290,11 @@ export namespace Torappu {
         level: System.Int32;
         multiplayerTeam: Torappu.Multiplayer.Servers.TeamBrief;
       }
-      export interface GetFriendTeamListRequest {
-      }
+      export interface GetFriendTeamListRequest {}
       export interface GetFriendTeamListResponse {
         list: System.Collections.Generic.List<Torappu.Multiplayer.Servers.FriendTeamItem>;
       }
-      export interface CreateTeamRequest {
-      }
+      export interface CreateTeamRequest {}
       export interface CreateTeamResponse {
         team: Torappu.Multiplayer.Servers.TeamInst;
       }
@@ -34211,15 +34331,13 @@ export namespace Torappu {
         result: System.Int32;
         team: Torappu.Multiplayer.Servers.TeamInst;
       }
-      export interface TryMatchRequest {
-      }
+      export interface TryMatchRequest {}
       export interface TryMatchResponse {
         result: System.String;
         success: System.Boolean;
         team: Torappu.Multiplayer.Servers.TeamInst;
       }
-      export interface LeaveMatchRequest {
-      }
+      export interface LeaveMatchRequest {}
       export interface LeaveMatchResponse {
         result: System.String;
       }
@@ -34228,8 +34346,7 @@ export namespace Torappu {
         sceneId: System.String;
         data: System.String;
       }
-      export interface UploadLogResponse {
-      }
+      export interface UploadLogResponse {}
       export namespace BattleProtocol {
         export interface SceneJoin {
           ID: System.UInt32;
@@ -34247,7 +34364,10 @@ export namespace Torappu {
           newToken: System.String;
           stageID: System.String;
           stageSeed: System.Int32;
-          users: Torappu.ListDict<System.String,Torappu.Multiplayer.Servers.BattleProtocol.SceneJoinRet.UserInfo>;
+          users: Torappu.ListDict<
+            System.String,
+            Torappu.Multiplayer.Servers.BattleProtocol.SceneJoinRet.UserInfo
+          >;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnRead: XLua.DelegateBridge;
         }
@@ -34387,7 +34507,10 @@ export namespace Torappu {
           seq: System.UInt32;
           spanMS: System.UInt32;
           checkSeq: System.Int32;
-          actions: System.Collections.Generic.Dictionary<System.String,Torappu.Multiplayer.PlayerOprtData[]>;
+          actions: System.Collections.Generic.Dictionary<
+            System.String,
+            Torappu.Multiplayer.PlayerOprtData[]
+          >;
         }
         export interface GameSettleInfo {
           result: System.Byte;
@@ -34655,8 +34778,7 @@ export namespace Torappu {
         toPrivate: System.Boolean;
       }
     }
-    export namespace MultiplayerLogUploader {
-    }
+    export namespace MultiplayerLogUploader {}
   }
   export namespace Network {
     export enum ResponseStatus {
@@ -34701,13 +34823,11 @@ export namespace Torappu {
       // m_downloadingTasks: System.Collections.Generic.List<Torappu.Network.FileDownloader.DownloadProcHandler>;
       // m_pendingTasks: System.Collections.Generic.Queue<Torappu.Network.FileDownloader.Options>;
     }
-    export interface IMsgBundle {
-    }
+    export interface IMsgBundle {}
     export interface MsgBundle<T> {
       data: T;
     }
-    export interface ICustomizedBundleData {
-    }
+    export interface ICustomizedBundleData {}
     export interface RespMsgBundle<T> {
       data: T;
     }
@@ -34811,7 +34931,10 @@ export namespace Torappu {
       body: Torappu.Network.IMsgBundle;
       overrideUrl: System.String;
       isRetry: System.Boolean;
-      header: System.Collections.Generic.Dictionary<System.String,System.String>;
+      header: System.Collections.Generic.Dictionary<
+        System.String,
+        System.String
+      >;
     }
     export interface MockMeta {
       serviceCase: System.String;
@@ -34822,7 +34945,10 @@ export namespace Torappu {
       isTimeout: System.Boolean;
       isError: System.Boolean;
       responseCode: System.Int64;
-      header: System.Collections.Generic.Dictionary<System.String,System.String>;
+      header: System.Collections.Generic.Dictionary<
+        System.String,
+        System.String
+      >;
       text: System.String;
       data: System.Byte[];
       error: System.String;
@@ -34845,8 +34971,7 @@ export namespace Torappu {
       DATA_DESIGN: Torappu.Network.Networker.Configuration;
       MOCK_SERVER: Torappu.Network.Networker.Configuration;
     }
-    export interface NetworkConfigException {
-    }
+    export interface NetworkConfigException {}
     export interface NetworkRouter {
       // m_networkConfigVersion: System.String;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -35096,8 +35221,7 @@ export namespace Torappu {
       sign: System.String;
       content: System.String;
     }
-    export interface UrlOptionalAttribute {
-    }
+    export interface UrlOptionalAttribute {}
     export interface UrlConfiguration {
       gameServerUrl: System.String;
       sdkServerUrl: System.String;
@@ -35139,8 +35263,7 @@ export namespace Torappu {
         downloadHandler: Torappu.Network.FileDownloader.DownloadProcHandler;
         options: Torappu.Network.FileDownloader.Options;
       }
-      export interface IDownloadMessage {
-      }
+      export interface IDownloadMessage {}
       export enum DownloadMsgType {
         SIZE = "SIZE",
         FINISH = "FINISH",
@@ -35226,7 +35349,10 @@ export namespace Torappu {
       export interface Content {
         configVer: System.String;
         funcVer: System.String;
-        configs: System.Collections.Generic.Dictionary<System.String,Torappu.Network.NetworkRouterConfig.Config>;
+        configs: System.Collections.Generic.Dictionary<
+          System.String,
+          Torappu.Network.NetworkRouterConfig.Config
+        >;
       }
       export interface Config {
         useOverride: System.Boolean;
@@ -35402,8 +35528,7 @@ export namespace Torappu {
       // __Hotfix0__CheckIfLocalABValid: XLua.DelegateBridge;
       // __Hotfix0__CheckIfLocalABExists: XLua.DelegateBridge;
     }
-    export interface AbstractAssetLoader {
-    }
+    export interface AbstractAssetLoader {}
     export interface AssetLoaderBehaviour {
       // m_cached: System.Boolean;
       // m_assetLoader: Torappu.Resource.AbstractAssetLoader;
@@ -35422,17 +35547,14 @@ export namespace Torappu {
       // m_abRequest: UnityEngine.AssetBundleRequest;
       // m_isLoaded: System.Boolean;
     }
-    export interface AsyncComponent<TComp> {
-    }
-    export interface IResourceManager {
-    }
+    export interface AsyncComponent<TComp> {}
+    export interface IResourceManager {}
     export interface RawResManager {
       ROOT_DIR_PATH: System.String;
       AB_DIR_NAME: System.String;
       TAG_FILE_NAME: System.String;
     }
-    export interface IResourceListener {
-    }
+    export interface IResourceListener {}
     export interface ResourceManager {
       // s_instance: Torappu.Resource.IResourceManager;
     }
@@ -35495,7 +35617,10 @@ export namespace Torappu {
       TYPE_VIDEO: System.String;
       TYPE_DYN_ILLUST: System.String;
       TYPE_LIST: System.Collections.Generic.List<System.String>;
-      TYPE_NAME_DIC: System.Collections.Generic.Dictionary<System.String,System.String>;
+      TYPE_NAME_DIC: System.Collections.Generic.Dictionary<
+        System.String,
+        System.String
+      >;
       // s_sharedTypeList: System.Collections.Generic.List<System.String>;
       // s_sharedStoryList: System.Collections.Generic.List<Torappu.StoryData>;
       // s_alertPref: Torappu.Resource.ResPreferenceController.ResUpdateAlertPref;
@@ -35535,10 +35660,8 @@ export namespace Torappu {
       // __Hotfix0_OnQuitBtnClick: XLua.DelegateBridge;
       // __Hotfix0_OnConfirmBtnClick: XLua.DelegateBridge;
     }
-    export namespace AssetBundleMigrate {
-    }
-    export namespace ExpiredPersistentRes {
-    }
+    export namespace AssetBundleMigrate {}
+    export namespace ExpiredPersistentRes {}
     export namespace HotUpdateInfo {
       export interface ABInfo {
         EMPTY: Torappu.Resource.HotUpdateInfo.ABInfo;
@@ -35622,8 +35745,7 @@ export namespace Torappu {
         // onProgress: System.Action<System.Int32,System.Int32>;
       }
     }
-    export namespace AbstractAssetLoader {
-    }
+    export namespace AbstractAssetLoader {}
     export namespace AB {
       export interface ABResourceManager {
         // m_inited: System.Boolean;
@@ -35773,12 +35895,10 @@ export namespace Torappu {
         // __Hotfix0__PreprocessAssetPath: XLua.DelegateBridge;
       }
       export namespace LocalResourceManager {
-        export interface ResourcesWrapper {
-        }
+        export interface ResourcesWrapper {}
       }
     }
-    export namespace ResourceManager {
-    }
+    export namespace ResourceManager {}
     export namespace ResourceIndex {
       export interface BundleMeta {
         name: System.String;
@@ -35840,10 +35960,8 @@ export namespace Torappu {
         // m_asset1: UnityEngine.Sprite;
         // m_asset2: UnityEngine.Sprite;
       }
-      export namespace ABLoaderTest {
-      }
-      export namespace ResourceTest {
-      }
+      export namespace ABLoaderTest {}
+      export namespace ResourceTest {}
     }
     export namespace UIHotUpdatePreferencePanel {
       export interface Options {
@@ -35855,8 +35973,7 @@ export namespace Torappu {
     }
   }
   export namespace SDK {
-    export interface ISDKBase {
-    }
+    export interface ISDKBase {}
     export interface SDKBase<T> {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
     }
@@ -36047,8 +36164,7 @@ export namespace Torappu {
       // __Hotfix0_GetPlatformKey: XLua.DelegateBridge;
       // __Hotfix0_OverrideGameVersionUpgrade: XLua.DelegateBridge;
     }
-    export namespace SDKExtraInfoBridge {
-    }
+    export namespace SDKExtraInfoBridge {}
     export namespace SDKExtraInfoHandler {
       export enum TPMsgType {
         NONE = "NONE",
@@ -36406,7 +36522,10 @@ export namespace Torappu {
       completeTime: System.Int64;
     }
     export interface BattleDataInRequest {
-      stats: System.Collections.Generic.Dictionary<System.String,System.String>;
+      stats: System.Collections.Generic.Dictionary<
+        System.String,
+        System.String
+      >;
     }
     export interface BattleData {
       stats: Torappu.Battle.BattleLogger.BattleStats;
@@ -36515,8 +36634,14 @@ export namespace Torappu {
   export namespace VisitBuildingResponse {
     export interface Snapshot {
       owner: Torappu.VisitBuildingResponse.RoomOwner;
-      chars: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerBuildingChar>;
-      roomSlots: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerBuildingRoomSlot>;
+      chars: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.PlayerBuildingChar
+      >;
+      roomSlots: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.PlayerBuildingRoomSlot
+      >;
       rooms: Torappu.PlayerBuildingRoom;
     }
     export interface RoomOwner {
@@ -36534,12 +36659,14 @@ export namespace Torappu {
       ts: System.Int64;
     }
   }
-  export namespace PlayerSquadMemberProto {
-  }
+  export namespace PlayerSquadMemberProto {}
   export namespace PlayerCarousel {
     export interface PlayerCarouselFurnitureShopData {
-      goods: System.Collections.Generic.Dictionary<System.String,System.Int32>;
-      groups: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+      goods: System.Collections.Generic.Dictionary<System.String, System.Int32>;
+      groups: System.Collections.Generic.Dictionary<
+        System.String,
+        System.Int32
+      >;
     }
   }
   export namespace PlayerCharacter {
@@ -36564,16 +36691,18 @@ export namespace Torappu {
   export namespace PlayerActivity {
     export interface PlayerDefaultActivity {
       coin: System.Int32;
-      shop: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+      shop: System.Collections.Generic.Dictionary<System.String, System.Int32>;
     }
-    export interface PlayerMissionOnlyTypeActivity {
-    }
+    export interface PlayerMissionOnlyTypeActivity {}
     export interface PlayerCheckinOnlyTypeActivity {
       history: System.Collections.Generic.List<System.Int32>;
     }
     export interface PlayerCollectionTypeActivity {
-      point: System.Collections.Generic.Dictionary<System.String,System.Int32>;
-      history: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerActivity.PlayerCollectionTypeActivity.PlayerCollectionInfo>;
+      point: System.Collections.Generic.Dictionary<System.String, System.Int32>;
+      history: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.PlayerActivity.PlayerCollectionTypeActivity.PlayerCollectionInfo
+      >;
     }
     export interface PlayerAVGOnlyTypeActivity {
       isOpen: System.Boolean;
@@ -36604,23 +36733,34 @@ export namespace Torappu {
       openedPosition: System.Collections.Generic.List<System.Int32>;
       openedType: System.Int32;
       rewardCount: System.Int32;
-      grandPositions: System.Collections.Generic.List<System.Collections.Generic.List<System.Int32>>;
+      grandPositions: System.Collections.Generic.List<
+        System.Collections.Generic.List<System.Int32>
+      >;
     }
     export interface PlayerMultiplayActivity {
-      troop: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerActivity.PlayerMultiplayActivity.Troop>;
-      stages: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerActivity.PlayerMultiplayActivity.Stage>;
+      troop: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.PlayerActivity.PlayerMultiplayActivity.Troop
+      >;
+      stages: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.PlayerActivity.PlayerMultiplayActivity.Stage
+      >;
     }
     export interface PlayerAct3D0Activity {
       faction: System.String;
       gachaCoin: System.Int32;
       ticket: System.Int32;
-      clue: System.Collections.Generic.Dictionary<System.String,System.Int32>;
-      box: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerActivity.PlayerAct3D0Activity.BoxState>;
+      clue: System.Collections.Generic.Dictionary<System.String, System.Int32>;
+      box: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.PlayerActivity.PlayerAct3D0Activity.BoxState
+      >;
       milestone: Torappu.PlayerActivity.PlayerAct3D0Activity.MileStone;
       favorList: System.Collections.Generic.List<System.String>;
     }
     export interface PlayerAct4D0Activity {
-      story: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+      story: System.Collections.Generic.Dictionary<System.String, System.Int32>;
       milestone: Torappu.PlayerActivity.PlayerAct4D0Activity.MileStone;
     }
     export interface PlayerAct5D0Activity {
@@ -36630,13 +36770,19 @@ export namespace Torappu {
       coin: System.Int32;
       pt: System.Int32;
       shop: Torappu.PlayerActivity.PlayerAct5D1Activity.PlayerAct5D1Shop;
-      runeStage: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerActivity.PlayerAct5D1Activity.PlayerActRuneStage>;
-      stageEnemy: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.List<System.String>>;
+      runeStage: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.PlayerActivity.PlayerAct5D1Activity.PlayerActRuneStage
+      >;
+      stageEnemy: System.Collections.Generic.Dictionary<
+        System.String,
+        System.Collections.Generic.List<System.String>
+      >;
     }
     export interface PlayerAct9D0Activity {
       coin: System.Int32;
       favorList: System.Collections.Generic.List<System.String>;
-      news: System.Collections.Generic.Dictionary<System.String,System.Int64>;
+      news: System.Collections.Generic.Dictionary<System.String, System.Int64>;
     }
     export interface PlayerAct17D7Activity {
       isOpen: System.Boolean;
@@ -36649,7 +36795,10 @@ export namespace Torappu {
     export namespace PlayerRoguelikeActivity {
       export interface MileStone {
         token: System.Int32;
-        rewards: System.Collections.Generic.Dictionary<System.String,System.Int64>;
+        rewards: System.Collections.Generic.Dictionary<
+          System.String,
+          System.Int64
+        >;
       }
       export interface GameStatus {
         lastTs: System.Int64;
@@ -36674,29 +36823,47 @@ export namespace Torappu {
     }
     export namespace PlayerAct3D0Activity {
       export interface BoxState {
-        content: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+        content: System.Collections.Generic.Dictionary<
+          System.String,
+          System.Int32
+        >;
       }
       export interface MileStone {
         point: System.Int32;
-        rewards: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+        rewards: System.Collections.Generic.Dictionary<
+          System.String,
+          System.Int32
+        >;
       }
     }
     export namespace PlayerAct4D0Activity {
       export interface MileStone {
         point: System.Int32;
-        rewards: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+        rewards: System.Collections.Generic.Dictionary<
+          System.String,
+          System.Int32
+        >;
       }
     }
     export namespace PlayerAct5D1Activity {
       export interface PlayerAct5D1Shop {
-        info: System.Collections.Generic.Dictionary<System.String,System.Int32>;
-        progressInfo: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerActivity.PlayerAct5D1Activity.PlayerAct5D1Shop.ProgressInfo>;
+        info: System.Collections.Generic.Dictionary<
+          System.String,
+          System.Int32
+        >;
+        progressInfo: System.Collections.Generic.Dictionary<
+          System.String,
+          Torappu.PlayerActivity.PlayerAct5D1Activity.PlayerAct5D1Shop.ProgressInfo
+        >;
       }
       export interface PlayerActRuneStage {
         schedule: System.String;
         available: System.Int32;
         scores: System.Int32;
-        rune: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+        rune: System.Collections.Generic.Dictionary<
+          System.String,
+          System.Int32
+        >;
       }
       export namespace PlayerAct5D1Shop {
         export interface ProgressInfo {
@@ -36727,7 +36894,10 @@ export namespace Torappu {
   }
   export namespace PlayerRecruit {
     export interface NormalModel {
-      slots: Torappu.ListDict<System.String,Torappu.PlayerRecruit.NormalModel.SlotModel>;
+      slots: Torappu.ListDict<
+        System.String,
+        Torappu.PlayerRecruit.NormalModel.SlotModel
+      >;
     }
     export namespace NormalModel {
       export interface SlotModel {
@@ -36869,16 +37039,37 @@ export namespace Torappu {
       status: Torappu.PlayerRoguelikeStatus;
       initialRewards: Torappu.PlayerRoguelikeInitialReward;
       map: Torappu.PlayerRoguelikeDungeon;
-      inventory: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerRoguelikeItem>;
-      chars: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerRoguelikeCharacter>;
+      inventory: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.PlayerRoguelikeItem
+      >;
+      chars: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.PlayerRoguelikeCharacter
+      >;
       record: Torappu.PlayerRoguelikeRecord;
     }
     export interface StableData {
-      outBuff: System.Collections.Generic.Dictionary<System.String,System.Int32>;
-      relic: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerRoguelike.StableData.RelicRecord>;
-      stages: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerRoguelike.StableData.StageRecord>;
-      ending: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerRoguelike.StableData.EndingRecord>;
-      mode: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerRoguelike.StableData.ModeRecord>;
+      outBuff: System.Collections.Generic.Dictionary<
+        System.String,
+        System.Int32
+      >;
+      relic: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.PlayerRoguelike.StableData.RelicRecord
+      >;
+      stages: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.PlayerRoguelike.StableData.StageRecord
+      >;
+      ending: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.PlayerRoguelike.StableData.EndingRecord
+      >;
+      mode: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.PlayerRoguelike.StableData.ModeRecord
+      >;
       stats: Torappu.PlayerRoguelike.StableData.StatsRecords;
     }
     export namespace StableData {
@@ -36891,7 +37082,10 @@ export namespace Torappu {
       }
       export interface EndingRecord {
         cnt: System.Int32;
-        initialRelic: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+        initialRelic: System.Collections.Generic.Dictionary<
+          System.String,
+          System.Int32
+        >;
       }
       export interface ModeRecord {
         uts: System.Int32;
@@ -36904,10 +37098,22 @@ export namespace Torappu {
         into_node_nobattle: System.Int32;
         shop_cost_gold: System.Int32;
         upgrade_char: System.Int32;
-        enemy_kill: System.Collections.Generic.Dictionary<System.String,System.Int32>;
-        gain_resource: System.Collections.Generic.Dictionary<System.String,System.Int32>;
-        scene_count: System.Collections.Generic.Dictionary<System.String,System.Int32>;
-        choice_count: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+        enemy_kill: System.Collections.Generic.Dictionary<
+          System.String,
+          System.Int32
+        >;
+        gain_resource: System.Collections.Generic.Dictionary<
+          System.String,
+          System.Int32
+        >;
+        scene_count: System.Collections.Generic.Dictionary<
+          System.String,
+          System.Int32
+        >;
+        choice_count: System.Collections.Generic.Dictionary<
+          System.String,
+          System.Int32
+        >;
       }
     }
   }
@@ -36942,7 +37148,10 @@ export namespace Torappu {
       poolItemInfo: System.Collections.Generic.List<Torappu.Act3D0Data.LimitedPoolDetailInfo.PoolItemInfo>;
     }
     export interface InfinitePoolPercent {
-      percentDict: System.Collections.Generic.Dictionary<System.String,System.Int32>;
+      percentDict: System.Collections.Generic.Dictionary<
+        System.String,
+        System.Int32
+      >;
     }
     export interface GachaBoxInfo {
       gachaBoxId: System.String;
@@ -36955,7 +37164,10 @@ export namespace Torappu {
     }
     export interface CampItemMapInfo {
       goodId: System.String;
-      itemDict: System.Collections.Generic.Dictionary<System.String,Torappu.ItemBundle>;
+      itemDict: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.ItemBundle
+      >;
     }
     export interface ZoneDescInfo {
       zoneId: System.String;
@@ -36976,7 +37188,10 @@ export namespace Torappu {
       orderId: System.Int32;
       mileStoneType: Torappu.Act3D0Data.GoodType;
       normalItem: Torappu.ItemBundle;
-      specialItemDict: System.Collections.Generic.Dictionary<System.String,Torappu.ItemBundle>;
+      specialItemDict: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.ItemBundle
+      >;
       tokenNum: System.Int32;
     }
     export namespace InfinitePoolDetailInfo {
@@ -37052,7 +37267,10 @@ export namespace Torappu {
   }
   export namespace Act5D1Data {
     export interface RewardGroup {
-      itemList: System.Collections.Generic.Dictionary<System.Int32,System.Collections.Generic.List<Torappu.ItemBundle>>;
+      itemList: System.Collections.Generic.Dictionary<
+        System.Int32,
+        System.Collections.Generic.List<Torappu.ItemBundle>
+      >;
     }
     export interface RuneStageData {
       stageId: System.String;
@@ -37102,8 +37320,14 @@ export namespace Torappu {
       rarity: System.String;
     }
     export interface ShopData {
-      shopGoods: System.Collections.Generic.Dictionary<System.String,Torappu.Act5D1Data.ShopGood>;
-      progressGoods: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.List<Torappu.Act5D1Data.ProgessGoodItem>>;
+      shopGoods: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.Act5D1Data.ShopGood
+      >;
+      progressGoods: System.Collections.Generic.Dictionary<
+        System.String,
+        System.Collections.Generic.List<Torappu.Act5D1Data.ProgessGoodItem>
+      >;
     }
     export interface ProgessGoodItem {
       order: System.Int32;
@@ -37252,7 +37476,10 @@ export namespace Torappu {
   export namespace ActivityRoguelikeData {
     export interface OuterBuffUnlockInfoData {
       buffId: System.String;
-      buffUnlockInfos: Torappu.ListDict<System.Int32,Torappu.ActivityRoguelikeData.OuterBuffUnlockInfo>;
+      buffUnlockInfos: Torappu.ListDict<
+        System.Int32,
+        Torappu.ActivityRoguelikeData.OuterBuffUnlockInfo
+      >;
     }
     export interface OuterBuffUnlockInfo {
       buffLevel: System.Int32;
@@ -37293,18 +37520,54 @@ export namespace Torappu {
       stageId: System.String;
     }
     export interface ActivityDetailTable {
-      defaultActivityData: System.Collections.Generic.Dictionary<System.String,Torappu.DefaultFirstData>;
-      defaultCheckinData: System.Collections.Generic.Dictionary<System.String,Torappu.DefaultCheckInData>;
-      typeAct3d0Data: System.Collections.Generic.Dictionary<System.String,Torappu.Act3D0Data>;
-      typeAct4d0Data: System.Collections.Generic.Dictionary<System.String,Torappu.Act4D0Data>;
-      typeAct5d0Data: System.Collections.Generic.Dictionary<System.String,Torappu.Act5D0Data>;
-      typeAct5d1Data: System.Collections.Generic.Dictionary<System.String,Torappu.Act5D1Data>;
-      defaultCollectionData: System.Collections.Generic.Dictionary<System.String,Torappu.ActivityCollectionData>;
-      typeAct9d0Data: System.Collections.Generic.Dictionary<System.String,Torappu.Act9D0Data>;
-      defaultLoginData: System.Collections.Generic.Dictionary<System.String,Torappu.ActivityLoginData>;
-      defaultMiniStoryData: System.Collections.Generic.Dictionary<System.String,Torappu.ActivityMiniStoryData>;
-      defaultRoguelikeData: System.Collections.Generic.Dictionary<System.String,Torappu.ActivityRoguelikeData>;
-      defaultMultiplayData: System.Collections.Generic.Dictionary<System.String,Torappu.ActivityMultiplayData>;
+      defaultActivityData: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.DefaultFirstData
+      >;
+      defaultCheckinData: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.DefaultCheckInData
+      >;
+      typeAct3d0Data: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.Act3D0Data
+      >;
+      typeAct4d0Data: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.Act4D0Data
+      >;
+      typeAct5d0Data: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.Act5D0Data
+      >;
+      typeAct5d1Data: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.Act5D1Data
+      >;
+      defaultCollectionData: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.ActivityCollectionData
+      >;
+      typeAct9d0Data: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.Act9D0Data
+      >;
+      defaultLoginData: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.ActivityLoginData
+      >;
+      defaultMiniStoryData: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.ActivityMiniStoryData
+      >;
+      defaultRoguelikeData: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.ActivityRoguelikeData
+      >;
+      defaultMultiplayData: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.ActivityMultiplayData
+      >;
     }
   }
   export namespace PreAnnounceData {
@@ -37425,8 +37688,7 @@ export namespace Torappu {
       CEILING = "CEILING",
       CEILINGLAMP = "CEILINGLAMP",
     }
-    export interface IRoomBean {
-    }
+    export interface IRoomBean {}
     export enum FurnitureLocation {
       NONE = "NONE",
       WALL = "WALL",
@@ -37470,7 +37732,10 @@ export namespace Torappu {
     }
     export interface RoomUnlockCond {
       id: System.String;
-      number: Torappu.ListDict<System.Int32,Torappu.BuildingData.RoomUnlockCond.CondItem>;
+      number: Torappu.ListDict<
+        System.Int32,
+        Torappu.BuildingData.RoomUnlockCond.CondItem
+      >;
     }
     export interface RoomData {
       id: Torappu.BuildingData.RoomType;
@@ -37486,9 +37751,18 @@ export namespace Torappu {
     export interface LayoutData {
       DEFAULT_LAYOUT_ID: System.String;
       id: System.String;
-      slots: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingData.LayoutData.RoomSlot>;
-      cleanCosts: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingData.LayoutData.SlotCleanCost>;
-      storeys: Torappu.ListDict<System.String,Torappu.BuildingData.LayoutData.StoreyData>;
+      slots: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.BuildingData.LayoutData.RoomSlot
+      >;
+      cleanCosts: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.BuildingData.LayoutData.SlotCleanCost
+      >;
+      storeys: Torappu.ListDict<
+        System.String,
+        Torappu.BuildingData.LayoutData.StoreyData
+      >;
     }
     export enum BuffCategory {
       NONE = "NONE",
@@ -37516,16 +37790,14 @@ export namespace Torappu {
       roomType: Torappu.BuildingData.RoomType;
       description: System.String;
     }
-    export interface RoomBeanParam {
-    }
+    export interface RoomBeanParam {}
     export interface RoomBean<TParam> {
       phases: System.Collections.Generic.List<TParam>;
     }
     export interface ControlRoomBean {
       basicCostBuff: System.Int32;
     }
-    export interface ControlRoomPhase {
-    }
+    export interface ControlRoomPhase {}
     export interface ManufactRoomBean {
       basicSpeedBuff: System.Single;
     }
@@ -37578,14 +37850,28 @@ export namespace Torappu {
     export interface PowerRoomBean {
       basicSpeedBuff: System.Single;
     }
-    export interface PowerPhase {
-    }
+    export interface PowerPhase {}
     export interface CustomData {
-      furnitures: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingData.CustomData.FurnitureData>;
-      themes: Torappu.ListDict<System.String,Torappu.BuildingData.CustomData.ThemeData>;
-      groups: Torappu.ListDict<System.String,Torappu.BuildingData.CustomData.GroupData>;
-      types: Torappu.ListDict<System.String,Torappu.BuildingData.CustomData.FurnitureTypeData>;
-      defaultFurnitures: Torappu.ListDict<System.String,System.Collections.Generic.List<Torappu.BuildingData.CustomData.DormitoryDefaultFurnitureItem>>;
+      furnitures: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.BuildingData.CustomData.FurnitureData
+      >;
+      themes: Torappu.ListDict<
+        System.String,
+        Torappu.BuildingData.CustomData.ThemeData
+      >;
+      groups: Torappu.ListDict<
+        System.String,
+        Torappu.BuildingData.CustomData.GroupData
+      >;
+      types: Torappu.ListDict<
+        System.String,
+        Torappu.BuildingData.CustomData.FurnitureTypeData
+      >;
+      defaultFurnitures: Torappu.ListDict<
+        System.String,
+        System.Collections.Generic.List<Torappu.BuildingData.CustomData.DormitoryDefaultFurnitureItem>
+      >;
     }
     export interface ManufactFormula {
       formulaId: System.String;
@@ -37629,8 +37915,14 @@ export namespace Torappu {
       requireRooms: System.Collections.Generic.List<Torappu.BuildingData.ShopFormula.UnlockRoom>;
     }
     export interface CreditFormula {
-      initiative: Torappu.ListDict<System.Int32,Torappu.BuildingData.CreditFormula.ValueModel>;
-      passive: Torappu.ListDict<System.Int32,Torappu.BuildingData.CreditFormula.ValueModel>;
+      initiative: Torappu.ListDict<
+        System.Int32,
+        Torappu.BuildingData.CreditFormula.ValueModel
+      >;
+      passive: Torappu.ListDict<
+        System.Int32,
+        Torappu.BuildingData.CreditFormula.ValueModel
+      >;
     }
     export namespace RoomUnlockCond {
       export interface CondItem {
@@ -37668,7 +37960,10 @@ export namespace Torappu {
       }
       export interface SlotCleanCost {
         id: System.String;
-        number: Torappu.ListDict<System.Int32,Torappu.BuildingData.LayoutData.SlotCleanCost.CountCost>;
+        number: Torappu.ListDict<
+          System.Int32,
+          Torappu.BuildingData.LayoutData.SlotCleanCost.CountCost
+        >;
       }
       export interface StoreyData {
         id: System.String;
@@ -37817,10 +38112,8 @@ export namespace Torappu {
     }
   }
   export namespace CharacterData {
-    export interface AttributesKeyFrame {
-    }
-    export interface AttributesDeltaKeyFrame {
-    }
+    export interface AttributesKeyFrame {}
+    export interface AttributesDeltaKeyFrame {}
     export interface UnlockCondition {
       phase: Torappu.EvolvePhase;
       level: System.Int32;
@@ -37928,7 +38221,7 @@ export namespace Torappu {
     }
   }
   export namespace KeyFrames {
-    export interface KeyFrame<TInput,TOutput> {
+    export interface KeyFrame<TInput, TOutput> {
       level: System.Int32;
       data: TInput;
     }
@@ -37936,14 +38229,23 @@ export namespace Torappu {
   export namespace CrisisServerData {
     export interface SeasonInfo {
       seasonId: System.String;
-      stages: System.Collections.Generic.Dictionary<System.String,Torappu.CrisisStageData>;
+      stages: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.CrisisStageData
+      >;
       permStageGroup: System.Collections.Generic.List<Torappu.CrisisPermStageGroup>;
       tempStageGroup: System.Collections.Generic.List<Torappu.CrisisTempStageGroup>;
       trainStageGroup: System.Collections.Generic.List<System.String>;
     }
     export interface TrainingInfo {
-      stages: System.Collections.Generic.Dictionary<System.String,Torappu.CrisisStageData>;
-      runeInfo: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.List<System.String>>;
+      stages: System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.CrisisStageData
+      >;
+      runeInfo: System.Collections.Generic.Dictionary<
+        System.String,
+        System.Collections.Generic.List<System.String>
+      >;
     }
   }
   export namespace CrisisClientData {
@@ -37959,7 +38261,10 @@ export namespace Torappu {
       permBgmHard: System.String;
     }
     export interface Meta {
-      stages: System.Collections.Generic.Dictionary<System.String,System.String>;
+      stages: System.Collections.Generic.Dictionary<
+        System.String,
+        System.String
+      >;
       icons: System.Collections.Generic.List<System.String>;
     }
   }
@@ -38016,7 +38321,10 @@ export namespace Torappu {
       computedRate: System.Single;
     }
     export interface GachaPoolConstants {
-      baseRarityRate: System.Collections.Generic.Dictionary<System.Int32,System.Single>;
+      baseRarityRate: System.Collections.Generic.Dictionary<
+        System.Int32,
+        System.Single
+      >;
     }
   }
   export namespace BasedRecruitPool {
@@ -38025,7 +38333,10 @@ export namespace Torappu {
       weight: System.Int32;
     }
     export interface RecruitConstants {
-      tagPriceList: System.Collections.Generic.Dictionary<System.Int32,System.Int32>;
+      tagPriceList: System.Collections.Generic.Dictionary<
+        System.Int32,
+        System.Int32
+      >;
       maxRecruitTime: System.Int32;
     }
   }
@@ -38301,8 +38612,7 @@ export namespace Torappu {
         position: Torappu.GridPosition;
         direction: Torappu.SharedConsts.Direction;
       }
-      export interface PredefinedCard {
-      }
+      export interface PredefinedCard {}
       export interface PredefinedTokenCard {
         initialCnt: System.Int32;
       }
@@ -38452,7 +38762,10 @@ export namespace Torappu {
       stageId: System.String;
       releaseInfo: System.Collections.Generic.List<Torappu.CrisisData.RuneReleaseData>;
       runeList: System.String[];
-      stagePointLevelInfo: System.Collections.Generic.Dictionary<System.Int32,Torappu.CrisisData.CrisisStagePointLevelChallengeInfo>;
+      stagePointLevelInfo: System.Collections.Generic.Dictionary<
+        System.Int32,
+        Torappu.CrisisData.CrisisStagePointLevelChallengeInfo
+      >;
       stageChallengeInfo: System.Collections.Generic.List<Torappu.CrisisData.CrisisPeRunePackChallengeInfo>;
     }
     export interface TempStageGroup {
@@ -38461,7 +38774,10 @@ export namespace Torappu {
       startTs: System.Int64;
       endTs: System.Int64;
       runeList: System.String[];
-      stagePointLevelInfo: System.Collections.Generic.Dictionary<System.Int32,Torappu.CrisisData.CrisisStagePointLevelChallengeInfo>;
+      stagePointLevelInfo: System.Collections.Generic.Dictionary<
+        System.Int32,
+        Torappu.CrisisData.CrisisStagePointLevelChallengeInfo
+      >;
       stageChallengeInfo: System.Collections.Generic.List<Torappu.CrisisData.CrisisTeRunePackChallengeInfo>;
     }
     export interface CrisisStageData {
@@ -38497,14 +38813,15 @@ export namespace Torappu {
       crisisStageData: System.Collections.Generic.List<Torappu.CrisisData.CrisisStageData>;
       permStageGroup: System.Collections.Generic.List<Torappu.CrisisData.PermStageGroup>;
       tempStageGroup: System.Collections.Generic.List<Torappu.CrisisData.TempStageGroup>;
-      runeInfoList: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.List<Torappu.CrisisData.RuneInfo>>;
+      runeInfoList: System.Collections.Generic.Dictionary<
+        System.String,
+        System.Collections.Generic.List<Torappu.CrisisData.RuneInfo>
+      >;
       shopInfoList: System.Collections.Generic.List<Torappu.CrisisData.SeasonShopInfo>;
       progressGoodInfo: System.Collections.Generic.List<Torappu.CrisisData.ProgressGoodItem>;
     }
-    export interface RuneMapInfo {
-    }
-    export interface TrainingInfo {
-    }
+    export interface RuneMapInfo {}
+    export interface TrainingInfo {}
   }
   export namespace ShopClientData {
     export interface ShopKeeperData {
@@ -38605,7 +38922,10 @@ export namespace Torappu {
     }
     export interface SpecialProgressInfo {
       progressType: Torappu.StageData.SpecialStageUnlockProgressType;
-      descList: System.Collections.Generic.Dictionary<System.Int32,System.String>;
+      descList: System.Collections.Generic.Dictionary<
+        System.Int32,
+        System.String
+      >;
     }
     export enum SpecialStageUnlockProgressType {
       ONCE = "ONCE",
@@ -38685,8 +39005,7 @@ export namespace Torappu {
     }
   }
   export namespace ListDict {
-    export interface Equality<TKey,TValue> {
-    }
+    export interface Equality<TKey, TValue> {}
   }
   export namespace SocketNetwork {
     export interface NetMsg {
@@ -38716,12 +39035,9 @@ export namespace Torappu {
       // __Hotfix0_OnRecycle: XLua.DelegateBridge;
       // __Hotfix0_ReadByteArray: XLua.DelegateBridge;
     }
-    export interface INetMsgProcessor {
-    }
-    export interface NetMsgHandler {
-    }
-    export interface INetProtocolSuite {
-    }
+    export interface INetMsgProcessor {}
+    export interface NetMsgHandler {}
+    export interface INetProtocolSuite {}
     export interface SocketNet {
       // m_connection: Torappu.SocketNetwork.Connections.Connection;
       // m_processor: Torappu.SocketNetwork.INetMsgProcessor;
@@ -38821,8 +39137,7 @@ export namespace Torappu {
         // __Hotfix0__Received: XLua.DelegateBridge;
       }
       export namespace HeartBeat {
-        export interface PingCalculator {
-        }
+        export interface PingCalculator {}
       }
     }
   }
@@ -38831,24 +39146,29 @@ export namespace Torappu {
       title: System.String;
       groups: System.String[];
     }
-    export interface UnitTestBase {
-    }
-    export interface UnitTestLauncher {
-    }
+    export interface UnitTestBase {}
+    export interface UnitTestLauncher {}
     export interface DisableLoggingTest {
       _log: System.Boolean;
     }
     export interface EnumAsDictionaryKeyTest {
       runNum: System.Int32;
-      dict_without_comparator_: System.Collections.Generic.Dictionary<Torappu.Test.EnumAsDictionaryKeyTest.EnumType,System.String>;
-      dict_with_comparator: System.Collections.Generic.Dictionary<Torappu.Test.EnumAsDictionaryKeyTest.EnumType,System.String>;
-      dict_with_int: System.Collections.Generic.Dictionary<System.Int32,System.String>;
+      dict_without_comparator_: System.Collections.Generic.Dictionary<
+        Torappu.Test.EnumAsDictionaryKeyTest.EnumType,
+        System.String
+      >;
+      dict_with_comparator: System.Collections.Generic.Dictionary<
+        Torappu.Test.EnumAsDictionaryKeyTest.EnumType,
+        System.String
+      >;
+      dict_with_int: System.Collections.Generic.Dictionary<
+        System.Int32,
+        System.String
+      >;
     }
     export namespace UnitTestBase {
-      export interface UnitTestException {
-      }
-      export interface UAssert {
-      }
+      export interface UnitTestException {}
+      export interface UAssert {}
     }
     export namespace EnumAsDictionaryKeyTest {
       export enum EnumType {
@@ -38866,16 +39186,14 @@ export namespace Torappu {
       bindListIndex: System.Int32;
       isBindList: System.Boolean;
     }
-    export interface IDataBindWrapper {
-    }
-    export interface IBindProperty {
-    }
+    export interface IDataBindWrapper {}
+    export interface IBindProperty {}
     export interface BindProperty<T> {
       // _binders: Torappu.DataBind.DataBinder[];
       // m_isDirty: System.Boolean;
       // m_value: T;
     }
-    export interface DynamicBindProperty<TProp,TValue> {
+    export interface DynamicBindProperty<TProp, TValue> {
       // m_dynamicBinders: System.Collections.Generic.List<Torappu.DataBind.DataBinder>;
       // m_isLocked: System.Boolean;
     }
@@ -38909,8 +39227,7 @@ export namespace Torappu {
       _config: Torappu.ObjectPool.PoolManager.ObjectConfig;
       // m_pool: Torappu.ObjectPool.GameObjectPool;
     }
-    export interface IReusable {
-    }
+    export interface IReusable {}
     export interface ObjectPool<T> {
       // m_options: Torappu.ObjectPool.ObjectPool.Options<T>;
       // m_unusedObjs: System.Collections.Generic.Stack<T>;
@@ -38996,8 +39313,7 @@ export namespace Torappu {
         // container: UnityEngine.Transform;
       }
     }
-    export namespace GameObjectPoolComponent {
-    }
+    export namespace GameObjectPoolComponent {}
     export namespace ObjectPool {
       export interface Options<T> {
         preloadSize: System.Int32;
@@ -39021,40 +39337,48 @@ export namespace Torappu {
     }
   }
   export namespace RemoteCommandLine {
-    export interface RemoteGeneralProcessor {
-    }
-    export interface RemoteCommandLineServer {
-    }
+    export interface RemoteGeneralProcessor {}
+    export interface RemoteCommandLineServer {}
   }
   export namespace StateMachine {
-    export interface IBlackboard {
-    }
-    export interface IStateNode {
-    }
-    export interface DefaultBlackboard {
-    }
+    export interface IBlackboard {}
+    export interface IStateNode {}
+    export interface DefaultBlackboard {}
   }
   export namespace HierachyStateMachine {
-    export interface StateNode<StateType,DataType,BlackboardType> {
+    export interface StateNode<StateType, DataType, BlackboardType> {
       // m_stateMachine: Torappu.HierachyStateMachine<StateType,DataType,BlackboardType>;
     }
-    export interface SubStateMachine<StateType,DataType,BlackboardType,SubStateType> {
-      parent: Torappu.HierachyStateMachine<StateType,DataType,BlackboardType>;
+    export interface SubStateMachine<
+      StateType,
+      DataType,
+      BlackboardType,
+      SubStateType,
+    > {
+      parent: Torappu.HierachyStateMachine<StateType, DataType, BlackboardType>;
     }
-    export interface SubStateMachineNode<StateType,DataType,BlackboardType,SubStateType> {
+    export interface SubStateMachineNode<
+      StateType,
+      DataType,
+      BlackboardType,
+      SubStateType,
+    > {
       // <subStateMachine>k__BackingField: Torappu.HierachyStateMachine.SubStateMachine<StateType,DataType,BlackboardType,SubStateType>;
     }
     export namespace SubStateMachineNode {
-      export interface SubStateNode<StateType,DataType,BlackboardType,SubStateType> {
+      export interface SubStateNode<
+        StateType,
+        DataType,
+        BlackboardType,
+        SubStateType,
+      > {
         // <parentState>k__BackingField: Torappu.HierachyStateMachine.SubStateMachineNode<StateType,DataType,BlackboardType,SubStateType>;
       }
     }
   }
-  export namespace CharacterUtil {
-  }
+  export namespace CharacterUtil {}
   export namespace BattleStartController {
-    export interface IPlugin {
-    }
+    export interface IPlugin {}
     export interface Param {
       stageId: System.String;
       isPractise: System.Boolean;
@@ -39153,8 +39477,7 @@ export namespace Torappu {
     }
   }
   export namespace Upgrade {
-    export interface ParticleSystemUpgradeAdapter {
-    }
+    export interface ParticleSystemUpgradeAdapter {}
   }
   export namespace PostEffect {
     export interface MobileBloom {
@@ -39271,8 +39594,7 @@ export namespace U8 {
       // onPaySuc: System.Action<U8.SDK.U8PayResult>;
       // onPayFail: System.Action<System.Object>;
     }
-    export interface IExternalPlugin {
-    }
+    export interface IExternalPlugin {}
     export interface SDKExternalTools {
       RANDOM_CHAR_MAP: System.Char[];
       // s_instance: U8.SDK.SDKExternalTools;
@@ -39428,8 +39750,7 @@ export namespace U8 {
       packageName: System.String;
       // packageInfo: UnityEngine.AndroidJavaObject;
     }
-    export interface SDKInterfaceDefault {
-    }
+    export interface SDKInterfaceDefault {}
     export interface SDKMeta {
       appID: System.String;
       appKey: System.String;
@@ -39438,8 +39759,7 @@ export namespace U8 {
       worldId: System.String;
       extension: System.String;
     }
-    export interface ISDKPromise {
-    }
+    export interface ISDKPromise {}
     export interface SDKPromise<Param> {
       // onFulfilled: System.Action<Param>;
       // onRejected: System.Action<System.Object>;
@@ -39451,7 +39771,6 @@ export namespace U8 {
       // m_instance: U8.SDK.U8SDKCallback;
       // m_lock: System.Object;
     }
-    export namespace U8SDKInterface {
-    }
+    export namespace U8SDKInterface {}
   }
 }
