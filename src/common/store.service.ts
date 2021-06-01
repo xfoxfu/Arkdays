@@ -1,12 +1,12 @@
-import { Inject, Injectable } from "@nestjs/common";
-import { AppConfigService } from "./config";
+import { Injectable } from "@nestjs/common";
+import { AppConfigService } from "./config.service";
 import level, { LevelDB } from "level";
 
 @Injectable()
 export class StoreService {
   private readonly storage: LevelDB;
 
-  public constructor(@Inject(AppConfigService) config: AppConfigService) {
+  public constructor(config: AppConfigService) {
     this.storage = level(config.database);
     this.put = this.storage.put;
     this.get = this.storage.get;
