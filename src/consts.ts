@@ -1,6 +1,6 @@
 /**
  * Possible domains discovered in game.
- * @version 1.5.01
+ * @version 1.5.20
  */
 export const ServerDomains = {
   WebServer: "ak.local.arkdays.com",
@@ -12,7 +12,7 @@ export const ServerDomains = {
 
 /**
  * Possible routes discovered in game.
- * @version 1.5.01
+ * @version 1.5.20
  */
 export const Routes = {
   SDK_LOGIN_BY_PWD: "/user/login",
