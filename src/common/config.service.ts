@@ -6,11 +6,6 @@ export interface Config {
   database: string;
 }
 
-export const loadConfig = (): Config => ({
-  port: parseInt(process.env.PORT ?? "3000", 10),
-  database: process.env.DATABASE ?? "arkdays.db",
-});
-
 @Injectable()
 export class AppConfigService {
   constructor(private configService: ConfigService<Config>) {}
@@ -22,4 +17,9 @@ export class AppConfigService {
   get port(): number {
     return this.configService.get<number>("port", 3000);
   }
+
+  static loadConfig = (): Config => ({
+    port: parseInt(process.env.PORT ?? "3000", 10),
+    database: process.env.DATABASE ?? "arkdays.db",
+  });
 }

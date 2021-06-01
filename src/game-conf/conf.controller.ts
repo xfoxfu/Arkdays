@@ -1,14 +1,11 @@
 import { Controller, Get } from "@nestjs/common";
-import { AppConfigService, StoreService } from "../common";
+import { TableService } from "../common/table.service";
 import { ServerDomains } from "../consts";
 import type { Torappu } from "../types";
 
 @Controller({ host: [ServerDomains.ConfServer] })
 export class ConfController {
-  constructor(
-    private readonly _conf: AppConfigService,
-    private readonly _s: StoreService,
-  ) {}
+  constructor(private readonly tables: TableService) {}
   @Get("/config/prod/official/network_config")
   getNetworkConfig(): Torappu.Network.NetworkRouterConfig {
     // TODO: dynamically fetch from server
@@ -49,10 +46,6 @@ export class ConfController {
 
   @Get("/config/prod/official/:platform/version")
   getPlatformVersion(): Torappu.Resource.HotUpdater.VersionInfo {
-    // TODO: dynamically fetch from server
-    return {
-      resVersion: "21-05-21-14-47-36-326b80",
-      clientVersion: "1.5.01",
-    };
+    return this.tables.confVersion;
   }
 }
