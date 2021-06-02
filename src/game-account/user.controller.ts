@@ -15,23 +15,22 @@ export class UserController {
   public async Login(
     @Body() req: HgSDK.LoginRequest,
   ): Promise<HgSDK.LoginResponse> {
-    if (await this.accountSvc.Login(req.account, req.password))
+    if (await this.accountSvc.Login(req.account, req.password)) {
+      const [token, payload] = await this.tokenSvc.Issue(req.account);
       return {
         result: 0,
-        uid: "1145141919810",
+        uid: req.account,
         role: 0,
-        token: "eNchDECdrSxNJby+ec9U378srSxNJby+",
+        token: token,
         isAuthenticate: true,
         isMinor: false,
         needAuthenticate: false,
-        // issuedAt:new System.DateTime(),
-        // expiresIn:new System.DateTime().AddYears(1),
-        issuedAt: new Date(),
-        expiresIn: new Date(),
+        issuedAt: new Date(payload.issuedAt),
+        expiresIn: new Date(payload.expiresAt),
         isLatestUserAgreement: true,
         captcha: null,
       };
-    else {
+    } else {
       return { result: 1 } as unknown as HgSDK.LoginResponse;
     }
   }
@@ -61,15 +60,14 @@ export class UserController {
     @Body() req: HgSDK.UserRegisterRequest,
   ): Promise<HgSDK.UserRegisterResponse> {
     await this.accountSvc.Register(req.account, req.password);
-    const token = await this.tokenSvc.Issue(req.account);
-    const payload = await this.tokenSvc.GetPayload(token);
+    const [token, payload] = await this.tokenSvc.Issue(req.account);
     return {
       result: 0,
       uid: req.account,
       role: 0,
       token,
-      issuedAt: new Date(payload.iss ?? Date.now()),
-      expiresIn: new Date(payload.exp ?? Date.now()),
+      // issuedAt: new Date(payload.issuedAt ?? Date.now()),
+      // expiresIn: new Date(payload.expiresAt ?? Date.now()),
       errMsg: "",
       needAuthenticate: false,
       isLatestUserAgreement: true,

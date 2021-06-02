@@ -2,6 +2,11 @@
 
 private server of Arknights
 
+## Date Encoding Rules
+
+- dates as `date-fns::getUnixTime`
+- booleans as numbers is ok
+
 ## LICENSE
 
         The copyrights of original game files from Arknights belong to Hypergryph, Inc.

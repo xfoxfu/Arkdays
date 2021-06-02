@@ -20,6 +20,14 @@ export class StoreService {
   public get: LevelDB["get"];
   public del: LevelDB["del"];
   public clear: LevelDB["clear"];
+  public exists = async (key: string): Promise<boolean> => {
+    try {
+      await this.get(key);
+    } catch (e) {
+      return false;
+    }
+    return true;
+  };
 
   public batch: LevelDB["batch"];
 

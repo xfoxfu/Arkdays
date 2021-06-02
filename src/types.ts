@@ -4909,8 +4909,8 @@ export namespace Torappu {
   export interface PlayerSquadMemberProto {
     charInstId: System.Int32;
     // m_skillIndex: System.Int32;
-    currentTmpl: System.String;
-    tmpl: Torappu.ListDict<System.String, Torappu.PlayerSquadTmpl>;
+    // currentTmpl: System.String;
+    // tmpl: Torappu.ListDict<System.String,Torappu.PlayerSquadTmpl>;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_GetSkillIndex: XLua.DelegateBridge;
     // __Hotfix0_InternalSkillIndex: XLua.DelegateBridge;
@@ -4956,8 +4956,8 @@ export namespace Torappu {
     favorPoint: System.Int32;
     mainSkillLvl: System.Int32;
     gainTime: System.Int64;
-    currentTmpl: System.String;
-    tmpl: Torappu.ListDict<System.String, Torappu.PlayerCharPatch>;
+    // currentTmpl: System.String;
+    // tmpl: Torappu.ListDict<System.String,Torappu.PlayerCharPatch>;
     // m_skills: Torappu.PlayerCharSkill[];
     // m_defaultSkillIndex: System.Int32;
     // m_skinId: System.String;
@@ -5843,7 +5843,7 @@ export namespace Torappu {
     stable: Torappu.PlayerRoguelike.StableData;
   }
   export interface PlayerDataModel {
-    events: Torappu.PlayerEvents;
+    event: Torappu.PlayerEvents;
     pushFlags: Torappu.PlayerPushFlags;
     status: Torappu.PlayerStatus;
     monthlySub: System.Collections.Generic.Dictionary<
@@ -9338,8 +9338,8 @@ export namespace Torappu {
       System.String,
       System.Int32
     >;
-    currentTmpl: System.String;
-    tmpl: Torappu.ListDict<System.String, Torappu.SharedCharData.TmplData>;
+    // currentTmpl: System.String;
+    // tmpl: Torappu.ListDict<System.String,Torappu.SharedCharData.TmplData>;
   }
   export interface RequestAssistChar {
     charInstId: System.Int32;
@@ -38253,7 +38253,7 @@ export namespace Torappu {
       skillId: System.String;
       overridePrefabKey: System.String;
       overrideTokenKey: System.String;
-      specializeLevelUpData: Torappu.CharacterData.MainSkill.SpecializeLevelData[];
+      levelUpCostCond: Torappu.CharacterData.MainSkill.SpecializeLevelData[];
       initialUnlockCond: Torappu.CharacterData.UnlockCondition;
     }
     export interface PotentialRank {

@@ -1,30 +1,37 @@
 import { Injectable } from "@nestjs/common";
-import { SignJWT } from "jose/jwt/sign";
-import { jwtVerify } from "jose/jwt/verify";
-import { createSecretKey } from "crypto";
-import { JWTPayload } from "jose/webcrypto/types";
+import { StoreService } from "../store.service";
+import { randomBytes } from "crypto";
+import { addDays, getUnixTime } from "date-fns";
 
-interface Token {
+const randomKey = () => randomBytes(24).toString("base64");
+
+const STORE_PREFIX = "as-token:";
+const getKey = (account: string): string => `${STORE_PREFIX}${account}`;
+
+interface IPayload {
   account: string;
+  issuedAt: number;
+  expiresAt: number;
 }
 
 @Injectable()
 export class TokenService {
-  private readonly key = createSecretKey(Buffer.from("TEST_SECRET"));
+  public constructor(private readonly store: StoreService) {}
 
-  public async Issue(account: string): Promise<string> {
-    return await new SignJWT({ account })
-      .setIssuedAt()
-      .setExpirationTime("31d")
-      .sign(this.key);
+  public async Issue(account: string): Promise<[string, IPayload]> {
+    const token = randomKey();
+    const issuedAt = getUnixTime(new Date());
+    const expiresAt = getUnixTime(addDays(issuedAt, 32));
+    const payload = { account, issuedAt, expiresAt };
+    await this.store.put(getKey(token), JSON.stringify(payload));
+    return [token, payload];
   }
 
-  public async GetPayload(token: string): Promise<JWTPayload> {
-    const data = await jwtVerify(token, this.key);
-    return data.payload;
+  public async GetPayload(token: string): Promise<IPayload> {
+    return JSON.parse(await this.store.get(getKey(token))) as IPayload;
   }
 
   public async GetAccount(token: string): Promise<string> {
-    return ((await this.GetPayload(token)) as unknown as Token).account;
+    return (await this.GetPayload(token)).account;
   }
 }

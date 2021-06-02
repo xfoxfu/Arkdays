@@ -9,7 +9,7 @@ export class AccountService {
   public constructor(private readonly store: StoreService) {}
 
   public async Register(account: string, password: string): Promise<void> {
-    if (await this.store.get(getKey(account))) {
+    if (await this.store.exists(getKey(account))) {
       throw new Error("account already registered");
     }
     await this.store.put(getKey(account), JSON.stringify({ password }));
