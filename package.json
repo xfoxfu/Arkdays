@@ -49,9 +49,11 @@
     "@nestjs/core": "^7.6.17",
     "@nestjs/platform-express": "^7.6.17",
     "date-fns": "^2.22.1",
+    "deep-observer": "^1.1.7",
     "jose": "^3.12.2",
     "level": "^7.0.0",
     "lodash": "^4.17.21",
+    "nestjs-pino": "^1.4.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.0.0"
   },

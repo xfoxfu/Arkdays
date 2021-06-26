@@ -70,7 +70,7 @@ export class TableService {
     await setStore(store, "gamedata/token_table.json");
     await setStore(store, "gamedata/zone_table.json");
 
-    await setStore(store, "player_init.json");
+    await setStore(store, "initial_data.json");
 
     return new TableService(store);
   };
@@ -211,6 +211,6 @@ export class TableService {
   }
 
   public get playerInit(): Torappu.PlayerDataModel {
-    return this.store.get("player_init.json");
+    return this.store.get("initial_data.json");
   }
 }

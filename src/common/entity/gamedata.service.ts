@@ -29,22 +29,18 @@ export class GameDataService {
     playerData.status.flags = Object.fromEntries(
       Object.keys(this.tables.story_table).map((k) => [k, true]),
     );
-    // _syncDataHolder.Value.user.dungeon.stages:_stageTableHolder.Value.stages
-    //     .Select(s => new PlayerStage
-    //     {
-    //         stageId:s.Value.stageId,
-    //         completeTimes:1,
-    //         state:PlayerStageState.COMPLETE,
-    //         hasBattleReplay:false,
-    //         noCostCnt:1,
-    //     })
-    //     .ToDictionary(kv => kv.stageId);
-    // _syncDataHolder.Value.user.dungeon.zones:_zoneTableHolder.Value.zones
-    //     .Select(s => (s.Key, new PlayerZone
-    //     {
-    //         completeTimes:1
-    //     }))
-    //     .ToDictionary(kv => kv.Key, kv => kv.Item2);
+    playerData.dungeon.stages = Object.fromEntries(
+      Object.values(this.tables.stage_table.stages).map((s) => [
+        s.stageId,
+        {
+          stageId: s.stageId,
+          completeTimes: 1,
+          state: Torappu.PlayerStageState.COMPLETE,
+          hasBattleReplay: false,
+          noCostCnt: 1,
+        },
+      ]),
+    );
     // _syncDataHolder.Value.user.dungeon.campaigns:new PlayerCampaign
     // {
     //     campaignCurrentFee:1800,

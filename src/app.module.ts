@@ -5,10 +5,18 @@ import { AccountModule } from "./game-account/account.module";
 import { ConfModule } from "./game-conf/conf.module";
 import { FileModule } from "./game-file/file.module";
 import { GameModule } from "./game/game.module";
+import { LoggerModule } from "nestjs-pino";
 
 @Global()
 @Module({
-  imports: [CommonModule, ConfModule, FileModule, AccountModule, GameModule],
+  imports: [
+    CommonModule,
+    ConfModule,
+    FileModule,
+    AccountModule,
+    GameModule,
+    LoggerModule.forRoot(),
+  ],
   controllers: [AppController],
   providers: [],
 })
