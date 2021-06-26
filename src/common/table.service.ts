@@ -25,9 +25,11 @@ export class TableService {
 
     await setStore(store, "conf/network_config");
     await setStore(store, "conf/remote_config");
-    await setStore(store, "conf/version");
+    await setStore(store, "conf/Android-version");
+    await setStore(store, "conf/IOS-version");
 
-    await setStore(store, "fs/preannouncement.meta.json");
+    await setStore(store, "fs/Android-preannouncement.meta.json");
+    await setStore(store, "fs/IOS-preannouncement.meta.json");
 
     await setStore(store, "gamedata/activity_table.json");
     await setStore(store, "gamedata/audio_data.json");
@@ -79,12 +81,18 @@ export class TableService {
   public get confRemoteConfig(): Partial<Torappu.Config.RemoteConfig.InternalConfig> {
     return this.store.get("conf/remote_config");
   }
-  public get confVersion(): Torappu.Resource.HotUpdater.VersionInfo {
-    return this.store.get("conf/version");
+  public get confVersionAndroid(): Torappu.Resource.HotUpdater.VersionInfo {
+    return this.store.get("conf/Android-version");
+  }
+  public get confVersionIOS(): Torappu.Resource.HotUpdater.VersionInfo {
+    return this.store.get("conf/IOS-version");
   }
 
-  public get fsPreAnnounceMeta(): Torappu.PreAnnounceData {
-    return this.store.get("fs/preannouncement.meta.json");
+  public get fsPreAnnounceMetaAndroid(): Torappu.PreAnnounceData {
+    return this.store.get("fs/Android-preannouncement.meta.json");
+  }
+  public get fsPreAnnounceMetaIOS(): Torappu.PreAnnounceData {
+    return this.store.get("fs/IOS-preannouncement.meta.json");
   }
 
   public get activity_table(): unknown {

@@ -37,8 +37,10 @@ const main = async () => {
   await Promise.all([
     fetch("conf", "https://ak-conf.hypergryph.com/config/prod/official/network_config"),
     fetch("conf", "https://ak-conf.hypergryph.com/config/prod/official/remote_config"),
-    fetch("conf", "https://ak-conf.hypergryph.com/config/prod/official/IOS/version"),
-    fetch("fs", "https://ak-fs.hypergryph.com/announce/IOS/preannouncement.meta.json"),
+    fetch("conf", "https://ak-conf.hypergryph.com/config/prod/official/Android/version", "Android-version"),
+    fetch("fs", "https://ak-fs.hypergryph.com/announce/Android/preannouncement.meta.json", "Android-preannouncement.meta.json"),
+    fetch("conf", "https://ak-conf.hypergryph.com/config/prod/official/IOS/version", "IOS-version"),
+    fetch("fs", "https://ak-fs.hypergryph.com/announce/IOS/preannouncement.meta.json", "IOS-preannouncement.meta.json"),
     fetch("gamedata", "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/activity_table.json"),
     fetch("gamedata", "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/audio_data.json"),
     fetch("gamedata", "https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/building_data.json"),

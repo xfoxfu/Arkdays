@@ -1,4 +1,4 @@
-import { Controller, Get } from "@nestjs/common";
+import { Controller, Get, Param } from "@nestjs/common";
 import { TableService } from "../common/table.service";
 import { ServerDomains } from "../consts";
 import type { Torappu } from "../types";
@@ -18,7 +18,12 @@ export class ConfController {
   }
 
   @Get("/config/prod/official/:platform/version")
-  getPlatformVersion(): Torappu.Resource.HotUpdater.VersionInfo {
-    return this.tables.confVersion;
+  getPlatformVersion(
+    @Param("platform") platform: string,
+  ): Torappu.Resource.HotUpdater.VersionInfo {
+    if (platform === "Android") return this.tables.confVersionAndroid;
+    else if (platform === "IOS") return this.tables.confVersionIOS;
+
+    return { resVersion: "INVALID_CLIENT", clientVersion: "0.0.00" };
   }
 }
