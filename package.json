@@ -54,6 +54,7 @@
     "level": "^7.0.0",
     "lodash": "^4.17.21",
     "nestjs-pino": "^1.4.0",
+    "pino-pretty": "^5.1.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.0.0"
   },

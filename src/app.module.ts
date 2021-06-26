@@ -6,6 +6,7 @@ import { ConfModule } from "./game-conf/conf.module";
 import { FileModule } from "./game-file/file.module";
 import { GameModule } from "./game/game.module";
 import { LoggerModule } from "nestjs-pino";
+import PinoPretty from "pino-pretty";
 
 @Global()
 @Module({
@@ -15,7 +16,9 @@ import { LoggerModule } from "nestjs-pino";
     FileModule,
     AccountModule,
     GameModule,
-    LoggerModule.forRoot(),
+    LoggerModule.forRoot({
+      pinoHttp: { prettyPrint: { singleLine: true }, prettifier: PinoPretty },
+    }),
   ],
   controllers: [AppController],
   providers: [],
