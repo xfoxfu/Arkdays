@@ -28,6 +28,7 @@ interface IClass {
 interface IField {
   type: string;
   name: string;
+  value: any;
 }
 
 type IExport = {
@@ -161,8 +162,13 @@ const write = (layer: IExport, indent = ""): string => {
       let fieldId = 0;
       for (const prop of klass.fields) {
         if (prop.name === "value__") continue;
-        if (["Torappu.PreAnnounceData.PreAnnounceType"].includes(klass.name)) {
-          result += indent + `    ${prop.name} = ${fieldId},\n`;
+        if (
+          [
+            "Torappu.PreAnnounceData.PreAnnounceType",
+            "Torappu.PlayerSyncModuleMask",
+          ].includes(klass.name)
+        ) {
+          result += indent + `    ${prop.name} = ${prop.value},\n`;
         } else {
           result += indent + `    ${prop.name} = "${prop.name}",\n`;
         }

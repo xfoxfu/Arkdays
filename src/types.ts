@@ -4017,18 +4017,18 @@ export namespace Torappu {
     subscriptionRewards: Torappu.CheckInResponse.ItemModel[];
   }
   export enum PlayerSyncModuleMask {
-    NONE = "NONE",
-    UNREAD_MAILS = "UNREAD_MAILS",
-    FRIEND_REQ = "FRIEND_REQ",
-    ANNOUNCE_VER = "ANNOUNCE_VER",
-    REFRESH_USER_CARD = "REFRESH_USER_CARD",
-    GOOD_PURCHASE_STATE = "GOOD_PURCHASE_STATE",
-    CASH_PURCHASE_STATE = "CASH_PURCHASE_STATE",
-    CLUE_STATE = "CLUE_STATE",
-    SYNC_BUILDING = "SYNC_BUILDING",
-    SYNC_CRISIS = "SYNC_CRISIS",
-    SYNC_ACTIVITY = "SYNC_ACTIVITY",
-    SYNC_MEDAL = "SYNC_MEDAL",
+    NONE = 0,
+    UNREAD_MAILS = 1,
+    FRIEND_REQ = 2,
+    ANNOUNCE_VER = 4,
+    REFRESH_USER_CARD = 8,
+    GOOD_PURCHASE_STATE = 16,
+    CASH_PURCHASE_STATE = 32,
+    CLUE_STATE = 64,
+    SYNC_BUILDING = 128,
+    SYNC_CRISIS = 256,
+    SYNC_ACTIVITY = 512,
+    SYNC_MEDAL = 1024,
   }
   export interface PlayerSyncStatusRequest {
     modules: System.Int64;
