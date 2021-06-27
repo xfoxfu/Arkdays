@@ -15,15 +15,25 @@ export class GameDataService {
     private readonly tables: TableService,
   ) {}
 
+  public async Exists(account: string): Promise<boolean> {
+    return await this.store.exists(getKey(account));
+  }
+
   public async Get(account: string): Promise<Torappu.PlayerDataModel> {
     return JSON.parse(
       await this.store.get(getKey(account)),
     ) as Torappu.PlayerDataModel;
   }
 
+  public async Set(
+    account: string,
+    data: Torappu.PlayerDataModel,
+  ): Promise<void> {
+    await this.store.put(getKey(account), JSON.stringify(data));
+  }
+
   public async Initialize(account: string): Promise<void> {
-    // TODO: generate init user data
-    // if (await this.store.exists(getKey(account))) return;
+    if (await this.store.exists(getKey(account))) return;
     const playerData: Torappu.PlayerDataModel = this.tables.playerInit;
 
     playerData.status.flags = Object.fromEntries(

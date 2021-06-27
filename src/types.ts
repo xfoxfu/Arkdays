@@ -5886,7 +5886,7 @@ export namespace Torappu {
     crisis: Torappu.PlayerCrisis;
     storyreview: Torappu.PlayerStoryReview;
     roguelike: Torappu.PlayerRoguelike;
-    campaign: Torappu.PlayerCampaign;
+    campaignV2: Torappu.PlayerCampaign;
   }
   export interface ILuaPlayerData {}
   export interface PlayerData {

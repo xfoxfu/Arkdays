@@ -153,6 +153,12 @@ const write = (layer: IExport, indent = ""): string => {
         ) {
           prop.name = "levelUpCostCond";
         }
+        if (
+          klass.name === "Torappu.PlayerDataModel" &&
+          prop.name === "campaign"
+        ) {
+          prop.name = "campaignV2";
+        }
 
         result += indent + `    ${comment}${prop.name}: ${prop.type};\n`;
       }
