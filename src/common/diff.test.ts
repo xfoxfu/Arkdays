@@ -13,6 +13,17 @@ test("diff equals", (t) => {
   );
 });
 
+test("duff boolean", (t) => {
+  t.deepEqual(computeDelta({ f: false }, { f: true }), {
+    modified: { f: true },
+    deleted: {},
+  });
+  t.deepEqual(computeDelta({ f: true }, { f: false }), {
+    modified: { f: false },
+    deleted: {},
+  });
+});
+
 test("diff array", (t) => {
   t.deepEqual(computeDelta({ a: [1, 2, 3, 4] }, { a: [] }), {
     modified: { a: [] },

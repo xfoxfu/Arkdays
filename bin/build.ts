@@ -65,6 +65,29 @@ const write = (layer: IExport, indent = ""): string => {
   if (layer.fullName === ".HGSDK") layer.name = "HgSDK";
   result += indent + `export namespace ${layer.name} {\n`;
   for (const [name, klass] of Object.entries(layer.klass)) {
+    if (klass.parent?.includes("HGSDK.")) {
+      klass.parent = klass.parent.replace("HGSDK.", "HgSDK.");
+    }
+    if (
+      klass.parent === "Torappu.PlayerDeltaResponse" ||
+      klass.parent === "System.Object" ||
+      klass.parent === "System.ValueType" ||
+      klass.parent === "System.Exception" ||
+      klass.parent === "System.Attribute" ||
+      klass.parent === "System.MulticastDelegate" ||
+      klass.parent?.includes("HGSDK.Test") ||
+      klass.parent?.includes("UnityEngine") ||
+      klass.parent?.includes("Torappu.UI") ||
+      klass.parent?.includes("Newtonsoft.Json") ||
+      klass.parent?.includes("Torappu.KeyFrames") ||
+      klass.parent?.includes("AdvancedInspector") ||
+      klass.parent?.includes("XNode") ||
+      klass.parent?.includes("Torappu.DataBind.DataBinder") ||
+      klass.parent?.includes("System.Collections.Generic.EqualityComparer") ||
+      klass.parent?.includes("System.Collections.Generic.KeyValuePair")
+    ) {
+      klass.parent = undefined;
+    }
     if (name.startsWith("<")) continue;
     if (
       [
@@ -88,7 +111,11 @@ const write = (layer: IExport, indent = ""): string => {
     )
       continue;
     if (klass.type !== "enum") {
-      result += indent + `  export interface ${name} {\n`;
+      result +=
+        indent +
+        `  export interface ${name} ${
+          klass.parent ? `extends ${klass.parent} ` : ""
+        }{\n`;
       for (const prop of klass.fields) {
         if (
           ["m_skills", "m_defaultSkillIndex", "m_skinId"].includes(prop.name)
@@ -189,6 +216,8 @@ const write = (layer: IExport, indent = ""): string => {
           [
             "Torappu.PreAnnounceData.PreAnnounceType",
             "Torappu.PlayerSyncModuleMask",
+            "Torappu.MissionHoldingState",
+            "Torappu.MissionPlayerData.MissionGroupState",
           ].includes(klass.name)
         ) {
           result += indent + `    ${prop.name} = ${prop.value},\n`;
@@ -240,6 +269,7 @@ export namespace System {
       export namespace Generic {
           export type List<T> = Array<T>;
           export type IList<T> = Array<T>;
+          export type Stack<T> = Array<T>;
           export type Queue<T> = Array<T>;
           export type HashSet<T> = Set<T>;
           export type Dictionary<K extends string | number, V> = Record<K, V>;

@@ -5,6 +5,7 @@ import { TableService } from "../table.service";
 import { last } from "lodash";
 import { getUnixTime } from "date-fns";
 import { Logger } from "nestjs-pino";
+import { cloneDeep } from "lodash";
 
 const STORE_PREFIX = "gamedata:";
 const getKey = (account: string): string => `${STORE_PREFIX}${account}`;
@@ -35,9 +36,13 @@ export class GameDataService {
   }
 
   public async Initialize(account: string): Promise<void> {
-    if (await this.store.exists(getKey(account))) return;
+    if (await this.store.exists(getKey(account))) {
+      this.logger.warn(`reinitialize PlayerData on user ${account}`);
+    }
     this.logger.log(`initialized PlayerData on user ${account}`);
-    const playerData: Torappu.PlayerDataModel = this.tables.playerInit;
+    const playerData: Torappu.PlayerDataModel = cloneDeep(
+      this.tables.playerInit,
+    );
 
     playerData.status.flags = Object.fromEntries(
       Object.keys(this.tables.story_table).map((k) => [k, true]),
@@ -120,6 +125,30 @@ export class GameDataService {
     );
     playerData.event.building = new Date();
     playerData.event.status = getUnixTime(new Date());
+    playerData.openServer = {
+      checkIn: {
+        isAvailable: false,
+        history: Array<boolean>(14).fill(false),
+      },
+      chainLogin: {
+        isAvailable: false,
+        nowIndex: 6,
+        history: Array<boolean>(7).fill(false),
+      },
+    };
+    for (const [_, value] of Object.entries(
+      playerData.mission.missions[Torappu.MissionType.OPENSERVER],
+    )) {
+      value.state = Torappu.MissionHoldingState.FINISHED;
+      for (const progress of value.progress) {
+        progress.value = progress.target;
+      }
+    }
+    playerData.mission.missionGroups["openseverTaskGroup1"] =
+      Torappu.MissionPlayerData.MissionGroupState.Complete;
+    playerData.status.lastRefreshTs = new Date();
+    playerData.status.registerTs = getUnixTime(new Date());
+    playerData.status.lastApAddTime = new Date();
 
     await this.store.put(getKey(account), JSON.stringify(playerData));
   }

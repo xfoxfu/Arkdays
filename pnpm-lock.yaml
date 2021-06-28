@@ -9,6 +9,7 @@ specifiers:
   '@types/level': ^6.0.0
   '@types/lodash': ^4.14.170
   '@types/node': ^15.6.1
+  '@types/uuid': ^8.3.0
   '@typescript-eslint/eslint-plugin': ^4.26.0
   '@typescript-eslint/parser': ^4.26.0
   ava: ^3.15.0
@@ -31,6 +32,7 @@ specifiers:
   ts-node: ^10.0.0
   ts-node-dev: ^1.1.6
   typescript: ^4.3.2
+  uuid: ^8.3.2
 
 dependencies:
   '@nestjs/common': 7.6.17_8e6d4b7501d9d25f42cbf34563d4f5bc
@@ -46,12 +48,14 @@ dependencies:
   pino-pretty: 5.1.0
   reflect-metadata: 0.1.13
   rxjs: 6.6.7
+  uuid: 8.3.2
 
 devDependencies:
   '@types/express': 4.17.12
   '@types/level': 6.0.0
   '@types/lodash': 4.14.170
   '@types/node': 15.6.1
+  '@types/uuid': 8.3.0
   '@typescript-eslint/eslint-plugin': 4.26.0_025fc50e542c8e957dec903a5ef525ba
   '@typescript-eslint/parser': 4.26.0_eslint@7.27.0+typescript@4.3.2
   ava: 3.15.0
@@ -463,6 +467,10 @@ packages:
 
   /@types/strip-json-comments/0.0.30:
     resolution: {integrity: sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==}
+    dev: true
+
+  /@types/uuid/8.3.0:
+    resolution: {integrity: sha512-eQ9qFW/fhfGJF8WKHGEHZEyVWfZxrT+6CLIJGBcZPfxUh/+BnEj+UCGYMlr9qZuX/2AltsvwrGqp0LhEW8D0zQ==}
     dev: true
 
   /@typescript-eslint/eslint-plugin/4.26.0_025fc50e542c8e957dec903a5ef525ba:

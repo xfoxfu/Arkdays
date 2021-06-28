@@ -21,7 +21,7 @@ export const computeDelta = <T>(
     }
   }
   for (const [key, cValue] of Object.entries(current)) {
-    if (!cValue) continue;
+    if (cValue === undefined || cValue === null) continue;
     if (equal(cValue, (legacy as any)[key])) continue;
 
     if (Array.isArray(cValue)) {

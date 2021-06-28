@@ -29,6 +29,7 @@ export namespace System {
     export namespace Generic {
       export type List<T> = Array<T>;
       export type IList<T> = Array<T>;
+      export type Stack<T> = Array<T>;
       export type Queue<T> = Array<T>;
       export type HashSet<T> = Set<T>;
       export type Dictionary<K extends string | number, V> = Record<K, V>;
@@ -46,7 +47,8 @@ export namespace Newtonsoft {
 }
 export namespace Torappu {
   export interface UpdateFullInspectorRootDirectory {}
-  export interface GameAnalytics {
+  export interface GameAnalytics
+    extends Torappu.PersistentSingleton<Torappu.GameAnalytics> {
     // s_cachedPlatformStr: System.String;
     // s_cachedDeviceIdMap: System.Collections.Generic.Dictionary<System.String,System.String>;
     CHANNEL_OFFICIAL: System.String;
@@ -96,7 +98,8 @@ export namespace Torappu {
     // __Hotfix0_GetOfficialDeviceId: XLua.DelegateBridge;
     // __Hotfix0__GetPlatformStr: XLua.DelegateBridge;
   }
-  export interface AudioManager {
+  export interface AudioManager
+    extends Torappu.PersistentSingleton<Torappu.AudioManager> {
     TIMEEPS: System.Single;
     SNAPSHOT_DEFAULT: System.String;
     CHANNEL_MUSIC: System.String;
@@ -175,7 +178,8 @@ export namespace Torappu {
     UI: System.String;
     SYSTEM: System.String;
   }
-  export interface TorappuAudio {
+  export interface TorappuAudio
+    extends Torappu.PersistentSingleton<Torappu.TorappuAudio> {
     // m_middleware: Torappu.Audio.Middleware.AudioMiddleware;
     // m_sb: System.Text.StringBuilder;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -220,7 +224,8 @@ export namespace Torappu {
     MISSION = "MISSION",
     FRIEND = "FRIEND",
   }
-  export interface AVGTextManager {
+  export interface AVGTextManager
+    extends Torappu.Singleton<Torappu.AVGTextManager> {
     // m_translater: Torappu.AVG.IAVGTextTranslater;
     // <>f__mg$cache0: Torappu.AVG.VariableTranslater.VariableGetterDelegate;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -343,7 +348,8 @@ export namespace Torappu {
   export interface AttributesCalculator {
     // s_sharedBuffList: System.Collections.Generic.List<Torappu.ExternalBuff>;
   }
-  export interface ClearAssets {
+  export interface ClearAssets
+    extends Torappu.SingletonMonoBehaviour<Torappu.ClearAssets> {
     _clearOnAwake: System.Boolean;
     _unloadAll: System.Boolean;
     _forceUnloadEvenUsed: System.Boolean;
@@ -399,7 +405,8 @@ export namespace Torappu {
     // <>f__am$cache0: System.Func<System.Reflection.FieldInfo,System.Boolean>;
   }
   export interface RandomExtensions {}
-  export interface GameFlowController {
+  export interface GameFlowController
+    extends Torappu.SingletonMonoBehaviour<Torappu.GameFlowController> {
     ASYNC_SCENE_LOAD_MAX_PROGRESS: System.Single;
     LOADING_MODE_MIN_WAITING_TIME: System.Single;
     // m_addingScenes: Torappu.ListSet<System.String>;
@@ -439,7 +446,8 @@ export namespace Torappu {
     // __Hotfix0_CheckIsInBattleScene: XLua.DelegateBridge;
     // __Hotfix0_CheckIsInStoryScene: XLua.DelegateBridge;
   }
-  export interface GameFlowListener {
+  export interface GameFlowListener
+    extends Torappu.SingletonMonoBehaviour<Torappu.GameFlowListener> {
     REGISTER_WAIT_CYCLES: System.Int32;
     // m_listenersRegistered: System.Boolean;
     // m_initListeners: System.Collections.Generic.List<System.Collections.IEnumerator>;
@@ -608,7 +616,8 @@ export namespace Torappu {
     CHECK_INVALID_INPUT_ON_CLIENT: System.Boolean;
     ENABLE_CAMERA_EFFECT: System.Boolean;
   }
-  export interface GlobalInitializerAndUpdater {
+  export interface GlobalInitializerAndUpdater
+    extends Torappu.SingletonMonoBehaviour<Torappu.GlobalInitializerAndUpdater> {
     ASYNC_LOADING_SCENES: System.String[];
     // m_isInited: System.Boolean;
     // m_actionsWhenInited: System.Collections.Generic.List<System.Action>;
@@ -628,7 +637,8 @@ export namespace Torappu {
     // __Hotfix0__EnableAsyncReloadAfterHotupdate: XLua.DelegateBridge;
     // __Hotfix0__UseAsyncDBForCurDevice: XLua.DelegateBridge;
   }
-  export interface GlobalOptions {
+  export interface GlobalOptions
+    extends Torappu.SingletonScriptableObject<Torappu.GlobalOptions> {
     devVersion: System.String;
     dynamicConfigPath: System.String;
     crossThisBundleVersionToDeleteAllCachedFiles: System.String;
@@ -636,7 +646,8 @@ export namespace Torappu {
     // backupStringMap: UnityEngine.TextAsset;
     expiredRes: Torappu.Resource.ExpiredPersistentRes[];
   }
-  export interface GlobalOptionsHolder {
+  export interface GlobalOptionsHolder
+    extends Torappu.PersistentSingleton<Torappu.GlobalOptionsHolder> {
     _globalOptions: Torappu.GlobalOptions;
     _logOptions: Torappu.DLogOptions;
     _resourceOptions: Torappu.Resource.ResourceOptions;
@@ -658,12 +669,12 @@ export namespace Torappu {
     // planeNormal: UnityEngine.Vector3;
     // source: UnityEngine.Transform;
   }
-  export interface EnemyIconHub {}
-  export interface PortraitHub {}
-  export interface SkillIconHub {}
+  export interface EnemyIconHub extends Torappu.SpriteHub {}
+  export interface PortraitHub extends Torappu.SpriteHub {}
+  export interface SkillIconHub extends Torappu.SpriteHub {}
   export interface ISpriteHub {}
   export interface MonoISpriteHub {}
-  export interface SpriteHub {
+  export interface SpriteHub extends Torappu.MonoISpriteHub {
     _caseSensitive: System.Boolean;
     // _sprites: UnityEngine.Sprite[];
     // m_spriteHub: System.Collections.Generic.Dictionary<System.String,UnityEngine.Sprite>;
@@ -1678,7 +1689,8 @@ export namespace Torappu {
     // __Hotfix0_get_MULTI_POS_DOWN_TEAM: XLua.DelegateBridge;
     // __Hotfix0_MULTI_BATTLE_ERROR_TIP: XLua.DelegateBridge;
   }
-  export interface GlobalResCache {
+  export interface GlobalResCache
+    extends Torappu.Singleton<Torappu.GlobalResCache> {
     // m_assetLoader: Torappu.Resource.CachedAssetLoader;
     // m_compCaches: System.Collections.Generic.Dictionary<System.String,Torappu.GlobalResCache.CompCache>;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -1731,7 +1743,8 @@ export namespace Torappu {
     // __Hotfix0__UpdateDisplayStatus: XLua.DelegateBridge;
     // __Hotfix0__EnableCoreComponents: XLua.DelegateBridge;
   }
-  export interface PersistentSingleton<T> {
+  export interface PersistentSingleton<T>
+    extends Torappu.SingletonMonoBehaviour<T> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_DestroyMe: XLua.DelegateBridge;
     // __Hotfix0_OnInit: XLua.DelegateBridge;
@@ -1813,7 +1826,8 @@ export namespace Torappu {
     // m_eventsMap: System.Collections.Generic.Dictionary<TEnum,Torappu.EventPool.AddOrRemoveSafeCallbackSet<TEnum>>;
     // m_onceEventsMap: System.Collections.Generic.Dictionary<TEnum,Torappu.EventPool.AddOrRemoveSafeCallbackSet<TEnum>>;
   }
-  export interface FastActionDetector {
+  export interface FastActionDetector
+    extends Torappu.Singleton<Torappu.FastActionDetector> {
     // m_latestInvoke: System.Single;
     FAST_THRESHOLD: System.Single;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -1875,7 +1889,7 @@ export namespace Torappu {
     // __Hotfix0_ClearUsingLinksOnly: XLua.DelegateBridge;
     // __Hotfix0__NewList: XLua.DelegateBridge;
   }
-  export interface ReusableList<T> {
+  export interface ReusableList<T> extends System.Collections.Generic.List<T> {
     // m_parentPool: Torappu.ListPool<T>;
   }
   export interface ListSet<TItem> {
@@ -1898,7 +1912,7 @@ export namespace Torappu {
     // m_periodTime: Torappu.FP;
     // m_remainingTime: Torappu.FP;
   }
-  export interface PrecisePeriodicTimer {}
+  export interface PrecisePeriodicTimer extends Torappu.PeriodicTimer {}
   export interface TimeSyncPeriodicTimer {
     // m_periodTime: Torappu.FP;
     // m_getTimeFunc: System.Func<Torappu.FP>;
@@ -1916,7 +1930,8 @@ export namespace Torappu {
     STANDARD_RATIO_THRESHOLD: System.Single;
   }
   export interface IPlayerDataListener {}
-  export interface PlayerDataTracker {
+  export interface PlayerDataTracker
+    extends Torappu.SingletonMonoBehaviour<Torappu.PlayerDataTracker> {
     // m_listeners: System.Collections.Generic.List<Torappu.IPlayerDataListener>;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_Register: XLua.DelegateBridge;
@@ -1939,7 +1954,7 @@ export namespace Torappu {
   export interface PriorityQueue<T> {
     // m_list: System.Collections.Generic.List<T>;
   }
-  export interface ProfessionSpriteHub {
+  export interface ProfessionSpriteHub extends Torappu.MonoISpriteHub {
     _sprites: Torappu.ProfessionSpriteHub.DataPair[];
     // m_spriteHub: System.Collections.Generic.Dictionary<Torappu.ProfessionCategory,UnityEngine.Sprite>;
   }
@@ -1951,7 +1966,8 @@ export namespace Torappu {
   export interface SafeParentComponent {
     // m_cachedChildren: Torappu.ListDict<System.Int32,Torappu.SafeParentComponent.Wrapper>;
   }
-  export interface SceneFontHolder {
+  export interface SceneFontHolder
+    extends Torappu.SingletonMonoBehaviour<Torappu.SceneFontHolder> {
     // _fontSel: Torappu.UI.FontSelect;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_TryGetFont: XLua.DelegateBridge;
@@ -2005,7 +2021,8 @@ export namespace Torappu {
     // m_queue: System.Collections.Generic.Queue<T>;
   }
   export interface ITimeWatcher {}
-  export interface TimeTracer {
+  export interface TimeTracer
+    extends Torappu.SingletonMonoBehaviour<Torappu.TimeTracer> {
     DEFAULT_GROUP: System.Int32;
     INVALID_GROUP: System.Int32;
     _timeScale: System.Single;
@@ -2031,11 +2048,13 @@ export namespace Torappu {
     // __Hotfix0__WatchOnGroup: XLua.DelegateBridge;
     // __Hotfix0__UnWatchOnGroup: XLua.DelegateBridge;
   }
-  export interface TopMenuDynamicPrefabInstHolder {
+  export interface TopMenuDynamicPrefabInstHolder
+    extends Torappu.DynamicPrefabInstHolder {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_GetPrefab: XLua.DelegateBridge;
   }
-  export interface TorappuMemoryPool {
+  export interface TorappuMemoryPool
+    extends Torappu.Singleton<Torappu.TorappuMemoryPool> {
     DEFAULT_CAPACITY: System.Int32;
     // m_globalFlags: Torappu.ListSet<System.Int32>;
     // m_cacheGroup: Torappu.ListDict<System.String,Torappu.LRUCache<System.String,Torappu.TorappuMemoryPool.Value>>;
@@ -2547,7 +2566,8 @@ export namespace Torappu {
     DEFAULT_TIMEOUT_FRAME_CNT: System.Int32;
     // m_waitingTasks: System.Collections.Generic.List<Torappu.YieldSemaphore.WaitTask<Param>>;
   }
-  export interface ActivityDB {
+  export interface ActivityDB
+    extends Torappu.DB.ConstTable<Torappu.ActivityTable, Torappu.ActivityDB> {
     // m_activityTimePoints: System.Collections.Generic.List<System.Int64>;
     // m_actMissionMap: System.Collections.Generic.Dictionary<System.String,Torappu.MissionData>;
     // m_actMissionGroupMap: System.Collections.Generic.Dictionary<System.String,Torappu.MissionGroup>;
@@ -2559,7 +2579,8 @@ export namespace Torappu {
     // __Hotfix0_GetMissionEnumerator: XLua.DelegateBridge;
     // __Hotfix0__InitMissionMap: XLua.DelegateBridge;
   }
-  export interface BuildingDB {
+  export interface BuildingDB
+    extends Torappu.DB.ConstTable<Torappu.BuildingData, Torappu.BuildingDB> {
     _obstacleTemplateConfig: Torappu.DB.TableConfig;
     // m_beans: System.Collections.Generic.Dictionary<Torappu.BuildingData.RoomType,Torappu.BuildingData.IRoomBean>;
     // m_obstacleTemplates: System.Collections.Generic.Dictionary<System.String,Torappu.BuildingData.ObstacleData>;
@@ -2583,7 +2604,8 @@ export namespace Torappu {
     // __Hotfix0__LoadRoomBeans: XLua.DelegateBridge;
     // __Hotfix0__LoadAllFurnitureNames: XLua.DelegateBridge;
   }
-  export interface CampaignDB {
+  export interface CampaignDB
+    extends Torappu.DB.ConstTable<Torappu.CampaignTable, Torappu.CampaignDB> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_BattleOnly_TryGetCampaign: XLua.DelegateBridge;
     // __Hotfix0_SDCOnly_TryGetCampaign: XLua.DelegateBridge;
@@ -2599,10 +2621,15 @@ export namespace Torappu {
     // __Hotfix0_TryGetNextTrainingGroup: XLua.DelegateBridge;
     // __Hotfix0_CalcTrainingGroupEndTs: XLua.DelegateBridge;
   }
-  export interface ChapterDB {
+  export interface ChapterDB
+    extends Torappu.DB.SimpleKVTable<Torappu.ChapterData, Torappu.ChapterDB> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
   }
-  export interface CharacterDB {
+  export interface CharacterDB
+    extends Torappu.DB.SimpleKVTable<
+      Torappu.CharacterData,
+      Torappu.CharacterDB
+    > {
     // m_allCharacterIds: System.Collections.Generic.List<System.String>;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_get_allCharacterIds: XLua.DelegateBridge;
@@ -2614,7 +2641,8 @@ export namespace Torappu {
     // __Hotfix0_GetValueOrDefault: XLua.DelegateBridge;
     // __Hotfix0_GetValues: XLua.DelegateBridge;
   }
-  export interface CharMetaDB {
+  export interface CharMetaDB
+    extends Torappu.DB.ConstTable<Torappu.CharMetaTable, Torappu.CharMetaDB> {
     // m_spCharGroupMap: System.Collections.Generic.Dictionary<System.String,System.String>;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_OnInit: XLua.DelegateBridge;
@@ -2622,10 +2650,12 @@ export namespace Torappu {
     // __Hotfix0_GetSpCharGroupByCharId: XLua.DelegateBridge;
     // __Hotfix0_GetSpCharIdsByCharId: XLua.DelegateBridge;
   }
-  export interface CharPatchDB {
+  export interface CharPatchDB
+    extends Torappu.DB.ConstTable<Torappu.CharPatchData, Torappu.CharPatchDB> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
   }
-  export interface CharWordDB {
+  export interface CharWordDB
+    extends Torappu.DB.SimpleKVTable<Torappu.CharWordData, Torappu.CharWordDB> {
     // m_showTypeSeachTable: System.Collections.Generic.Dictionary<System.String,Torappu.ListDict<Torappu.CharWordShowType,System.Collections.Generic.List<Torappu.CharWordData>>>;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_OnInit: XLua.DelegateBridge;
@@ -2634,35 +2664,45 @@ export namespace Torappu {
     // __Hotfix0_FilterCharWordData: XLua.DelegateBridge;
     // __Hotfix0_ShowTypeSearchTable: XLua.DelegateBridge;
   }
-  export interface CheckInDB {
+  export interface CheckInDB
+    extends Torappu.DB.ConstTable<Torappu.CheckInTable, Torappu.CheckInDB> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_GetCurrentMonthlyItem: XLua.DelegateBridge;
   }
-  export interface ClueDB {
+  export interface ClueDB
+    extends Torappu.DB.ConstTable<Torappu.MeetingClueData, Torappu.ClueDB> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
   }
-  export interface CrisisDB {
+  export interface CrisisDB
+    extends Torappu.DB.ConstTable<Torappu.CrisisClientData, Torappu.CrisisDB> {
     META_KEY: System.String;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_OnInit: XLua.DelegateBridge;
     // __Hotfix0_FindSeasonInfo: XLua.DelegateBridge;
     // __Hotfix0_EditorLoadMeta: XLua.DelegateBridge;
   }
-  export interface EnemyDB {
+  export interface EnemyDB
+    extends Torappu.DB.ConstTable<Torappu.EnemyDatabase, Torappu.EnemyDB> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_TryGet: XLua.DelegateBridge;
     // __Hotfix1_TryGet: XLua.DelegateBridge;
   }
-  export interface EnemyHandBookDB {
+  export interface EnemyHandBookDB
+    extends Torappu.DB.SimpleKVTable<
+      Torappu.EnemyHandBookData,
+      Torappu.EnemyHandBookDB
+    > {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
   }
-  export interface FavorDB {
+  export interface FavorDB
+    extends Torappu.DB.ConstTable<Torappu.FavorTable, Torappu.FavorDB> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_GetFavorData: XLua.DelegateBridge;
     // __Hotfix0_GetFavorBattlePhase: XLua.DelegateBridge;
     // __Hotfix0_CalculateFavorPointByBattlePhaseRoughly: XLua.DelegateBridge;
   }
-  export interface GachaDB {
+  export interface GachaDB
+    extends Torappu.DB.ConstTable<Torappu.GachaData, Torappu.GachaDB> {
     // m_recruitBuildTimeMap: System.Collections.Generic.Dictionary<System.Int32,Torappu.RecruitPool.RecruitTime>;
     // m_freeLimitGachaMap: System.Collections.Generic.Dictionary<System.String,Torappu.GachaData.FreeLimitGachaData>;
     // m_poolMap: System.Collections.Generic.Dictionary<System.String,Torappu.GachaPoolClientData>;
@@ -2681,15 +2721,27 @@ export namespace Torappu {
     // __Hotfix0_GetValidLimitTenGachaTktEnumerator: XLua.DelegateBridge;
     // __Hotfix0_GetValidLinkageTenGachaTktEnumerator: XLua.DelegateBridge;
   }
-  export interface GameDataConstsDB {
+  export interface GameDataConstsDB
+    extends Torappu.DB.ConstTable<
+      Torappu.GameDataConsts,
+      Torappu.GameDataConstsDB
+    > {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
   }
-  export interface HandbookInfoDB {
+  export interface HandbookInfoDB
+    extends Torappu.DB.ConstTable<
+      Torappu.HandbookInfoTable,
+      Torappu.HandbookInfoDB
+    > {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_TryGetName: XLua.DelegateBridge;
     // __Hotfix0_CheckCharAvailable: XLua.DelegateBridge;
   }
-  export interface HandbookTeamDB {
+  export interface HandbookTeamDB
+    extends Torappu.DB.SimpleKVTable<
+      Torappu.HandbookTeamData,
+      Torappu.HandbookTeamDB
+    > {
     DEFAULT_POWER_ID: System.String;
     RHODES_ID: System.String;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -2697,14 +2749,16 @@ export namespace Torappu {
     // __Hotfix0_IsTeamIconRaw: XLua.DelegateBridge;
     // __Hotfix0_GetColor: XLua.DelegateBridge;
   }
-  export interface ItemDB {
+  export interface ItemDB
+    extends Torappu.DB.ConstTable<Torappu.InventoryData, Torappu.ItemDB> {
     // m_specialTypesInItemRepo: System.Collections.Generic.List<Torappu.ItemType>;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_OnInit: XLua.DelegateBridge;
     // __Hotfix0_get_specialTypesInItemRepo: XLua.DelegateBridge;
     // __Hotfix0_TryGetPotentionItemId: XLua.DelegateBridge;
   }
-  export interface MedalDB {
+  export interface MedalDB
+    extends Torappu.DB.ConstTable<Torappu.MedalData, Torappu.MedalDB> {
     // m_medalDataMap: System.Collections.Generic.Dictionary<System.String,Torappu.MedalPerData>;
     // m_medalGroupMap: System.Collections.Generic.Dictionary<System.String,Torappu.MedalGroupData>;
     // m_advMedalToNormal: System.Collections.Generic.Dictionary<System.String,System.String>;
@@ -2714,16 +2768,25 @@ export namespace Torappu {
     // __Hotfix0_GetMedalGroupById: XLua.DelegateBridge;
     // __Hotfix0_CheckIfAdvancedMedal: XLua.DelegateBridge;
   }
-  export interface MissionDB {
+  export interface MissionDB
+    extends Torappu.DB.ConstTable<Torappu.MissionTable, Torappu.MissionDB> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_GetCurrentDailyMissionState: XLua.DelegateBridge;
   }
-  export interface OpenServerDB {
+  export interface OpenServerDB
+    extends Torappu.DB.ConstTable<
+      Torappu.OpenServerSchedule,
+      Torappu.OpenServerDB
+    > {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_GetCurrentOpenServerData: XLua.DelegateBridge;
     // __Hotfix0_GetCurrentOpenServerGroupData: XLua.DelegateBridge;
   }
-  export interface PlayerAvatarDB {
+  export interface PlayerAvatarDB
+    extends Torappu.DB.ConstTable<
+      Torappu.PlayerAvatarData,
+      Torappu.PlayerAvatarDB
+    > {
     // m_avatarDataMap: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerAvatarPerData>;
     // m_avatarGroupMap: System.Collections.Generic.Dictionary<System.String,Torappu.PlayerAvatarGroupData>;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -2731,27 +2794,39 @@ export namespace Torappu {
     // __Hotfix0_GetAvatarDataById: XLua.DelegateBridge;
     // __Hotfix0_GetAvatarGroupDataByType: XLua.DelegateBridge;
   }
-  export interface RangeDB {
+  export interface RangeDB
+    extends Torappu.DB.SimpleKVTable<Torappu.RangeData, Torappu.RangeDB> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_OnInit: XLua.DelegateBridge;
   }
-  export interface ReplicateDB {
+  export interface ReplicateDB
+    extends Torappu.DB.SimpleKVTable<
+      Torappu.ReplicateTable,
+      Torappu.ReplicateDB
+    > {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
   }
-  export interface RetroDB {
+  export interface RetroDB
+    extends Torappu.DB.ConstTable<Torappu.RetroStageTable, Torappu.RetroDB> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_OnInit: XLua.DelegateBridge;
     // __Hotfix0_GetRetroIdByZoneId: XLua.DelegateBridge;
     // __Hotfix0_GetActInfoNullable: XLua.DelegateBridge;
     // __Hotfix0__FlushLevelsToDefault: XLua.DelegateBridge;
   }
-  export interface RoguelikeDB {
+  export interface RoguelikeDB
+    extends Torappu.DB.ConstTable<Torappu.RoguelikeTable, Torappu.RoguelikeDB> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
   }
-  export interface ShopClientDB {
+  export interface ShopClientDB
+    extends Torappu.DB.ConstTable<
+      Torappu.ShopClientData,
+      Torappu.ShopClientDB
+    > {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
   }
-  export interface SkillDB {
+  export interface SkillDB
+    extends Torappu.DB.SimpleKVTable<Torappu.SkillDataBundle, Torappu.SkillDB> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_GetSkillOrDefault: XLua.DelegateBridge;
     // __Hotfix0_TryGetSkill: XLua.DelegateBridge;
@@ -2759,7 +2834,8 @@ export namespace Torappu {
     // __Hotfix0__TryGetSkill: XLua.DelegateBridge;
     // __Hotfix0_TryGetSkillBundle: XLua.DelegateBridge;
   }
-  export interface SkinDB {
+  export interface SkinDB
+    extends Torappu.DB.ConstTable<Torappu.SkinTable, Torappu.SkinDB> {
     // s_sharedSet: Torappu.ListSet<System.String>;
     // <>f__am$cache0: System.Comparison<System.Collections.Generic.KeyValuePair<System.Int32,System.String>>;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -2774,7 +2850,8 @@ export namespace Torappu {
     // __Hotfix0__RevertToDefaultIfNecessary: XLua.DelegateBridge;
     // __Hotfix0_EditorGetAllNonDefaultSkinList: XLua.DelegateBridge;
   }
-  export interface StageDB {
+  export interface StageDB
+    extends Torappu.DB.ConstTable<Torappu.StageTable, Torappu.StageDB> {
     AUDIT_ZONE_WHITE_LIST: System.Collections.Generic.HashSet<System.String>;
     AUDIT_DEFAULT_LEVEL: System.String;
     // m_hardToNormalMap: System.Collections.Generic.Dictionary<System.String,System.String>;
@@ -2790,7 +2867,8 @@ export namespace Torappu {
     // __Hotfix0_GetCampaignStages: XLua.DelegateBridge;
     // __Hotfix0__FlushLevelsToDefault: XLua.DelegateBridge;
   }
-  export interface StoryDB {
+  export interface StoryDB
+    extends Torappu.DB.SimpleKVTable<Torappu.StoryData, Torappu.StoryDB> {
     KEY_SEPARATOR: System.Char;
     // m_triggerToStories: System.Collections.Generic.Dictionary<Torappu.StoryData.Trigger,System.Collections.Generic.List<Torappu.StoryData>>;
     // m_regexStories: System.Collections.Generic.List<Torappu.StoryData>[];
@@ -2804,7 +2882,11 @@ export namespace Torappu {
     // __Hotfix0__AddTrigger: XLua.DelegateBridge;
     // __Hotfix0__TryGetCandidates: XLua.DelegateBridge;
   }
-  export interface StoryReviewDB {
+  export interface StoryReviewDB
+    extends Torappu.DB.SimpleKVTable<
+      Torappu.StoryReviewGroupClientData,
+      Torappu.StoryReviewDB
+    > {
     // m_groupedStoryDict: System.Collections.Generic.Dictionary<System.String,Torappu.StoryReviewGroupClientData>;
     // m_storyBriefDict: System.Collections.Generic.Dictionary<System.String,Torappu.StoryReviewBriefData>;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -2814,7 +2896,8 @@ export namespace Torappu {
     // __Hotfix0_FindActivityStoryData: XLua.DelegateBridge;
     // __Hotfix0_GetStoryBriefByStoryId: XLua.DelegateBridge;
   }
-  export interface TipDB {
+  export interface TipDB
+    extends Torappu.DB.ConstTable<Torappu.TipTable, Torappu.TipDB> {
     INITIAL_CAPACITY: System.Int32;
     // m_list: System.Collections.Generic.List<Torappu.TipData>;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -2824,11 +2907,13 @@ export namespace Torappu {
     // __Hotfix1_PickTips: XLua.DelegateBridge;
     // __Hotfix0_PickWorldViewTip: XLua.DelegateBridge;
   }
-  export interface TokenDB {
+  export interface TokenDB
+    extends Torappu.DB.SimpleKVTable<Torappu.CharacterData, Torappu.TokenDB> {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_TryGetName: XLua.DelegateBridge;
   }
-  export interface ZoneDB {
+  export interface ZoneDB
+    extends Torappu.DB.ConstTable<Torappu.ZoneTable, Torappu.ZoneDB> {
     MAINLINE_EMPTY_BG: System.String;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_TryGetChapterId: XLua.DelegateBridge;
@@ -3329,31 +3414,31 @@ export namespace Torappu {
     result: System.Int32;
   }
   export interface BuildingRequest {}
-  export interface BuildingSyncRequest {}
+  export interface BuildingSyncRequest extends Torappu.BuildingRequest {}
   export interface BuildingSyncResponse {
     ts: System.Int64;
   }
-  export interface BuildingUpgradeRoomRequest {
+  export interface BuildingUpgradeRoomRequest extends Torappu.BuildingRequest {
     roomSlotId: System.String;
     targetLevel: System.Int32;
   }
   export interface BuildingUpgradeRoomResponse {
     result: System.Int32;
   }
-  export interface BuildingDegradeRoomRequest {
+  export interface BuildingDegradeRoomRequest extends Torappu.BuildingRequest {
     roomSlotId: System.String;
     targetLevel: System.Int32;
   }
   export interface BuildingDegradeRoomResponse {
     payback: System.Collections.Generic.List<Torappu.ItemBundle>;
   }
-  export interface BuildingCleanRoomRequest {
+  export interface BuildingCleanRoomRequest extends Torappu.BuildingRequest {
     roomSlotId: System.String;
   }
   export interface BuildingCleanRoomResponse {
     result: System.Int32;
   }
-  export interface BuildingBuildRoomRequest {
+  export interface BuildingBuildRoomRequest extends Torappu.BuildingRequest {
     roomSlotId: System.String;
     roomId: System.String;
   }
@@ -3361,7 +3446,8 @@ export namespace Torappu {
     result: System.Int32;
     alert: System.Collections.Generic.List<Torappu.ServiceAlertStruct>;
   }
-  export interface BuildingUpgradeCompleteRoomRequest {
+  export interface BuildingUpgradeCompleteRoomRequest
+    extends Torappu.BuildingRequest {
     roomSlotId: System.String;
     targetLevel: System.Int32;
   }
@@ -3369,12 +3455,14 @@ export namespace Torappu {
     result: System.Int32;
     alert: System.Collections.Generic.List<Torappu.ServiceAlertStruct>;
   }
-  export interface BuildingDIYChangeDIYSolutionRequest {
+  export interface BuildingDIYChangeDIYSolutionRequest
+    extends Torappu.BuildingRequest {
     roomSlotId: System.String;
     solution: Torappu.PlayerBuildingDIYSolution;
   }
   export interface BuildingDIYChangeDIYResponse {}
-  export interface BuildingDIYSavePresetSolutionRequest {
+  export interface BuildingDIYSavePresetSolutionRequest
+    extends Torappu.BuildingRequest {
     solutionId: System.Int32;
     name: System.String;
     solution: Torappu.PlayerBuildingDIYSolution;
@@ -3383,42 +3471,48 @@ export namespace Torappu {
   export interface BuildingDIYSavePresetSolutionResponse {
     result: System.Int32;
   }
-  export interface BuildingDIYRenamePresetSolutionRequest {
+  export interface BuildingDIYRenamePresetSolutionRequest
+    extends Torappu.BuildingRequest {
     solutionId: System.Int32;
     name: System.String;
   }
   export interface BuildingDIYRenamePresetSolutionResponse {
     result: System.Int32;
   }
-  export interface BuildingDIYGetPresetThumbnailUrlRequest {
+  export interface BuildingDIYGetPresetThumbnailUrlRequest
+    extends Torappu.BuildingRequest {
     solutionId: System.Collections.Generic.List<System.Int32>;
   }
   export interface BuildingDIYGetPresetThumbnailUrlResponse {
     url: System.Collections.Generic.List<System.String>;
   }
-  export interface BuildingGetFurnitureGoodListRequest {}
+  export interface BuildingGetFurnitureGoodListRequest
+    extends Torappu.BuildingRequest {}
   export interface BuildingGetFurnitureGoodListResponse {
     goods: System.Collections.Generic.List<Torappu.BuildingGetFurnitureGoodListResponse.Good>;
     groups: System.Collections.Generic.List<Torappu.BuildingGetFurnitureGoodListResponse.Group>;
   }
-  export interface BuildingBuyFurnitureGoodRequest {
+  export interface BuildingBuyFurnitureGoodRequest
+    extends Torappu.BuildingRequest {
     goodId: System.String;
     buyCount: System.Int32;
     costType: Torappu.BuildingBuyFurnitureGoodRequest.CostType;
   }
   export interface BuildingBuyFurnitureGoodResponse {}
-  export interface BuildingSettleManufactRequest {
+  export interface BuildingSettleManufactRequest
+    extends Torappu.BuildingRequest {
     roomSlotIdList: System.Collections.Generic.List<System.String>;
     supplement: System.Int32;
   }
   export interface BuildingSettleManufactResponse {
     supplement: System.Int32;
   }
-  export interface BuildingSettleSaleRequest {
+  export interface BuildingSettleSaleRequest extends Torappu.BuildingRequest {
     roomSlotIdList: System.Collections.Generic.List<System.String>;
   }
   export interface BuildingSettleSaleResponse {}
-  export interface BuildingChangeManufactRequest {
+  export interface BuildingChangeManufactRequest
+    extends Torappu.BuildingRequest {
     roomSlotId: System.String;
     targetFormulaId: System.String;
     solutionCount: System.Int32;
@@ -3426,7 +3520,7 @@ export namespace Torappu {
   export interface BuildingChangeManufactResponse {
     change: System.Boolean;
   }
-  export interface BuildingChangeShopRequest {
+  export interface BuildingChangeShopRequest extends Torappu.BuildingRequest {
     roomSlotId: System.String;
     stockIndex: System.Int32;
     targetFormulaId: System.String;
@@ -3435,26 +3529,29 @@ export namespace Torappu {
   export interface BuildingChangeShopResponse {
     change: System.Boolean;
   }
-  export interface BuildingAssignCharRequest {
+  export interface BuildingAssignCharRequest extends Torappu.BuildingRequest {
     roomSlotId: System.String;
     charInstIdList: System.Collections.Generic.List<System.Int32>;
   }
   export interface BuildingAssignCharResponse {}
-  export interface CharBuildIncIntimacyRequest {
+  export interface CharBuildIncIntimacyRequest extends Torappu.BuildingRequest {
     charInstId: System.Int32;
   }
   export interface CharBuildIncIntimacyResponse {}
-  export interface CharBuildIncAssistIntimacyRequest {
+  export interface CharBuildIncAssistIntimacyRequest
+    extends Torappu.BuildingRequest {
     charInstId: System.Int32;
   }
   export interface CharBuildIncAssistIntimacyResponse {}
-  export interface UpdateSpecializationRequest {
+  export interface UpdateSpecializationRequest extends Torappu.BuildingRequest {
     skillIndex: System.Int32;
   }
   export interface UpdateSpecializationResponse {}
-  export interface CompleteUpgradeSpecializationRequest {}
+  export interface CompleteUpgradeSpecializationRequest
+    extends Torappu.BuildingRequest {}
   export interface CompleteUpgradeSpecializationResponse {}
-  export interface BuildingWorkshopSynthesisRequest {
+  export interface BuildingWorkshopSynthesisRequest
+    extends Torappu.BuildingRequest {
     formulaId: System.String;
     times: System.Int32;
   }
@@ -3463,7 +3560,8 @@ export namespace Torappu {
     additional: System.Collections.Generic.List<Torappu.ItemBundle>;
     recoverCost: System.Int64;
   }
-  export interface BuildingWorkshopDecompositionRequest {
+  export interface BuildingWorkshopDecompositionRequest
+    extends Torappu.BuildingRequest {
     furniId: System.String;
     times: System.Int32;
   }
@@ -3508,7 +3606,8 @@ export namespace Torappu {
     normal: System.Int32;
     assist: System.Int32;
   }
-  export interface BuildingDeliveryBatchOrderRequest {
+  export interface BuildingDeliveryBatchOrderRequest
+    extends Torappu.BuildingRequest {
     slotList: System.Collections.Generic.List<System.String>;
   }
   export interface BuildingDeliveryBatchOrderResponse {
@@ -3553,56 +3652,69 @@ export namespace Torappu {
     charInstId: System.Int32;
   }
   export interface BuildingSetAssistResponse {}
-  export interface BuildingMeetingClueDeleteOwnClueRequest {
+  export interface BuildingMeetingClueDeleteOwnClueRequest
+    extends Torappu.BuildingRequest {
     clueId: System.String;
   }
   export interface BuildingMeetingClueDeleteOwnClueResponse {}
-  export interface BuildingMeetingClueDeleteReceiveClueRequest {
+  export interface BuildingMeetingClueDeleteReceiveClueRequest
+    extends Torappu.BuildingRequest {
     clueId: System.String;
   }
   export interface BuildingMeetingClueDeleteReceiveClueResponse {}
-  export interface BuildingMeetingCluePutClueToTheBoardRequest {
+  export interface BuildingMeetingCluePutClueToTheBoardRequest
+    extends Torappu.BuildingRequest {
     clueId: System.String;
   }
   export interface BuildingMeetingCluePutClueToTheBoardResponse {}
-  export interface BuildingMeetingClueSendClueRequest {
+  export interface BuildingMeetingClueSendClueRequest
+    extends Torappu.BuildingRequest {
     friendId: System.String;
     clueId: System.String;
   }
   export interface BuildingMeetingClueSendClueResponse {}
-  export interface BuildingMeetingClueGetMeetingRoomRewardRequest {
+  export interface BuildingMeetingClueGetMeetingRoomRewardRequest
+    extends Torappu.BuildingRequest {
     type: System.Collections.Generic.List<System.Int32>;
   }
   export interface BuildingMeetingClueGetMeetingRoomRewardResponse {
     rewards: System.Collections.Generic.List<Torappu.ItemBundle>;
   }
-  export interface BuildingMeetingClueUpdateWaitingClueRequest {}
+  export interface BuildingMeetingClueUpdateWaitingClueRequest
+    extends Torappu.BuildingRequest {}
   export interface BuildingMeetingClueUpdateWaitingClueResponse {
     box: System.Collections.Generic.List<Torappu.BuildingMeetingClueUpdateWaitingClueResponse.Clue>;
   }
-  export interface BuildingMeetingClueReceiveClueToStockRequest {
+  export interface BuildingMeetingClueReceiveClueToStockRequest
+    extends Torappu.BuildingRequest {
     clues: System.Collections.Generic.List<System.String>;
   }
   export interface BuildingMeetingClueReceiveClueToStockResponse {}
-  export interface BuildingMeetingClueStartInfoShareRequest {}
+  export interface BuildingMeetingClueStartInfoShareRequest
+    extends Torappu.BuildingRequest {}
   export interface BuildingMeetingClueStartInfoShareResponse {}
-  export interface BuildingMeetingClueTakeClueFromBoardRequest {
+  export interface BuildingMeetingClueTakeClueFromBoardRequest
+    extends Torappu.BuildingRequest {
     type: System.String;
   }
   export interface BuildingMeetingClueTakeClueFromBoardResponse {}
-  export interface BuildingMeetingClueGetInfoShareVisitorsRequest {}
+  export interface BuildingMeetingClueGetInfoShareVisitorsRequest
+    extends Torappu.BuildingRequest {}
   export interface BuildingMeetingClueGetInfoShareVisitorsResponse {
     num: System.Int32;
   }
-  export interface BuildingMeetingClueReceiveInfoShareRewardRequest {}
+  export interface BuildingMeetingClueReceiveInfoShareRewardRequest
+    extends Torappu.BuildingRequest {}
   export interface BuildingMeetingClueReceiveInfoShareRewardResponse {
     list: System.Collections.Generic.List<Torappu.BuildingMeetingClueReceiveInfoShareRewardResponse.VisitorInfo>;
   }
-  export interface BuildingGetRecentVisitorsRequest {}
+  export interface BuildingGetRecentVisitorsRequest
+    extends Torappu.BuildingRequest {}
   export interface BuildingGetRecentVisitorsResponse {
     visitors: System.Collections.Generic.List<Torappu.BuildingGetRecentVisitorsResponse.Visitor>;
   }
-  export interface BuildingMeetingClueGetDailyClueRequest {}
+  export interface BuildingMeetingClueGetDailyClueRequest
+    extends Torappu.BuildingRequest {}
   export interface BuildingMeetingClueGetDailyClueResponse {}
   export interface CampaignConfirmBreakRewardRequest {
     stageId: System.String;
@@ -3616,10 +3728,14 @@ export namespace Torappu {
     id: System.String;
   }
   export interface CampaignGetCommonMissionRewardResponse {}
-  export interface CampaignStartBattleRequest {}
-  export interface CampaignStartBattleResponse {}
-  export interface CampaignFinishBattleRequest {}
-  export interface CampaignFinishBattleResponse {
+  export interface CampaignStartBattleRequest
+    extends Torappu.CommonStartBattleRequest {}
+  export interface CampaignStartBattleResponse
+    extends Torappu.CommonStartBattleResponse {}
+  export interface CampaignFinishBattleRequest
+    extends Torappu.CommonFinishBattleRequest {}
+  export interface CampaignFinishBattleResponse
+    extends Torappu.CommonFinishBattleResponse {
     currentFeeBefore: System.Int32;
     currentFeeAfter: System.Int32;
     unlockStages: System.String[];
@@ -3674,13 +3790,16 @@ export namespace Torappu {
     rune: System.Collections.Generic.List<System.String>;
     seed: System.String;
   }
-  export interface CrisisStartBattleResponse {
+  export interface CrisisStartBattleResponse
+    extends Torappu.CommonStartBattleResponse {
     sign: System.String;
   }
-  export interface CrisisFinishBattleRequest {
+  export interface CrisisFinishBattleRequest
+    extends Torappu.CommonFinishBattleRequest {
     battleLog: System.String;
   }
-  export interface CrisisFinishBattleResponse {
+  export interface CrisisFinishBattleResponse
+    extends Torappu.CommonFinishBattleResponse {
     score: System.Int32;
     updateInfo: Torappu.CrisisFinishBattleResponse.UpdateInfo;
     ts: System.Int64;
@@ -3706,14 +3825,16 @@ export namespace Torappu {
     price: System.Int32;
     availCount: System.Int32;
   }
-  export interface CrisisLongTermShopItemData {
+  export interface CrisisLongTermShopItemData
+    extends Torappu.CrisisCommonShopItemData {
     isSingle: System.Int32;
     slotId1: System.Int32;
     slotId2: System.Int32;
     seasonId: System.String;
     title: Torappu.CrisisShopTitleType;
   }
-  export interface CrisisSeasonShopItemData {
+  export interface CrisisSeasonShopItemData
+    extends Torappu.CrisisCommonShopItemData {
     slotId: System.Int32;
     rarity: System.String;
   }
@@ -3799,8 +3920,10 @@ export namespace Torappu {
     diamondMaterialRewards: System.Collections.Generic.List<Torappu.CommonFinishBattleResponse.RewardModel>;
     furnitureRewards: System.Collections.Generic.List<Torappu.CommonFinishBattleResponse.RewardModel>;
   }
-  export interface DefaultFinishBattleRequest {}
-  export interface DefaultFinishBattleResponse {
+  export interface DefaultFinishBattleRequest
+    extends Torappu.CommonFinishBattleRequest {}
+  export interface DefaultFinishBattleResponse
+    extends Torappu.CommonFinishBattleResponse {
     goldScale: System.Single;
     expScale: System.Single;
     firstRewards: System.Collections.Generic.List<Torappu.CommonFinishBattleResponse.RewardModel>;
@@ -3998,9 +4121,12 @@ export namespace Torappu {
     squad: Torappu.CommonStartBattleRequest.SquadModel;
     stageType: Torappu.StageType;
   }
-  export interface HandBookAddonStageBattleStartResponse {}
-  export interface HandBookAddonStageBattleFinishRequest {}
-  export interface HandBookAddonStageBattleFinishResponse {
+  export interface HandBookAddonStageBattleStartResponse
+    extends Torappu.CommonStartBattleResponse {}
+  export interface HandBookAddonStageBattleFinishRequest
+    extends Torappu.CommonFinishBattleRequest {}
+  export interface HandBookAddonStageBattleFinishResponse
+    extends Torappu.CommonFinishBattleResponse {
     firstRewards: System.Collections.Generic.List<Torappu.CommonFinishBattleResponse.RewardModel>;
   }
   export interface BuyApRequest {}
@@ -4045,15 +4171,17 @@ export namespace Torappu {
     >;
   }
   export interface PlayerSyncParam {}
-  export interface PlayerSyncGoodPurchaseParam {
+  export interface PlayerSyncGoodPurchaseParam extends Torappu.PlayerSyncParam {
     goodIdMap: Torappu.ShopPurchaseState;
   }
   export interface PlayerSyncResult {}
-  export interface PlayerSyncAnnounceVersionResult {
+  export interface PlayerSyncAnnounceVersionResult
+    extends Torappu.PlayerSyncResult {
     announcementPopUpVersion: System.String;
     announcementVersion: System.String;
   }
-  export interface PlayerSyncGoodPurchaseResult {
+  export interface PlayerSyncGoodPurchaseResult
+    extends Torappu.PlayerSyncResult {
     goodPurchaseState: Torappu.GetGoodPurchaseStateResponse;
   }
   export enum GachaVoucherType {
@@ -4186,7 +4314,7 @@ export namespace Torappu {
     deviceId2: System.String;
     deviceId3: System.String;
   }
-  export interface LoginRequestV002 {
+  export interface LoginRequestV002 extends Torappu.LoginRequest {
     networkVersion: System.String;
   }
   export interface LoginResponse {
@@ -4199,7 +4327,7 @@ export namespace Torappu {
   export interface ListMailBoxCommonRequest {
     mailIdList: System.Collections.Generic.List<System.Int64>;
   }
-  export interface ListMailBoxRequest {
+  export interface ListMailBoxRequest extends Torappu.ListMailBoxCommonRequest {
     sysMailIdList: System.Collections.Generic.List<System.Int64>;
   }
   export enum MailState {
@@ -4229,7 +4357,7 @@ export namespace Torappu {
   export interface ReceiveCommonMailRequest {
     mailId: System.Int64;
   }
-  export interface ReceiveMailRequest {
+  export interface ReceiveMailRequest extends Torappu.ReceiveCommonMailRequest {
     type: Torappu.MailFromInfo;
   }
   export interface ReceiveMailResponse {
@@ -4239,7 +4367,8 @@ export namespace Torappu {
   export interface RemoveAllCommonRecievedMailRequest {
     mailIdList: System.Collections.Generic.List<System.Int64>;
   }
-  export interface RemoveAllRecievedMailRequest {
+  export interface RemoveAllRecievedMailRequest
+    extends Torappu.RemoveAllCommonRecievedMailRequest {
     sysMailIdList: System.Collections.Generic.List<System.Int64>;
   }
   export interface RemoveAllRecievedMailResponse {}
@@ -4249,7 +4378,8 @@ export namespace Torappu {
   export interface ReceiveAllMailResponse {
     items: System.Collections.Generic.List<Torappu.MailGet>;
   }
-  export interface ReceiveAllMailRequest {
+  export interface ReceiveAllMailRequest
+    extends Torappu.ReceiveAllCommonMailRequest {
     sysMailIdList: System.Collections.Generic.List<System.Int64>;
   }
   export interface GetMetaInfoListRequest {
@@ -4358,22 +4488,29 @@ export namespace Torappu {
     stageId: System.String;
     squad: Torappu.CommonStartBattleRequest.SquadModel;
   }
-  export interface RoguelikeStartBattleResponse {
+  export interface RoguelikeStartBattleResponse
+    extends Torappu.CommonStartBattleResponse {
     chestEnemy: System.Int32;
   }
-  export interface RoguelikeFinishBattleRequest {
+  export interface RoguelikeFinishBattleRequest
+    extends Torappu.CommonFinishBattleRequest {
     battleLog: System.String;
   }
-  export interface RoguelikeFinishBattleResponse {}
-  export interface RuneStartBattleRequest {
+  export interface RoguelikeFinishBattleResponse
+    extends Torappu.CommonFinishBattleResponse {}
+  export interface RuneStartBattleRequest
+    extends Torappu.CommonStartBattleRequest {
     rune: System.Collections.Generic.List<System.String>;
     isPractice: System.Boolean;
   }
-  export interface RuneStartBattleResponse {}
-  export interface RuneFinishBattleRequest {
+  export interface RuneStartBattleResponse
+    extends Torappu.CommonStartBattleResponse {}
+  export interface RuneFinishBattleRequest
+    extends Torappu.CommonFinishBattleRequest {
     battleLog: System.String;
   }
-  export interface RuneFinishBattleResponse {
+  export interface RuneFinishBattleResponse
+    extends Torappu.CommonFinishBattleResponse {
     score: System.Int32;
     from: System.Int32;
     to: System.Int32;
@@ -4655,14 +4792,14 @@ export namespace Torappu {
     goodId: System.String;
     receiveItems: Torappu.PayConfirmOrderResponse.Good;
   }
-  export interface MonthlySubItem {
+  export interface MonthlySubItem extends Torappu.NormalGPItem {
     cardId: System.String;
     dailyBonus: Torappu.ItemBundle[];
   }
-  export interface LevelGPItem {
+  export interface LevelGPItem extends Torappu.NormalGPItem {
     playerLevel: System.Int32;
   }
-  export interface ChooseGPItem {
+  export interface ChooseGPItem extends Torappu.NormalGPItem {
     options: System.Collections.Generic.List<Torappu.ChooseGiftPackageShopOption>;
     desc: System.String;
     itemDisplayDesc: System.String;
@@ -4688,7 +4825,7 @@ export namespace Torappu {
     startDateTime: System.Int64;
     endDateTime: System.Int64;
   }
-  export interface PeriodicityGPItem {
+  export interface PeriodicityGPItem extends Torappu.NormalGPItem {
     groupId: System.String;
   }
   export interface PeriodicityGroup {
@@ -4752,11 +4889,11 @@ export namespace Torappu {
   export interface SquadRenameResponse {
     result: System.Int32;
   }
-  export interface SquadFriendData {
+  export interface SquadFriendData extends Torappu.FriendCommonData {
     assistChar: Torappu.SharedCharData;
     assistSlotIndex: System.Int32;
   }
-  export interface SquadAssistData {
+  export interface SquadAssistData extends Torappu.FriendCommonData {
     assistSlotIndex: System.Int32;
     aliasName: System.String;
     assistCharList: Torappu.SharedCharData[];
@@ -4788,10 +4925,12 @@ export namespace Torappu {
     result: System.Int32;
     battleId: System.String;
   }
-  export interface DefaultStartBattleRequest {
+  export interface DefaultStartBattleRequest
+    extends Torappu.CommonStartBattleRequest {
     isRetro: System.Boolean;
   }
-  export interface DefaultStartBattleResponse {
+  export interface DefaultStartBattleResponse
+    extends Torappu.CommonStartBattleResponse {
     isApProtect: System.Boolean;
     apFailReturn: System.Int32;
     notifyPowerScoreNotEnoughIfFailed: System.Boolean;
@@ -4826,7 +4965,7 @@ export namespace Torappu {
   export interface SyncDataRequest {
     platform: Torappu.PlatformKey;
   }
-  export interface SyncDataResponse {
+  export interface SyncDataResponse extends Torappu.PlayerInitResponse {
     result: System.Int32;
     ts: System.Int64;
   }
@@ -4917,10 +5056,10 @@ export namespace Torappu {
     // __Hotfix0_ExtraTmplSkillInfo: XLua.DelegateBridge;
     // __Hotfix0_ExtraTmplCount: XLua.DelegateBridge;
   }
-  export interface PlayerSquadItem {
+  export interface PlayerSquadItem extends Torappu.PlayerSquadMemberProto {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
   }
-  export interface PlayerFriendAssist {
+  export interface PlayerFriendAssist extends Torappu.PlayerSquadMemberProto {
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
   }
   export interface PlayerSquad {
@@ -5193,7 +5332,8 @@ export namespace Torappu {
     curShopId: System.String;
     info: System.Collections.Generic.List<Torappu.PlayerGoodItemData>;
   }
-  export interface PlayerLowQCShopProgressData {
+  export interface PlayerLowQCShopProgressData
+    extends Torappu.PlayerCommonShopProgressData {
     curGroupId: System.String;
   }
   export interface PlayerHighQCShopProgressData {
@@ -5622,10 +5762,10 @@ export namespace Torappu {
     compare: System.String;
   }
   export enum MissionHoldingState {
-    NOT_OPEN = "NOT_OPEN",
-    IN_EFFECT = "IN_EFFECT",
-    CONFIRMED = "CONFIRMED",
-    FINISHED = "FINISHED",
+    NOT_OPEN = 0,
+    IN_EFFECT = 1,
+    CONFIRMED = 2,
+    FINISHED = 3,
   }
   export interface MissionPlayerState {
     state: Torappu.MissionHoldingState;
@@ -5639,7 +5779,14 @@ export namespace Torappu {
       System.Collections.Generic.Dictionary<System.String, System.Int32>
     >;
   }
-  export interface MissionPlayerDataGroup {}
+  export interface MissionPlayerDataGroup
+    extends System.Collections.Generic.Dictionary<
+      System.String,
+      System.Collections.Generic.Dictionary<
+        System.String,
+        Torappu.MissionPlayerState
+      >
+    > {}
   export interface MissionPlayerData {
     missions: Torappu.MissionPlayerDataGroup;
     missionRewards: Torappu.MissionDailyRewards;
@@ -5790,7 +5937,7 @@ export namespace Torappu {
     recruit: System.Collections.Generic.List<Torappu.RoguelikeRecruitUpgradeCharacter>;
     upgrade: System.Collections.Generic.List<Torappu.RoguelikeRecruitUpgradeCharacter>;
   }
-  export interface PlayerRoguelikeCharacter {
+  export interface PlayerRoguelikeCharacter extends Torappu.PlayerCharacter {
     upgradePhase: System.Int32;
     upgradeLimited: System.Boolean;
     isAddition: System.Int32;
@@ -5889,7 +6036,7 @@ export namespace Torappu {
     campaignV2: Torappu.PlayerCampaign;
   }
   export interface ILuaPlayerData {}
-  export interface PlayerData {
+  export interface PlayerData extends Torappu.Singleton<Torappu.PlayerData> {
     FAKE_CHAR_INST_ID_ROOT: System.Int32;
     FAKE_CHAR_INST_ID_OFFSET: System.Int32;
     // m_logToken: System.String;
@@ -6283,7 +6430,7 @@ export namespace Torappu {
     silenceImmune: System.Boolean;
     sleepImmune: System.Boolean;
   }
-  export interface AttributesDeltaData {}
+  export interface AttributesDeltaData extends Torappu.AttributesData {}
   export interface AttributeModifierData {
     abnormalFlags: System.Collections.Generic.List<Torappu.AbnormalFlag>;
     abnormalImmunes: System.Collections.Generic.List<Torappu.AbnormalFlag>;
@@ -6292,7 +6439,8 @@ export namespace Torappu {
     abnormalComboImmunes: System.Collections.Generic.List<Torappu.AbnormalCombo>;
     attributeModifiers: Torappu.AttributeModifierData.AttributeModifier[];
   }
-  export interface Blackboard {}
+  export interface Blackboard
+    extends System.Collections.Generic.List<Torappu.Blackboard.DataPair> {}
   export interface BuffData {
     attributes: Torappu.AttributeModifierData;
     buffKey: System.String;
@@ -6987,10 +7135,10 @@ export namespace Torappu {
   export interface BasedRecruitPool {
     recruitConstants: Torappu.BasedRecruitPool.RecruitConstants;
   }
-  export interface RecruitPool {
+  export interface RecruitPool extends Torappu.BasedRecruitPool {
     recruitTimeTable: Torappu.RecruitPool.RecruitTime[];
   }
-  export interface SpecialRecruitPool {
+  export interface SpecialRecruitPool extends Torappu.BasedRecruitPool {
     recruitId: System.String;
     tagName: System.String;
     tagId: System.Int32;
@@ -7749,7 +7897,8 @@ export namespace Torappu {
     retroUnlockCost: System.Int32;
     retroDetail: System.String;
   }
-  export interface RoguelikeRecruitUpgradeCharacter {
+  export interface RoguelikeRecruitUpgradeCharacter
+    extends Torappu.PlayerCharacter {
     population: System.Int32;
     isAddition: System.Int32;
     isElite: System.Int32;
@@ -8046,7 +8195,7 @@ export namespace Torappu {
     key: System.String;
     blackboard: Torappu.Blackboard;
   }
-  export interface RoguelikeOuterBuff {
+  export interface RoguelikeOuterBuff extends Torappu.RoguelikeBuff {
     buffId: System.String;
     level: System.Int32;
     name: System.String;
@@ -8804,7 +8953,8 @@ export namespace Torappu {
     isLimitedGachaBanned: System.Boolean;
     retroRelatedActIds: System.Collections.Generic.List<System.String>;
   }
-  export interface DLogOptions {
+  export interface DLogOptions
+    extends Torappu.SingletonScriptableObject<Torappu.DLogOptions> {
     _logInfo: System.Boolean;
     _logWarning: System.Boolean;
     _logError: System.Boolean;
@@ -8941,11 +9091,12 @@ export namespace Torappu {
     // <currentStateId>k__BackingField: System.Int32;
     // <currentState>k__BackingField: Torappu.StateMachine.IStateNode;
   }
-  export interface EnumStateMachine<StateType> {}
-  export interface TypeStateMachine {
+  export interface EnumStateMachine<StateType> extends Torappu.StateMachine {}
+  export interface TypeStateMachine extends Torappu.StateMachine {
     // m_type2int: System.Collections.Generic.Dictionary<System.Type,System.Int32>;
   }
-  export interface HierachyStateMachine<StateType, DataType, BlackboardType> {
+  export interface HierachyStateMachine<StateType, DataType, BlackboardType>
+    extends Torappu.StateMachine {
     // <data>k__BackingField: DataType;
   }
   export interface CampaignDataUtil {
@@ -9347,13 +9498,13 @@ export namespace Torappu {
     S_currentTmpl: System.String;
     S_tmpl: Torappu.ListDict<System.String, Torappu.RequestAssistChar.Patch>;
   }
-  export interface FriendData {
+  export interface FriendData extends Torappu.FriendCommonData {
     assistCharList: System.Collections.Generic.List<Torappu.SharedCharData>;
     board: System.Collections.Generic.List<System.String>;
     infoShare: System.Int64;
     infoShareVisited: System.Int32;
   }
-  export interface FriendDataWithNameCard {
+  export interface FriendDataWithNameCard extends Torappu.FriendData {
     registerTs: System.DateTime;
     mainStageProgress: System.String;
     charCnt: System.Int32;
@@ -9736,7 +9887,8 @@ export namespace Torappu {
     export interface ActivityUtil {
       ACT_LOCAL_CACHE_PREFIX_WATCHED_FAVOR_UP_CHAR_ID: System.String;
     }
-    export interface ActDefaultResHolder {
+    export interface ActDefaultResHolder
+      extends Torappu.Activity.ActivityResHolder {
       // _homeSprite: UnityEngine.Sprite;
       // _homeSpriteMultiMode: UnityEngine.Sprite;
       // _topbarSprite: UnityEngine.Sprite;
@@ -9801,7 +9953,8 @@ export namespace Torappu {
       BATTLE_FINISH: System.String;
       TEMPLATE_SHOP: System.String;
     }
-    export interface ActivityAssetMap {
+    export interface ActivityAssetMap
+      extends Torappu.Singleton<Torappu.Activity.ActivityAssetMap> {
       // m_data: Torappu.Activity.ActivityAssetMap.InternalData;
       // m_isLoaded: System.Boolean;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -9810,19 +9963,22 @@ export namespace Torappu {
       // __Hotfix0_ForceReload: XLua.DelegateBridge;
       // __Hotfix0_GetAssetResPath: XLua.DelegateBridge;
     }
-    export interface ActivityGameObjectAssetHolder {
+    export interface ActivityGameObjectAssetHolder
+      extends Torappu.Activity.ActivityAssetHolder {
       // _gameObjectList: UnityEngine.GameObject[];
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_GetAssetIdList: XLua.DelegateBridge;
       // __Hotfix0_TryFindGameObject: XLua.DelegateBridge;
     }
-    export interface ActivitySpriteAssetHolder {
+    export interface ActivitySpriteAssetHolder
+      extends Torappu.Activity.ActivityAssetHolder {
       // _sprites: UnityEngine.Sprite[];
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_GetAssetIdList: XLua.DelegateBridge;
       // __Hotfix0_TryFindSprite: XLua.DelegateBridge;
     }
-    export interface ActivityStageButtonHolder {
+    export interface ActivityStageButtonHolder
+      extends Torappu.Activity.ActivityAssetHolder {
       // _btnPatches: System.Collections.Generic.List<Torappu.UI.Stage.StageButtonPatch>;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_GetAssetIdList: XLua.DelegateBridge;
@@ -9830,14 +9986,16 @@ export namespace Torappu {
       // __Hotfix0_TryGetStageButtonPatch: XLua.DelegateBridge;
       // __Hotfix0_SavePatch: XLua.DelegateBridge;
     }
-    export interface ActivityStartBattleButtonStyle {
+    export interface ActivityStartBattleButtonStyle
+      extends Torappu.Activity.ActivityAssetHolder {
       _styles: Torappu.Activity.ActivityStartBattleButtonStyle.Style[];
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_GetAssetIdList: XLua.DelegateBridge;
       // __Hotfix0_TryFindStyle: XLua.DelegateBridge;
       // __Hotfix0_LockAspect: XLua.DelegateBridge;
     }
-    export interface ActivityTimelyDropAssetHolder {
+    export interface ActivityTimelyDropAssetHolder
+      extends Torappu.Activity.ActivityAssetHolder {
       // _zoneSelectExDrop: UnityEngine.GameObject;
       // _dropPicExDrop: UnityEngine.GameObject;
       // _stagePicExDrop: UnityEngine.GameObject;
@@ -9847,27 +10005,31 @@ export namespace Torappu {
       // __Hotfix0_TryToGetDropPicExDrop: XLua.DelegateBridge;
       // __Hotfix0_TryToGetStagePicExDrop: XLua.DelegateBridge;
     }
-    export interface ActivityZoneMapHolder {
+    export interface ActivityZoneMapHolder
+      extends Torappu.Activity.ActivityAssetHolder {
       _zoneId: System.String;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_zoneId: XLua.DelegateBridge;
       // __Hotfix0_GetAssetIdList: XLua.DelegateBridge;
       // __Hotfix0_LockAspect: XLua.DelegateBridge;
     }
-    export interface ActivityZoneMapPluginHolder {
+    export interface ActivityZoneMapPluginHolder
+      extends Torappu.Activity.ActivityAssetHolder {
       // _plugin: Torappu.UI.Stage.StageZoneMapStatePlugin;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_LockAspect: XLua.DelegateBridge;
       // __Hotfix0_GetAssetIdList: XLua.DelegateBridge;
       // __Hotfix0_get_plugin: XLua.DelegateBridge;
     }
-    export interface ActivityBattleFinishView {
+    export interface ActivityBattleFinishView
+      extends Torappu.Activity.ActivityAssetHolder {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_GetAssetIdList: XLua.DelegateBridge;
       // __Hotfix0_LockAspect: XLua.DelegateBridge;
       // __Hotfix0_TriggetInit: XLua.DelegateBridge;
     }
-    export interface ActivityDataFromServer<DataType> {
+    export interface ActivityDataFromServer<DataType>
+      extends Torappu.DataFromServer.DataFromServer<DataType> {
       ACT_DATA_FROM_SERVER: System.String;
       // m_dataId: System.String;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -9879,14 +10041,16 @@ export namespace Torappu {
     export interface AbstractStageTime {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
     }
-    export interface ActivitySpriteStageTime {
+    export interface ActivitySpriteStageTime
+      extends Torappu.Activity.AbstractStageTime {
       // _rewardTimeImage: UnityEngine.GameObject;
       // _stageTimeImage: UnityEngine.GameObject;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_SetRewardTimeActive: XLua.DelegateBridge;
       // __Hotfix0_SetStageTimeActive: XLua.DelegateBridge;
     }
-    export interface ActivityTextRemainTime {
+    export interface ActivityTextRemainTime
+      extends Torappu.Activity.AbstractRemainTime {
       // _text: UnityEngine.UI.Text;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_SetRemainTime: XLua.DelegateBridge;
@@ -10083,7 +10247,8 @@ export namespace Torappu {
       // __Hotfix0__UpdateImagePos: XLua.DelegateBridge;
       // __Hotfix0__OnDotClick: XLua.DelegateBridge;
     }
-    export interface ActivityCommonCheckinEntry {
+    export interface ActivityCommonCheckinEntry
+      extends Torappu.Activity.ActivityCommonEntry {
       // <actId>k__BackingField: System.String;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_set_actId: XLua.DelegateBridge;
@@ -10170,7 +10335,8 @@ export namespace Torappu {
       // __Hotfix0_Render: XLua.DelegateBridge;
       // __Hotfix0__OnItemCardClicked: XLua.DelegateBridge;
     }
-    export interface ActivityCommonMissionEntry {
+    export interface ActivityCommonMissionEntry
+      extends Torappu.Activity.ActivityCommonEntry {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
     }
     export interface ActivityCommonMissionItem {
@@ -10189,7 +10355,8 @@ export namespace Torappu {
       // m_missionId: System.String;
     }
     export namespace Act0D5 {
-      export interface Act0D5Entry {
+      export interface Act0D5Entry
+        extends Torappu.Activity.ActivityCommonMissionEntry {
         // _container: UnityEngine.Transform;
         _missionItem: Torappu.Activity.ActivityCommonMissionItem;
         // _allFinishPart: UnityEngine.GameObject;
@@ -10208,7 +10375,8 @@ export namespace Torappu {
         // __Hotfix0_SendMissionGroupRequest: XLua.DelegateBridge;
         // __Hotfix0__ReceiveItemsCoroutine: XLua.DelegateBridge;
       }
-      export interface Activity0D5ResHolder {
+      export interface Activity0D5ResHolder
+        extends Torappu.Activity.ActivityResHolder {
         // _homeSprite: UnityEngine.Sprite;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_get_topbarSprite: XLua.DelegateBridge;
@@ -10407,7 +10575,8 @@ export namespace Torappu {
         // __Hotfix0_SendBuyShopRequest: XLua.DelegateBridge;
         // __Hotfix0__ReceiveItemsCoroutine: XLua.DelegateBridge;
       }
-      export interface ActivityFirstResHolder {
+      export interface ActivityFirstResHolder
+        extends Torappu.Activity.ActivityResHolder {
         // _homeSprite: UnityEngine.Sprite;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_get_topbarSprite: XLua.DelegateBridge;
@@ -10503,7 +10672,9 @@ export namespace Torappu {
         // __Hotfix0_get_selectedZoneData: XLua.DelegateBridge;
         // __Hotfix0_get_showZoneData: XLua.DelegateBridge;
       }
-      export interface ActivityFirstMapProperty {
+      export interface ActivityFirstMapProperty
+        extends Torappu.DataBind
+          .BindProperty<Torappu.Activity.Act1.ActivityFirstMapViewModel> {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_InitData: XLua.DelegateBridge;
         // __Hotfix0_SetZone: XLua.DelegateBridge;
@@ -10611,7 +10782,8 @@ export namespace Torappu {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_UpdateStatus: XLua.DelegateBridge;
       }
-      export interface Activity10D5ResHolder {
+      export interface Activity10D5ResHolder
+        extends Torappu.Activity.ActivityResHolder {
         // _homeSprite: UnityEngine.Sprite;
         // _homeMultiSprite: UnityEngine.Sprite;
         _zoneHomeRes: Torappu.Activity.ActivityResHolder.ZoneHomeRes;
@@ -10671,7 +10843,11 @@ export namespace Torappu {
         prop: Torappu.Activity.Act10D5.Act10D5StoryProperty;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
       }
-      export interface Act10D5StoryProperty {}
+      export interface Act10D5StoryProperty
+        extends Torappu.DataBind.DynamicBindProperty<
+          Torappu.Activity.Act10D5.Act10D5StoryProperty,
+          Torappu.Activity.Act10D5.Act10D5StoryViewModel
+        > {}
       export interface Act10D5StoryViewModel {
         // chapterModel: Torappu.UI.StoryReview.StoryReviewChapterViewModel;
         // availableModelList: System.Collections.Generic.List<Torappu.UI.StoryReview.StoryReviewViewModel>;
@@ -10822,7 +10998,11 @@ export namespace Torappu {
         // <selectedZoneId>k__BackingField: System.String;
         // <isAllTimeout>k__BackingField: System.Boolean;
       }
-      export interface Act10D5ZoneDescGroupViewProperty {}
+      export interface Act10D5ZoneDescGroupViewProperty
+        extends Torappu.DataBind.DynamicBindProperty<
+          Torappu.Activity.Act10D5.Act10D5ZoneDescGroupViewProperty,
+          Torappu.Activity.Act10D5.Act10D5ZoneDescGroupViewModel
+        > {}
       export namespace Act10D5StageController {
         export interface Bridge {}
         export interface Act10D5InitMeta {
@@ -11529,7 +11709,8 @@ export namespace Torappu {
         // __Hotfix0__GenOuterBuffByLevel: XLua.DelegateBridge;
         // __Hotfix0__GenPlayerOuterBuffData: XLua.DelegateBridge;
       }
-      export interface PlayerOuterBuffData {
+      export interface PlayerOuterBuffData
+        extends Torappu.ActivityRoguelikeData.OuterBuffUnlockInfoData {
         currentLevel: System.Int32;
       }
       export interface Act12D6RelicHandBookItemView {
@@ -11566,7 +11747,8 @@ export namespace Torappu {
         // __Hotfix0_SetRelicRead: XLua.DelegateBridge;
         // __Hotfix0__GenPlayerRelicGotStatus: XLua.DelegateBridge;
       }
-      export interface PlayerRelicHandBookData {
+      export interface PlayerRelicHandBookData
+        extends Torappu.RoguelikeItemData {
         read: System.Boolean;
         got: System.Boolean;
         unlocked: System.Boolean;
@@ -11721,7 +11903,8 @@ export namespace Torappu {
       }
     }
     export namespace Act16D6 {
-      export interface Act16D6Entry {
+      export interface Act16D6Entry
+        extends Torappu.Activity.ActivityCommonCheckinEntry {
         _checkinItem: Torappu.Activity.ActivityCommonCheckinV2Item;
         // _itemContainer: UnityEngine.Transform;
         // _dotViewContainer: UnityEngine.Transform;
@@ -11779,7 +11962,8 @@ export namespace Torappu {
         // __Hotfix0_OnDestroy: XLua.DelegateBridge;
         // __Hotfix0__DisableEffect: XLua.DelegateBridge;
       }
-      export interface Act17D0MissionView {
+      export interface Act17D0MissionView
+        extends Torappu.Activity.Act9D0.Act9D0MissionBaseView {
         // _textProgress: UnityEngine.UI.Text;
         // _imageProgress: UnityEngine.UI.Image;
         _missionGroupAdapter: Torappu.Activity.Act9D0.Act9D0MissionGroupAdapter;
@@ -11934,7 +12118,8 @@ export namespace Torappu {
         }
       }
       export namespace Battle {
-        export interface Act17D1CameraPlugin {
+        export interface Act17D1CameraPlugin
+          extends Torappu.Battle.CameraController.Plugin {
           AUDIO_FADE_OUT_TIME: System.Single;
           // _extraCameraTransform: UnityEngine.Transform;
           // _extraCamera: UnityEngine.Camera;
@@ -11968,7 +12153,8 @@ export namespace Torappu {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_Render: XLua.DelegateBridge;
         }
-        export interface Act17D1BattleFinishView {
+        export interface Act17D1BattleFinishView
+          extends Torappu.Activity.ActivityBattleFinishView {
           ANIM_WIN: System.String;
           ANIM_LOSE: System.String;
           ANIM_WIN_WAIT_TIME: System.Single;
@@ -12038,7 +12224,8 @@ export namespace Torappu {
       }
     }
     export namespace Act1D5 {
-      export interface Act1D5Entry {
+      export interface Act1D5Entry
+        extends Torappu.Activity.ActivityCommonCheckinEntry {
         _checkinItemList: System.Collections.Generic.List<Torappu.Activity.ActivityCommonCheckinItem>;
         // _itemContainer: UnityEngine.Transform;
         // _openTime: UnityEngine.UI.Text;
@@ -12051,7 +12238,8 @@ export namespace Torappu {
         // __Hotfix0__ApplyTimeInfo: XLua.DelegateBridge;
         // __Hotfix0_RefreshInfo: XLua.DelegateBridge;
       }
-      export interface Act1D5ResHolder {
+      export interface Act1D5ResHolder
+        extends Torappu.Activity.ActivityResHolder {
         // _homeSprite: UnityEngine.Sprite;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_get_topbarSprite: XLua.DelegateBridge;
@@ -12709,7 +12897,11 @@ export namespace Torappu {
         selectedZoneId: System.String;
         zoneDescModels: System.Collections.Generic.List<Torappu.Activity.Act3D0.Act3D0ZoneDescModel>;
       }
-      export interface Act3D0ZoneDescGroupViewProperty {}
+      export interface Act3D0ZoneDescGroupViewProperty
+        extends Torappu.DataBind.DynamicBindProperty<
+          Torappu.Activity.Act3D0.Act3D0ZoneDescGroupViewProperty,
+          Torappu.Activity.Act3D0.Act3D0ZoneDescGroupViewModel
+        > {}
       export interface Act3D0CampGroupViewModel {
         activityId: System.String;
         camps: Torappu.ListDict<
@@ -12832,7 +13024,8 @@ export namespace Torappu {
       }
     }
     export namespace Act3D5 {
-      export interface Act3D5Entry {
+      export interface Act3D5Entry
+        extends Torappu.Activity.ActivityCommonEntry {
         // s_sorted: System.Boolean;
         // _actDescLabel: UnityEngine.UI.Text;
         // _pointTitle: UnityEngine.UI.Text;
@@ -13389,7 +13582,8 @@ export namespace Torappu {
       export interface Act5D1BuyGoodsResponse {
         item: Torappu.Activity.RewardItemModel;
       }
-      export interface Activity5D1ResHolder {
+      export interface Activity5D1ResHolder
+        extends Torappu.Activity.ActivityResHolder {
         // _homeSprite: UnityEngine.Sprite;
         // _zoneTabSprite: UnityEngine.Sprite;
         _zoneHomeRes: Torappu.Activity.ActivityResHolder.ZoneHomeRes;
@@ -13398,7 +13592,8 @@ export namespace Torappu {
         // __Hotfix0_get_homeSprite: XLua.DelegateBridge;
         // __Hotfix0_get_zoneHomeRes: XLua.DelegateBridge;
       }
-      export interface Act5D1BattleFinishView {
+      export interface Act5D1BattleFinishView
+        extends Torappu.Activity.ActivityBattleFinishView {
         _holder: Torappu.Activity.Act5D1.RuneBattleFinishHolder;
         _effView: Torappu.Activity.Act5D1.RuneBattleFinishEffView;
         _stateBean: Torappu.Activity.Act5D1.RuneBattleFinishStateBean;
@@ -13918,10 +14113,12 @@ export namespace Torappu {
         // __Hotfix0_OnEnter: XLua.DelegateBridge;
         // __Hotfix0_OnResume: XLua.DelegateBridge;
       }
-      export interface Act5D1ShopDetailComplexState {
+      export interface Act5D1ShopDetailComplexState
+        extends Torappu.Activity.Act5D1.Act5D1ShopDetailCommonState {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
       }
-      export interface Act5D1ShopDetailComplexView {
+      export interface Act5D1ShopDetailComplexView
+        extends Torappu.Activity.Act5D1.Act5D1ShopDetailView {
         // m_shopBuyCount: System.Int32;
         _pileView: Torappu.Activity.Act5D1.Act5D1ShopDetailItemPileView;
         // _shopBuyCount: UnityEngine.UI.Text;
@@ -13954,10 +14151,12 @@ export namespace Torappu {
         // __Hotfix0_PileItem: XLua.DelegateBridge;
         // __Hotfix1_PileItem: XLua.DelegateBridge;
       }
-      export interface Act5D1ShopDetailNormalState {
+      export interface Act5D1ShopDetailNormalState
+        extends Torappu.Activity.Act5D1.Act5D1ShopDetailCommonState {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
       }
-      export interface Act5D1ShopDetailNormalView {
+      export interface Act5D1ShopDetailNormalView
+        extends Torappu.Activity.Act5D1.Act5D1ShopDetailView {
         _pileView: Torappu.Activity.Act5D1.Act5D1ShopDetailItemPileView;
         // _itemContainer: UnityEngine.Transform;
         // _pilePart: UnityEngine.GameObject;
@@ -13985,10 +14184,12 @@ export namespace Torappu {
         // __Hotfix0_InitActiveData: XLua.DelegateBridge;
         // __Hotfix0_InitUnActiveData: XLua.DelegateBridge;
       }
-      export interface Act5D1ShopDetailProgressState {
+      export interface Act5D1ShopDetailProgressState
+        extends Torappu.Activity.Act5D1.Act5D1ShopDetailCommonState {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
       }
-      export interface Act5D1ShopDetailProgressView {
+      export interface Act5D1ShopDetailProgressView
+        extends Torappu.Activity.Act5D1.Act5D1ShopDetailView {
         _unactiveItem: Torappu.Activity.Act5D1.Act5D1ShopDetailProgressItem;
         _acativeItem: Torappu.Activity.Act5D1.Act5D1ShopDetailProgressItem;
         // _itemContainer: UnityEngine.Transform;
@@ -14122,7 +14323,8 @@ export namespace Torappu {
       export namespace Act5D1RuneMissionItem {}
       export namespace Act5D1RuneShopItem {}
       export namespace Act5D1ShopDetailProgressView {
-        export interface PrgViewModel {
+        export interface PrgViewModel
+          extends Torappu.Activity.Act5D1.Act5D1ShopCommonViewModel {
           prgId: System.String;
           progress: Torappu.Activity.Act5D1.Act5D1ProgressGoodItem[];
         }
@@ -14261,7 +14463,8 @@ export namespace Torappu {
       export interface ActivityMissionCheckResponse {
         items: System.Collections.Generic.List<Torappu.Activity.RewardItemModel>;
       }
-      export interface Activity5D0ResHolder {
+      export interface Activity5D0ResHolder
+        extends Torappu.Activity.ActivityResHolder {
         // _homeSprite: UnityEngine.Sprite;
         // _zoneTabSprite: UnityEngine.Sprite;
         _zoneHomeRes: Torappu.Activity.ActivityResHolder.ZoneHomeRes;
@@ -14278,7 +14481,8 @@ export namespace Torappu {
         // __Hotfix0_ToActivityMission: XLua.DelegateBridge;
         // __Hotfix0_ToReplicateState: XLua.DelegateBridge;
       }
-      export interface Act5D0MileStoneState {
+      export interface Act5D0MileStoneState
+        extends Torappu.Activity.MileStoneState {
         // _topMenuContainer: UnityEngine.Transform;
         // m_topMenu: Torappu.UI.CommonTopMenu;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -14341,7 +14545,8 @@ export namespace Torappu {
         // __Hotfix0_OnZoneDescModelUpdated: XLua.DelegateBridge;
         // __Hotfix0_EventOnBtnClicked: XLua.DelegateBridge;
       }
-      export interface Act5D0MileStoneItemObj {
+      export interface Act5D0MileStoneItemObj
+        extends Torappu.Activity.MileStoneItem {
         // _bgEff: UnityEngine.UI.Image;
         // _bg: UnityEngine.UI.Image;
         // _ableToGetButton: UnityEngine.UI.Button;
@@ -14404,7 +14609,8 @@ export namespace Torappu {
         // __Hotfix0_get_isShow: XLua.DelegateBridge;
         // __Hotfix0_UpdateState: XLua.DelegateBridge;
       }
-      export interface Act5D0MileStoneHolder {
+      export interface Act5D0MileStoneHolder
+        extends Torappu.Activity.MileStoneHolder {
         // _curMilestoneToken: UnityEngine.UI.Text;
         // _curBonusCond: UnityEngine.UI.Text;
         // _curBonusName: UnityEngine.UI.Text;
@@ -14412,7 +14618,8 @@ export namespace Torappu {
         // __Hotfix0_OnRefreshHolderInfo: XLua.DelegateBridge;
         // __Hotfix0_GetScrollToTargetIndex: XLua.DelegateBridge;
       }
-      export interface Act5D0MileStoneStateBean {
+      export interface Act5D0MileStoneStateBean
+        extends Torappu.Activity.MileStoneStateBean {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_GetMileStoneList: XLua.DelegateBridge;
         // __Hotfix0_GetMileStonePlayerInfo: XLua.DelegateBridge;
@@ -14464,7 +14671,11 @@ export namespace Torappu {
         selectedZoneId: System.String;
         zoneDescModels: System.Collections.Generic.List<Torappu.Activity.Act5D0.Act5D0ZoneDescModel>;
       }
-      export interface Act5D0ZoneDescGroupViewProperty {}
+      export interface Act5D0ZoneDescGroupViewProperty
+        extends Torappu.DataBind.DynamicBindProperty<
+          Torappu.Activity.Act5D0.Act5D0ZoneDescGroupViewProperty,
+          Torappu.Activity.Act5D0.Act5D0ZoneDescGroupViewModel
+        > {}
       export namespace Act5D0StageController {
         export interface Bridge {
           // m_controller: Torappu.Activity.Act5D0.Act5D0StageController;
@@ -14591,7 +14802,8 @@ export namespace Torappu {
         // __Hotfix0_OnLoaded: XLua.DelegateBridge;
         // __Hotfix0_EventOnShopClicked: XLua.DelegateBridge;
       }
-      export interface Activity9D0ResHolder {
+      export interface Activity9D0ResHolder
+        extends Torappu.Activity.ActivityResHolder {
         // _homeSprite: UnityEngine.Sprite;
         // _homeMultiSprite: UnityEngine.Sprite;
         _zoneHomeRes: Torappu.Activity.ActivityResHolder.ZoneHomeRes;
@@ -14826,7 +15038,8 @@ export namespace Torappu {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_Render: XLua.DelegateBridge;
       }
-      export interface Act9D0MissionView {
+      export interface Act9D0MissionView
+        extends Torappu.Activity.Act9D0.Act9D0MissionBaseView {
         // _textProgress: UnityEngine.UI.Text;
         _missionGroupAdapter: Torappu.Activity.Act9D0.Act9D0MissionGroupAdapter;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -14992,7 +15205,8 @@ export namespace Torappu {
         // __Hotfix0_UpdateNewsStatus: XLua.DelegateBridge;
         // __Hotfix0_getViewModel: XLua.DelegateBridge;
       }
-      export interface Act9D0NewsViewModel {
+      export interface Act9D0NewsViewModel
+        extends Torappu.Act9D0Data.ActivityNewsInfo {
         readTs: System.Int64;
       }
       export interface Act9D0SubMissionStateBean {
@@ -15019,7 +15233,11 @@ export namespace Torappu {
         // <selectedZoneId>k__BackingField: System.String;
         // <isAllTimeout>k__BackingField: System.Boolean;
       }
-      export interface Act9D0ZoneDescGroupViewProperty {}
+      export interface Act9D0ZoneDescGroupViewProperty
+        extends Torappu.DataBind.DynamicBindProperty<
+          Torappu.Activity.Act9D0.Act9D0ZoneDescGroupViewProperty,
+          Torappu.Activity.Act9D0.Act9D0ZoneDescGroupViewModel
+        > {}
       export interface Act9D0BannableObject {
         _key: System.String;
         // _sprites: System.Collections.Generic.List<UnityEngine.Sprite>;
@@ -15324,7 +15542,8 @@ export namespace Torappu {
       playerSide: Torappu.PlayerSide;
       extraData: System.Object;
     }
-    export interface BattleInOut {
+    export interface BattleInOut
+      extends Torappu.Singleton<Torappu.Battle.BattleInOut> {
       // <input>k__BackingField: Torappu.Battle.BattleInOut.InParams;
       // <output>k__BackingField: Torappu.Battle.BattleInOut.OutParams;
       // <sceneAssetPath>k__BackingField: System.String;
@@ -15565,7 +15784,7 @@ export namespace Torappu {
       // sharedWaitForFixedUpdate: UnityEngine.WaitForFixedUpdate;
       // sharedWaitForEndOfFrame: UnityEngine.WaitForEndOfFrame;
     }
-    export interface EmptyAbility {
+    export interface EmptyAbility extends Torappu.Battle.AbilityStandard {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_cooldown: XLua.DelegateBridge;
       // __Hotfix0_get_category: XLua.DelegateBridge;
@@ -15578,11 +15797,11 @@ export namespace Torappu {
       // __Hotfix0_OnWaitForPreDelay: XLua.DelegateBridge;
       // __Hotfix0_OnWaitForPostDelay: XLua.DelegateBridge;
     }
-    export interface EmptyActiveAbility {
+    export interface EmptyActiveAbility extends Torappu.Battle.EmptyAbility {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_category: XLua.DelegateBridge;
     }
-    export interface Ability {
+    export interface Ability extends Torappu.Battle.Entity.FriendComponent {
       // onCastStart: System.Action;
       onCastFinish: Torappu.Battle.Ability.FinishCallbackDelegate;
       _selector: Torappu.Battle.TargetSelector;
@@ -15670,7 +15889,7 @@ export namespace Torappu {
       prob: System.Single;
       // m_targetValidator: Torappu.Battle.TargetValidator;
     }
-    export interface AbilityStandard {
+    export interface AbilityStandard extends Torappu.Battle.Ability {
       _ignoreIfOwnerDead: System.Boolean;
       INFINITY_TIME: Torappu.FP;
       // m_castTargets: System.Collections.Generic.List<Torappu.ObjectPtr<Torappu.Battle.Entity>>;
@@ -15730,7 +15949,7 @@ export namespace Torappu {
       // __Hotfix0_DoEmitAudioSignalForSpellOn: XLua.DelegateBridge;
       // __Hotfix0_Awake: XLua.DelegateBridge;
     }
-    export interface CharacterAnimator {
+    export interface CharacterAnimator extends Torappu.Battle.SpineAnimator {
       TOLERANCE_L_OR_R_DIRECTION: System.Single;
       ADDON_TO_L_OR_R_DIRECTION: System.Single;
       _faceSwitcher: Torappu.Battle.FaceSwitcher;
@@ -15772,7 +15991,7 @@ export namespace Torappu {
       // __Hotfix0__SwapConfiguration: XLua.DelegateBridge;
       // __Hotfix0_TryGetSpinePrefix: XLua.DelegateBridge;
     }
-    export interface EmptyAnimator {
+    export interface EmptyAnimator extends Torappu.Battle.UnitAnimator {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_color: XLua.DelegateBridge;
       // __Hotfix0_set_color: XLua.DelegateBridge;
@@ -15799,7 +16018,7 @@ export namespace Torappu {
       // m_lastTween: Torappu.ITweenHandler;
       // <animator>k__BackingField: Torappu.Battle.UnitAnimator;
     }
-    export interface MeshAnimator {
+    export interface MeshAnimator extends Torappu.Battle.UnitAnimator {
       // _animation: UnityEngine.Animation;
       // _muzzleTransform: UnityEngine.Transform;
       // _hitTransform: UnityEngine.Transform;
@@ -15850,11 +16069,12 @@ export namespace Torappu {
       // __Hotfix0_OnFaceChanged: XLua.DelegateBridge;
     }
     export interface UnitAnimatorHooker {}
-    export interface SimpleUnitAnimatorHooker {
+    export interface SimpleUnitAnimatorHooker
+      extends Torappu.Battle.UnitAnimatorHooker {
       _excludeAnimKeys: System.String[];
       _replaceAnimPairs: Torappu.Battle.SimpleUnitAnimatorHooker.ReplacePair[];
     }
-    export interface SingleSpineAnimator {
+    export interface SingleSpineAnimator extends Torappu.Battle.SpineAnimator {
       // _skeleton: Spine.Unity.SkeletonAnimation;
       _faceSwitcher: Torappu.Battle.FaceSwitcher;
       // _muzzleTransform: UnityEngine.Transform;
@@ -15886,7 +16106,7 @@ export namespace Torappu {
       // __Hotfix0_ForEachSkeleton: XLua.DelegateBridge;
       // __Hotfix0__UpdateDirection: XLua.DelegateBridge;
     }
-    export interface SpineAnimator {
+    export interface SpineAnimator extends Torappu.Battle.UnitAnimator {
       SHADER_PROPERTY_BASELINE_Z: System.String;
       _animations: Torappu.Battle.SpineAnimator.AnimationData[];
       _mixSettings: Torappu.Battle.SpineAnimator.CustomMixAnimSetting[];
@@ -16026,7 +16246,8 @@ export namespace Torappu {
       // __Hotfix0_OnFixedUpdate: XLua.DelegateBridge;
       // __Hotfix0_Clear: XLua.DelegateBridge;
     }
-    export interface ArtCollection {
+    export interface ArtCollection
+      extends Torappu.SingletonMonoBehaviour<Torappu.Battle.ArtCollection> {
       // _defaultIcon: UnityEngine.Sprite;
       // _defaultIllust: UnityEngine.UI.Image;
       // m_assetLoader: Torappu.Resource.CachedAssetLoader;
@@ -16139,7 +16360,8 @@ export namespace Torappu {
       ON_OPERA_TRIGGER: System.String;
     }
     export interface RandomUtil {}
-    export interface BattleController {
+    export interface BattleController
+      extends Torappu.SingletonMonoBehaviour<Torappu.Battle.BattleController> {
       INITIAL_OBJECT_CAPACITY: System.Int32;
       INITIAL_BUFF_PRELOAD_CNT: System.Int32;
       // s_cachedModeMeta: Torappu.Battle.GameModeMeta;
@@ -16428,13 +16650,15 @@ export namespace Torappu {
       MIN_ATTACK_SPEED: Torappu.FP;
       ATTACK_SPEED_DIVIDER: Torappu.FP;
     }
-    export interface BattleInitializer {
+    export interface BattleInitializer
+      extends Torappu.SingletonMonoBehaviour<Torappu.Battle.BattleInitializer> {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_DoPreProcess: XLua.DelegateBridge;
       // __Hotfix0_OnInit: XLua.DelegateBridge;
       // __Hotfix0_GetDefaultMeta: XLua.DelegateBridge;
     }
-    export interface BattleLauncher {
+    export interface BattleLauncher
+      extends Torappu.SingletonMonoBehaviour<Torappu.Battle.BattleLauncher> {
       _levelId: System.String;
       // _levelJson: UnityEngine.TextAsset;
       // _squadJson: UnityEngine.TextAsset;
@@ -16470,7 +16694,7 @@ export namespace Torappu {
       // __Hotfix0_LoadSceneAsync: XLua.DelegateBridge;
       // __Hotfix0_LoadScene: XLua.DelegateBridge;
     }
-    export interface BattleLoader {
+    export interface BattleLoader extends Torappu.Battle.AbstractBattleLoader {
       _minLoadingTime: System.Single;
       _collector: Torappu.Battle.ResourceCollector;
       // _loadingUI: Torappu.Battle.UI.UIBattleLoading;
@@ -16484,7 +16708,7 @@ export namespace Torappu {
       // __Hotfix0__OnFailed: XLua.DelegateBridge;
       // __Hotfix0__LoadDummyLevel: XLua.DelegateBridge;
     }
-    export interface BObject {
+    export interface BObject extends Torappu.Battle.VisualObject {
       // s_globalCounter: System.UInt32;
       // <instanceUid>k__BackingField: System.UInt32;
       // <side>k__BackingField: Torappu.Battle.SideType;
@@ -16655,7 +16879,8 @@ export namespace Torappu {
       // __Hotfix0_ClearDerivedBuffsIfNot: XLua.DelegateBridge;
       // __Hotfix0__UpdateOverrideMap: XLua.DelegateBridge;
     }
-    export interface CameraController {
+    export interface CameraController
+      extends Torappu.SingletonMonoBehaviour<Torappu.Battle.CameraController> {
       // _camera: UnityEngine.Camera;
       // _fakeCamera: UnityEngine.Camera;
       // _uiPerspectiveCamera: UnityEngine.Camera;
@@ -16784,7 +17009,8 @@ export namespace Torappu {
       // __Hotfix0_PlayEffect: XLua.DelegateBridge;
       // __Hotfix0_GatherEffects: XLua.DelegateBridge;
     }
-    export interface ReadyEnemySkillEffect {
+    export interface ReadyEnemySkillEffect
+      extends Torappu.Battle.EnemySkill.Behaviour {
       _effect: System.String;
       _stopBeforeCast: System.Boolean;
       // m_effectPtr: Torappu.ObjectPtr<Torappu.Battle.Effects.Effect>;
@@ -16868,7 +17094,8 @@ export namespace Torappu {
       // __Hotfix0__UpdateRegisterAsModifier: XLua.DelegateBridge;
       // __Hotfix0_Awake: XLua.DelegateBridge;
     }
-    export interface EnemySkillWithCooldownVariable {
+    export interface EnemySkillWithCooldownVariable
+      extends Torappu.Battle.EnemySkill {
       // m_cooldownSequenceList: System.Collections.Generic.List<System.Single>;
       // m_currentIndex: System.Int32;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -16876,7 +17103,7 @@ export namespace Torappu {
       // __Hotfix0__CollectCooldownList: XLua.DelegateBridge;
       // __Hotfix0_ResetSkillCooldownIfNeeded: XLua.DelegateBridge;
     }
-    export interface Entity {
+    export interface Entity extends Torappu.Battle.BObject {
       FACE_TO_TARGET_MIN_DISTANCE_SQR: System.Single;
       // m_stateMachine: Torappu.StateMachine;
       // m_hp: Torappu.FP;
@@ -17188,7 +17415,8 @@ export namespace Torappu {
       // m_blackboard: Torappu.Blackboard;
       // m_overrideCameraEffect: System.String;
     }
-    export interface Map {
+    export interface Map
+      extends Torappu.SingletonMonoBehaviour<Torappu.Battle.Map> {
       // _anchorTransform: UnityEngine.Transform;
       // _tilesContainer: UnityEngine.Transform;
       // _graphicContainer: UnityEngine.Transform;
@@ -17285,7 +17513,7 @@ export namespace Torappu {
       // __Hotfix0__UpdateAnchorToCenter: XLua.DelegateBridge;
       // __Hotfix0__CreateTile: XLua.DelegateBridge;
     }
-    export interface MapAttachment {
+    export interface MapAttachment extends Torappu.Battle.MapWidget {
       _attachedTiles: Torappu.GridPosition[];
     }
     export interface MapGraphic {
@@ -17294,7 +17522,7 @@ export namespace Torappu {
       _effectSettings: Torappu.Battle.MapGraphic.EffectSettings;
       _graphics: Torappu.Battle.TileGraphic[];
     }
-    export interface MapWidget {
+    export interface MapWidget extends Torappu.Battle.VisualObject {
       _anchorPos: Torappu.GridPosition;
     }
     export interface BasicCursor {
@@ -17326,7 +17554,7 @@ export namespace Torappu {
       // __Hotfix0__MoveNext: XLua.DelegateBridge;
       // __Hotfix0__CreateCheckpoint: XLua.DelegateBridge;
     }
-    export interface DirectionCursor {
+    export interface DirectionCursor extends Torappu.Battle.BasicCursor {
       // m_visitedMap: System.Boolean[][];
       // m_offset: UnityEngine.Vector2;
       // m_nextGrid: Torappu.GridPosition;
@@ -17351,7 +17579,7 @@ export namespace Torappu {
       // __Hotfix0__GetNextGrid: XLua.DelegateBridge;
       // __Hotfix0_GetLocatorPosition: XLua.DelegateBridge;
     }
-    export interface GridCursor {
+    export interface GridCursor extends Torappu.Battle.BasicCursor {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_CheckReached: XLua.DelegateBridge;
       // __Hotfix0_GetNextGrid: XLua.DelegateBridge;
@@ -17389,7 +17617,7 @@ export namespace Torappu {
     export interface MapThemeFactory {
       WATER_THEME_TYPE: System.String;
     }
-    export interface BuffTile {
+    export interface BuffTile extends Torappu.Battle.Tile {
       EMPTY_IDS: System.Collections.Generic.List<System.UInt32>;
       _targetOptions: Torappu.Battle.TargetOptions;
       _sourceSide: Torappu.Battle.SideType;
@@ -17413,7 +17641,7 @@ export namespace Torappu {
       // __Hotfix0_EnsureEnemyBuffList: XLua.DelegateBridge;
       // __Hotfix0_PreloadBuffAssets: XLua.DelegateBridge;
     }
-    export interface CastTile {
+    export interface CastTile extends Torappu.Battle.Tile {
       _targetOptions: Torappu.Battle.TargetOptions;
       _sourceSide: Torappu.Battle.SideType;
       // _actions: ActionArray;
@@ -17438,7 +17666,7 @@ export namespace Torappu {
       // __Hotfix0__CheckExtraTarget: XLua.DelegateBridge;
       // __Hotfix0_PreloadAssets: XLua.DelegateBridge;
     }
-    export interface DynamicBuffTile {
+    export interface DynamicBuffTile extends Torappu.Battle.BuffTile {
       _modeIndex: System.Int32;
       _dynamicBuffs: Torappu.Battle.DynamicBuffTile.TileBuffsAndEffectsPair[];
       // m_charDynamicBuffUids: System.Collections.Generic.List<System.UInt32>;
@@ -17462,13 +17690,13 @@ export namespace Torappu {
       // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
       // __Hotfix0_PreloadBuffAssets: XLua.DelegateBridge;
     }
-    export interface HoleTile {
+    export interface HoleTile extends Torappu.Battle.Tile {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_moveCost: XLua.DelegateBridge;
       // __Hotfix0_get_isObstacleLike: XLua.DelegateBridge;
       // __Hotfix0_OnEnemyEnter: XLua.DelegateBridge;
     }
-    export interface InteractableTile {
+    export interface InteractableTile extends Torappu.Battle.Tile {
       // m_triggerCost: System.Int32;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_triggerable: XLua.DelegateBridge;
@@ -17476,7 +17704,7 @@ export namespace Torappu {
       // __Hotfix0_Interact: XLua.DelegateBridge;
     }
     export interface ITileListener {}
-    export interface Tile {
+    export interface Tile extends Torappu.Battle.VisualObject {
       // s_tileInstCounter: System.UInt32;
       _tileKey: System.String;
       _height: System.Single;
@@ -17578,7 +17806,7 @@ export namespace Torappu {
       // _mapOffset: UnityEngine.Vector2;
       // m_highlightType: Torappu.Battle.TileGraphic.HighlightType;
     }
-    export interface ToggleTile {
+    export interface ToggleTile extends Torappu.Battle.InteractableTile {
       _toggleOptions: Torappu.Battle.Tile.Options;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_maxTriggerCnt: XLua.DelegateBridge;
@@ -17670,10 +17898,12 @@ export namespace Torappu {
       // m_damageNode: Torappu.Battle.Action.Nodes.ApplyDamage;
       // m_cachedSplittedModifiers: Torappu.ListDict<Torappu.ObjectPtr<Torappu.Battle.Entity>,System.Collections.Generic.KeyValuePair<Torappu.Battle.Modifier,Torappu.Battle.Action.Nodes.ApplyModifier>>;
     }
-    export interface MeleeModifierSplitter {
+    export interface MeleeModifierSplitter
+      extends Torappu.Battle.ModifierSplitter {
       // m_sharedSplittedNode: Torappu.Battle.Action.Nodes.ApplyModifier;
     }
-    export interface RangedModifierSplitter {
+    export interface RangedModifierSplitter
+      extends Torappu.Battle.ModifierSplitter {
       damageNodeIndex: System.Int32;
       // m_actions: System.Collections.Generic.IList<Torappu.Battle.Action.ActionNode>;
     }
@@ -17706,7 +17936,7 @@ export namespace Torappu {
       // m_objects: Torappu.PriorityQueue<Torappu.Battle.BObject>;
       // m_cachedList: System.Collections.Generic.List<Torappu.Battle.BObject>;
     }
-    export interface BounceProjectile {
+    export interface BounceProjectile extends Torappu.Battle.Projectile {
       _lifeTimeType: Torappu.LifeType;
       _lifeTime: System.Single;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -17720,7 +17950,7 @@ export namespace Torappu {
       // __Hotfix0_GetMaxHitNum: XLua.DelegateBridge;
       // __Hotfix0_CheckTargetAlreadyHitAndUpdate: XLua.DelegateBridge;
     }
-    export interface HarpoonProjectile {
+    export interface HarpoonProjectile extends Torappu.Battle.LinkProjectile {
       _pullForceLevel: System.Int32;
       _pullSourceOffset: System.Single;
       _stopAfterPulledBack: System.Boolean;
@@ -17735,7 +17965,7 @@ export namespace Torappu {
       // __Hotfix0_SetPullForceLevel: XLua.DelegateBridge;
       // __Hotfix0_DoLink: XLua.DelegateBridge;
     }
-    export interface LaserProjectile {
+    export interface LaserProjectile extends Torappu.Battle.LinkProjectile {
       _unlimitedAlreadyHit: System.Boolean;
       _ignoreTargetDead: System.Boolean;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -17744,7 +17974,7 @@ export namespace Torappu {
       // __Hotfix0_CheckTargetAlreadyHitAndUpdate: XLua.DelegateBridge;
       // __Hotfix0_OnHitTarget: XLua.DelegateBridge;
     }
-    export interface LassoProjectile {
+    export interface LassoProjectile extends Torappu.Battle.LinkProjectile {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_DoLink: XLua.DelegateBridge;
       // __Hotfix0__ValidForLassoProjectile: XLua.DelegateBridge;
@@ -17752,7 +17982,7 @@ export namespace Torappu {
       // __Hotfix0_OnProjectileStop: XLua.DelegateBridge;
       // __Hotfix0__OnRallyPointLikeSwitch: XLua.DelegateBridge;
     }
-    export interface LinkProjectile {
+    export interface LinkProjectile extends Torappu.Battle.Projectile {
       _lifeTimeType: Torappu.LifeType;
       _lifeTime: System.Single;
       _linkDuration: System.Single;
@@ -17786,7 +18016,7 @@ export namespace Torappu {
       // __Hotfix0_DoLink: XLua.DelegateBridge;
       // __Hotfix0__InitDamageSplitter: XLua.DelegateBridge;
     }
-    export interface BasicMovement {
+    export interface BasicMovement extends Torappu.Battle.Projectile.Behaviour {
       _rotateToTarget: System.Boolean;
       _forceReachedWhenTimeup: System.Boolean;
       _useSourceDirection: System.Boolean;
@@ -17818,7 +18048,8 @@ export namespace Torappu {
       // __Hotfix0_DoUpdateRotation: XLua.DelegateBridge;
       // __Hotfix0_RotateToCertainDirection: XLua.DelegateBridge;
     }
-    export interface NetCatcherProjectile {
+    export interface NetCatcherProjectile
+      extends Torappu.Battle.LinkProjectile {
       _blackboardPrefix: System.String;
       _pullForceLevel: System.Int32;
       _firstPartTime: System.Single;
@@ -17853,7 +18084,7 @@ export namespace Torappu {
       // __Hotfix0__DoPull: XLua.DelegateBridge;
       // __Hotfix0_GetEffectFollowTarget: XLua.DelegateBridge;
     }
-    export interface Projectile {
+    export interface Projectile extends Torappu.Battle.BObject {
       INFINITE_TIME: System.Single;
       _randomDelayToBorn: System.Single;
       // _bodyTransform: UnityEngine.Transform;
@@ -17944,7 +18175,7 @@ export namespace Torappu {
       // __Hotfix0_GetActionNodes: XLua.DelegateBridge;
       // __Hotfix0_RunActions: XLua.DelegateBridge;
     }
-    export interface SimpleProjectile {
+    export interface SimpleProjectile extends Torappu.Battle.Projectile {
       _lifeTimeType: Torappu.LifeType;
       _lifeTime: System.Single;
       _hitNumType: Torappu.LifeType;
@@ -18129,7 +18360,7 @@ export namespace Torappu {
       // __Hotfix0__CheckActionEnabled: XLua.DelegateBridge;
       // __Hotfix0__RegisterActionExecutors: XLua.DelegateBridge;
     }
-    export interface AdvancedToggleSkill {
+    export interface AdvancedToggleSkill extends Torappu.Battle.ToggleSkill {
       _endAnim: System.String;
       _endEffect: System.String[];
       _playExtraSignalAtSkillBegin: System.Boolean;
@@ -18150,7 +18381,7 @@ export namespace Torappu {
       // __Hotfix0_UseSkill: XLua.DelegateBridge;
       // __Hotfix0_PlayBeginEffectAndAudio: XLua.DelegateBridge;
     }
-    export interface AppearSkill {
+    export interface AppearSkill extends Torappu.Battle.BasicSkill {
       _overrideStartEffect: System.String;
       _switchToState: System.Boolean;
       _castOnLocate: System.Boolean;
@@ -18167,7 +18398,7 @@ export namespace Torappu {
       // __Hotfix0_OnLocate: XLua.DelegateBridge;
       // __Hotfix0_GatherEffects: XLua.DelegateBridge;
     }
-    export interface AttachOrDetachSkill {
+    export interface AttachOrDetachSkill extends Torappu.Battle.BasicSkill {
       INFINITY_TIME: Torappu.FP;
       _switchToState: System.Boolean;
       _isInfinity: System.Boolean;
@@ -18310,7 +18541,7 @@ export namespace Torappu {
       // __Hotfix0__ApplyModifierToData: XLua.DelegateBridge;
       // __Hotfix0_PostprocessData: XLua.DelegateBridge;
     }
-    export interface CastSkill {
+    export interface CastSkill extends Torappu.Battle.BasicSkill {
       _trigger: Torappu.Battle.TargetTrigger;
       _switchToState: System.Boolean;
       _canSwitchDuringBorn: System.Boolean;
@@ -18346,7 +18577,7 @@ export namespace Torappu {
       // __Hotfix0__IsStackable: XLua.DelegateBridge;
       // __Hotfix0_get_progressToReady: XLua.DelegateBridge;
     }
-    export interface CastSkillWithCost {
+    export interface CastSkillWithCost extends Torappu.Battle.CastSkill {
       // m_requiredCost: System.Int32;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_requiredCost: XLua.DelegateBridge;
@@ -18354,7 +18585,7 @@ export namespace Torappu {
       // __Hotfix0_OnInit: XLua.DelegateBridge;
       // __Hotfix0_DoCast: XLua.DelegateBridge;
     }
-    export interface CastSkillWithLimitTimes {
+    export interface CastSkillWithLimitTimes extends Torappu.Battle.CastSkill {
       _progressSource: Torappu.Battle.Abilities.AbilityEventCounter;
       _fetchFromMainAttack: System.Boolean;
       _modeIndex: System.Int32;
@@ -18372,12 +18603,12 @@ export namespace Torappu {
       // __Hotfix0_IsDiscardable: XLua.DelegateBridge;
       // __Hotfix0_UseSkill: XLua.DelegateBridge;
     }
-    export interface CastTokenSkill {
+    export interface CastTokenSkill extends Torappu.Battle.CastSkill {
       _stopSpWhenTokenIsFull: System.Boolean;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_UpdateSpRecovery: XLua.DelegateBridge;
     }
-    export interface ContinuousSkill {
+    export interface ContinuousSkill extends Torappu.Battle.CastSkill {
       DEFAULT_SP_COST_PER_SEC: System.Single;
       // m_spContinuousCostTimer: Torappu.PrecisePeriodicTimer;
       // m_spCostPerSpec: System.Single;
@@ -18386,13 +18617,14 @@ export namespace Torappu {
       // __Hotfix0_DoCast: XLua.DelegateBridge;
       // __Hotfix0_OnTick: XLua.DelegateBridge;
     }
-    export interface NextAtkAdditionSkill {
+    export interface NextAtkAdditionSkill
+      extends Torappu.Battle.NextAttackOrCombatSkill {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_CheckIfToModify: XLua.DelegateBridge;
       // __Hotfix0_ApplyModification: XLua.DelegateBridge;
       // __Hotfix0_CancelAfterAttack: XLua.DelegateBridge;
     }
-    export interface NextAttackOrCombatSkill {
+    export interface NextAttackOrCombatSkill extends Torappu.Battle.BasicSkill {
       _trigger: Torappu.Battle.TargetTrigger;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_trigger: XLua.DelegateBridge;
@@ -18404,14 +18636,15 @@ export namespace Torappu {
       // __Hotfix0_OnAfterAttack: XLua.DelegateBridge;
       // __Hotfix0_OnTick: XLua.DelegateBridge;
     }
-    export interface PassiveSkill {
+    export interface PassiveSkill extends Torappu.Battle.BasicSkill {
       _attachInDummy: System.Boolean;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_OnInit: XLua.DelegateBridge;
       // __Hotfix0_DoCast: XLua.DelegateBridge;
       // __Hotfix0_UseSkill: XLua.DelegateBridge;
     }
-    export interface ReplacementSkill {
+    export interface ReplacementSkill
+      extends Torappu.Battle.NextAttackOrCombatSkill {
       _cancelIfSearchTargetFailed: System.Boolean;
       _recoverSpIfTargetDead: System.Boolean;
       _rangeToShow: Torappu.Battle.TargetSelector;
@@ -18426,7 +18659,7 @@ export namespace Torappu {
       // __Hotfix0_TryHookSearchTarget: XLua.DelegateBridge;
       // __Hotfix0__RecoverSp: XLua.DelegateBridge;
     }
-    export interface ToggleSkill {
+    export interface ToggleSkill extends Torappu.Battle.BasicSkill {
       _switchToMode: System.Int32;
       _switchToState: System.Boolean;
       _restartFSM: System.Boolean;
@@ -18445,7 +18678,7 @@ export namespace Torappu {
     export interface CharacterAudioHooker {
       _replaceAudioPairs: Torappu.Battle.CharacterAudioHooker.ReplacePair[];
     }
-    export interface CharacterSkin {
+    export interface CharacterSkin extends Torappu.Battle.CharacterAnimator {
       _overrideEffects: System.Collections.Generic.KeyValuePair<
         System.String,
         System.String
@@ -18453,7 +18686,7 @@ export namespace Torappu {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_TryLoadEffectOverrideMap: XLua.DelegateBridge;
     }
-    export interface AppearTalent {
+    export interface AppearTalent extends Torappu.Battle.Talent {
       _castOnLocate: System.Boolean;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_DoAttach: XLua.DelegateBridge;
@@ -18513,21 +18746,22 @@ export namespace Torappu {
       // __Hotfix0__GenerateBlackboardByTalentScale: XLua.DelegateBridge;
       // __Hotfix0_Awake: XLua.DelegateBridge;
     }
-    export interface ConstrainedTalent {
+    export interface ConstrainedTalent extends Torappu.Battle.Talent {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_OnBeforeAttack: XLua.DelegateBridge;
       // __Hotfix0_OnAfterAttack: XLua.DelegateBridge;
       // __Hotfix0_CheckReborn: XLua.DelegateBridge;
       // __Hotfix0_ProcessTraitBlackboard: XLua.DelegateBridge;
     }
-    export interface DeckBuffTalent {
+    export interface DeckBuffTalent extends Torappu.Battle.DeckTalent {
       _options: Torappu.Battle.DeckBuffTalent.Options;
       _deckBuffs: Torappu.Battle.DeckBuff[];
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_AssignData: XLua.DelegateBridge;
       // __Hotfix0_CreateDeckModifier: XLua.DelegateBridge;
     }
-    export interface DecklikeRuntimeCostTalent {
+    export interface DecklikeRuntimeCostTalent
+      extends Torappu.Battle.BasicTalent {
       _options: Torappu.Battle.DecklikeRuntimeCostTalent.Options;
       _runtimeCost: System.Int32;
       // m_runtimeCost: System.Int32;
@@ -18536,38 +18770,41 @@ export namespace Torappu {
       // __Hotfix0_AssignData: XLua.DelegateBridge;
       // __Hotfix0_CreateDecklikeRuntimeCostModifier: XLua.DelegateBridge;
     }
-    export interface DeckTalent {
+    export interface DeckTalent extends Torappu.Battle.BasicTalent {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_attachInDummy: XLua.DelegateBridge;
     }
-    export interface DeckTalentToAddCardCost {
+    export interface DeckTalentToAddCardCost extends Torappu.Battle.DeckTalent {
       _selector: Torappu.Battle.DeckSelector;
       // m_cost: System.Int32;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_AssignData: XLua.DelegateBridge;
       // __Hotfix0_CreateDeckModifier: XLua.DelegateBridge;
     }
-    export interface DeckTalentToAddMaxCost {
+    export interface DeckTalentToAddMaxCost extends Torappu.Battle.DeckTalent {
       // m_cost: System.Int32;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_AssignData: XLua.DelegateBridge;
       // __Hotfix0_CreateDeckModifier: XLua.DelegateBridge;
     }
-    export interface DeckTalentToModifyHealScaleByCost {
+    export interface DeckTalentToModifyHealScaleByCost
+      extends Torappu.Battle.DeckBuffTalent {
       _maxCost: System.Int32;
       // m_maxCost: System.Int32;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_AssignData: XLua.DelegateBridge;
       // __Hotfix0_CreateDeckModifier: XLua.DelegateBridge;
     }
-    export interface DeckTalentToModifyRespawnMaxMultiplier {
+    export interface DeckTalentToModifyRespawnMaxMultiplier
+      extends Torappu.Battle.DeckTalent {
       _selector: Torappu.Battle.DeckSelector;
       // m_maxMultiplier: System.Single;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_AssignData: XLua.DelegateBridge;
       // __Hotfix0_CreateDeckModifier: XLua.DelegateBridge;
     }
-    export interface OverrideAttackOrCombatTalent {
+    export interface OverrideAttackOrCombatTalent
+      extends Torappu.Battle.Talent {
       _overrideAttack: System.Boolean;
       _overrideCombat: System.Boolean;
       _trigger: Torappu.Battle.TargetTrigger;
@@ -18575,7 +18812,7 @@ export namespace Torappu {
       // __Hotfix0_DoAttach: XLua.DelegateBridge;
       // __Hotfix0_DoDetach: XLua.DelegateBridge;
     }
-    export interface ProbAdditionNextAtkTalent {
+    export interface ProbAdditionNextAtkTalent extends Torappu.Battle.Talent {
       _familyMask: Torappu.Battle.Ability.FamilyGroupMask;
       _probKey: System.String;
       // m_prob: System.Single;
@@ -18586,7 +18823,7 @@ export namespace Torappu {
       // __Hotfix0_OnBeforeAttack: XLua.DelegateBridge;
       // __Hotfix0_OnAfterAttack: XLua.DelegateBridge;
     }
-    export interface ProbReplaceNextAtkTalent {
+    export interface ProbReplaceNextAtkTalent extends Torappu.Battle.Talent {
       _trigger: Torappu.Battle.TargetTrigger;
       _familyMask: Torappu.Battle.Ability.FamilyGroupMask;
       _probKey: System.String;
@@ -18600,14 +18837,14 @@ export namespace Torappu {
       // __Hotfix0_OnAfterAttack: XLua.DelegateBridge;
       // __Hotfix0_TryHookSearchTarget: XLua.DelegateBridge;
     }
-    export interface RallyPointRebornTalent {
+    export interface RallyPointRebornTalent extends Torappu.Battle.Talent {
       // m_rebornBuff: Torappu.Battle.Buff;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_DoAttach: XLua.DelegateBridge;
       // __Hotfix0__FetchFirstPassiveBuffUids: XLua.DelegateBridge;
       // __Hotfix0_get_rebornProgress: XLua.DelegateBridge;
     }
-    export interface RebornTalent {
+    export interface RebornTalent extends Torappu.Battle.Talent {
       _maxRespawnCnt: System.Int32;
       _modeIndex: System.Int32;
       _buffs: Torappu.BuffData[];
@@ -18631,7 +18868,7 @@ export namespace Torappu {
       // __Hotfix0_ModifyHpRatio: XLua.DelegateBridge;
       // __Hotfix0__OnRebornAfterFakeDeath: XLua.DelegateBridge;
     }
-    export interface SilenceableTalent {
+    export interface SilenceableTalent extends Torappu.Battle.Talent {
       _isSilenceable: System.Boolean;
       // m_isManuallyAttached: System.Boolean;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -18641,18 +18878,18 @@ export namespace Torappu {
       // __Hotfix0__OnAbnormalFlagPossiblyChanged: XLua.DelegateBridge;
       // __Hotfix0_OnRecycle: XLua.DelegateBridge;
     }
-    export interface SkillInfluencedTalent {
+    export interface SkillInfluencedTalent extends Torappu.Battle.Talent {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_GetSkillBlackboardFromRawData: XLua.DelegateBridge;
     }
-    export interface SkillSyncedTalent {
+    export interface SkillSyncedTalent extends Torappu.Battle.Talent {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_DoAttach: XLua.DelegateBridge;
       // __Hotfix0_DoDetach: XLua.DelegateBridge;
       // __Hotfix0__OnSkillStart: XLua.DelegateBridge;
       // __Hotfix0__OnSkillFinish: XLua.DelegateBridge;
     }
-    export interface Talent {
+    export interface Talent extends Torappu.Battle.BasicTalent {
       _overwriteTalentKey: System.String;
       _attachInDummy: System.Boolean;
       _defaultModeIndex: System.Int32;
@@ -18679,12 +18916,12 @@ export namespace Torappu {
       // __Hotfix0_get_talentKey: XLua.DelegateBridge;
       // __Hotfix0_GenerateAttackBlackboard: XLua.DelegateBridge;
     }
-    export interface TraitTalent {
+    export interface TraitTalent extends Torappu.Battle.Talent {
       _modifiers: Torappu.Battle.TraitTalent.TraitModifier[];
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_ProcessTraitBlackboard: XLua.DelegateBridge;
     }
-    export interface AutoLoadBoxRange {
+    export interface AutoLoadBoxRange extends Torappu.Battle.PhysicsRange {
       // m_loadedRangeId: System.String;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_loadedRangeId: XLua.DelegateBridge;
@@ -18698,7 +18935,7 @@ export namespace Torappu {
       // s_sharedColliders: UnityEngine.Collider2D[];
       // s_sharedTiles: System.Collections.Generic.List<Torappu.Battle.Tile>;
     }
-    export interface CircleRange {
+    export interface CircleRange extends Torappu.Battle.PhysicsRange {
       _scaleble: System.Boolean;
       // m_circleCollider: UnityEngine.CircleCollider2D;
       // m_originRadius: System.Single;
@@ -18706,13 +18943,13 @@ export namespace Torappu {
       // __Hotfix0_FetchColliders: XLua.DelegateBridge;
       // __Hotfix0_InitCollidersIfNot: XLua.DelegateBridge;
     }
-    export interface ConstBoxRange {
+    export interface ConstBoxRange extends Torappu.Battle.AutoLoadBoxRange {
       _rangeId: System.String;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_FetchColliders: XLua.DelegateBridge;
       // __Hotfix0_InitCollidersIfNot: XLua.DelegateBridge;
     }
-    export interface EmptyRange {
+    export interface EmptyRange extends Torappu.Battle.Range {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_extendable: XLua.DelegateBridge;
       // __Hotfix0_CheckTargetIn: XLua.DelegateBridge;
@@ -18721,7 +18958,7 @@ export namespace Torappu {
       // __Hotfix0_OnInit: XLua.DelegateBridge;
       // __Hotfix0_UpdateExtend: XLua.DelegateBridge;
     }
-    export interface EntityLocateRange {
+    export interface EntityLocateRange extends Torappu.Battle.Range {
       // m_colliders: UnityEngine.Collider2D[];
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_extendable: XLua.DelegateBridge;
@@ -18733,7 +18970,7 @@ export namespace Torappu {
       // __Hotfix0_CheckTargetIn: XLua.DelegateBridge;
       // __Hotfix0_FetchColliders: XLua.DelegateBridge;
     }
-    export interface GlobalRange {
+    export interface GlobalRange extends Torappu.Battle.Range {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_extendable: XLua.DelegateBridge;
       // __Hotfix0_CheckTargetIn: XLua.DelegateBridge;
@@ -18746,7 +18983,7 @@ export namespace Torappu {
       // s_sharedSet: System.Collections.Generic.HashSet<Torappu.GridPosition>;
       // s_sharedTiles: System.Collections.Generic.List<Torappu.Battle.Tile>;
     }
-    export interface PhysicsRange {
+    export interface PhysicsRange extends Torappu.Battle.Range {
       _extendable: System.Boolean;
       // m_colliders: UnityEngine.Collider2D[];
       // m_originBoxColliderData: Torappu.Battle.PhysicsRange.BoxColliderData[];
@@ -18769,7 +19006,7 @@ export namespace Torappu {
       // __Hotfix0_FindTargets_DISPOSE: XLua.DelegateBridge;
       // __Hotfix1_FindTargets_DISPOSE: XLua.DelegateBridge;
     }
-    export interface AdvancedSelector {
+    export interface AdvancedSelector extends Torappu.Battle.RangeSelector {
       _targetSide: Torappu.Battle.SideType;
       _targetMotion: Torappu.MotionMask;
       _targetCategory: Torappu.Battle.EntityCategory;
@@ -18811,22 +19048,26 @@ export namespace Torappu {
       // __Hotfix0_AddExcludeTarget: XLua.DelegateBridge;
       // __Hotfix0_ClearExcludeTarget: XLua.DelegateBridge;
     }
-    export interface AdvancedSelectorBaseOnOwnerTile {
+    export interface AdvancedSelectorBaseOnOwnerTile
+      extends Torappu.Battle.AdvancedSelector {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
     }
-    export interface AdvancedSelectorWithAbnormalFlag {
+    export interface AdvancedSelectorWithAbnormalFlag
+      extends Torappu.Battle.AdvancedSelector {
       _abnormalFlagExcluded: System.Boolean;
       _abnormalFlags: Torappu.AbnormalFlag[];
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
     }
-    export interface AdvancedSelectorWithBuildableType {
+    export interface AdvancedSelectorWithBuildableType
+      extends Torappu.Battle.AdvancedSelector {
       _buildableType: Torappu.BuildableType;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
     }
-    export interface AdvancedSelectorWithinHpRatio {
+    export interface AdvancedSelectorWithinHpRatio
+      extends Torappu.Battle.AdvancedSelector {
       _filerMaxHp: System.Boolean;
       _maxHpRatio: System.Single;
       _filterMinHp: System.Boolean;
@@ -18835,7 +19076,8 @@ export namespace Torappu {
       // __Hotfix0_ValidateTarget: XLua.DelegateBridge;
       // __Hotfix0__CheckHpRatio: XLua.DelegateBridge;
     }
-    export interface AdvancedSelectorWithinHpRatioInBb {
+    export interface AdvancedSelectorWithinHpRatioInBb
+      extends Torappu.Battle.AdvancedSelector {
       _filerMaxHp: System.Boolean;
       _maxHpRatio: System.Single;
       _loadMaxHpRatioFromBb: System.Boolean;
@@ -18849,7 +19091,8 @@ export namespace Torappu {
       // __Hotfix0_ValidateTarget: XLua.DelegateBridge;
       // __Hotfix0__CheckHpRatio: XLua.DelegateBridge;
     }
-    export interface AdvancedSelectorWithOffsetFromTileBind {
+    export interface AdvancedSelectorWithOffsetFromTileBind
+      extends Torappu.Battle.AdvancedSelector {
       _tagExcluded: System.Boolean;
       _filterTag: System.String;
       _excludeRootTile: System.Boolean;
@@ -18859,14 +19102,16 @@ export namespace Torappu {
       // __Hotfix0_DoFindTargets: XLua.DelegateBridge;
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
     }
-    export interface AdvancedSelectorWithRandomTarget {
+    export interface AdvancedSelectorWithRandomTarget
+      extends Torappu.Battle.AdvancedSelector {
       _additionalNum: System.Int32;
       // m_prob: System.Single;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
       // __Hotfix0_SetData: XLua.DelegateBridge;
     }
-    export interface AdvancedSelectorWithTagAndBuffKey {
+    export interface AdvancedSelectorWithTagAndBuffKey
+      extends Torappu.Battle.AdvancedSelector {
       _tagExcluded: System.Boolean;
       _filterTag: System.String;
       _buffKeyExcluded: System.Boolean;
@@ -18874,7 +19119,8 @@ export namespace Torappu {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
     }
-    export interface AdvancedSelectorWithTagAndBuffWithinHpRatio {
+    export interface AdvancedSelectorWithTagAndBuffWithinHpRatio
+      extends Torappu.Battle.AdvancedSelectorWithinHpRatio {
       _tagExcluded: System.Boolean;
       _filterTag: System.String;
       _buffKeyExcluded: System.Boolean;
@@ -18882,7 +19128,8 @@ export namespace Torappu {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
     }
-    export interface AdvancedSelectorWithTagFilteredWithCreatedTime {
+    export interface AdvancedSelectorWithTagFilteredWithCreatedTime
+      extends Torappu.Battle.AdvancedSelector {
       _compareWithOwnerCreatedTime: Torappu.CompareType;
       _tagExcluded: System.Boolean;
       _filterTag: System.String;
@@ -18892,7 +19139,8 @@ export namespace Torappu {
       // __Hotfix0_Reset: XLua.DelegateBridge;
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
     }
-    export interface AllyBlockedAdvancedSelector {
+    export interface AllyBlockedAdvancedSelector
+      extends Torappu.Battle.BlockedBaseSelector {
       // m_tmpList: System.Collections.Generic.List<Torappu.Battle.Entity>;
       // m_character: Torappu.Battle.Character;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -18901,23 +19149,27 @@ export namespace Torappu {
       // __Hotfix0_ValidateEnemyTarget: XLua.DelegateBridge;
       // __Hotfix0_ValidateAllyTarget: XLua.DelegateBridge;
     }
-    export interface BlemshSleepingFirstSelector {
+    export interface BlemshSleepingFirstSelector
+      extends Torappu.Battle.BlockedOrAdvancedSelector {
       _abnormalComboWithHighPriority: Torappu.AbnormalCombo;
       _selectBlockRadiusSquareWithHighPrior: System.Boolean;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_DoFindTargets: XLua.DelegateBridge;
       // __Hotfix0__CheckEnemyHasAbnormalComboAndInBlockableRange: XLua.DelegateBridge;
     }
-    export interface BlockedAndAdvancedSelectorWithRestPostSort {
+    export interface BlockedAndAdvancedSelectorWithRestPostSort
+      extends Torappu.Battle.BlockedOrAdvancedSelectorWithRestPostSort {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_DoFindTargets: XLua.DelegateBridge;
     }
-    export interface BlockedBaseSelector {
+    export interface BlockedBaseSelector
+      extends Torappu.Battle.AdvancedSelector {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_ValidateTarget: XLua.DelegateBridge;
       // __Hotfix0__ValidateWithTargetFree: XLua.DelegateBridge;
     }
-    export interface BlockedOrAdvancedSelector {
+    export interface BlockedOrAdvancedSelector
+      extends Torappu.Battle.BlockedBaseSelector {
       _limitedMaxTargetNumToBlockedCnt: System.Boolean;
       _allowZeroBlockCntLimit: System.Boolean;
       // m_tmpList: System.Collections.Generic.List<Torappu.Battle.Entity>;
@@ -18932,7 +19184,8 @@ export namespace Torappu {
       // __Hotfix0_DoBaseFindTargets: XLua.DelegateBridge;
       // __Hotfix0_ValidateTarget: XLua.DelegateBridge;
     }
-    export interface BlockedOrAdvancedSelectorWithRestPostSort {
+    export interface BlockedOrAdvancedSelectorWithRestPostSort
+      extends Torappu.Battle.BlockedOrAdvancedSelector {
       _postSortTag: System.String;
       _excludeBuffKey: System.String;
       _hasPriorAbnormalFlag: System.Boolean;
@@ -18942,14 +19195,15 @@ export namespace Torappu {
       // __Hotfix0_get_hasPriorAbnormalFlag: XLua.DelegateBridge;
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
     }
-    export interface BlockedOrRandomSelector {
+    export interface BlockedOrRandomSelector
+      extends Torappu.Battle.RandomSelector {
       // m_character: Torappu.Battle.Character;
       _selectTargetInRageWhenHasBlockee: System.Boolean;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_SetData: XLua.DelegateBridge;
       // __Hotfix0_DoFindTargets: XLua.DelegateBridge;
     }
-    export interface BlockedSelector {
+    export interface BlockedSelector extends Torappu.Battle.TargetSelector {
       _maxTargetNum: System.Int32;
       // m_targetOptions: Torappu.Battle.TargetOptions;
       // <character>k__BackingField: Torappu.Battle.Character;
@@ -18969,7 +19223,8 @@ export namespace Torappu {
       // __Hotfix0_CheckTargetIn: XLua.DelegateBridge;
       // __Hotfix0_ValidateTarget: XLua.DelegateBridge;
     }
-    export interface BlockedTargetAdvancedSelector {
+    export interface BlockedTargetAdvancedSelector
+      extends Torappu.Battle.AdvancedSelector {
       _shrinkInTheEnd: System.Boolean;
       _shrinkNum: System.Int32;
       _pickMyTokenFirst: System.Boolean;
@@ -18979,7 +19234,7 @@ export namespace Torappu {
       // __Hotfix0_Reset: XLua.DelegateBridge;
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
     }
-    export interface ChainedSelector {
+    export interface ChainedSelector extends Torappu.Battle.RangeSelector {
       _targetSide: Torappu.Battle.SideType;
       _targetMotion: Torappu.MotionMask;
       _targetCategory: Torappu.Battle.EntityCategory;
@@ -19000,7 +19255,7 @@ export namespace Torappu {
       // __Hotfix0_FindNearestTarget: XLua.DelegateBridge;
       // __Hotfix0__GetNearestTargetIndex: XLua.DelegateBridge;
     }
-    export interface EmptyRangeSelector {
+    export interface EmptyRangeSelector extends Torappu.Battle.RangeSelector {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_limitTargetNum: XLua.DelegateBridge;
       // __Hotfix0_get_targetSide: XLua.DelegateBridge;
@@ -19011,7 +19266,7 @@ export namespace Torappu {
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
       // __Hotfix1_OnPostFilter: XLua.DelegateBridge;
     }
-    export interface EnemyHostSelector {
+    export interface EnemyHostSelector extends Torappu.Battle.TargetSelector {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_DoFindTargets: XLua.DelegateBridge;
       // __Hotfix0_FindTiles: XLua.DelegateBridge;
@@ -19110,7 +19365,8 @@ export namespace Torappu {
       // __Hotfix0__Filter_CreatedTimeAsc: XLua.DelegateBridge;
       // __Hotfix0__Filter_HpRatioNotFullAscMyTokenOrMeFirst: XLua.DelegateBridge;
     }
-    export interface InputTargetOnlySelector {
+    export interface InputTargetOnlySelector
+      extends Torappu.Battle.RangeSelector {
       _targetSide: Torappu.Battle.SideType;
       _targetMotion: Torappu.MotionMask;
       _targetCategory: Torappu.Battle.EntityCategory;
@@ -19123,7 +19379,7 @@ export namespace Torappu {
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
       // __Hotfix1_OnPostFilter: XLua.DelegateBridge;
     }
-    export interface NearestRangeSelector {
+    export interface NearestRangeSelector extends Torappu.Battle.RangeSelector {
       _targetSide: Torappu.Battle.SideType;
       _targetMotion: Torappu.MotionMask;
       _targetCategory: Torappu.Battle.EntityCategory;
@@ -19142,7 +19398,8 @@ export namespace Torappu {
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
       // __Hotfix1_OnPostFilter: XLua.DelegateBridge;
     }
-    export interface OneOfAllBlockedOrAdvancedSelector {
+    export interface OneOfAllBlockedOrAdvancedSelector
+      extends Torappu.Battle.BlockedBaseSelector {
       // <character>k__BackingField: Torappu.Battle.Character;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_character: XLua.DelegateBridge;
@@ -19150,7 +19407,7 @@ export namespace Torappu {
       // __Hotfix0_Reset: XLua.DelegateBridge;
       // __Hotfix0_DoFindTargets: XLua.DelegateBridge;
     }
-    export interface RandomSelector {
+    export interface RandomSelector extends Torappu.Battle.RangeSelector {
       _targetSide: Torappu.Battle.SideType;
       _targetMotion: Torappu.MotionMask;
       _targetCategory: Torappu.Battle.EntityCategory;
@@ -19171,7 +19428,7 @@ export namespace Torappu {
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
       // __Hotfix1_OnPostFilter: XLua.DelegateBridge;
     }
-    export interface RangeSelector {
+    export interface RangeSelector extends Torappu.Battle.TargetSelector {
       // m_range: Torappu.Battle.Range;
       // m_targetOptions: Torappu.Battle.TargetOptions;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -19189,7 +19446,8 @@ export namespace Torappu {
       // __Hotfix0_CheckTargetIn: XLua.DelegateBridge;
       // __Hotfix0_Awake: XLua.DelegateBridge;
     }
-    export interface SecondaryFilterAdvancedSelector {
+    export interface SecondaryFilterAdvancedSelector
+      extends Torappu.Battle.AdvancedSelector {
       _secondaryFilter: Torappu.Battle.SecondaryFilterAdvancedSelector.SecondaryFilterType;
       _filterTag: System.String;
       _buffKey: System.String;
@@ -19202,21 +19460,23 @@ export namespace Torappu {
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
       // __Hotfix0__CheckSecondFilter: XLua.DelegateBridge;
     }
-    export interface SecondaryFilterExAdvancedSelector {
+    export interface SecondaryFilterExAdvancedSelector
+      extends Torappu.Battle.AdvancedSelector {
       _secondaryFilterEx: Torappu.Battle.SecondaryFilterExAdvancedSelector.SecondaryFilterExType;
       // <>f__am$cache0: System.Comparison<Torappu.Battle.Entity>;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
       // __Hotfix0__CheckSecondFilter: XLua.DelegateBridge;
     }
-    export interface SelfSelector {
+    export interface SelfSelector extends Torappu.Battle.TargetSelector {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_maxTargetNum: XLua.DelegateBridge;
       // __Hotfix0_DoFindTargets: XLua.DelegateBridge;
       // __Hotfix0_FindTiles: XLua.DelegateBridge;
       // __Hotfix0_CheckTargetIn: XLua.DelegateBridge;
     }
-    export interface SelfSelectorInCertainCondition {
+    export interface SelfSelectorInCertainCondition
+      extends Torappu.Battle.SelfSelector {
       _checkHpRatioCondition: System.Boolean;
       _maxRatio: System.Single;
       // m_maxRatio: Torappu.FP;
@@ -19225,7 +19485,8 @@ export namespace Torappu {
       // __Hotfix0_SetData: XLua.DelegateBridge;
       // __Hotfix0__CheckSelfMeetCertainConditions: XLua.DelegateBridge;
     }
-    export interface SequenceGroupSelector {
+    export interface SequenceGroupSelector
+      extends Torappu.Battle.RangeSelector {
       _firstOrderSelector: Torappu.Battle.RangeSelector;
       _appendOrderSelector: Torappu.Battle.RangeSelector;
       _limitTargetNum: System.Boolean;
@@ -19244,7 +19505,7 @@ export namespace Torappu {
       // __Hotfix0_OnPostFilter: XLua.DelegateBridge;
       // __Hotfix1_OnPostFilter: XLua.DelegateBridge;
     }
-    export interface EmpgrdTalentSelector {
+    export interface EmpgrdTalentSelector extends Torappu.Battle.RangeSelector {
       _damageRecorderBuffKey: System.String;
       _lowPriorityBuffKey: System.String;
       _maxTargetNum: System.Int32;
@@ -19297,7 +19558,7 @@ export namespace Torappu {
       // __Hotfix0_OnCastedOnTarget: XLua.DelegateBridge;
       // __Hotfix0_OnAbilityExtendUpdated: XLua.DelegateBridge;
     }
-    export interface TileSelector {
+    export interface TileSelector extends Torappu.Battle.RangeSelector {
       MAX_SURROUND_DISTANCE: System.Single;
       _options: Torappu.Battle.TileSelector.Options;
       _filterType: Torappu.Battle.TileSelector.FilterType;
@@ -19327,7 +19588,8 @@ export namespace Torappu {
       // __Hotfix0__CheckCharacter: XLua.DelegateBridge;
       // __Hotfix0__CheckEnemies: XLua.DelegateBridge;
     }
-    export interface TokenOrAdvancedSelector {
+    export interface TokenOrAdvancedSelector
+      extends Torappu.Battle.AdvancedSelector {
       _includeOwner: System.Boolean;
       // <character>k__BackingField: Torappu.Battle.Character;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -19337,7 +19599,7 @@ export namespace Torappu {
       // __Hotfix0_DoFindTargets: XLua.DelegateBridge;
       // __Hotfix0_CheckTargetIn: XLua.DelegateBridge;
     }
-    export interface TokenOrHostSelector {
+    export interface TokenOrHostSelector extends Torappu.Battle.TargetSelector {
       _maxTargetNum: System.Int32;
       // <character>k__BackingField: Torappu.Battle.Character;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -19349,14 +19611,14 @@ export namespace Torappu {
       // __Hotfix0_FindTiles: XLua.DelegateBridge;
       // __Hotfix0_CheckTargetIn: XLua.DelegateBridge;
     }
-    export interface AlwaysTrigger {
+    export interface AlwaysTrigger extends Torappu.Battle.TargetTrigger {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_target: XLua.DelegateBridge;
       // __Hotfix0_get_isReadyToTrig: XLua.DelegateBridge;
       // __Hotfix0_Search: XLua.DelegateBridge;
       // __Hotfix0_CheckTargetIn: XLua.DelegateBridge;
     }
-    export interface LevelBranchTrigger {
+    export interface LevelBranchTrigger extends Torappu.Battle.TargetTrigger {
       _isLoop: System.Boolean;
       _branchId: System.String;
       // m_branchId: System.String;
@@ -19367,26 +19629,28 @@ export namespace Torappu {
       // __Hotfix0_Search: XLua.DelegateBridge;
       // __Hotfix0_CheckTargetIn: XLua.DelegateBridge;
     }
-    export interface NeverTrigger {
+    export interface NeverTrigger extends Torappu.Battle.TargetTrigger {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_target: XLua.DelegateBridge;
       // __Hotfix0_Search: XLua.DelegateBridge;
       // __Hotfix0_CheckTargetIn: XLua.DelegateBridge;
     }
-    export interface RangedSelectorTrigger {
+    export interface RangedSelectorTrigger
+      extends Torappu.Battle.SelectorTrigger {
       // m_rangeSelector: Torappu.Battle.RangeSelector;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_Validator: XLua.DelegateBridge;
       // __Hotfix0_Awake: XLua.DelegateBridge;
     }
-    export interface SelectorOrAlwaysTrigger {
+    export interface SelectorOrAlwaysTrigger
+      extends Torappu.Battle.SelectorTrigger {
       // m_ability: Torappu.Battle.IAlwaysTrigger;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_isReadyToTrig: XLua.DelegateBridge;
       // __Hotfix0_SetData: XLua.DelegateBridge;
       // __Hotfix0_Search: XLua.DelegateBridge;
     }
-    export interface SelectorTrigger {
+    export interface SelectorTrigger extends Torappu.Battle.TargetTrigger {
       SEARCH_TARGET_TICK: System.Int32;
       _keepTarget: System.Boolean;
       _minTargetNum: System.Int32;
@@ -19416,7 +19680,7 @@ export namespace Torappu {
       // __Hotfix0_Reset: XLua.DelegateBridge;
       // __Hotfix0_OnAbilityExtendUpdated: XLua.DelegateBridge;
     }
-    export interface TileTrigger {
+    export interface TileTrigger extends Torappu.Battle.TargetTrigger {
       SEARCH_TARGET_TICK: System.Int32;
       _minTileNum: System.Int32;
       // m_selector: Torappu.Battle.TileSelector;
@@ -19430,30 +19694,37 @@ export namespace Torappu {
       // __Hotfix0_Awake: XLua.DelegateBridge;
       // __Hotfix0_FixedUpdate: XLua.DelegateBridge;
     }
-    export interface AdvancedCharacterValidator {
+    export interface AdvancedCharacterValidator
+      extends Torappu.Battle.TargetValidator {
       _buildableType: Torappu.BuildableType;
       _rarityMask: Torappu.RarityRankMask;
     }
-    export interface AttributeTargetValidator {
+    export interface AttributeTargetValidator
+      extends Torappu.Battle.TargetValidator {
       _blackboardPrefix: System.String;
       _conditions: Torappu.Battle.AttributeTargetValidator.AttributeCondition[];
     }
-    export interface FilterBuffTargetValidator {
+    export interface FilterBuffTargetValidator
+      extends Torappu.Battle.TargetValidator {
       _excludeKey: System.Boolean;
       _buffs: System.String[];
     }
-    export interface FilterGroupTagTargetValidator {
+    export interface FilterGroupTagTargetValidator
+      extends Torappu.Battle.TargetValidator {
       _tags: System.String[];
     }
-    export interface FilterTagTargetValidator {
+    export interface FilterTagTargetValidator
+      extends Torappu.Battle.TargetValidator {
       _tags: System.String[];
     }
-    export interface OriginCostTargetValidator {
+    export interface OriginCostTargetValidator
+      extends Torappu.Battle.TargetValidator {
       _blackboardPrefix: System.String;
       _compareType: Torappu.CompareType;
       // m_conditonCost: System.Int32;
     }
-    export interface SingleIdTargetValidator {
+    export interface SingleIdTargetValidator
+      extends Torappu.Battle.TargetValidator {
       _targetId: System.String;
     }
     export interface TargetValidator {
@@ -19462,8 +19733,9 @@ export namespace Torappu {
       // m_ignoreTargetSide: System.Boolean;
       // m_inited: System.Boolean;
     }
-    export interface TokenOrHostTargetValidator {}
-    export interface Character {
+    export interface TokenOrHostTargetValidator
+      extends Torappu.Battle.TargetValidator {}
+    export interface Character extends Torappu.Battle.Unit {
       // LOG_SNAPSHOT_PERIOD_RANGE: UnityEngine.Vector2;
       FIND_BLOCKEE_TICK: System.Int32;
       HATRED_VALUE_GAP: Torappu.FP;
@@ -19651,7 +19923,7 @@ export namespace Torappu {
       // __Hotfix0_OnRallyPointLikeReborn: XLua.DelegateBridge;
       // __Hotfix0__ReactivateMainTriggerCollider: XLua.DelegateBridge;
     }
-    export interface Enemy {
+    export interface Enemy extends Torappu.Battle.Unit {
       UPDATE_POS_TICK: System.Int32;
       BLOCKING_TWEEN_DURATION: System.Single;
       HATRED_VALUE_GAP: System.Single;
@@ -19835,7 +20107,7 @@ export namespace Torappu {
       // __Hotfix0__InitPhysics: XLua.DelegateBridge;
       // __Hotfix0__GenerateSpData: XLua.DelegateBridge;
     }
-    export interface MapDependentTrap {
+    export interface MapDependentTrap extends Torappu.Battle.Trap {
       SKIN_INSTANCE_NAME: System.String;
       _defaultSkin: System.String;
       _skins: Torappu.Battle.MapDependentTrap.SkinEntry[];
@@ -19844,7 +20116,7 @@ export namespace Torappu {
       // __Hotfix0__CheckNeedToLoadSkin: XLua.DelegateBridge;
       // __Hotfix0__TryLoadSkin: XLua.DelegateBridge;
     }
-    export interface RallyPoint {
+    export interface RallyPoint extends Torappu.Battle.Trap {
       _retainedBuffsWhenDead: System.Collections.Generic.List<System.String>;
       // m_categoty: Torappu.Battle.EntityCategory;
       // <rallyPointRebornTalent>k__BackingField: Torappu.Battle.RallyPointRebornTalent;
@@ -19863,7 +20135,7 @@ export namespace Torappu {
       // __Hotfix0_Withdraw: XLua.DelegateBridge;
       // __Hotfix0_OnAwake: XLua.DelegateBridge;
     }
-    export interface Token {
+    export interface Token extends Torappu.Battle.Character {
       _category: Torappu.Battle.EntityCategory;
       _cardPolicy: Torappu.Battle.Deck.Card.CardPolicy;
       _isInfinity: System.Boolean;
@@ -19882,7 +20154,7 @@ export namespace Torappu {
       // __Hotfix0_FetchHost: XLua.DelegateBridge;
       // __Hotfix0_get_allowWithdrawGainCost: XLua.DelegateBridge;
     }
-    export interface Trap {
+    export interface Trap extends Torappu.Battle.Token {
       _sideType: Torappu.Battle.SideType;
       _withdrawable: System.Boolean;
       _ignoreParentWithdrawable: System.Boolean;
@@ -19914,11 +20186,11 @@ export namespace Torappu {
       // __Hotfix0_OnSwitchMode: XLua.DelegateBridge;
       // __Hotfix0_CheckHasFilterTag: XLua.DelegateBridge;
     }
-    export interface TrapMode {
+    export interface TrapMode extends Torappu.Battle.UnitMode {
       _tileOptions: Torappu.Battle.Tile.Options;
       _keepCurrentPassableMask: System.Boolean;
     }
-    export interface Unit {
+    export interface Unit extends Torappu.Battle.Entity {
       _animator: Torappu.Battle.UnitAnimator;
       _modes: Torappu.Battle.UnitMode[];
       _commonAbilities: Torappu.Battle.Ability[];
@@ -20114,7 +20386,8 @@ export namespace Torappu {
       nameEn: System.String;
       attributes: Torappu.AttributesData;
     }
-    export interface BattleCharacterData {
+    export interface BattleCharacterData
+      extends Torappu.Battle.BattleEntityData {
       level: System.Int32;
       evolvePhase: Torappu.EvolvePhase;
       potentialRank: System.Int32;
@@ -20236,7 +20509,8 @@ export namespace Torappu {
       // m_hasGiantBoss: System.Boolean;
       // m_giantBossLocateRnage: Torappu.Battle.IDrawableRange;
     }
-    export interface MaterialManager {
+    export interface MaterialManager
+      extends Torappu.SingletonMonoBehaviour<Torappu.Battle.MaterialManager> {
       // m_materialMap: System.Collections.Generic.Dictionary<Torappu.Battle.MaterialManager.MaterialKey,UnityEngine.Material>;
       // m_tweenMap: System.Collections.Generic.Dictionary<UnityEngine.Material,DG.Tweening.Tween>;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -20257,7 +20531,7 @@ export namespace Torappu {
       // m_receivedEventCounter: System.Int32;
       // m_consumedEventCounter: System.Int32;
     }
-    export interface PreviewCursor {
+    export interface PreviewCursor extends Torappu.Battle.BObject {
       _height: System.Single;
       _moveSpeed: System.Single;
       _faceToDirection: System.Boolean;
@@ -20295,7 +20569,11 @@ export namespace Torappu {
     export interface TransformGroup {
       // _transforms: UnityEngine.Transform[];
     }
-    export interface BuffDB {
+    export interface BuffDB
+      extends Torappu.DB.SimpleKVTable<
+        Torappu.BuffData,
+        Torappu.Battle.BuffDB
+      > {
       // m_buffTemplates: System.Collections.Generic.Dictionary<System.String,Torappu.Battle.BuffTemplate>;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_TryGetTemplate: XLua.DelegateBridge;
@@ -20307,15 +20585,19 @@ export namespace Torappu {
     export interface BuffTemp {
       template: Torappu.Battle.BuffTemplate;
     }
-    export interface EPBreakBuffDB {
+    export interface EPBreakBuffDB
+      extends Torappu.DB.SimpleKVTable<
+        Torappu.EPBreakBuffData,
+        Torappu.Battle.EPBreakBuffDB
+      > {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_GetBreakData: XLua.DelegateBridge;
     }
     export namespace Effects {
-      export interface CameraEffect {
+      export interface CameraEffect extends Torappu.Fx.BasicEffect {
         // _spawnOffset: UnityEngine.Vector3;
       }
-      export interface Effect {
+      export interface Effect extends Torappu.Fx.BasicEffect {
         CHILD_NAME_BODY_TRANSFORM: System.String;
         // s_globalCounter: System.UInt32;
         // _bodyTransofrm: UnityEngine.Transform;
@@ -20368,7 +20650,8 @@ export namespace Torappu {
         // __Hotfix0__InitLocation: XLua.DelegateBridge;
         // __Hotfix0_FinishEffects: XLua.DelegateBridge;
       }
-      export interface ColorModifier {
+      export interface ColorModifier
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         // _color: UnityEngine.Color;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_get_color: XLua.DelegateBridge;
@@ -20376,14 +20659,16 @@ export namespace Torappu {
         // __Hotfix0_OnFinish: XLua.DelegateBridge;
         // __Hotfix0_OnPaused: XLua.DelegateBridge;
       }
-      export interface EmitterRandomGroup {
+      export interface EmitterRandomGroup
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         _effectPickFrom: System.String[];
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_OnPlay: XLua.DelegateBridge;
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
         // __Hotfix0__PickOneEmitter: XLua.DelegateBridge;
       }
-      export interface FlyToPredefinedLocation {
+      export interface FlyToPredefinedLocation
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         _location: Torappu.Battle.PredefinedLocation;
         _duration: System.Single;
         // _easeType: DG.Tweening.Ease;
@@ -20393,7 +20678,8 @@ export namespace Torappu {
         // __Hotfix0_OnPlay: XLua.DelegateBridge;
         // __Hotfix0_OnRecycle: XLua.DelegateBridge;
       }
-      export interface FollowDirection {
+      export interface FollowDirection
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         _useFourDir: System.Boolean;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_OnPlay: XLua.DelegateBridge;
@@ -20401,7 +20687,8 @@ export namespace Torappu {
         // __Hotfix0_UpdateDirection: XLua.DelegateBridge;
         // __Hotfix0__FollowDirection: XLua.DelegateBridge;
       }
-      export interface FollowMountPoint {
+      export interface FollowMountPoint
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         _mountPointType: Torappu.Battle.Entity.MountPointType;
         _followScaleSign: System.Boolean;
         _followScale: System.Boolean;
@@ -20411,24 +20698,28 @@ export namespace Torappu {
         // __Hotfix0_LateUpdate: XLua.DelegateBridge;
         // __Hotfix0__FollowMountPoint: XLua.DelegateBridge;
       }
-      export interface FollowOwner {
+      export interface FollowOwner
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_Update: XLua.DelegateBridge;
         // __Hotfix0__FollowEntity: XLua.DelegateBridge;
       }
-      export interface FunnelHitEffect {
+      export interface FunnelHitEffect
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         // _randomRange: UnityEngine.Vector3;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_OnPlay: XLua.DelegateBridge;
       }
-      export interface OnFinishEmitter {
+      export interface OnFinishEmitter
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         _effects: System.String[];
         _useFaceVector: System.Boolean;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_OnFinish: XLua.DelegateBridge;
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
       }
-      export interface OnPlayEmitter {
+      export interface OnPlayEmitter
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         _effects: System.String[];
         _preDelay: System.Single;
         _useFaceVector: System.Boolean;
@@ -20441,7 +20732,8 @@ export namespace Torappu {
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
         // __Hotfix0__DoEmit: XLua.DelegateBridge;
       }
-      export interface PauseAnotherEffect {
+      export interface PauseAnotherEffect
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         _effect: System.String;
         _preDelay: System.Single;
         _checkUpdate: System.Boolean;
@@ -20455,7 +20747,8 @@ export namespace Torappu {
         // __Hotfix0__OnUnpause: XLua.DelegateBridge;
         // __Hotfix0_Update: XLua.DelegateBridge;
       }
-      export interface PauseEffectIf {
+      export interface PauseEffectIf
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         _checkAbnormalFlag: System.Boolean;
         _pauseWhenAbnormalFlag: Torappu.AbnormalFlag;
         _checkAbnormalImmune: System.Boolean;
@@ -20472,11 +20765,13 @@ export namespace Torappu {
         // __Hotfix0_Update: XLua.DelegateBridge;
         // __Hotfix0__CheckPauseIfFlag: XLua.DelegateBridge;
       }
-      export interface PauseEffectIfNotMove {
+      export interface PauseEffectIfNotMove
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_Update: XLua.DelegateBridge;
       }
-      export interface RandomEmitter {
+      export interface RandomEmitter
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         _count: System.Int32;
         _effect: System.String;
         _preDelay: System.Single;
@@ -20488,12 +20783,14 @@ export namespace Torappu {
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
         // __Hotfix0__DoEmit: XLua.DelegateBridge;
       }
-      export interface SpecifyUnitModeEffect {
+      export interface SpecifyUnitModeEffect
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         _unitModeIndex: System.Int32;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_OnPlay: XLua.DelegateBridge;
       }
-      export interface SwitchableBackEffect {
+      export interface SwitchableBackEffect
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         _backEffect: System.String;
         // m_backEffect: Torappu.ObjectPtr<Torappu.Battle.Effects.Effect>;
         // m_cachedIsBack: System.Boolean;
@@ -20503,7 +20800,8 @@ export namespace Torappu {
         // __Hotfix0_Update: XLua.DelegateBridge;
         // __Hotfix0__UpdateFace: XLua.DelegateBridge;
       }
-      export interface SwitchableRightEffect {
+      export interface SwitchableRightEffect
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         _rightEffect: System.String;
         // m_rightEffect: Torappu.ObjectPtr<Torappu.Battle.Effects.Effect>;
         // m_cachedIsRight: System.Boolean;
@@ -20513,14 +20811,15 @@ export namespace Torappu {
         // __Hotfix0_Update: XLua.DelegateBridge;
         // __Hotfix0__UpdateFace: XLua.DelegateBridge;
       }
-      export interface TriggerAnimatorWhenFinish {
+      export interface TriggerAnimatorWhenFinish
+        extends Torappu.Battle.Effects.Effect.Behaviour {
         // m_animator: UnityEngine.Animator;
         // s_onFinish: System.Int32;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_OnFinish: XLua.DelegateBridge;
         // __Hotfix0_Awake: XLua.DelegateBridge;
       }
-      export interface EmptyEffect {
+      export interface EmptyEffect extends Torappu.Battle.Effects.Effect {
         _delayToFinish: System.Single;
         _allowAutoReuse: System.Boolean;
         _preloadCnt: System.Int32;
@@ -20534,7 +20833,7 @@ export namespace Torappu {
         // __Hotfix0_get_heightOffset: XLua.DelegateBridge;
         // __Hotfix0_get_delayToRecycle: XLua.DelegateBridge;
       }
-      export interface MapEffect {
+      export interface MapEffect extends Torappu.Battle.Effects.Effect {
         // _spawnMapOffset: UnityEngine.Vector3;
         _pauseIfTileIsLocated: System.Boolean;
         _forceZeroHeight: System.Boolean;
@@ -20554,7 +20853,7 @@ export namespace Torappu {
         // __Hotfix0_SetTile: XLua.DelegateBridge;
         // __Hotfix0_OnLocatedCharacterUpdate: XLua.DelegateBridge;
       }
-      export interface ParticleEffect {
+      export interface ParticleEffect extends Torappu.Battle.Effects.Effect {
         CHILD_NAME_ROTATION_Y: System.String;
         CHILD_NAME_ROTATION_Z: System.String;
         CHILD_NAME_FLIP_X: System.String;
@@ -20608,7 +20907,7 @@ export namespace Torappu {
         // __Hotfix0_OnAllocate: XLua.DelegateBridge;
         // __Hotfix0_OnRecycle: XLua.DelegateBridge;
       }
-      export interface ProjectileEffect {
+      export interface ProjectileEffect extends Torappu.Battle.Effects.Effect {
         _resetMainDir: System.Boolean;
         _mainDir: Torappu.SharedConsts.Direction;
         _rotate180Y: System.Boolean;
@@ -20635,7 +20934,7 @@ export namespace Torappu {
         // __Hotfix0_OnFinish: XLua.DelegateBridge;
         // __Hotfix0_Awake: XLua.DelegateBridge;
       }
-      export interface SimpleEffect {
+      export interface SimpleEffect extends Torappu.Battle.Effects.Effect {
         CHECK_IF_ALIVE_DELTA: System.Single;
         _allowAutoReuse: System.Boolean;
         _preloadCnt: System.Int32;
@@ -20657,11 +20956,13 @@ export namespace Torappu {
         // __Hotfix0_OnEnable: XLua.DelegateBridge;
       }
       export namespace Data {
-        export interface EffectData_Advanced {
+        export interface EffectData_Advanced
+          extends Torappu.Battle.Effects.Data.SourceData {
           overrideHeight: System.Boolean;
           heightOffset: System.Single;
         }
-        export interface EffectData_Projectile {
+        export interface EffectData_Projectile
+          extends Torappu.Battle.Effects.Data.SourceData {
           // inactiveOnFinish: UnityEngine.Transform[];
         }
         export interface SourceData {}
@@ -20759,12 +21060,12 @@ export namespace Torappu {
           MODIFIER_SOURCE = "MODIFIER_SOURCE",
           MAIN_TARGET = "MAIN_TARGET",
         }
-        export interface Empty {
+        export interface Empty extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ModifyCost {
+        export interface ModifyCost extends Torappu.Battle.Action.ActionNode {
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _forceToDisplayNumber: System.Boolean;
           _forceToDisplayNegativeNumber: System.Boolean;
@@ -20772,19 +21073,21 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ModifyCharacterLimit {
+        export interface ModifyCharacterLimit
+          extends Torappu.Battle.Action.ActionNode {
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ModifyLifePoint {
+        export interface ModifyLifePoint
+          extends Torappu.Battle.Action.ActionNode {
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ModifySp {
+        export interface ModifySp extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _modifyByRatio: System.Boolean;
           _spMask: Torappu.SpType;
@@ -20794,7 +21097,7 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface SwitchMode {
+        export interface SwitchMode extends Torappu.Battle.Action.ActionNode {
           _modeIndex: System.Int32;
           _loadModeFromBlackboard: System.Boolean;
           _restoreDefault: System.Boolean;
@@ -20803,26 +21106,30 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface SwitchRallyPointCategory {
+        export interface SwitchRallyPointCategory
+          extends Torappu.Battle.Action.ActionNode {
           _category: Torappu.Battle.EntityCategory;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface InterruptEnemyAbility {
+        export interface InterruptEnemyAbility
+          extends Torappu.Battle.Action.ActionNode {
           _enemyFrom: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface InterruptCharacterAttack {
+        export interface InterruptCharacterAttack
+          extends Torappu.Battle.Action.ActionNode {
           _charFrom: Torappu.Battle.Action.Nodes.ActionTargetType;
           _resetCD: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface InterruptCharacterAbility {
+        export interface InterruptCharacterAbility
+          extends Torappu.Battle.Action.ActionNode {
           _charFrom: Torappu.Battle.Action.Nodes.ActionTargetType;
           _abilityName: System.String;
           _needStopAffect: System.Boolean;
@@ -20830,7 +21137,7 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface Withdraw {
+        export interface Withdraw extends Torappu.Battle.Action.ActionNode {
           _withdrawSource: System.Boolean;
           _switchToDeadState: System.Boolean;
           _force: System.Boolean;
@@ -20839,14 +21146,15 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface WithdrawAlltheSameExcludeSource {
+        export interface WithdrawAlltheSameExcludeSource
+          extends Torappu.Battle.Action.ActionNode {
           _source: Torappu.Battle.Action.Nodes.ActionTargetType;
           _skipReborn: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface Evade {
+        export interface Evade extends Torappu.Battle.Action.ActionNode {
           _damageMask: Torappu.Battle.DamageTypeMask;
           _applyWayFilter: Torappu.Battle.Modifier.SourceApplyWay;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -20854,7 +21162,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0__VerifyModifier: XLua.DelegateBridge;
         }
-        export interface EvadeByRemainingRatio {
+        export interface EvadeByRemainingRatio
+          extends Torappu.Battle.Action.ActionNode {
           _damageMask: Torappu.Battle.DamageTypeMask;
           _applyWayFilter: Torappu.Battle.Modifier.SourceApplyWay;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -20862,7 +21171,7 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0__VerifyModifier: XLua.DelegateBridge;
         }
-        export interface CreateEffect {
+        export interface CreateEffect extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _effectKey: System.String;
@@ -20870,14 +21179,15 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FinishBuff {
+        export interface FinishBuff extends Torappu.Battle.Action.ActionNode {
           _decCntIfStack: System.Boolean;
           _updateOverrideMap: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FinishBuffsById {
+        export interface FinishBuffsById
+          extends Torappu.Battle.Action.ActionNode {
           _buffKey: System.String;
           _loadFromBlackboard: System.Boolean;
           _decCntIfStack: System.Boolean;
@@ -20887,13 +21197,14 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FinishDerivedBuff {
+        export interface FinishDerivedBuff
+          extends Torappu.Battle.Action.ActionNode {
           _updateOverrideMap: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CreateBuff {
+        export interface CreateBuff extends Torappu.Battle.Action.ActionNode {
           _buff: Torappu.BuffData;
           _buffOwner: Torappu.Battle.Action.Nodes.ActionTargetType;
           _isDerivedBuff: System.Boolean;
@@ -20902,7 +21213,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         }
-        export interface CreateBuffToBindingTiles {
+        export interface CreateBuffToBindingTiles
+          extends Torappu.Battle.Action.ActionNode {
           _buff: Torappu.BuffData;
           _source: Torappu.Battle.Action.Nodes.ActionTargetType;
           _isDerivedBuff: System.Boolean;
@@ -20912,7 +21224,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         }
-        export interface RandomCreateBuff {
+        export interface RandomCreateBuff
+          extends Torappu.Battle.Action.ActionNode {
           _datas: Torappu.Battle.Action.Nodes.RandomCreateBuff.BuffPair[];
           _isDerivedBuff: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -20920,7 +21233,7 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         }
-        export interface CreateBuffs {
+        export interface CreateBuffs extends Torappu.Battle.Action.ActionNode {
           _buffPair: Torappu.Battle.Action.Nodes.CreateBuffs.BuffPair;
           _buffOwner: Torappu.Battle.Action.Nodes.ActionTargetType;
           _isDerivedBuff: System.Boolean;
@@ -20930,7 +21243,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         }
-        export interface CreateBuffById {
+        export interface CreateBuffById
+          extends Torappu.Battle.Action.ActionNode {
           _buffKey: System.String;
           _buffOwner: Torappu.Battle.Action.Nodes.ActionTargetType;
           _isDerivedBuff: System.Boolean;
@@ -20939,7 +21253,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         }
-        export interface CreateBuffToCertainProfession {
+        export interface CreateBuffToCertainProfession
+          extends Torappu.Battle.Action.ActionNode {
           _professionMask: Torappu.ProfessionCategory;
           _buffData: Torappu.BuffData;
           _isDerivedBuff: System.Boolean;
@@ -20948,7 +21263,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         }
-        export interface CreateBuffInRange {
+        export interface CreateBuffInRange
+          extends Torappu.Battle.Action.ActionNode {
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _targetOptions: Torappu.Battle.TargetOptions;
@@ -20962,7 +21278,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         }
-        export interface CreateBuffToToken {
+        export interface CreateBuffToToken
+          extends Torappu.Battle.Action.ActionNode {
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _buffData: Torappu.BuffData;
           _isDerivedBuff: System.Boolean;
@@ -20972,7 +21289,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         }
-        export interface CreateBuffToHost {
+        export interface CreateBuffToHost
+          extends Torappu.Battle.Action.ActionNode {
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _buffData: Torappu.BuffData;
           _isDerivedBuff: System.Boolean;
@@ -20981,17 +21299,19 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         }
-        export interface TriggerBuff {
+        export interface TriggerBuff extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckTriggerable {
+        export interface CheckTriggerable
+          extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface RemainingRatioToAttributeModifier {
+        export interface RemainingRatioToAttributeModifier
+          extends Torappu.Battle.Action.ActionNode {
           _attributeType: Torappu.AttributeType;
           _formulaType: Torappu.AttributeModifierData.AttributeModifier.FormulaItemType;
           _isInversed: System.Boolean;
@@ -21000,12 +21320,14 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ModifyDynamicVar {
+        export interface ModifyDynamicVar
+          extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CreateBuffToUnitInCurrentMapLayer {
+        export interface CreateBuffToUnitInCurrentMapLayer
+          extends Torappu.Battle.Action.ActionNode {
           _source: Torappu.Battle.Action.Nodes.ActionTargetType;
           _targetOptions: Torappu.Battle.TargetOptions;
           _buff: Torappu.BuffData;
@@ -21015,21 +21337,23 @@ export namespace Torappu {
           // __Hotfix0__AddBuff: XLua.DelegateBridge;
           // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         }
-        export interface ClearFirstBuffBlackboardByKey {
+        export interface ClearFirstBuffBlackboardByKey
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _buffKey: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ClearAllBuffs {
+        export interface ClearAllBuffs
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _retainedBuffsWhenClear: System.Collections.Generic.List<System.String>;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface SpShowBuff {
+        export interface SpShowBuff extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _spShowBuffKey: System.String;
           _isSelf: System.Boolean;
@@ -21038,19 +21362,19 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface Dice {
+        export interface Dice extends Torappu.Battle.Action.ActionNode {
           _probKey: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface RandomSetter {
+        export interface RandomSetter extends Torappu.Battle.Action.ActionNode {
           _targetKey: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface RandomAction {
+        export interface RandomAction extends Torappu.Battle.Action.ActionNode {
           _probKey: System.String;
           _actions: Torappu.Battle.Action.ActionNode[];
           _otherwiseActions: Torappu.Battle.Action.ActionNode[];
@@ -21058,14 +21382,15 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface RandomCastAbility {
+        export interface RandomCastAbility
+          extends Torappu.Battle.Action.ActionNode {
           _abilities: Torappu.Battle.Action.Nodes.TriggerAbility[];
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_GatherActionNodes: XLua.DelegateBridge;
         }
-        export interface ApplyDamage {
+        export interface ApplyDamage extends Torappu.Battle.Action.ActionNode {
           _damageType: Torappu.Battle.DamageType;
           _applyWay: Torappu.Battle.Modifier.SourceApplyWay;
           _attackType: Torappu.Battle.Modifier.SourceAttackType;
@@ -21086,19 +21411,22 @@ export namespace Torappu {
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
           // __Hotfix0_DeliverPreprocessPara: XLua.DelegateBridge;
         }
-        export interface ApplyCacheAtkDamageFromProjectile {
+        export interface ApplyCacheAtkDamageFromProjectile
+          extends Torappu.Battle.Action.Nodes.ApplyDamage {
           _transferSource: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_CreateDamageModifier: XLua.DelegateBridge;
         }
-        export interface ApplyCacheAtkDamageFromBuff {
+        export interface ApplyCacheAtkDamageFromBuff
+          extends Torappu.Battle.Action.Nodes.ApplyDamage {
           _damageScaleKey: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface AdvancedApplyDamage {
+        export interface AdvancedApplyDamage
+          extends Torappu.Battle.Action.ActionNode {
           _damageType: Torappu.Battle.DamageType;
           _atkScaleVar: System.String;
           _applyWay: Torappu.Battle.Modifier.SourceApplyWay;
@@ -21113,7 +21441,8 @@ export namespace Torappu {
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
           // __Hotfix0__TryGetAtkAsHostBased: XLua.DelegateBridge;
         }
-        export interface NoSourceDamage {
+        export interface NoSourceDamage
+          extends Torappu.Battle.Action.ActionNode {
           _damageType: Torappu.Battle.DamageType;
           _damageKey: System.String;
           _ignoreForSp: System.Boolean;
@@ -21126,7 +21455,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface FixedValueDamage {
+        export interface FixedValueDamage
+          extends Torappu.Battle.Action.ActionNode {
           _damageType: Torappu.Battle.DamageType;
           _damageKey: System.String;
           _ignoreForSp: System.Boolean;
@@ -21137,7 +21467,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface DamageViaMaxHpRatio {
+        export interface DamageViaMaxHpRatio
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _getMaxHpFromTarget: System.Boolean;
           _damageType: Torappu.Battle.DamageType;
@@ -21152,7 +21483,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface DamageViaCurHpRatio {
+        export interface DamageViaCurHpRatio
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _damageType: Torappu.Battle.DamageType;
           _applyWay: Torappu.Battle.Modifier.SourceApplyWay;
@@ -21166,7 +21498,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface DamageByDistance {
+        export interface DamageByDistance
+          extends Torappu.Battle.Action.ActionNode {
           MAX_DISTANCE: System.Int32;
           _isInit: System.Boolean;
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
@@ -21178,7 +21511,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface DamageViaAttr {
+        export interface DamageViaAttr
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _attributeType: Torappu.AttributeType;
@@ -21194,7 +21528,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface InverseDamage {
+        export interface InverseDamage
+          extends Torappu.Battle.Action.ActionNode {
           _damageType: Torappu.Battle.DamageType;
           _sideMask: Torappu.Battle.SideType;
           _attackType: Torappu.Battle.Modifier.SourceAttackType;
@@ -21204,7 +21539,7 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface AtkScaleUp {
+        export interface AtkScaleUp extends Torappu.Battle.Action.ActionNode {
           _filterApplyWay: System.Boolean;
           _applyWay: Torappu.Battle.Modifier.SourceApplyWay;
           _defaultValue: System.Single;
@@ -21212,7 +21547,7 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface BlockDamage {
+        export interface BlockDamage extends Torappu.Battle.Action.ActionNode {
           _filterDamageType: System.Boolean;
           _damageMask: Torappu.Battle.DamageTypeMask;
           _useDynamicVar: System.Boolean;
@@ -21222,7 +21557,7 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface InstantKill {
+        export interface InstantKill extends Torappu.Battle.Action.ActionNode {
           _killSource: System.Boolean;
           _noSource: System.Boolean;
           _withdrawIfRallyPoint: System.Boolean;
@@ -21231,7 +21566,7 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface DamageScale {
+        export interface DamageScale extends Torappu.Battle.Action.ActionNode {
           _filterDamageType: System.Boolean;
           _damageMask: Torappu.Battle.DamageTypeMask;
           _filterApplyWay: System.Boolean;
@@ -21242,7 +21577,7 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface DamageSplit {
+        export interface DamageSplit extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _attackType: Torappu.Battle.Modifier.SourceAttackType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -21251,7 +21586,7 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface AOEDamage {
+        export interface AOEDamage extends Torappu.Battle.Action.ActionNode {
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _damageType: Torappu.Battle.DamageType;
@@ -21272,7 +21607,8 @@ export namespace Torappu {
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
           // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         }
-        export interface AOEDamageFromProjectile {
+        export interface AOEDamageFromProjectile
+          extends Torappu.Battle.Action.ActionNode {
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _damageType: Torappu.Battle.DamageType;
           _sourceApplyWay: Torappu.Battle.Modifier.SourceApplyWay;
@@ -21297,7 +21633,7 @@ export namespace Torappu {
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
           // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         }
-        export interface SplashDamage {
+        export interface SplashDamage extends Torappu.Battle.Action.ActionNode {
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _excludeTargetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _damageType: Torappu.Battle.DamageType;
@@ -21313,12 +21649,14 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0__DealDamage: XLua.DelegateBridge;
         }
-        export interface BleedingDamageIncreasingReset {
+        export interface BleedingDamageIncreasingReset
+          extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface BleedingDamagePerSec {
+        export interface BleedingDamagePerSec
+          extends Torappu.Battle.Action.ActionNode {
           _damageType: Torappu.Battle.DamageType;
           _damageKey: System.String;
           _baseDamageKey: System.String;
@@ -21335,14 +21673,16 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface SetAtkScaleZero {
+        export interface SetAtkScaleZero
+          extends Torappu.Battle.Action.ActionNode {
           _filterApplyWay: System.Boolean;
           _applyWay: Torappu.Battle.Modifier.SourceApplyWay;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ApplyElementDamage {
+        export interface ApplyElementDamage
+          extends Torappu.Battle.Action.ActionNode {
           _elementDamageType: Torappu.Battle.ElementType;
           // m_cachedAtkEp: Torappu.FP;
           // m_epDamageRatio: Torappu.FP;
@@ -21353,7 +21693,7 @@ export namespace Torappu {
           // __Hotfix0_CreateElementDamageModifier: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface ApplyHeal {
+        export interface ApplyHeal extends Torappu.Battle.Action.ActionNode {
           _isCont: System.Boolean;
           _isHpRatio: System.Boolean;
           // m_forceUseCacheAtk: System.Boolean;
@@ -21368,7 +21708,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface FixedValueHeal {
+        export interface FixedValueHeal
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _ignoreHealFree: System.Boolean;
@@ -21378,7 +21719,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface AdvancedApplyHeal {
+        export interface AdvancedApplyHeal
+          extends Torappu.Battle.Action.ActionNode {
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _useDynamicVar: System.Boolean;
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
@@ -21390,7 +21732,7 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface AOEHeal {
+        export interface AOEHeal extends Torappu.Battle.Action.ActionNode {
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _targetOptions: Torappu.Battle.TargetOptions;
@@ -21404,7 +21746,8 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface HealViaDamage {
+        export interface HealViaDamage
+          extends Torappu.Battle.Action.ActionNode {
           _healType: Torappu.Battle.Action.Nodes.HealViaDamage.HealType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
@@ -21412,7 +21755,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface AdvancedHealViaDamage {
+        export interface AdvancedHealViaDamage
+          extends Torappu.Battle.Action.ActionNode {
           _owner: Torappu.Battle.Action.Nodes.ActionTargetType;
           _healAbilityName: System.String;
           _scaleKey: System.String;
@@ -21422,7 +21766,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface HealViaMaxHpRatio {
+        export interface HealViaMaxHpRatio
+          extends Torappu.Battle.Action.ActionNode {
           _healTarget: Torappu.Battle.Action.Nodes.ActionTargetType;
           _getMaxHpFromTarget: System.Boolean;
           _ignoreHealFree: System.Boolean;
@@ -21433,7 +21778,7 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface HealToken {
+        export interface HealToken extends Torappu.Battle.Action.ActionNode {
           _sourceTarget: Torappu.Battle.Action.Nodes.ActionTargetType;
           _ignoreHealFree: System.Boolean;
           _healByRatio: System.Boolean;
@@ -21445,17 +21790,18 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_PreprocessForProjectile: XLua.DelegateBridge;
         }
-        export interface IsDamage {
+        export interface IsDamage extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface IsHeal {
+        export interface IsHeal extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ApplyModifier {
+        export interface ApplyModifier
+          extends Torappu.Battle.Action.ActionNode {
           // m_modifier: Torappu.Battle.Modifier;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // _c__Hotfix1_ctor: XLua.DelegateBridge;
@@ -21464,32 +21810,37 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface EnsureDmgOrHeal {
+        export interface EnsureDmgOrHeal
+          extends Torappu.Battle.Action.ActionNode {
           _key: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ModifierScaleUp {
+        export interface ModifierScaleUp
+          extends Torappu.Battle.Action.ActionNode {
           _scaleKey: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface IfModifierTarget {
+        export interface IfModifierTarget
+          extends Torappu.Battle.Action.ActionNode {
           _motionMask: Torappu.MotionMask;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckModifierFace {
+        export interface CheckModifierFace
+          extends Torappu.Battle.Action.ActionNode {
           _angle: System.Single;
           _backward: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckModifierDirectionOffset {
+        export interface CheckModifierDirectionOffset
+          extends Torappu.Battle.Action.ActionNode {
           _source: Torappu.Battle.Action.Nodes.ActionTargetType;
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           _targetToSource: System.Boolean;
@@ -21499,36 +21850,42 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface HpNoLessThanCertainPercentModifier {
+        export interface HpNoLessThanCertainPercentModifier
+          extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface SetSharedFlag {
+        export interface SetSharedFlag
+          extends Torappu.Battle.Action.ActionNode {
           _sharedFlagIndex: Torappu.Battle.Modifier.SharedFlagIndex;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface RecordDamageModifier {
+        export interface RecordDamageModifier
+          extends Torappu.Battle.Action.ActionNode {
           // m_keyBuilder: System.Text.StringBuilder;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface TargetHpRatioToAtkScale {
+        export interface TargetHpRatioToAtkScale
+          extends Torappu.Battle.Action.ActionNode {
           _startHpRatio: System.Single;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface AtkToHpRecovery {
+        export interface AtkToHpRecovery
+          extends Torappu.Battle.Action.ActionNode {
           _getAtkFromTarget: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckBuffAttributeModifierChanged {
+        export interface CheckBuffAttributeModifierChanged
+          extends Torappu.Battle.Action.ActionNode {
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _sourceAttributeType: Torappu.AttributeType;
           _buffAttributeType: Torappu.AttributeType;
@@ -21538,7 +21895,8 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface HpRatioToAttributeAdd {
+        export interface HpRatioToAttributeAdd
+          extends Torappu.Battle.Action.ActionNode {
           _minHpRatio: System.Single;
           _maxHpRatio: System.Single;
           _attributeType: Torappu.AttributeType;
@@ -21546,19 +21904,21 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface RechargeToken {
+        export interface RechargeToken
+          extends Torappu.Battle.Action.ActionNode {
           _rechargeTiming: Torappu.Battle.Deck.Card.RechargeTiming;
           _refreshRemainingCnt: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface KillTokens {
+        export interface KillTokens extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface WithdrawTokens {
+        export interface WithdrawTokens
+          extends Torappu.Battle.Action.ActionNode {
           _switchToDeadState: System.Boolean;
           _force: System.Boolean;
           _needLog: System.Boolean;
@@ -21566,18 +21926,19 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckFirstRallyPointMode {
+        export interface CheckFirstRallyPointMode
+          extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface GainToken {
+        export interface GainToken extends Torappu.Battle.Action.ActionNode {
           _rechargeTiming: Torappu.Battle.Deck.Card.RechargeTiming;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface Knockback {
+        export interface Knockback extends Torappu.Battle.Action.ActionNode {
           TOO_CLOSE_TOLERANCE_SQR: System.Single;
           _useSourceDirection: System.Boolean;
           _decreaseForceLevelWhenNotInDirection: System.Int32;
@@ -21585,12 +21946,14 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface DragTowardSource {
+        export interface DragTowardSource
+          extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface EmitProjectile {
+        export interface EmitProjectile
+          extends Torappu.Battle.Action.ActionNode {
           _mountPoint: Torappu.Battle.Entity.MountPointType;
           _ev: Torappu.Battle.Projectile.Event;
           _actions: Torappu.Battle.Action.ActionNode[];
@@ -21602,7 +21965,8 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_GatherActionNodes: XLua.DelegateBridge;
         }
-        export interface EmitProjectileOnSourceRootTile {
+        export interface EmitProjectileOnSourceRootTile
+          extends Torappu.Battle.Action.ActionNode {
           _overwriteActions: System.Boolean;
           _ev: Torappu.Battle.Projectile.Event;
           _actions: Torappu.Battle.Action.ActionNode[];
@@ -21612,32 +21976,34 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_GatherActionNodes: XLua.DelegateBridge;
         }
-        export interface IsBlackboardZero {
+        export interface IsBlackboardZero
+          extends Torappu.Battle.Action.ActionNode {
           _var: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface IsBlackboardEqualWithString {
+        export interface IsBlackboardEqualWithString
+          extends Torappu.Battle.Action.ActionNode {
           _var: System.String;
           _compareValue: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface IfNot {
+        export interface IfNot extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_get_executeCondition: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface AlwaysNext {
+        export interface AlwaysNext extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_get_executeCondition: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface IfTarget {
+        export interface IfTarget extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _motionMask: Torappu.MotionMask;
           _checkTargetAlive: System.Boolean;
@@ -21647,7 +22013,8 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface IfTargetFromDirection {
+        export interface IfTargetFromDirection
+          extends Torappu.Battle.Action.ActionNode {
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _direction: Torappu.SharedConsts.Direction;
@@ -21656,7 +22023,8 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface IfDamageTargetSide {
+        export interface IfDamageTargetSide
+          extends Torappu.Battle.Action.ActionNode {
           _sideMask: Torappu.Battle.SideType;
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
@@ -21664,14 +22032,15 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckEntityEquals {
+        export interface CheckEntityEquals
+          extends Torappu.Battle.Action.ActionNode {
           _lhsType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _rhsType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckBlocked {
+        export interface CheckBlocked extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _checkBlockedBySource: System.Boolean;
           _checkBlockedBySourceToken: System.Boolean;
@@ -21680,54 +22049,62 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FilterAbilityFamily {
+        export interface FilterAbilityFamily
+          extends Torappu.Battle.Action.ActionNode {
           _familyGroupMask: Torappu.Battle.Ability.FamilyGroupMask;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface StartTimeline {
+        export interface StartTimeline
+          extends Torappu.Battle.Action.ActionNode {
           _timelineKey: System.String;
           // m_blackboardKey: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ConsumeTimeline {
+        export interface ConsumeTimeline
+          extends Torappu.Battle.Action.ActionNode {
           _timelineKey: System.String;
           // m_blackboardKey: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckIfDamageHasSharedFlags {
+        export interface CheckIfDamageHasSharedFlags
+          extends Torappu.Battle.Action.ActionNode {
           _sharedFlags: Torappu.Battle.Modifier.SharedFlagIndex;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FilterByTargetHpRatio {
+        export interface FilterByTargetHpRatio
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _condType: Torappu.CompareType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FilterByTargetHp {
+        export interface FilterByTargetHp
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _condType: Torappu.CompareType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FilterByTargetSpRatio {
+        export interface FilterByTargetSpRatio
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _condType: Torappu.CompareType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FilterByBuffStackCount {
+        export interface FilterByBuffStackCount
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _buffKey: System.String;
           _stackCount: System.Int32;
@@ -21738,7 +22115,8 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FilterByBlackboardValue {
+        export interface FilterByBlackboardValue
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _blackboardKey: System.String;
           _valueToCompare: System.Int32;
@@ -21748,14 +22126,16 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckManhattanDistance {
+        export interface CheckManhattanDistance
+          extends Torappu.Battle.Action.ActionNode {
           _minDist: System.Int32;
           _maxDist: System.Int32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckAbnormalFlag {
+        export interface CheckAbnormalFlag
+          extends Torappu.Battle.Action.ActionNode {
           _abnormalFlag: Torappu.AbnormalFlag;
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _isUnset: System.Boolean;
@@ -21763,7 +22143,8 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckAbnormalCombo {
+        export interface CheckAbnormalCombo
+          extends Torappu.Battle.Action.ActionNode {
           _abnormalCombo: Torappu.AbnormalCombo;
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _isUnset: System.Boolean;
@@ -21771,21 +22152,24 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckFilterTag {
+        export interface CheckFilterTag
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _filterTag: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckCharacterGroupTag {
+        export interface CheckCharacterGroupTag
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _groupTag: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckTargetInRange {
+        export interface CheckTargetInRange
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _soureceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _rangeId: System.String;
@@ -21793,14 +22177,16 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckHasEnemyInRange {
+        export interface CheckHasEnemyInRange
+          extends Torappu.Battle.Action.ActionNode {
           _soureceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _rangeId: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckContainsBuff {
+        export interface CheckContainsBuff
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _buffKeys: System.String[];
           isAND: System.Boolean;
@@ -21809,13 +22195,15 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckContainsDerviedBuff {
+        export interface CheckContainsDerviedBuff
+          extends Torappu.Battle.Action.ActionNode {
           _derviedBuffKey: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckCertainCharacterContainsBuff {
+        export interface CheckCertainCharacterContainsBuff
+          extends Torappu.Battle.Action.ActionNode {
           _targetKey: System.String;
           _buffKey: System.String;
           _loadFromBlackboard: System.Boolean;
@@ -21823,14 +22211,16 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckBuildableType {
+        export interface CheckBuildableType
+          extends Torappu.Battle.Action.ActionNode {
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           _buildableType: Torappu.BuildableType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface VertifyTarget {
+        export interface VertifyTarget
+          extends Torappu.Battle.Action.ActionNode {
           _source: Torappu.Battle.Action.Nodes.ActionTargetType;
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           _targetOptions: Torappu.Battle.TargetOptions;
@@ -21838,7 +22228,8 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckDirection {
+        export interface CheckDirection
+          extends Torappu.Battle.Action.ActionNode {
           _source: Torappu.Battle.Action.Nodes.ActionTargetType;
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           _judgeType: Torappu.Battle.Action.Nodes.CheckDirection.JudgeType;
@@ -21847,7 +22238,7 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0__GetDirectionVector: XLua.DelegateBridge;
         }
-        export interface IfElse {
+        export interface IfElse extends Torappu.Battle.Action.ActionNode {
           _conditionNode: Torappu.Battle.Action.ActionNode;
           _succeedNodes: Torappu.Battle.Action.ActionNode[];
           _failNodes: Torappu.Battle.Action.ActionNode[];
@@ -21856,14 +22247,16 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_GatherActionNodes: XLua.DelegateBridge;
         }
-        export interface FilterDeathReason {
+        export interface FilterDeathReason
+          extends Torappu.Battle.Action.ActionNode {
           _source: Torappu.Battle.Action.Nodes.ActionTargetType;
           _finishReason: Torappu.Battle.Entity.FinishReason;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface SwitchDirection {
+        export interface SwitchDirection
+          extends Torappu.Battle.Action.ActionNode {
           _source: Torappu.Battle.Action.Nodes.ActionTargetType;
           _direction: Torappu.SharedConsts.Direction;
           _useCustomDirection: System.Boolean;
@@ -21876,14 +22269,16 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_GatherActionNodes: XLua.DelegateBridge;
         }
-        export interface FilterByTargetMassLevel {
+        export interface FilterByTargetMassLevel
+          extends Torappu.Battle.Action.ActionNode {
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           _condType: Torappu.CompareType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FilterByTargetAttribute {
+        export interface FilterByTargetAttribute
+          extends Torappu.Battle.Action.ActionNode {
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           _condType: Torappu.CompareType;
           _attributeType: Torappu.AttributeType;
@@ -21891,7 +22286,8 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FilterDamageModifer {
+        export interface FilterDamageModifer
+          extends Torappu.Battle.Action.ActionNode {
           _filterAttackType: System.Boolean;
           _attackTypeFilter: Torappu.Battle.Modifier.SourceAttackType;
           _filterDamageType: System.Boolean;
@@ -21902,19 +22298,21 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckCost {
+        export interface CheckCost extends Torappu.Battle.Action.ActionNode {
           _compareType: Torappu.CompareType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FilterAbilityApplyWay {
+        export interface FilterAbilityApplyWay
+          extends Torappu.Battle.Action.ActionNode {
           _applyWayFilter: Torappu.Battle.Modifier.SourceApplyWay;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface HpRatioTrigger {
+        export interface HpRatioTrigger
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _condType: Torappu.CompareType;
           _hpRatioEachTime: System.Single;
@@ -21922,51 +22320,58 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckRemainTime {
+        export interface CheckRemainTime
+          extends Torappu.Battle.Action.ActionNode {
           _checkRemainTime: System.Single;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckBuildCnt {
+        export interface CheckBuildCnt
+          extends Torappu.Battle.Action.ActionNode {
           _checkBuildCnt: System.Int32;
           _condType: Torappu.CompareType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckUnitCurrentMode {
+        export interface CheckUnitCurrentMode
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _checkCurModeIndex: System.Int32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface IsCharacter {
+        export interface IsCharacter extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckEnemyUnbalanced {
+        export interface CheckEnemyUnbalanced
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckCharSkillAvailable {
+        export interface CheckCharSkillAvailable
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CheckCharSkillAffecting {
+        export interface CheckCharSkillAffecting
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CompareCharSkillAvailableCnt {
+        export interface CompareCharSkillAvailableCnt
+          extends Torappu.Battle.Action.ActionNode {
           _condType: Torappu.CompareType;
           _count: System.Int32;
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
@@ -21975,38 +22380,43 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface TriggerSkill {
+        export interface TriggerSkill extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface TriggerTokenSkill {
+        export interface TriggerTokenSkill
+          extends Torappu.Battle.Action.ActionNode {
           _hostType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface InterruptTokenSkill {
+        export interface InterruptTokenSkill
+          extends Torappu.Battle.Action.ActionNode {
           _hostType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface TriggerTokenSkillWithinManhattanDistance {
+        export interface TriggerTokenSkillWithinManhattanDistance
+          extends Torappu.Battle.Action.ActionNode {
           _hostType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface SwitchDynamicBuffTileMode {
+        export interface SwitchDynamicBuffTileMode
+          extends Torappu.Battle.Action.ActionNode {
           _operation: Torappu.Battle.Action.Nodes.SwitchDynamicBuffTileMode.Operation;
           // <>f__am$cache0: System.Func<System.Int32,System.Int32>;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CreateTileEffect {
+        export interface CreateTileEffect
+          extends Torappu.Battle.Action.ActionNode {
           _effectKey: System.String;
           _holdIt: System.Boolean;
           _verifyBeforeCreate: System.Boolean;
@@ -22014,19 +22424,21 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FinishTileHoldingEffect {
+        export interface FinishTileHoldingEffect
+          extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface BlinkNode {
+        export interface BlinkNode extends Torappu.Battle.Action.ActionNode {
           _toNextCheckpoint: System.Boolean;
           _useAnimSpeed: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface TriggerAbility {
+        export interface TriggerAbility
+          extends Torappu.Battle.Action.ActionNode {
           _ownerType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _abilityName: System.String;
@@ -22036,7 +22448,8 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface TriggerAbilityUseSelector {
+        export interface TriggerAbilityUseSelector
+          extends Torappu.Battle.Action.ActionNode {
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _abilityName: System.String;
@@ -22046,7 +22459,8 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface TriggerEnemySkill {
+        export interface TriggerEnemySkill
+          extends Torappu.Battle.Action.ActionNode {
           _skillName: System.String;
           _ownerType: Torappu.Battle.Action.Nodes.ActionTargetType;
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
@@ -22054,37 +22468,41 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface MoveNextLevelBranch {
+        export interface MoveNextLevelBranch
+          extends Torappu.Battle.Action.ActionNode {
           _isLoop: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface PickRandomBranchPhase {
+        export interface PickRandomBranchPhase
+          extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FinishCurrentWave {
+        export interface FinishCurrentWave
+          extends Torappu.Battle.Action.ActionNode {
           _trackSourceAtNextWave: System.Boolean;
           _sourceType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface DisableTrait {
+        export interface DisableTrait extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface EnableTrait {
+        export interface EnableTrait extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface LogExtraBattleInfo {
+        export interface LogExtraBattleInfo
+          extends Torappu.Battle.Action.ActionNode {
           _logType: Torappu.Battle.Action.Nodes.LogExtraBattleInfo.LogType;
           _key: System.String;
           _attributeType: Torappu.Battle.Action.Nodes.LogExtraBattleInfo.LogAttributeType;
@@ -22093,14 +22511,16 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ChangeMotionMode {
+        export interface ChangeMotionMode
+          extends Torappu.Battle.Action.ActionNode {
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           _resetToDefault: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ModifyAbilityBlackboardAndCast {
+        export interface ModifyAbilityBlackboardAndCast
+          extends Torappu.Battle.Action.ActionNode {
           _scaledByBuffGroupStackCount: System.Boolean;
           _blackboardKeys: System.String;
           _ability: System.String;
@@ -22109,13 +22529,13 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface PlayBGM {
+        export interface PlayBGM extends Torappu.Battle.Action.ActionNode {
           _needSourceStateRunning: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ShakeCamera {
+        export interface ShakeCamera extends Torappu.Battle.Action.ActionNode {
           _duration: System.Single;
           // _strength: UnityEngine.Vector3;
           _vibrato: System.Int32;
@@ -22124,26 +22544,30 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface MarkCurrentHpRatio {
+        export interface MarkCurrentHpRatio
+          extends Torappu.Battle.Action.ActionNode {
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           _markInBlackboard: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface RallyPointReborn {
+        export interface RallyPointReborn
+          extends Torappu.Battle.Action.ActionNode {
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ReleaseFromBlocker {
+        export interface ReleaseFromBlocker
+          extends Torappu.Battle.Action.ActionNode {
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface HasCertainCharacterInFrontOfMe {
+        export interface HasCertainCharacterInFrontOfMe
+          extends Torappu.Battle.Action.ActionNode {
           _characterKey: System.String;
           _source: Torappu.Battle.Action.Nodes.ActionTargetType;
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
@@ -22151,7 +22575,8 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface SummonEnemiesFollowMyRoute {
+        export interface SummonEnemiesFollowMyRoute
+          extends Torappu.Battle.Action.ActionNode {
           _source: Torappu.Battle.Action.Nodes.ActionTargetType;
           _enemyKey: System.String;
           _summonCount: System.Int32;
@@ -22167,25 +22592,29 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0__FindNearestPassableTile: XLua.DelegateBridge;
         }
-        export interface EnemyKillToken {
+        export interface EnemyKillToken
+          extends Torappu.Battle.Action.ActionNode {
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface EnemyHasValidToken {
+        export interface EnemyHasValidToken
+          extends Torappu.Battle.Action.ActionNode {
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CharacterHasValidToken {
+        export interface CharacterHasValidToken
+          extends Torappu.Battle.Action.ActionNode {
           _hostType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface SummonEnemyWithRuntimeRoute {
+        export interface SummonEnemyWithRuntimeRoute
+          extends Torappu.Battle.Action.ActionNode {
           _source: Torappu.Battle.Action.Nodes.ActionTargetType;
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           _enemyKey: System.String;
@@ -22198,26 +22627,30 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ClearCharacterSp {
+        export interface ClearCharacterSp
+          extends Torappu.Battle.Action.ActionNode {
           _charFrom: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0__ReduceSpToZero: XLua.DelegateBridge;
         }
-        export interface OnRallyPointLikeReborn {
+        export interface OnRallyPointLikeReborn
+          extends Torappu.Battle.Action.ActionNode {
           _targetType: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CreateCardFilterByProfession {
+        export interface CreateCardFilterByProfession
+          extends Torappu.Battle.Action.Nodes.BaseCreateCardBuff {
           _profession: Torappu.ProfessionCategory;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CreateCardBuffFilterByRarityAndProfession {
+        export interface CreateCardBuffFilterByRarityAndProfession
+          extends Torappu.Battle.Action.Nodes.BaseCreateCardBuff {
           _rarity: Torappu.RarityRankMask;
           _profession: Torappu.ProfessionCategory[];
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -22225,13 +22658,15 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface CreateCardBuff {
+        export interface CreateCardBuff
+          extends Torappu.Battle.Action.Nodes.BaseCreateCardBuff {
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface BaseCreateCardBuff {
+        export interface BaseCreateCardBuff
+          extends Torappu.Battle.Action.ActionNode {
           _lifeType: Torappu.Battle.Deck.Card.CardBuff.LifeType;
           _isRatio: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -22239,18 +22674,21 @@ export namespace Torappu {
           // __Hotfix0_Execute: XLua.DelegateBridge;
           // __Hotfix0_DoCreateCardBuff: XLua.DelegateBridge;
         }
-        export interface FinishCardBuff {
+        export interface FinishCardBuff
+          extends Torappu.Battle.Action.ActionNode {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FilterTargetBlackboardPlayerSide {
+        export interface FilterTargetBlackboardPlayerSide
+          extends Torappu.Battle.Action.ActionNode {
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FilterTargetWithPlayerSide {
+        export interface FilterTargetWithPlayerSide
+          extends Torappu.Battle.Action.ActionNode {
           _target: Torappu.Battle.Action.Nodes.ActionTargetType;
           filterMapLayer: System.Boolean;
           filterTargetPlayerSide: System.Boolean;
@@ -22258,19 +22696,21 @@ export namespace Torappu {
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface ForceCharacterAnimatorFaceFront {
+        export interface ForceCharacterAnimatorFaceFront
+          extends Torappu.Battle.Action.ActionNode {
           _FroceFaceFront: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface FilterAbilityValidCastTargetCnt {
+        export interface FilterAbilityValidCastTargetCnt
+          extends Torappu.Battle.Action.ActionNode {
           _condType: Torappu.CompareType;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
           // __Hotfix0_Execute: XLua.DelegateBridge;
         }
-        export interface LuaNode {
+        export interface LuaNode extends Torappu.Battle.Action.ActionNode {
           _luaActionName: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_allowedSource: XLua.DelegateBridge;
@@ -22349,19 +22789,25 @@ export namespace Torappu {
           _items: TPair[];
         }
         export namespace Nodes {
-          export interface OnEvent {}
-          export interface IfElse {
+          export interface OnEvent
+            extends Torappu.Battle.Action.TNodeAction.TNodeBase {}
+          export interface IfElse
+            extends Torappu.Battle.Action.TNodeAction.TNodeBase {
             onSuccess: Torappu.Battle.Action.TNodeAction.TNodeBase;
             onFail: Torappu.Battle.Action.TNodeAction.TNodeBase;
             condition: Torappu.Battle.Action.TNodeAction.TNodeBase;
           }
           export namespace OnEvent {
-            export interface OnEventTNodeData {
+            export interface OnEventTNodeData
+              extends Torappu.Battle.Action.TNodeAction.TNodeBase
+                .TNodeBaseData {
               _eventType: Torappu.Battle.Buff.Event;
             }
           }
           export namespace IfElse {
-            export interface IfElseTNodeData {}
+            export interface IfElseTNodeData
+              extends Torappu.Battle.Action.TNodeAction.TNodeBase
+                .TNodeBaseData {}
           }
         }
         export namespace TNodeBase {
@@ -22447,7 +22893,8 @@ export namespace Torappu {
       }
     }
     export namespace Abilities {
-      export interface AnimatedActionToOwnerAbility {
+      export interface AnimatedActionToOwnerAbility
+        extends Torappu.Battle.Abilities.AbstractAnimatedAbility {
         // _actions: ActionArray;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_GetProjectileActions: XLua.DelegateBridge;
@@ -22456,7 +22903,8 @@ export namespace Torappu {
         // __Hotfix0_GeneratePurposeMask: XLua.DelegateBridge;
         // __Hotfix0_GatherActionNodes: XLua.DelegateBridge;
       }
-      export interface AnimatedActionToTargetAbility {
+      export interface AnimatedActionToTargetAbility
+        extends Torappu.Battle.Abilities.AbstractAnimatedAbility {
         // _actions: ActionArray;
         _attackType: Torappu.Battle.Modifier.SourceAttackType;
         _useDynamicAttackType: System.Boolean;
@@ -22467,12 +22915,14 @@ export namespace Torappu {
         // __Hotfix0_GetEventActions: XLua.DelegateBridge;
         // __Hotfix0_GatherActionNodes: XLua.DelegateBridge;
       }
-      export interface EmptyAnimatedAbility {
+      export interface EmptyAnimatedAbility
+        extends Torappu.Battle.Abilities.AbstractAnimatedAbility {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_GetProjectileActions: XLua.DelegateBridge;
         // __Hotfix0_GetEventActions: XLua.DelegateBridge;
       }
-      export interface InstantActionToOwnerAbility {
+      export interface InstantActionToOwnerAbility
+        extends Torappu.Battle.EmptyAbility {
         // _actions: ActionArray;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_get_category: XLua.DelegateBridge;
@@ -22482,7 +22932,8 @@ export namespace Torappu {
         // __Hotfix0_GatherActionNodes: XLua.DelegateBridge;
         // __Hotfix0_OnSpellStart: XLua.DelegateBridge;
       }
-      export interface AbstractBasicAttack {
+      export interface AbstractBasicAttack
+        extends Torappu.Battle.Abilities.AbstractAnimatedAbility {
         _atkScale: System.Single;
         _attackType: Torappu.Battle.Modifier.SourceAttackType;
         _elementDamageType: Torappu.Battle.ElementType;
@@ -22505,7 +22956,8 @@ export namespace Torappu {
         // __Hotfix0_CheckIsDamageOrHealSource: XLua.DelegateBridge;
         // __Hotfix0_GeneratePurposeMask: XLua.DelegateBridge;
       }
-      export interface ChannelingMeleeAttack {
+      export interface ChannelingMeleeAttack
+        extends Torappu.Battle.Abilities.MeleeAttack {
         _triggerDelta: System.Single;
         _postDelayChecker: System.Single;
         _onlyTrigAudioSignalForFirstSpell: System.Boolean;
@@ -22522,7 +22974,8 @@ export namespace Torappu {
         // __Hotfix0_GetDuration: XLua.DelegateBridge;
         // __Hotfix0_OnCastStart: XLua.DelegateBridge;
       }
-      export interface MeleeAttack {
+      export interface MeleeAttack
+        extends Torappu.Battle.Abilities.AbstractBasicAttack {
         _damageType: Torappu.Battle.DamageType;
         _extraDamageType: Torappu.Battle.DamageType;
         _alwaysPutIncludeTargetFirst: System.Boolean;
@@ -22537,12 +22990,14 @@ export namespace Torappu {
         // __Hotfix0_DoSetData: XLua.DelegateBridge;
         // __Hotfix0_UpdateTargets: XLua.DelegateBridge;
       }
-      export interface MeleeAttackByDistance {
+      export interface MeleeAttackByDistance
+        extends Torappu.Battle.Abilities.MeleeAttack {
         _atkScaleByDistance: Torappu.Battle.Abilities.MeleeAttackByDistance.AtkScaleByDistConfig[];
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_CheckActiveBuffs: XLua.DelegateBridge;
       }
-      export interface MultiMeleeAttack {
+      export interface MultiMeleeAttack
+        extends Torappu.Battle.Abilities.MeleeAttack {
         _additionalTimes: System.Int32;
         _triggerDelta: System.Single;
         _waitAttackEventForAllAttacks: System.Boolean;
@@ -22571,7 +23026,8 @@ export namespace Torappu {
         // __Hotfix0_OnWaitForPreDelay: XLua.DelegateBridge;
         // __Hotfix0_OnWaitForTriggerDelta: XLua.DelegateBridge;
       }
-      export interface ChargeRangedAttack {
+      export interface ChargeRangedAttack
+        extends Torappu.Battle.Abilities.RangedAttack {
         _maxChargeTimes: System.Int32;
         _mountPointForProjectiles: System.Collections.Generic.List<Torappu.Battle.Entity.MountPointType>;
         // m_chargeTimes: System.Int32;
@@ -22599,11 +23055,13 @@ export namespace Torappu {
         // __Hotfix0_SetChargeTimes: XLua.DelegateBridge;
         // __Hotfix0_OnCastOnTarget: XLua.DelegateBridge;
       }
-      export interface CrossRangedAttack {
+      export interface CrossRangedAttack
+        extends Torappu.Battle.Abilities.RangedAttack {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_DoCastOnTargets: XLua.DelegateBridge;
       }
-      export interface DuoRangedAttack {
+      export interface DuoRangedAttack
+        extends Torappu.Battle.Abilities.RangedAttack {
         DUO_ATTACK_SPLIT_FACTOR: System.Int32;
         _duoProjectileKey: System.String;
         _duoMountPointType: Torappu.Battle.Entity.MountPointType;
@@ -22616,13 +23074,15 @@ export namespace Torappu {
         // __Hotfix0_CreateProjectile: XLua.DelegateBridge;
         // __Hotfix0_GatherProjectiles: XLua.DelegateBridge;
       }
-      export interface FunnelNormalAttack {
+      export interface FunnelNormalAttack
+        extends Torappu.Battle.Abilities.RangedAttack {
         // m_trait: Torappu.Battle.Abilities.CammouTrait;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_DoSetData: XLua.DelegateBridge;
         // __Hotfix0_OnCastOnTarget: XLua.DelegateBridge;
       }
-      export interface FunnelRemoteAttack {
+      export interface FunnelRemoteAttack
+        extends Torappu.Battle.Abilities.RangedAttack {
         _funnelAction: Torappu.Battle.Ability;
         // m_hasFireFunnel: System.Boolean;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -22634,7 +23094,8 @@ export namespace Torappu {
         // __Hotfix0__RecycleFunnel: XLua.DelegateBridge;
         // __Hotfix0_OnTick: XLua.DelegateBridge;
       }
-      export interface MultiChargeRangedAttack {
+      export interface MultiChargeRangedAttack
+        extends Torappu.Battle.Abilities.RangedAttack {
         _useChargeableGroup: System.Boolean;
         _chargeableGroup: Torappu.Battle.Abilities.AbilityChargeableGroup;
         _chargeAbility: Torappu.Battle.Abilities.ChargeRangedAttack;
@@ -22659,7 +23120,8 @@ export namespace Torappu {
         // __Hotfix0__CheckCanCharge: XLua.DelegateBridge;
         // __Hotfix0_CanAlwaysTrigger: XLua.DelegateBridge;
       }
-      export interface MultiRangedAttack {
+      export interface MultiRangedAttack
+        extends Torappu.Battle.Abilities.RangedAttack {
         _additionalTimes: System.Int32;
         _triggerDelta: System.Single;
         _waitAttackEventForAllAttacks: System.Boolean;
@@ -22697,7 +23159,8 @@ export namespace Torappu {
         // __Hotfix0_GetActiveBuffs: XLua.DelegateBridge;
         // __Hotfix0_CheckProjectileNameOnApplied: XLua.DelegateBridge;
       }
-      export interface RangedAttack {
+      export interface RangedAttack
+        extends Torappu.Battle.Abilities.AbstractBasicAttack {
         _projectileKey: System.String;
         _mountPointType: Torappu.Battle.Entity.MountPointType;
         _damageType: Torappu.Battle.DamageType;
@@ -22736,7 +23199,8 @@ export namespace Torappu {
         // __Hotfix0_OnPrefabUpdated: XLua.DelegateBridge;
         // __Hotfix0_OnAttackTimeChanged: XLua.DelegateBridge;
       }
-      export interface RangedAttackWithDoubleConfirm {
+      export interface RangedAttackWithDoubleConfirm
+        extends Torappu.Battle.Abilities.RangedAttack {
         // m_hasFirstConfirm: System.Boolean;
         // m_cachedPosition: System.Nullable<UnityEngine.Vector2>;
         _checkCanUseAbilityFlag: System.Boolean;
@@ -22747,14 +23211,16 @@ export namespace Torappu {
         // __Hotfix0_Reset: XLua.DelegateBridge;
         // __Hotfix0__ResetDoubleConfirm: XLua.DelegateBridge;
       }
-      export interface RangedAttackWithExtraActions {
+      export interface RangedAttackWithExtraActions
+        extends Torappu.Battle.Abilities.RangedAttack {
         _actionEvent: Torappu.Battle.Projectile.Event;
         // _actions: ActionArray;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_GetProjectileActions: XLua.DelegateBridge;
         // __Hotfix0_GatherActionNodes: XLua.DelegateBridge;
       }
-      export interface ActiveBuffAbility {
+      export interface ActiveBuffAbility
+        extends Torappu.Battle.Abilities.EasyToStartAbility {
         _buffs: Torappu.BuffData[];
         _waitForCasting: System.Boolean;
         _preDelay: System.Single;
@@ -22788,7 +23254,8 @@ export namespace Torappu {
         // __Hotfix0_OnTick: XLua.DelegateBridge;
         // __Hotfix0__CheckNotAllFinished: XLua.DelegateBridge;
       }
-      export interface ActiveOneOfBuffAbility {
+      export interface ActiveOneOfBuffAbility
+        extends Torappu.Battle.Abilities.ActiveBuffAbility {
         _extraBuffs: System.Collections.Generic.List<Torappu.Battle.Abilities.ActiveOneOfBuffAbility.BuffDataList>;
         // m_spellCnt: System.Int32;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -22796,7 +23263,8 @@ export namespace Torappu {
         // __Hotfix0_OnSpellStart: XLua.DelegateBridge;
         // __Hotfix0_Reset: XLua.DelegateBridge;
       }
-      export interface Heal {
+      export interface Heal
+        extends Torappu.Battle.Abilities.AbstractAnimatedAbility {
         _isCont: System.Boolean;
         _isHpRatio: System.Boolean;
         _hasNoActionNode: System.Boolean;
@@ -22815,7 +23283,7 @@ export namespace Torappu {
         // __Hotfix0_CheckIsDamageOrHealSource: XLua.DelegateBridge;
         // __Hotfix0_GeneratePurposeMask: XLua.DelegateBridge;
       }
-      export interface RangedHeal {
+      export interface RangedHeal extends Torappu.Battle.Abilities.Heal {
         _projectileKey: System.String;
         _useCachedAtkOnly: System.Boolean;
         _mountPointType: Torappu.Battle.Entity.MountPointType;
@@ -22828,7 +23296,8 @@ export namespace Torappu {
         // __Hotfix0_GatherProjectiles: XLua.DelegateBridge;
         // __Hotfix0_GetProjectileKey: XLua.DelegateBridge;
       }
-      export interface AbstractSpawnTokenOnTileAbility {
+      export interface AbstractSpawnTokenOnTileAbility
+        extends Torappu.Battle.Abilities.CastOnTileAbility {
         _applyWay: Torappu.Battle.Modifier.SourceApplyWay;
         // _actions: ActionArray;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -22837,7 +23306,8 @@ export namespace Torappu {
         // __Hotfix0_GetEventActions: XLua.DelegateBridge;
         // __Hotfix0_OnCastOnTile: XLua.DelegateBridge;
       }
-      export interface CastOnTileAbility {
+      export interface CastOnTileAbility
+        extends Torappu.Battle.Abilities.AbstractAnimatedAbility {
         _tileEffect: System.String;
         _startEffect: System.String;
         _faceToTile: System.Boolean;
@@ -22853,7 +23323,8 @@ export namespace Torappu {
         // __Hotfix0_DoCastOnTargets: XLua.DelegateBridge;
         // __Hotfix0_UpdateTargets: XLua.DelegateBridge;
       }
-      export interface ProjectileToTileAbility {
+      export interface ProjectileToTileAbility
+        extends Torappu.Battle.Abilities.CastOnTileAbility {
         _projectileKey: System.String;
         _mountPointType: Torappu.Battle.Entity.MountPointType;
         _damageType: Torappu.Battle.DamageType;
@@ -22881,12 +23352,14 @@ export namespace Torappu {
         // __Hotfix0_CheckIsDamageOrHealSource: XLua.DelegateBridge;
         // __Hotfix0__CheckProjectileValid: XLua.DelegateBridge;
       }
-      export interface SpawnTokenOnTileAbility {
+      export interface SpawnTokenOnTileAbility
+        extends Torappu.Battle.Abilities.AbstractSpawnTokenOnTileAbility {
         _tokenToSpawn: Torappu.CharacterInst;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_DoSpawnOnTile: XLua.DelegateBridge;
       }
-      export interface SpawnTokenOnTileByIDAbility {
+      export interface SpawnTokenOnTileByIDAbility
+        extends Torappu.Battle.Abilities.AbstractSpawnTokenOnTileAbility {
         _tokenId: System.String;
         _addBuffsIfOverlay: System.Boolean;
         _buffsToExistToken: Torappu.BuffData[];
@@ -22896,12 +23369,14 @@ export namespace Torappu {
         // __Hotfix0_get_addBuffsIfOverlay: XLua.DelegateBridge;
         // __Hotfix0_DoSpawnOnTile: XLua.DelegateBridge;
       }
-      export interface ProjectileToTileOnceAbility {
+      export interface ProjectileToTileOnceAbility
+        extends Torappu.Battle.Abilities.ProjectileToTileAbility {
         // m_cachedTiles: System.Collections.Generic.List<Torappu.Battle.Tile>;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_OnCastOnTile: XLua.DelegateBridge;
       }
-      export interface SummonEnemyToTileAbility {
+      export interface SummonEnemyToTileAbility
+        extends Torappu.Battle.Abilities.AbstractAnimatedAbility {
         _sourceSelector: Torappu.Battle.TargetSelector;
         _enemyKey: System.String;
         _motionMode: Torappu.MotionMode;
@@ -22922,7 +23397,8 @@ export namespace Torappu {
         // __Hotfix0_OnCastStart: XLua.DelegateBridge;
         // __Hotfix0_OnCastEnd: XLua.DelegateBridge;
       }
-      export interface AbilityChargeableGroup {
+      export interface AbilityChargeableGroup
+        extends Torappu.Battle.AbilityStandard {
         _maxChargeTimes: System.Int32;
         _abilities: Torappu.Battle.AbilityStandard[];
         _feedData: System.Boolean;
@@ -22959,7 +23435,8 @@ export namespace Torappu {
         // __Hotfix0_GetChargeTimes: XLua.DelegateBridge;
         // __Hotfix0_GetIsChargeAction: XLua.DelegateBridge;
       }
-      export interface AbilityFirstSucceedGroup {
+      export interface AbilityFirstSucceedGroup
+        extends Torappu.Battle.AbilityStandard {
         _category: Torappu.Battle.Ability.Category;
         _coolDownAbilityIndex: System.Int32;
         _clearInternalCooldownWhenFinish: System.Boolean;
@@ -22988,7 +23465,8 @@ export namespace Torappu {
         // __Hotfix0__OnSubAbilityFinished: XLua.DelegateBridge;
         // __Hotfix0_PreloadSpecialAudioSignals: XLua.DelegateBridge;
       }
-      export interface AbilityParallelGroup {
+      export interface AbilityParallelGroup
+        extends Torappu.Battle.AbilityStandard {
         _abilities: Torappu.Battle.Ability[];
         // m_category: Torappu.Battle.Ability.Category;
         // m_cooldown: Torappu.FP;
@@ -23022,7 +23500,8 @@ export namespace Torappu {
         // __Hotfix0_CheckAtPreCastPhase: XLua.DelegateBridge;
         // __Hotfix0_PreloadSpecialAudioSignals: XLua.DelegateBridge;
       }
-      export interface AbilityRandomGroup {
+      export interface AbilityRandomGroup
+        extends Torappu.Battle.AbilityStandard {
         _category: Torappu.Battle.Ability.Category;
         _coolDownAbilityIndex: System.Int32;
         _clearInternalCooldownWhenFinish: System.Boolean;
@@ -23063,7 +23542,8 @@ export namespace Torappu {
         // __Hotfix0_PreloadSpecialAudioSignals: XLua.DelegateBridge;
         // __Hotfix0_InterruptIfNot: XLua.DelegateBridge;
       }
-      export interface AbilitySequenceGroup {
+      export interface AbilitySequenceGroup
+        extends Torappu.Battle.AbilityStandard {
         MAX_CASTING_TIME: System.Int32;
         _abilities: Torappu.Battle.Ability[];
         _alwaysNext: System.Boolean;
@@ -23106,7 +23586,8 @@ export namespace Torappu {
         // __Hotfix0_StopAffect: XLua.DelegateBridge;
         // __Hotfix0_ResetCooldown: XLua.DelegateBridge;
       }
-      export interface AbstractAnimatedAbility {
+      export interface AbstractAnimatedAbility
+        extends Torappu.Battle.Abilities.EasyToStartAbility {
         MIN_ANIM_SCALE: System.Single;
         _selectTargetSource: Torappu.Battle.AbilityStandard.SelectTargetSource;
         _selectTargetTiming: Torappu.Battle.AbilityStandard.SelectTargetTiming;
@@ -23163,7 +23644,8 @@ export namespace Torappu {
         // __Hotfix0_CheckDownAttack: XLua.DelegateBridge;
         // __Hotfix0_CheckUpAttack: XLua.DelegateBridge;
       }
-      export interface ActiveAbilityWrapper {
+      export interface ActiveAbilityWrapper
+        extends Torappu.Battle.Abilities.EasyToStartAbility {
         _wrappedAbilities: Torappu.Battle.Ability[];
         _isInfinity: System.Boolean;
         _durationKey: System.String;
@@ -23188,7 +23670,8 @@ export namespace Torappu {
         // __Hotfix0_OnSpellStart: XLua.DelegateBridge;
         // __Hotfix0_OnCastEnd: XLua.DelegateBridge;
       }
-      export interface EasyToStartAbility {
+      export interface EasyToStartAbility
+        extends Torappu.Battle.AbilityStandard {
         _waitForAttackEvent: System.Boolean;
         _interuptIfTargetDead: System.Boolean;
         _resetCdStrategy: Torappu.Battle.Abilities.EasyToStartAbility.ResetCooldownStrategy;
@@ -23208,7 +23691,7 @@ export namespace Torappu {
         // __Hotfix0__CheckNotReceiveEvent: XLua.DelegateBridge;
         // __Hotfix0__CheckNotReceiveEventAndTargetAlive: XLua.DelegateBridge;
       }
-      export interface AuraAbility {
+      export interface AuraAbility extends Torappu.Battle.AbilityStandard {
         TRIGGER_TICK: System.Int32;
         _buffs: Torappu.BuffData[];
         _passiveBuffs: Torappu.BuffData[];
@@ -23257,7 +23740,8 @@ export namespace Torappu {
         // __Hotfix0_Awake: XLua.DelegateBridge;
         // __Hotfix0_OnTick: XLua.DelegateBridge;
       }
-      export interface AuraAttachmentAbility {
+      export interface AuraAttachmentAbility
+        extends Torappu.Battle.Abilities.AuraAbility {
         _additiveActiveBuffs: Torappu.BuffData[];
         _targetFamilyMask: Torappu.Battle.Ability.FamilyGroupMask;
         _attachTargetValidator: Torappu.Battle.TargetValidator;
@@ -23268,13 +23752,15 @@ export namespace Torappu {
         // __Hotfix0_DealTargetTouched: XLua.DelegateBridge;
         // __Hotfix0_DealTargetLeft: XLua.DelegateBridge;
       }
-      export interface AuraWithHostAsSourceAbility {
+      export interface AuraWithHostAsSourceAbility
+        extends Torappu.Battle.Abilities.AuraAbility {
         // m_host: Torappu.ObjectPtr<Torappu.Battle.Character>;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_DealTargetTouched: XLua.DelegateBridge;
         // __Hotfix0_DoAttach: XLua.DelegateBridge;
       }
-      export interface GlobalAuraAbility {
+      export interface GlobalAuraAbility
+        extends Torappu.Battle.AbilityStandard {
         TRIGGER_TICK: System.Int32;
         _targetValidator: Torappu.Battle.TargetValidator;
         _buffs: Torappu.BuffData[];
@@ -23314,7 +23800,8 @@ export namespace Torappu {
         // __Hotfix0_VerityTarget: XLua.DelegateBridge;
         // __Hotfix0_OnTick: XLua.DelegateBridge;
       }
-      export interface RandomAuraAbility {
+      export interface RandomAuraAbility
+        extends Torappu.Battle.Abilities.AuraAbility {
         _maxNum: System.Int32;
         // m_affectTargetNum: System.Int32;
         // m_pendingTargets: System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<Torappu.ObjectPtr<Torappu.Battle.Entity>,Torappu.Battle.Abilities.AuraAbility.TargetMeta>>;
@@ -23328,7 +23815,8 @@ export namespace Torappu {
         // __Hotfix0_DealTargetTouched: XLua.DelegateBridge;
         // __Hotfix0__DealWithPendingTask: XLua.DelegateBridge;
       }
-      export interface BlockAffectedPassiveBuffAbility {
+      export interface BlockAffectedPassiveBuffAbility
+        extends Torappu.Battle.Abilities.PassiveBuffAbility {
         // s_tmpBuffList: System.Collections.Generic.List<Torappu.ObjectPtr<Torappu.Battle.Buff>>;
         _blockAffectedBuffs: Torappu.BuffData[];
         // m_blockBuffMap: Torappu.ListDict<Torappu.ObjectPtr<Torappu.Battle.Entity>,Torappu.ObjectPtr<Torappu.Battle.Buff>[]>;
@@ -23338,7 +23826,8 @@ export namespace Torappu {
         // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         // __Hotfix0__HandleBlockAffectedBuffs: XLua.DelegateBridge;
       }
-      export interface GloballUniqueBuffAbility {
+      export interface GloballUniqueBuffAbility
+        extends Torappu.Battle.Abilities.AbstractAnimatedAbility {
         _uniqueBuff: Torappu.BuffData;
         // m_target: Torappu.ObjectPtr<Torappu.Battle.Entity>;
         // m_buff: Torappu.ObjectPtr<Torappu.Battle.Buff>;
@@ -23359,7 +23848,8 @@ export namespace Torappu {
         // __Hotfix0__DoAddBuff: XLua.DelegateBridge;
         // __Hotfix0__DoRemoveBuff: XLua.DelegateBridge;
       }
-      export interface PassiveAttachmentAbility {
+      export interface PassiveAttachmentAbility
+        extends Torappu.Battle.Abilities.PassiveBuffAbility {
         _additiveActiveBuffs: Torappu.BuffData[];
         _targetFamilyMask: Torappu.Battle.Ability.FamilyGroupMask;
         _targetValidator: Torappu.Battle.TargetValidator;
@@ -23372,7 +23862,8 @@ export namespace Torappu {
         // __Hotfix0_DoAttach: XLua.DelegateBridge;
         // __Hotfix0_DoDetach: XLua.DelegateBridge;
       }
-      export interface PassiveBuffAbility {
+      export interface PassiveBuffAbility
+        extends Torappu.Battle.AbilityStandard {
         _buffs: Torappu.BuffData[];
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_get_cooldown: XLua.DelegateBridge;
@@ -23386,7 +23877,8 @@ export namespace Torappu {
         // __Hotfix0_OnWaitForPreDelay: XLua.DelegateBridge;
         // __Hotfix0_OnWaitForPostDelay: XLua.DelegateBridge;
       }
-      export interface PassiveOneOfBuffAbility {
+      export interface PassiveOneOfBuffAbility
+        extends Torappu.Battle.Abilities.PassiveBuffAbility {
         _selectMethod: Torappu.Battle.Abilities.PassiveOneOfBuffAbility.SelectMethod;
         // m_attachCnt: System.Int32;
         // m_lastCastedBuffKey: System.String;
@@ -23395,7 +23887,8 @@ export namespace Torappu {
         // __Hotfix0_DoSetData: XLua.DelegateBridge;
         // __Hotfix0_GetPassiveBuffs: XLua.DelegateBridge;
       }
-      export interface AdjacentAllyToggleChecker {
+      export interface AdjacentAllyToggleChecker
+        extends Torappu.Battle.Abilities.ToggleablePassiveBuffAbility.Checker {
         _distanceType: Torappu.Battle.Abilities.AdjacentAllyToggleChecker.DistanceType;
         _minManhattan: System.Int32;
         _maxManhattan: System.Int32;
@@ -23405,13 +23898,15 @@ export namespace Torappu {
         _needProfessionMask: System.Boolean;
         _professionMask: Torappu.ProfessionCategory;
       }
-      export interface AdjacentTileToggleChecker {
+      export interface AdjacentTileToggleChecker
+        extends Torappu.Battle.Abilities.ToggleablePassiveBuffAbility.Checker {
         posList: Torappu.GridPosition[];
         _isLocalPosition: System.Boolean;
         _condition: Torappu.Battle.Abilities.AdjacentTileToggleChecker.TileCondition;
         // m_minCnt: System.Int32;
       }
-      export interface AdvancedCompoundToggleChecker {
+      export interface AdvancedCompoundToggleChecker
+        extends Torappu.Battle.Abilities.ToggleablePassiveBuffAbility.Checker {
         _isInitToggled: System.Boolean;
         _disableWhenAttack: System.Boolean;
         _disableWhenBlocked: System.Boolean;
@@ -23422,7 +23917,8 @@ export namespace Torappu {
         _restoreDelay: System.Single;
         // m_restoreDelay: System.Single;
       }
-      export interface BlockedToggleChecker {
+      export interface BlockedToggleChecker
+        extends Torappu.Battle.Abilities.ToggleablePassiveBuffAbility.Checker {
         _blockMinCnt: System.Int32;
         _blockMaxCnt: System.Int32;
         _useBlockAsMin: System.Boolean;
@@ -23432,36 +23928,42 @@ export namespace Torappu {
         // m_blockeeBuffList: Torappu.ListDict<Torappu.ObjectPtr<Torappu.Battle.Entity>,System.UInt32[]>;
         // m_unit: Torappu.Battle.Unit;
       }
-      export interface HpRatioToggleChecker {
+      export interface HpRatioToggleChecker
+        extends Torappu.Battle.Abilities.ToggleablePassiveBuffAbility.Checker {
         _minHpRatio: System.Single;
         _maxHpRatio: System.Single;
         _restoreDelay: System.Single;
         // m_maxHpRatio: System.Single;
         // m_restoreDelay: System.Single;
       }
-      export interface MapTagToggleChecker {
+      export interface MapTagToggleChecker
+        extends Torappu.Battle.Abilities.ToggleablePassiveBuffAbility.Checker {
         _oneOfTags: System.String[];
       }
-      export interface ProfessionCntToggleChecker {
+      export interface ProfessionCntToggleChecker
+        extends Torappu.Battle.Abilities.ToggleablePassiveBuffAbility.Checker {
         _professionMask: Torappu.ProfessionCategory;
         _minCount: System.Int32;
         _forceToggleFlag: System.Boolean;
         // m_conditionCount: System.Int32;
       }
-      export interface AirSupportReachExitChecker {
+      export interface AirSupportReachExitChecker
+        extends Torappu.Battle.Abilities.ToggleablePassiveBuffAbility.Checker {
         _isInitToggled: System.Boolean;
         _restoreDelay: System.Single;
         _toggleWhenReached: System.Boolean;
         // m_restoreDelay: System.Single;
       }
-      export interface ToggleableOnlyOncePassiveBuffAbility {
+      export interface ToggleableOnlyOncePassiveBuffAbility
+        extends Torappu.Battle.Abilities.ToggleablePassiveBuffAbility {
         // m_isTriggered: System.Boolean;
         // m_isTriggerFinished: System.Boolean;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_DoSetData: XLua.DelegateBridge;
         // __Hotfix0_OnToggleChanged: XLua.DelegateBridge;
       }
-      export interface ToggleablePassiveBuffAbility {
+      export interface ToggleablePassiveBuffAbility
+        extends Torappu.Battle.Abilities.PassiveBuffAbility {
         _checker: Torappu.Battle.Abilities.ToggleablePassiveBuffAbility.Checker;
         _unmanagedBuffsWhenToggleOn: Torappu.BuffData[];
         // m_toggled: System.Boolean;
@@ -23482,13 +23984,15 @@ export namespace Torappu {
         // __Hotfix0__SetToggledInternal: XLua.DelegateBridge;
         // __Hotfix0__UpdateNextActiveTime: XLua.DelegateBridge;
       }
-      export interface ToggleablePassiveWrapperAbility {
+      export interface ToggleablePassiveWrapperAbility
+        extends Torappu.Battle.Abilities.ToggleablePassiveBuffAbility {
         _passiveAbilities: Torappu.Battle.Ability[];
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_DoSetData: XLua.DelegateBridge;
         // __Hotfix0_OnToggleChanged: XLua.DelegateBridge;
       }
-      export interface TriggablePassiveAbility {
+      export interface TriggablePassiveAbility
+        extends Torappu.Battle.AbilityStandard {
         // _actions: ActionArray;
         _buffs: Torappu.BuffData[];
         _alwaysIncludeSelf: System.Boolean;
@@ -23507,13 +24011,15 @@ export namespace Torappu {
         // __Hotfix0_OnWaitForPostDelay: XLua.DelegateBridge;
         // __Hotfix0_OnTrigger: XLua.DelegateBridge;
       }
-      export interface TriggerWhenTakenDamageAbility {
+      export interface TriggerWhenTakenDamageAbility
+        extends Torappu.Battle.Abilities.TriggablePassiveAbility {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_OnAttached: XLua.DelegateBridge;
         // __Hotfix0_OnDetached: XLua.DelegateBridge;
         // __Hotfix0__OnTakeDamage: XLua.DelegateBridge;
       }
-      export interface BldskTalent_1 {
+      export interface BldskTalent_1
+        extends Torappu.Battle.Abilities.PassiveBuffAbility {
         _targetOptions: Torappu.Battle.TargetOptions;
         _selfBuff: Torappu.BuffData;
         _randomBuff: Torappu.BuffData;
@@ -23524,7 +24030,8 @@ export namespace Torappu {
         // __Hotfix0__OnTrigger: XLua.DelegateBridge;
         // __Hotfix0__OnUnitFinish: XLua.DelegateBridge;
       }
-      export interface BrownbTalent_1 {
+      export interface BrownbTalent_1
+        extends Torappu.Battle.Abilities.PassiveBuffAbility {
         _stackBuff: Torappu.BuffData;
         _targetFamilyMask: Torappu.Battle.Ability.FamilyGroupMask;
         _onlyApplyOnFirstSpell: System.Boolean;
@@ -23540,7 +24047,7 @@ export namespace Torappu {
         // __Hotfix0_OnAttached: XLua.DelegateBridge;
         // __Hotfix0_OnDetached: XLua.DelegateBridge;
       }
-      export interface BslimeTalent_1 {
+      export interface BslimeTalent_1 extends Torappu.Battle.AbilityStandard {
         _buffs: Torappu.BuffData[];
         // _projectileActions: ActionArray;
         _projectileBuffs: Torappu.BuffData[];
@@ -23557,7 +24064,8 @@ export namespace Torappu {
         // __Hotfix0_OnWaitForPreDelay: XLua.DelegateBridge;
         // __Hotfix0_OnWaitForPostDelay: XLua.DelegateBridge;
       }
-      export interface BsnakeScreenAttack {
+      export interface BsnakeScreenAttack
+        extends Torappu.Battle.Abilities.AbstractBasicAttack {
         _projectileKey: System.String;
         _damageType: Torappu.Battle.DamageType;
         _borderToPeel: System.Int32;
@@ -23574,7 +24082,7 @@ export namespace Torappu {
         // __Hotfix0_GatherProjectiles: XLua.DelegateBridge;
         // __Hotfix0_OnAttackTimeChanged: XLua.DelegateBridge;
       }
-      export interface BsnakeSummonHint {
+      export interface BsnakeSummonHint extends Torappu.Battle.AbilityStandard {
         _effectKey: System.String;
         _cancelBuffKey: System.String;
         // m_effectList: System.Collections.Generic.List<Torappu.Battle.Effects.Effect>;
@@ -23598,7 +24106,8 @@ export namespace Torappu {
         // __Hotfix0_CastToTarget: XLua.DelegateBridge;
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
       }
-      export interface CammouTrait {
+      export interface CammouTrait
+        extends Torappu.Battle.Abilities.PassiveBuffAbility {
         _initAtkScale: System.Single;
         _deltaAtkScale: System.Single;
         _maxAtkScale: System.Single;
@@ -23615,7 +24124,8 @@ export namespace Torappu {
         // __Hotfix0_SetFunnelAtkScale: XLua.DelegateBridge;
         // __Hotfix0_Reset: XLua.DelegateBridge;
       }
-      export interface NightmSkill_1 {
+      export interface NightmSkill_1
+        extends Torappu.Battle.Abilities.AbstractBasicAttack {
         _primaryOptions: Torappu.Battle.Abilities.NightmSkill_1.ProjectileOptions;
         _secondaryOptions: Torappu.Battle.Abilities.NightmSkill_1.ProjectileOptions;
         _secondarySelector: Torappu.Battle.TargetSelector;
@@ -23631,7 +24141,8 @@ export namespace Torappu {
         // __Hotfix0_OnCastOnTarget: XLua.DelegateBridge;
         // __Hotfix0__OnHitPrimaryTarget: XLua.DelegateBridge;
       }
-      export interface ActionToOwner {
+      export interface ActionToOwner
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _runActionOnEvent: Torappu.Battle.AbilityStandard.Event;
         // _actions: ActionArray;
         _onlyRunOnce: System.Boolean;
@@ -23642,13 +24153,15 @@ export namespace Torappu {
         // __Hotfix0_GatherActionNodes: XLua.DelegateBridge;
         // __Hotfix0__RunActions: XLua.DelegateBridge;
       }
-      export interface ExtraActions {
+      export interface ExtraActions
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         // _actions: ActionArray;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_OnCastOnTarget: XLua.DelegateBridge;
         // __Hotfix0_GatherActionNodes: XLua.DelegateBridge;
       }
-      export interface NoPreOneshotAnimation {
+      export interface NoPreOneshotAnimation
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _animWithPre: System.String;
         _animNoPre: System.String;
         _endAnim: System.String;
@@ -23663,7 +24176,8 @@ export namespace Torappu {
         // __Hotfix0_DoPlayAnimation: XLua.DelegateBridge;
         // __Hotfix0__ClearCoroutine: XLua.DelegateBridge;
       }
-      export interface ThreePartChannelingAnimation {
+      export interface ThreePartChannelingAnimation
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         MAX_CHANNELING_TIME: System.Single;
         _default: Torappu.Battle.Abilities.ThreePartChannelingAnimation.AnimationBundle;
         _overrideDownAnimation: System.Boolean;
@@ -23702,7 +24216,8 @@ export namespace Torappu {
         // __Hotfix0__OnReceiveAttackFinishEvent: XLua.DelegateBridge;
         // __Hotfix0__ClearCoroutine: XLua.DelegateBridge;
       }
-      export interface ThreePartOneshotAnimation {
+      export interface ThreePartOneshotAnimation
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _beginAnim: System.String;
         _oneshotAnim: System.String;
         _endAnim: System.String;
@@ -23729,13 +24244,15 @@ export namespace Torappu {
         // __Hotfix0__CheckDownAttack: XLua.DelegateBridge;
         // __Hotfix0__ClearCoroutine: XLua.DelegateBridge;
       }
-      export interface GlazeTalentAbilityTrigger {
+      export interface GlazeTalentAbilityTrigger
+        extends Torappu.Battle.Abilities.SelfAbilityTrigger {
         _buff: Torappu.BuffData;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_Preprocess: XLua.DelegateBridge;
         // __Hotfix0_ApplyAttackAction: XLua.DelegateBridge;
       }
-      export interface SelfAbilityTrigger {
+      export interface SelfAbilityTrigger
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _timing: Torappu.Battle.Abilities.SelfAbilityTrigger.TriggerTiming;
         _mask: Torappu.Battle.Ability.FamilyGroupMask;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -23745,13 +24262,15 @@ export namespace Torappu {
         // __Hotfix0_OnEvent: XLua.DelegateBridge;
         // __Hotfix0_Apply: XLua.DelegateBridge;
       }
-      export interface DuplicateBlackboardVar {
+      export interface DuplicateBlackboardVar
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _sourceVar: System.String;
         _targetVar: System.String;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_OnEvent: XLua.DelegateBridge;
       }
-      export interface SetAttributeAsDynamicVar {
+      export interface SetAttributeAsDynamicVar
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _attributeType: Torappu.AttributeType;
         _scaleVar: System.String;
         // m_nextEscapeTime: System.Single;
@@ -23761,7 +24280,8 @@ export namespace Torappu {
         // __Hotfix0_OnEvent: XLua.DelegateBridge;
         // __Hotfix0__UpdateDynamicVar: XLua.DelegateBridge;
       }
-      export interface BuffAfterAffecting {
+      export interface BuffAfterAffecting
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _buffs: Torappu.BuffData[];
         // m_waitForAffectingEnd: System.Boolean;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -23771,11 +24291,13 @@ export namespace Torappu {
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
         // __Hotfix0_OnTick: XLua.DelegateBridge;
       }
-      export interface BuffDuringCasting {
+      export interface BuffDuringCasting
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _buffs: Torappu.BuffData[];
         // m_buffUid: System.Collections.Generic.List<System.UInt32>;
       }
-      export interface BuffDuringCastingFixed {
+      export interface BuffDuringCastingFixed
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _buffs: Torappu.BuffData[];
         // m_buffUid: System.Collections.Generic.List<System.UInt32>;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -23786,7 +24308,8 @@ export namespace Torappu {
         // __Hotfix0__ClearBuffs: XLua.DelegateBridge;
         // __Hotfix0_OnEvent: XLua.DelegateBridge;
       }
-      export interface BuffToOwner {
+      export interface BuffToOwner
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _runActionOnEvent: Torappu.Battle.AbilityStandard.Event;
         _buffs: Torappu.BuffData[];
         _onlyRunOnce: System.Boolean;
@@ -23797,14 +24320,16 @@ export namespace Torappu {
         // __Hotfix0_OnEvent: XLua.DelegateBridge;
         // __Hotfix0__AddBuffs: XLua.DelegateBridge;
       }
-      export interface ExtraPassiveBuff {
+      export interface ExtraPassiveBuff
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _passiveBuffs: Torappu.BuffData[];
         // m_buffUids: System.Collections.Generic.List<System.UInt32>;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         // __Hotfix0_OnEvent: XLua.DelegateBridge;
       }
-      export interface AbilityEventCounter {
+      export interface AbilityEventCounter
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _countEvent: Torappu.Battle.AbilityStandard.Event;
         _triggerTimeCount: System.Int32;
         _resetAfterEnd: System.Boolean;
@@ -23823,7 +24348,8 @@ export namespace Torappu {
         // __Hotfix0_GetProgress: XLua.DelegateBridge;
         // __Hotfix0_DiscardRemainingCount: XLua.DelegateBridge;
       }
-      export interface BuffTriggerEventCounter {
+      export interface BuffTriggerEventCounter
+        extends Torappu.Battle.Abilities.AbilityEventCounter {
         _buffs: System.Collections.Generic.List<Torappu.BuffData>;
         // m_buffUid: System.Collections.Generic.List<System.UInt32>;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -23832,10 +24358,12 @@ export namespace Torappu {
         // __Hotfix0_OnCountReset: XLua.DelegateBridge;
         // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
       }
-      export interface AbstractEffectEmitter {
+      export interface AbstractEffectEmitter
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
       }
-      export interface ChannelingEffectEmitter {
+      export interface ChannelingEffectEmitter
+        extends Torappu.Battle.Abilities.AbstractEffectEmitter {
         _playOnEvent: Torappu.Battle.AbilityStandard.Event;
         _effect: System.String;
         _stopOnEvent: Torappu.Battle.AbilityStandard.Event;
@@ -23857,7 +24385,8 @@ export namespace Torappu {
         // __Hotfix0__StopEffectIfNot: XLua.DelegateBridge;
         // __Hotfix0__ClearEffectIfNot: XLua.DelegateBridge;
       }
-      export interface ChannelingEffectGroupEmitter {
+      export interface ChannelingEffectGroupEmitter
+        extends Torappu.Battle.Abilities.ChannelingEffectEmitter {
         _extraEventGroup: System.Collections.Generic.List<Torappu.Battle.Abilities.ChannelingEffectGroupEmitter.EventGroup>;
         // m_effectHolderDict: System.Collections.Generic.Dictionary<System.String,Torappu.ObjectPtr<Torappu.Battle.Effects.Effect>>;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -23872,7 +24401,8 @@ export namespace Torappu {
         // __Hotfix0__ClearEffectGroupIfNot: XLua.DelegateBridge;
         // __Hotfix0__ClearAllEffectGroupIfNot: XLua.DelegateBridge;
       }
-      export interface FunnelEffectEmitter {
+      export interface FunnelEffectEmitter
+        extends Torappu.Battle.Abilities.AbstractEffectEmitter {
         _idleEffect: System.String[];
         _disappearEffect: System.String[];
         _appearEffect: System.String[];
@@ -23883,7 +24413,8 @@ export namespace Torappu {
         // __Hotfix0_OnEvent: XLua.DelegateBridge;
         // __Hotfix0__PlayEffect: XLua.DelegateBridge;
       }
-      export interface MultiChargeUberEffectEmitter {
+      export interface MultiChargeUberEffectEmitter
+        extends Torappu.Battle.Abilities.UberEffectEmitter {
         _chargeEffectGroups: Torappu.Battle.Abilities.MultiChargeUberEffectEmitter.ChargeEffectGroup[];
         _chargeCastGroups: Torappu.Battle.Abilities.MultiChargeUberEffectEmitter.ChargeCastGroup[];
         // m_chargeAbility: Torappu.Battle.IMultiChargeUberEffectEmitterAbility;
@@ -23898,7 +24429,8 @@ export namespace Torappu {
         // __Hotfix0__IsInChargeAction: XLua.DelegateBridge;
         // __Hotfix0__CheckChargeIndexValid: XLua.DelegateBridge;
       }
-      export interface MultiHitUberEffectEmitter {
+      export interface MultiHitUberEffectEmitter
+        extends Torappu.Battle.Abilities.UberEffectEmitter {
         _hitGroups: Torappu.Battle.Abilities.MultiHitUberEffectEmitter.HitEffectGroup[];
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_Init: XLua.DelegateBridge;
@@ -23907,7 +24439,8 @@ export namespace Torappu {
         // __Hotfix0_OnCastOnTarget: XLua.DelegateBridge;
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
       }
-      export interface RangeEffectEmitter {
+      export interface RangeEffectEmitter
+        extends Torappu.Battle.Abilities.AbstractEffectEmitter {
         _playCastEffectOnEvent: Torappu.Battle.AbilityStandard.Event;
         _castEffects: System.String[];
         _stopCastEffectOnEvent: Torappu.Battle.AbilityStandard.Event;
@@ -23921,7 +24454,8 @@ export namespace Torappu {
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
         // __Hotfix0__ClearEffects: XLua.DelegateBridge;
       }
-      export interface ScreenEffectEmitter {
+      export interface ScreenEffectEmitter
+        extends Torappu.Battle.Abilities.AbstractEffectEmitter {
         _effect: System.String;
         _startEv: Torappu.Battle.AbilityStandard.Event;
         _endEv: Torappu.Battle.AbilityStandard.Event;
@@ -23931,7 +24465,8 @@ export namespace Torappu {
         // __Hotfix0__ClearEffect: XLua.DelegateBridge;
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
       }
-      export interface AirSupportLockEffectBehaviour {
+      export interface AirSupportLockEffectBehaviour
+        extends Torappu.Battle.Abilities.AbstractEffectEmitter {
         _tileEffect: System.String;
         // m_effectCreated: System.Boolean;
         // m_tileEffect: Torappu.Battle.Effects.Effect;
@@ -23942,7 +24477,8 @@ export namespace Torappu {
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
         // __Hotfix0__FinishEffect: XLua.DelegateBridge;
       }
-      export interface UberEffectEmitter {
+      export interface UberEffectEmitter
+        extends Torappu.Battle.Abilities.AbstractEffectEmitter {
         _hitEffects: Torappu.Battle.Abilities.UberEffectEmitter.HitEffectOptions[];
         _castEffects: Torappu.Battle.Abilities.UberEffectEmitter.CastEffectOptions[];
         _attachEffects: Torappu.Battle.Abilities.UberEffectEmitter.AttachEffectOptions[];
@@ -23963,13 +24499,15 @@ export namespace Torappu {
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
         // __Hotfix0__GatherEffects: XLua.DelegateBridge;
       }
-      export interface ExtraAbilities {
+      export interface ExtraAbilities
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _abilities: Torappu.Battle.Ability[];
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_SetData: XLua.DelegateBridge;
         // __Hotfix0_OnEvent: XLua.DelegateBridge;
       }
-      export interface LuaAbilityBehaviourStub {
+      export interface LuaAbilityBehaviourStub
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _luaBehaviourName: System.String;
         // m_luaBinding: Torappu.Battle.Abilities.LuaAbilityBehaviourStub.LuaBinding;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -23985,7 +24523,8 @@ export namespace Torappu {
         // __Hotfix0_UpdatePlaybackSpeed: XLua.DelegateBridge;
         // __Hotfix0_OnDestroy: XLua.DelegateBridge;
       }
-      export interface PauseEffectDuringCasting {
+      export interface PauseEffectDuringCasting
+        extends Torappu.Battle.Abilities.AbstractEffectEmitter {
         _effect: System.String;
         _startEv: Torappu.Battle.AbilityStandard.Event;
         _endEv: Torappu.Battle.AbilityStandard.Event;
@@ -23997,16 +24536,19 @@ export namespace Torappu {
         // __Hotfix0__OnUnpause: XLua.DelegateBridge;
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
       }
-      export interface SetAtkScaleAsHostBased {
+      export interface SetAtkScaleAsHostBased
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         // m_atkScale: System.Single;
       }
-      export interface SetAtkScaleAsHostBasedFixed {
+      export interface SetAtkScaleAsHostBasedFixed
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         // m_atkScale: System.Single;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_SetData: XLua.DelegateBridge;
         // __Hotfix0_OnEvent: XLua.DelegateBridge;
       }
-      export interface UpdateAtkScaleByLastCastTime {
+      export interface UpdateAtkScaleByLastCastTime
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _createNewNodeEachTime: System.Boolean;
         // m_minDeltaTime: Torappu.FP;
         // m_maxDeltaTime: Torappu.FP;
@@ -24019,7 +24561,8 @@ export namespace Torappu {
         // __Hotfix0_OnTick: XLua.DelegateBridge;
         // __Hotfix0__GetAtkScale: XLua.DelegateBridge;
       }
-      export interface UpdateAtkScaleByTraitData {
+      export interface UpdateAtkScaleByTraitData
+        extends Torappu.Battle.AbilityStandard.Behaviour {
         _defaultValue: System.Single;
         _overwrite: System.Boolean;
         // m_atkScale: System.Single;
@@ -24087,7 +24630,8 @@ export namespace Torappu {
         export interface TargetMeta {
           buffIds: System.Collections.Generic.List<System.UInt32>;
         }
-        export interface TargetEnterExitHandler {
+        export interface TargetEnterExitHandler
+          extends Torappu.Battle.MultiEnterExitHandler<Torappu.Battle.Entity> {
           // m_options: Torappu.Battle.Abilities.AuraAbility.TargetEnterExitHandler.Options;
           // m_invalidTarget: Torappu.ListSet<Torappu.ObjectPtr<Torappu.Battle.Entity>>;
           // m_triggerTicker: Torappu.PeriodicTicker;
@@ -24173,7 +24717,8 @@ export namespace Torappu {
         }
       }
       export namespace MultiChargeUberEffectEmitter {
-        export interface ChargeEffectOptions {
+        export interface ChargeEffectOptions
+          extends Torappu.Battle.Abilities.UberEffectEmitter.CastEffectOptions {
           // m_chargeEffects: System.Collections.Generic.List<Torappu.ObjectPtr<Torappu.Battle.Effects.Effect>>;
         }
         export interface ChargeEffectGroup {
@@ -24194,7 +24739,8 @@ export namespace Torappu {
           _effects: System.String[];
           // m_holder: Torappu.Battle.Abilities.UberEffectEmitter;
         }
-        export interface HitEffectOptions {
+        export interface HitEffectOptions
+          extends Torappu.Battle.Abilities.UberEffectEmitter.EffectOptions {
           _oneshot: System.Boolean;
           _endEvent: Torappu.Battle.AbilityStandard.Event;
           _onlyOnce: System.Boolean;
@@ -24203,7 +24749,8 @@ export namespace Torappu {
           // m_casted: System.Boolean;
           // m_effects: System.Collections.Generic.List<Torappu.ObjectPtr<Torappu.Battle.Effects.Effect>>;
         }
-        export interface CastEffectOptions {
+        export interface CastEffectOptions
+          extends Torappu.Battle.Abilities.UberEffectEmitter.EffectOptions {
           _oneshot: System.Boolean;
           _startEvent: Torappu.Battle.AbilityStandard.Event;
           _endEvent: Torappu.Battle.AbilityStandard.Event;
@@ -24213,13 +24760,17 @@ export namespace Torappu {
           // m_casted: System.Boolean;
           // m_effects: System.Collections.Generic.List<Torappu.ObjectPtr<Torappu.Battle.Effects.Effect>>;
         }
-        export interface AttachEffectOptions {
+        export interface AttachEffectOptions
+          extends Torappu.Battle.Abilities.UberEffectEmitter.EffectOptions {
           // m_effect: Torappu.ObjectPtr<Torappu.Battle.Effects.Effect>;
         }
-        export interface InputTargetEffectOptions {
+        export interface InputTargetEffectOptions
+          extends Torappu.Battle.Abilities.UberEffectEmitter.CastEffectOptions {
           _useInputPos: System.Boolean;
         }
-        export interface CastTargetEffectOptions {}
+        export interface CastTargetEffectOptions
+          extends Torappu.Battle.Abilities.UberEffectEmitter
+            .CastEffectOptions {}
         export namespace EffectOptions {
           export enum DirectionType {
             NONE = "NONE",
@@ -24549,12 +25100,16 @@ export namespace Torappu {
     }
     export namespace BattleLoader {}
     export namespace Buff {
-      export interface DoubleBufferedBuffList {
+      export interface DoubleBufferedBuffList
+        extends Torappu.DoubleBufferedList<
+          Torappu.ObjectPtr<Torappu.Battle.Buff>
+        > {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_ClearInvalidElementsIfNotLoop: XLua.DelegateBridge;
         // __Hotfix0_ClearWithWhiteList: XLua.DelegateBridge;
       }
-      export interface SortedDoubleBufferedBuffList {
+      export interface SortedDoubleBufferedBuffList
+        extends Torappu.Battle.Buff.DoubleBufferedBuffList {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_Add: XLua.DelegateBridge;
       }
@@ -24701,8 +25256,10 @@ export namespace Torappu {
         mainTarget: Torappu.Battle.Entity;
         atkScale: Torappu.FP;
       }
-      export interface ContextPtrStack<T> {}
-      export interface ContextValueStack<T> {}
+      export interface ContextPtrStack<T>
+        extends System.Collections.Generic.Stack<Torappu.ObjectPtr<T>> {}
+      export interface ContextValueStack<T>
+        extends System.Collections.Generic.Stack<T> {}
       export interface ChangeGuard {
         // m_context: Torappu.Battle.Context;
       }
@@ -24781,7 +25338,7 @@ export namespace Torappu {
         // __Hotfix0__PreprocessCharCost: XLua.DelegateBridge;
         // __Hotfix0__PreprocessDeckBuffs: XLua.DelegateBridge;
       }
-      export interface CharacterCard {
+      export interface CharacterCard extends Torappu.Battle.Deck.Card {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_get_isInfinity: XLua.DelegateBridge;
         // __Hotfix0_get_isFull: XLua.DelegateBridge;
@@ -24792,7 +25349,7 @@ export namespace Torappu {
         // __Hotfix0_CreateDummy: XLua.DelegateBridge;
         // __Hotfix0_CheckBuildable: XLua.DelegateBridge;
       }
-      export interface TokenCard {
+      export interface TokenCard extends Torappu.Battle.Deck.Card {
         // m_cardPolicy: Torappu.Battle.Deck.Card.CardPolicy;
         // m_hostIsAlive: System.Boolean;
         // m_spawnedCnt: System.Int32;
@@ -25256,20 +25813,29 @@ export namespace Torappu {
         // <data>k__BackingField: Torappu.RouteData.CheckpointData;
         // <cursor>k__BackingField: Torappu.Battle.BasicCursor;
       }
-      export interface PosRelatedCheckpoint {}
-      export interface MoveCheckpoint {
+      export interface PosRelatedCheckpoint
+        extends Torappu.Battle.BasicCursor.Checkpoint {}
+      export interface MoveCheckpoint
+        extends Torappu.Battle.BasicCursor.PosRelatedCheckpoint {
         // m_offset: UnityEngine.Vector2;
         // m_nextmap: Torappu.Battle.Route.Node[][];
       }
-      export interface DisappearCheckpoint {}
-      export interface AppearAtPosCheckpoint {}
-      export interface WaitForSecondsCheckpoint {
+      export interface DisappearCheckpoint
+        extends Torappu.Battle.BasicCursor.Checkpoint {}
+      export interface AppearAtPosCheckpoint
+        extends Torappu.Battle.BasicCursor.PosRelatedCheckpoint {}
+      export interface WaitForSecondsCheckpoint
+        extends Torappu.Battle.BasicCursor.Checkpoint {
         // m_time: Torappu.FP;
       }
-      export interface WaitForPlayTimeCheckpoint {}
-      export interface WaitCurrentWaveTimeCheckpoint {}
-      export interface WaitCurrentFragmentTimeCheckpoint {}
-      export interface AlertCheckpoint {}
+      export interface WaitForPlayTimeCheckpoint
+        extends Torappu.Battle.BasicCursor.Checkpoint {}
+      export interface WaitCurrentWaveTimeCheckpoint
+        extends Torappu.Battle.BasicCursor.Checkpoint {}
+      export interface WaitCurrentFragmentTimeCheckpoint
+        extends Torappu.Battle.BasicCursor.Checkpoint {}
+      export interface AlertCheckpoint
+        extends Torappu.Battle.BasicCursor.Checkpoint {}
     }
     export namespace Route {
       export interface Node {
@@ -25283,17 +25849,20 @@ export namespace Torappu {
       }
     }
     export namespace MapThemeFactory {
-      export interface DefaultThemeController {
+      export interface DefaultThemeController
+        extends Torappu.Battle.MapThemeController {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_OnInit: XLua.DelegateBridge;
       }
-      export interface WaterThemeController {
+      export interface WaterThemeController
+        extends Torappu.Battle.MapThemeController {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_OnInit: XLua.DelegateBridge;
       }
     }
     export namespace Tiles {
-      export interface UniformRandomTrigger {
+      export interface UniformRandomTrigger
+        extends Torappu.Battle.Tile.Behaviour {
         BLACKBOARD_KEY_CD_MIN: System.String;
         BLACKBOARD_KEY_CD_MAX: System.String;
         _preDelay: System.Single;
@@ -25301,7 +25870,7 @@ export namespace Torappu {
         // m_minCd: System.Single;
         // m_maxCd: System.Single;
       }
-      export interface MeshTileGraphic {
+      export interface MeshTileGraphic extends Torappu.Battle.TileGraphic {
         BUILDABLE_MATERIAL_KEY: System.String;
         FOCUSED_MATERIAL_KEY: System.String;
         TWEEN_LOOP_TIME: System.Single;
@@ -25315,7 +25884,7 @@ export namespace Torappu {
         // m_tween: DG.Tweening.Tween;
         // <>f__am$cache0: DG.Tweening.Core.DOGetter<System.Single>;
       }
-      export interface SpriteTileGraphic {
+      export interface SpriteTileGraphic extends Torappu.Battle.TileGraphic {
         // _sprite: UnityEngine.SpriteRenderer;
         // _buildableColor: UnityEngine.Color;
         // _focusColor: UnityEngine.Color;
@@ -25397,7 +25966,8 @@ export namespace Torappu {
       }
     }
     export namespace Projectiles {
-      export interface BounceHitBehaviour {
+      export interface BounceHitBehaviour
+        extends Torappu.Battle.Projectiles.SelectorHitBehaviour {
         // m_bounceTimes: System.Int32;
         _bounceTimesAsDamageTimes: System.Boolean;
         _perDamageInterval: System.Single;
@@ -25411,7 +25981,8 @@ export namespace Torappu {
         // __Hotfix0_Init: XLua.DelegateBridge;
         // __Hotfix0_DoSelectTargetToHit: XLua.DelegateBridge;
       }
-      export interface ChainLightningEffectBehaviour {
+      export interface ChainLightningEffectBehaviour
+        extends Torappu.Battle.Projectile.Behaviour {
         _mainEffect: System.String;
         _playSpecialEffectOnFirstOne: System.Boolean;
         _specialHitEffect: System.String;
@@ -25429,7 +26000,8 @@ export namespace Torappu {
         // __Hotfix0_PlayLineEffect: XLua.DelegateBridge;
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
       }
-      export interface ChainLightningHitBehaviour {
+      export interface ChainLightningHitBehaviour
+        extends Torappu.Battle.Projectiles.SelectorHitBehaviour {
         _atkScale: System.Single;
         _useChainPrefix: System.Boolean;
         _playChainEffectAndAudioAfterSelectTarget: System.Boolean;
@@ -25444,12 +26016,14 @@ export namespace Torappu {
         // __Hotfix0_OnProjectileReached: XLua.DelegateBridge;
         // __Hotfix0_PlayChainAudio: XLua.DelegateBridge;
       }
-      export interface ClearTrailRenderer {
+      export interface ClearTrailRenderer
+        extends Torappu.Battle.Projectile.Behaviour {
         // m_trailRenderers: UnityEngine.TrailRenderer[];
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_OnProjectileStop: XLua.DelegateBridge;
       }
-      export interface EffectBehaviour {
+      export interface EffectBehaviour
+        extends Torappu.Battle.Projectile.Behaviour {
         _effectsWhenReached: System.String[];
         _effectsWhenHit: System.String[];
         _effectsToTargetWhenStart: System.String[];
@@ -25476,7 +26050,8 @@ export namespace Torappu {
         // __Hotfix0_OnHitTarget: XLua.DelegateBridge;
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
       }
-      export interface FunnelHitbehaviour {
+      export interface FunnelHitbehaviour
+        extends Torappu.Battle.Projectile.Behaviour {
         _targetOptions: Torappu.Battle.TargetOptions;
         _waitFirstPeriod: System.Boolean;
         // m_periodTimer: Torappu.PeriodicTimer;
@@ -25489,7 +26064,8 @@ export namespace Torappu {
         // __Hotfix0_OnAttackTimeChanged: XLua.DelegateBridge;
         // __Hotfix0__CheckProjectileInValid: XLua.DelegateBridge;
       }
-      export interface HarpoonRenderer {
+      export interface HarpoonRenderer
+        extends Torappu.Battle.Projectile.Behaviour {
         _mainEffect: System.String;
         _throwEffect: System.Boolean;
         // m_mainEffect: Torappu.ObjectPtr<Torappu.Battle.Effects.Effect>;
@@ -25502,7 +26078,8 @@ export namespace Torappu {
         // __Hotfix0_OnTick: XLua.DelegateBridge;
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
       }
-      export interface HitBehaviour {
+      export interface HitBehaviour
+        extends Torappu.Battle.Projectile.Behaviour {
         // s_sharedList: System.Collections.Generic.List<Torappu.Battle.Entity>;
         _targetOptions: Torappu.Battle.TargetOptions;
         _goThroughWall: System.Boolean;
@@ -25525,7 +26102,8 @@ export namespace Torappu {
         // __Hotfix0_OnTriggerExit2D: XLua.DelegateBridge;
         // __Hotfix0_ClearStaticMethods: XLua.DelegateBridge;
       }
-      export interface LaserHitBehaviour {
+      export interface LaserHitBehaviour
+        extends Torappu.Battle.Projectile.Behaviour {
         _overridePurposeMaskWithTargetOptions: System.Boolean;
         _targetOptions: Torappu.Battle.TargetOptions;
         _exceptTraceTarget: System.Boolean;
@@ -25543,14 +26121,16 @@ export namespace Torappu {
         // __Hotfix0_OnTriggerEnter2D: XLua.DelegateBridge;
         // __Hotfix0_OnTriggerExit2D: XLua.DelegateBridge;
       }
-      export interface MultiHitBehaviour {
+      export interface MultiHitBehaviour
+        extends Torappu.Battle.Projectiles.HitBehaviour {
         _hitAfterReached: System.Boolean;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0__DoTargetStay: XLua.DelegateBridge;
         // __Hotfix0_OnTriggerStay2D: XLua.DelegateBridge;
         // __Hotfix0_DealHitTarget: XLua.DelegateBridge;
       }
-      export interface ScaleableHitBehaviour {
+      export interface ScaleableHitBehaviour
+        extends Torappu.Battle.Projectiles.HitBehaviour {
         _applyExtraAtkScale: System.Boolean;
         _atkScale: System.Single;
         // m_atkScale: System.Single;
@@ -25559,7 +26139,8 @@ export namespace Torappu {
         // __Hotfix0_DealHitTarget: XLua.DelegateBridge;
         // __Hotfix0_OnBeforeHitTarget: XLua.DelegateBridge;
       }
-      export interface ScatteredProjectileHitBehaviour {
+      export interface ScatteredProjectileHitBehaviour
+        extends Torappu.Battle.Projectiles.SelectorHitBehaviour {
         _projectileKey: System.String;
         // m_useHookProjectile: System.Boolean;
         // m_logicProjectileKey: System.String;
@@ -25573,12 +26154,14 @@ export namespace Torappu {
         // __Hotfix0_EmitScatteredProjectile: XLua.DelegateBridge;
         // __Hotfix0_DoSelectTargetToHit: XLua.DelegateBridge;
       }
-      export interface SelectorForceHitBehaviour {
+      export interface SelectorForceHitBehaviour
+        extends Torappu.Battle.Projectiles.SelectorHitBehaviour {
         _forceHit: System.Boolean;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_DoSelectTargetToHit: XLua.DelegateBridge;
       }
-      export interface SelectorHitBehaviour {
+      export interface SelectorHitBehaviour
+        extends Torappu.Battle.Projectile.Behaviour {
         _selector: Torappu.Battle.TargetSelector;
         _interval: System.Single;
         _waitFirstPeriod: System.Boolean;
@@ -25598,13 +26181,15 @@ export namespace Torappu {
         // __Hotfix0_DealHitTarget: XLua.DelegateBridge;
         // __Hotfix0_DoSelectTargetToHit: XLua.DelegateBridge;
       }
-      export interface SnsantChangeForceBehaviour {
+      export interface SnsantChangeForceBehaviour
+        extends Torappu.Battle.Projectile.Behaviour {
         _tag: System.String;
         // m_deltaForceLevel: System.Int32;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_Init: XLua.DelegateBridge;
       }
-      export interface SnsantSkill2ProjectileEffectBehaviour {
+      export interface SnsantSkill2ProjectileEffectBehaviour
+        extends Torappu.Battle.Projectile.Behaviour {
         _effectsWhenReached: System.String[];
         _movingEffectsWhenReached: System.String;
         _harpoonEffect: System.String;
@@ -25631,11 +26216,13 @@ export namespace Torappu {
         // __Hotfix0__DoEffectMovement: XLua.DelegateBridge;
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
       }
-      export interface TileSelectorHitBehaviour {
+      export interface TileSelectorHitBehaviour
+        extends Torappu.Battle.Projectiles.SelectorHitBehaviour {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_DoSelectTargetToHit: XLua.DelegateBridge;
       }
-      export interface VortexMultiHitBehaviour {
+      export interface VortexMultiHitBehaviour
+        extends Torappu.Battle.Projectiles.SelectorHitBehaviour {
         _pullDuration: System.Single;
         _castEffect: System.String;
         // m_pullForceLevel: System.Int32;
@@ -25649,7 +26236,7 @@ export namespace Torappu {
         // __Hotfix0_Init: XLua.DelegateBridge;
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
       }
-      export interface AdvancedMovement {
+      export interface AdvancedMovement extends Torappu.Battle.BasicMovement {
         _moveType: Torappu.Battle.Projectiles.AdvancedMovement.MoveType;
         _speed: System.Single;
         _distance: System.Single;
@@ -25680,7 +26267,8 @@ export namespace Torappu {
         // __Hotfix0_Comeback: XLua.DelegateBridge;
         // __Hotfix0_CheckStartTick: XLua.DelegateBridge;
       }
-      export interface AdvancedMovementWithRandomBodyOffset {
+      export interface AdvancedMovementWithRandomBodyOffset
+        extends Torappu.Battle.Projectiles.AdvancedMovement {
         // _randomRange: UnityEngine.Vector3;
         // m_randomTargetOffset: UnityEngine.Vector3;
         // m_bodyMapPosition: UnityEngine.Vector3;
@@ -25691,7 +26279,8 @@ export namespace Torappu {
         // __Hotfix0_OnInit: XLua.DelegateBridge;
         // __Hotfix0_OnTick: XLua.DelegateBridge;
       }
-      export interface AmiyaDefaultMovement {
+      export interface AmiyaDefaultMovement
+        extends Torappu.Battle.BasicMovement {
         MIN_FULL_HEIGHT: System.Single;
         _startDistance: System.Single;
         _zOffset: System.Single;
@@ -25704,7 +26293,7 @@ export namespace Torappu {
         // __Hotfix0_OnInit: XLua.DelegateBridge;
         // __Hotfix0_OnTick: XLua.DelegateBridge;
       }
-      export interface AmiyaS2Movement {
+      export interface AmiyaS2Movement extends Torappu.Battle.BasicMovement {
         MIN_FULL_HEIGHT: System.Single;
         _startDistance: System.Single;
         _zOffset: System.Single;
@@ -25721,7 +26310,7 @@ export namespace Torappu {
         // __Hotfix0_OnTick: XLua.DelegateBridge;
         // __Hotfix0__UpdateBodyAnimation: XLua.DelegateBridge;
       }
-      export interface AttachToTarget {
+      export interface AttachToTarget extends Torappu.Battle.BasicMovement {
         _keepUpdate: System.Boolean;
         _attachToMountPoint: System.Boolean;
         _mountPointType: Torappu.Battle.Entity.MountPointType;
@@ -25745,7 +26334,8 @@ export namespace Torappu {
         // __Hotfix0_OnProjectileStop: XLua.DelegateBridge;
         // __Hotfix0_CheckStartTick: XLua.DelegateBridge;
       }
-      export interface BombdMovement {
+      export interface BombdMovement
+        extends Torappu.Battle.Projectiles.AdvancedMovement {
         _fallingTime: System.Single;
         _fallingSpeed: System.Single;
         // m_fallingTime: System.Single;
@@ -25754,7 +26344,8 @@ export namespace Torappu {
         // __Hotfix0_OnInit: XLua.DelegateBridge;
         // __Hotfix0_OnTick: XLua.DelegateBridge;
       }
-      export interface BouncedAdvancedMovement {
+      export interface BouncedAdvancedMovement
+        extends Torappu.Battle.Projectiles.AdvancedMovement {
         _speedAfterFirstReach: System.Single;
         // m_firstReachFlag: System.Boolean;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -25765,7 +26356,8 @@ export namespace Torappu {
         // __Hotfix0_OnInit: XLua.DelegateBridge;
         // __Hotfix0_OnProjectileStop: XLua.DelegateBridge;
       }
-      export interface FarthestPointMovement {
+      export interface FarthestPointMovement
+        extends Torappu.Battle.Projectiles.AdvancedMovement {
         _targetHeightType: Torappu.Battle.Projectiles.FarthestPointMovement.TargetHeightType;
         _useStartDirection: System.Boolean;
         _useTargetDirection: System.Boolean;
@@ -25776,7 +26368,7 @@ export namespace Torappu {
         // __Hotfix0_OnInit: XLua.DelegateBridge;
         // __Hotfix0__SetTargetPosAndDirection: XLua.DelegateBridge;
       }
-      export interface HarpoonMovement {
+      export interface HarpoonMovement extends Torappu.Battle.BasicMovement {
         _speed: System.Single;
         _acceleration: System.Single;
         // m_speed: System.Single;
@@ -25785,12 +26377,13 @@ export namespace Torappu {
         // __Hotfix0_OnTick: XLua.DelegateBridge;
         // __Hotfix0__UpdateSpeed: XLua.DelegateBridge;
       }
-      export interface NearestHighlandWallBottomMovement {
+      export interface NearestHighlandWallBottomMovement
+        extends Torappu.Battle.Projectiles.ParacurveMovement {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_OnInit: XLua.DelegateBridge;
         // __Hotfix0__SetTargetPos: XLua.DelegateBridge;
       }
-      export interface NetCatcherMovement {
+      export interface NetCatcherMovement extends Torappu.Battle.BasicMovement {
         _speed: System.Single;
         _acceleration: System.Single;
         // m_speed: System.Single;
@@ -25800,7 +26393,7 @@ export namespace Torappu {
         // __Hotfix0__UpdateSpeed: XLua.DelegateBridge;
         // __Hotfix0__GetAdsorptionPosition: XLua.DelegateBridge;
       }
-      export interface ParacurveMovement {
+      export interface ParacurveMovement extends Torappu.Battle.BasicMovement {
         MIN_FULL_HEIGHT: System.Single;
         DIRECTION_ZERO_TOLERANCE: System.Single;
         TOO_CLOSE_THRESHOLD: System.Single;
@@ -25897,8 +26490,13 @@ export namespace Torappu {
         // <blackboard>k__BackingField: Torappu.Blackboard;
         // <projectile>k__BackingField: Torappu.Battle.Projectile;
       }
-      export interface EventToActionPair {}
-      export interface EventToActionMap {}
+      export interface EventToActionPair
+        extends Torappu.ActionKV<Torappu.Battle.Projectile.Event> {}
+      export interface EventToActionMap
+        extends Torappu.ActionDict<
+          Torappu.Battle.Projectile.Event,
+          Torappu.Battle.Projectile.EventToActionPair
+        > {}
     }
     export namespace BattleAudioLoader {}
     export namespace ResourceCollector {}
@@ -25950,7 +26548,8 @@ export namespace Torappu {
         // __Hotfix0_DoPreProcess: XLua.DelegateBridge;
         // __Hotfix0_Preprocess: XLua.DelegateBridge;
       }
-      export interface BasicCharacterRelic {
+      export interface BasicCharacterRelic
+        extends Torappu.Battle.Roguelike.BasicRelic {
         // m_professionCategory: Torappu.ProfessionCategory;
         // m_buildableMask: Torappu.BuildableType;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -25959,7 +26558,8 @@ export namespace Torappu {
         // __Hotfix0__Verify: XLua.DelegateBridge;
         // __Hotfix0_Preprocess: XLua.DelegateBridge;
       }
-      export interface BasicEnemyRelic {
+      export interface BasicEnemyRelic
+        extends Torappu.Battle.Roguelike.BasicRelic {
         BOSS_KEY: System.String;
         // m_checkIsBoss: System.Boolean;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -25985,69 +26585,84 @@ export namespace Torappu {
         }
       }
       export namespace Internal {
-        export interface BasicLevelRelic {
+        export interface BasicLevelRelic
+          extends Torappu.Battle.Roguelike.BasicRelic {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_relicType: XLua.DelegateBridge;
         }
-        export interface LCharacterLimitAdd {
+        export interface LCharacterLimitAdd
+          extends Torappu.Battle.Roguelike.Internal.BasicLevelRelic {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_Preprocess: XLua.DelegateBridge;
         }
-        export interface LInitCostAdd {
+        export interface LInitCostAdd
+          extends Torappu.Battle.Roguelike.Internal.BasicLevelRelic {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_Preprocess: XLua.DelegateBridge;
         }
-        export interface LMaxLifePointAdd {
+        export interface LMaxLifePointAdd
+          extends Torappu.Battle.Roguelike.Internal.BasicLevelRelic {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_Preprocess: XLua.DelegateBridge;
         }
-        export interface CAttributeAdd {
+        export interface CAttributeAdd
+          extends Torappu.Battle.Roguelike.BasicCharacterRelic {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_DoPreProcess: XLua.DelegateBridge;
         }
-        export interface CAttributeMul {
+        export interface CAttributeMul
+          extends Torappu.Battle.Roguelike.BasicCharacterRelic {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_DoPreProcess: XLua.DelegateBridge;
         }
-        export interface CDynamicAbilityNew {
+        export interface CDynamicAbilityNew
+          extends Torappu.Battle.Roguelike.BasicCharacterRelic {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_DoPreProcess: XLua.DelegateBridge;
         }
-        export interface CSkillCostMul {
+        export interface CSkillCostMul
+          extends Torappu.Battle.Roguelike.BasicCharacterRelic {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_DoPreProcess: XLua.DelegateBridge;
         }
-        export interface CSquadAttributeMul {
+        export interface CSquadAttributeMul
+          extends Torappu.Battle.Roguelike.BasicCharacterRelic {
           // m_cnt: System.Int32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnInit: XLua.DelegateBridge;
           // __Hotfix0_DoPreProcess: XLua.DelegateBridge;
         }
-        export interface CSquadAttributeAdd {
+        export interface CSquadAttributeAdd
+          extends Torappu.Battle.Roguelike.BasicCharacterRelic {
           // m_cnt: System.Int32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnInit: XLua.DelegateBridge;
           // __Hotfix0_DoPreProcess: XLua.DelegateBridge;
         }
-        export interface EAttributeMul {
+        export interface EAttributeMul
+          extends Torappu.Battle.Roguelike.BasicEnemyRelic {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_DoPreProcess: XLua.DelegateBridge;
         }
-        export interface EAttributeAdd {
+        export interface EAttributeAdd
+          extends Torappu.Battle.Roguelike.BasicEnemyRelic {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_DoPreProcess: XLua.DelegateBridge;
         }
-        export interface GBuffNormal {
+        export interface GBuffNormal
+          extends Torappu.Battle.Roguelike.BasicRelic {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_relicType: XLua.DelegateBridge;
           // __Hotfix0_Preprocess: XLua.DelegateBridge;
         }
-        export interface GBuffStack {
+        export interface GBuffStack
+          extends Torappu.Battle.Roguelike.BasicRelic {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_relicType: XLua.DelegateBridge;
           // __Hotfix0_Preprocess: XLua.DelegateBridge;
         }
-        export interface GBuffStackBaseOne {
+        export interface GBuffStackBaseOne
+          extends Torappu.Battle.Roguelike.BasicRelic {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_relicType: XLua.DelegateBridge;
           // __Hotfix0_Preprocess: XLua.DelegateBridge;
@@ -26097,57 +26712,99 @@ export namespace Torappu {
         }
       }
       export namespace Internal {
-        export interface BasicLevelRune {}
-        export interface LInitCostAdd {}
-        export interface LCostIncreaseTimeMul {}
-        export interface LMaxLifePointSet {}
-        export interface LCharacterLimitAdd {}
-        export interface LForbidLocation {}
-        export interface LGlobalBuffNew {}
-        export interface LGlobalBuffMul {}
-        export interface LGlobalBuffAdd {}
-        export interface LHiddenGroupEnable {}
-        export interface LHiddenGroupDisable {}
-        export interface LPredefinesInstEnable {}
-        export interface LEnemyKeyReplace {}
-        export interface BasicCharacterRune {}
-        export interface CAttributesMul {}
-        export interface CAttributesAdd {}
-        export interface CCostMul {}
-        export interface CCostAdd {}
-        export interface CRespawnTimeMul {}
-        export interface CRespawnTimeAdd {}
-        export interface CExcludedFromBattle {}
-        export interface CDeckCardNumLimit {
+        export interface BasicLevelRune extends Torappu.Battle.Runes.Rune {}
+        export interface LInitCostAdd
+          extends Torappu.Battle.Runes.Internal.BasicLevelRune {}
+        export interface LCostIncreaseTimeMul
+          extends Torappu.Battle.Runes.Internal.BasicLevelRune {}
+        export interface LMaxLifePointSet
+          extends Torappu.Battle.Runes.Internal.BasicLevelRune {}
+        export interface LCharacterLimitAdd
+          extends Torappu.Battle.Runes.Internal.BasicLevelRune {}
+        export interface LForbidLocation
+          extends Torappu.Battle.Runes.Internal.BasicLevelRune {}
+        export interface LGlobalBuffNew
+          extends Torappu.Battle.Runes.Internal.BasicLevelRune {}
+        export interface LGlobalBuffMul
+          extends Torappu.Battle.Runes.Internal.BasicLevelRune {}
+        export interface LGlobalBuffAdd
+          extends Torappu.Battle.Runes.Internal.BasicLevelRune {}
+        export interface LHiddenGroupEnable
+          extends Torappu.Battle.Runes.Internal.BasicLevelRune {}
+        export interface LHiddenGroupDisable
+          extends Torappu.Battle.Runes.Internal.BasicLevelRune {}
+        export interface LPredefinesInstEnable
+          extends Torappu.Battle.Runes.Internal.BasicLevelRune {}
+        export interface LEnemyKeyReplace
+          extends Torappu.Battle.Runes.Internal.BasicLevelRune {}
+        export interface BasicCharacterRune extends Torappu.Battle.Runes.Rune {}
+        export interface CAttributesMul
+          extends Torappu.Battle.Runes.Internal.BasicCharacterRune {}
+        export interface CAttributesAdd
+          extends Torappu.Battle.Runes.Internal.BasicCharacterRune {}
+        export interface CCostMul
+          extends Torappu.Battle.Runes.Internal.BasicCharacterRune {}
+        export interface CCostAdd
+          extends Torappu.Battle.Runes.Internal.BasicCharacterRune {}
+        export interface CRespawnTimeMul
+          extends Torappu.Battle.Runes.Internal.BasicCharacterRune {}
+        export interface CRespawnTimeAdd
+          extends Torappu.Battle.Runes.Internal.BasicCharacterRune {}
+        export interface CExcludedFromBattle
+          extends Torappu.Battle.Runes.Internal.BasicCharacterRune {}
+        export interface CDeckCardNumLimit
+          extends Torappu.Battle.Runes.Internal.BasicCharacterRune {
           // m_visitCounter: System.Int32;
           // m_limitNum: System.Int32;
         }
-        export interface CTokenInitialCntAdd {}
-        export interface CSkillCdMul {}
-        export interface CSkillCdAdd {}
-        export interface CSkillBlackboardAdd {}
-        export interface CSkillBlackboardMul {}
-        export interface CBlockCntAdd {}
-        export interface BasicEnemyRune {}
-        export interface BasicEnemySkillRune {}
-        export interface EAttribuesMul {}
-        export interface EAttribuesAdd {}
-        export interface EAttackRangeMul {}
-        export interface EMassLevelAdd {}
-        export interface ETalentBlackboardMul {}
-        export interface ETalentBlackboardAdd {}
-        export interface EDynamicAbilityNew {}
-        export interface ESkillRangeMul {}
-        export interface ESkillCdMul {}
-        export interface ESkillInitCdMul {}
-        export interface ESkillInitCdAdd {}
-        export interface ESkillBlackboardMul {}
-        export interface ESkillBlackboardAdd {}
-        export interface BasicMapRune {
+        export interface CTokenInitialCntAdd
+          extends Torappu.Battle.Runes.Internal.BasicCharacterRune {}
+        export interface CSkillCdMul
+          extends Torappu.Battle.Runes.Internal.BasicCharacterRune {}
+        export interface CSkillCdAdd
+          extends Torappu.Battle.Runes.Internal.BasicCharacterRune {}
+        export interface CSkillBlackboardAdd
+          extends Torappu.Battle.Runes.Internal.BasicCharacterRune {}
+        export interface CSkillBlackboardMul
+          extends Torappu.Battle.Runes.Internal.BasicCharacterRune {}
+        export interface CBlockCntAdd
+          extends Torappu.Battle.Runes.Internal.BasicCharacterRune {}
+        export interface BasicEnemyRune extends Torappu.Battle.Runes.Rune {}
+        export interface BasicEnemySkillRune
+          extends Torappu.Battle.Runes.Internal.BasicEnemyRune {}
+        export interface EAttribuesMul
+          extends Torappu.Battle.Runes.Internal.BasicEnemyRune {}
+        export interface EAttribuesAdd
+          extends Torappu.Battle.Runes.Internal.BasicEnemyRune {}
+        export interface EAttackRangeMul
+          extends Torappu.Battle.Runes.Internal.BasicEnemyRune {}
+        export interface EMassLevelAdd
+          extends Torappu.Battle.Runes.Internal.BasicEnemyRune {}
+        export interface ETalentBlackboardMul
+          extends Torappu.Battle.Runes.Internal.BasicEnemyRune {}
+        export interface ETalentBlackboardAdd
+          extends Torappu.Battle.Runes.Internal.BasicEnemyRune {}
+        export interface EDynamicAbilityNew
+          extends Torappu.Battle.Runes.Internal.BasicEnemyRune {}
+        export interface ESkillRangeMul
+          extends Torappu.Battle.Runes.Internal.BasicEnemySkillRune {}
+        export interface ESkillCdMul
+          extends Torappu.Battle.Runes.Internal.BasicEnemySkillRune {}
+        export interface ESkillInitCdMul
+          extends Torappu.Battle.Runes.Internal.BasicEnemySkillRune {}
+        export interface ESkillInitCdAdd
+          extends Torappu.Battle.Runes.Internal.BasicEnemySkillRune {}
+        export interface ESkillBlackboardMul
+          extends Torappu.Battle.Runes.Internal.BasicEnemySkillRune {}
+        export interface ESkillBlackboardAdd
+          extends Torappu.Battle.Runes.Internal.BasicEnemySkillRune {}
+        export interface BasicMapRune extends Torappu.Battle.Runes.Rune {
           // m_locationList: System.Collections.Generic.List<Torappu.GridPosition>;
         }
-        export interface MTileBlackboardMul {}
-        export interface MTileBlackboardAdd {}
+        export interface MTileBlackboardMul
+          extends Torappu.Battle.Runes.Internal.BasicMapRune {}
+        export interface MTileBlackboardAdd
+          extends Torappu.Battle.Runes.Internal.BasicMapRune {}
       }
     }
     export namespace Scheduler {
@@ -26193,7 +26850,8 @@ export namespace Torappu {
       }
     }
     export namespace Skills {
-      export interface BuffAfterSkill {
+      export interface BuffAfterSkill
+        extends Torappu.Battle.BasicSkill.Behaviour {
         _buffs: Torappu.BuffData[];
         // m_waitForSkillEnd: System.Boolean;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -26202,7 +26860,8 @@ export namespace Torappu {
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
         // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
       }
-      export interface BuffDuringSkill {
+      export interface BuffDuringSkill
+        extends Torappu.Battle.BasicSkill.Behaviour {
         _buffs: Torappu.BuffData[];
         // m_buffUid: System.Collections.Generic.List<System.UInt32>;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -26212,7 +26871,8 @@ export namespace Torappu {
         // __Hotfix0_GatherBuffs: XLua.DelegateBridge;
         // __Hotfix0__ClearBuffs: XLua.DelegateBridge;
       }
-      export interface SkillSubTalents {
+      export interface SkillSubTalents
+        extends Torappu.Battle.BasicSkill.Behaviour {
         // m_talents: Torappu.Battle.ConstrainedTalent[];
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_PostprocessData: XLua.DelegateBridge;
@@ -26223,7 +26883,8 @@ export namespace Torappu {
         // __Hotfix0__InactivateSubTalent: XLua.DelegateBridge;
         // __Hotfix0_Awake: XLua.DelegateBridge;
       }
-      export interface SpScaleAfterSkillCast {
+      export interface SpScaleAfterSkillCast
+        extends Torappu.Battle.BasicSkill.Behaviour {
         _spScale: System.Int32;
         // m_spScaleCnt: System.Int32;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -26245,7 +26906,7 @@ export namespace Torappu {
         selector: Torappu.Battle.DeckSelector;
         minCntToTrig: System.Int32;
       }
-      export interface DeckBuffModifier {
+      export interface DeckBuffModifier extends Torappu.Battle.DeckModifier {
         // m_deckBuffs: System.Collections.Generic.IList<Torappu.Battle.DeckBuff>;
         // m_options: Torappu.Battle.DeckBuffTalent.Options;
         // m_isTriggered: System.Boolean;
@@ -26256,7 +26917,8 @@ export namespace Torappu {
         selector: Torappu.Battle.DeckSelector;
         minCntToTrig: System.Int32;
       }
-      export interface DecklikeRuntimeCostModifier {
+      export interface DecklikeRuntimeCostModifier
+        extends Torappu.Battle.Deck.Card.RuntimeCostModifier {
         // m_sourceCard: Torappu.Battle.Deck.Card;
         // m_costDelta: System.Int32;
         // m_options: Torappu.Battle.DecklikeRuntimeCostTalent.Options;
@@ -26264,24 +26926,28 @@ export namespace Torappu {
       }
     }
     export namespace DeckTalentToAddCardCost {
-      export interface DeckModifierToAddCardCost {
+      export interface DeckModifierToAddCardCost
+        extends Torappu.Battle.DeckModifier {
         // m_selector: Torappu.Battle.DeckSelector;
         // m_cost: System.Int32;
       }
     }
     export namespace DeckTalentToAddMaxCost {
-      export interface DeckModifierToAddMaxCost {
+      export interface DeckModifierToAddMaxCost
+        extends Torappu.Battle.DeckModifier {
         // m_cost: System.Int32;
       }
     }
     export namespace DeckTalentToModifyHealScaleByCost {
-      export interface DeckModifierToModifyHealScaleByCost {
+      export interface DeckModifierToModifyHealScaleByCost
+        extends Torappu.Battle.DeckModifier {
         // m_deckBuffs: System.Collections.Generic.IList<Torappu.Battle.DeckBuff>;
         // m_maxCost: System.Int32;
       }
     }
     export namespace DeckTalentToModifyRespawnMaxMultiplier {
-      export interface DeckModifierToModifyRespawnMaxMultiplier {
+      export interface DeckModifierToModifyRespawnMaxMultiplier
+        extends Torappu.Battle.DeckModifier {
         // m_selector: Torappu.Battle.DeckSelector;
         // m_maxMultiplier: Torappu.FP;
       }
@@ -26455,10 +27121,16 @@ export namespace Torappu {
         export interface Blackboard {
           // <owner>k__BackingField: Torappu.Battle.Character;
         }
-        export interface BasicState {
+        export interface BasicState
+          extends Torappu.HierachyStateMachine.StateNode<
+            Torappu.Battle.Character.States.State,
+            Torappu.Battle.Character,
+            Torappu.Battle.Character.States.Blackboard
+          > {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
         }
-        export interface BornState {
+        export interface BornState
+          extends Torappu.Battle.Character.States.BasicState {
           // m_remainingTime: Torappu.FP;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnEnter: XLua.DelegateBridge;
@@ -26466,12 +27138,14 @@ export namespace Torappu {
           // __Hotfix0_OnExit: XLua.DelegateBridge;
           // __Hotfix0__OnLocate: XLua.DelegateBridge;
         }
-        export interface IdleState {
+        export interface IdleState
+          extends Torappu.Battle.Character.States.BasicState {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnEnter: XLua.DelegateBridge;
           // __Hotfix0_OnTick: XLua.DelegateBridge;
         }
-        export interface CombatState {
+        export interface CombatState
+          extends Torappu.Battle.Character.States.BasicState {
           // m_nextEscapeTime: Torappu.FP;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnEnter: XLua.DelegateBridge;
@@ -26482,7 +27156,8 @@ export namespace Torappu {
           // __Hotfix0__FetchTarget: XLua.DelegateBridge;
           // __Hotfix0__GetTarget: XLua.DelegateBridge;
         }
-        export interface DeadState {
+        export interface DeadState
+          extends Torappu.Battle.Character.States.BasicState {
           // m_tween: DG.Tweening.Tween;
           // <>f__am$cache0: DG.Tweening.Core.DOGetter<System.Single>;
           // <>f__am$cache1: DG.Tweening.Core.DOSetter<System.Single>;
@@ -26494,7 +27169,8 @@ export namespace Torappu {
           // __Hotfix0_CheckSwitchOut: XLua.DelegateBridge;
           // __Hotfix0__PlayAnimation: XLua.DelegateBridge;
         }
-        export interface AttackState {
+        export interface AttackState
+          extends Torappu.Battle.Character.States.BasicState {
           // m_nextEscapeTime: Torappu.FP;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnEnter: XLua.DelegateBridge;
@@ -26505,7 +27181,8 @@ export namespace Torappu {
           // __Hotfix0__GetTarget: XLua.DelegateBridge;
           // __Hotfix0__CheckSwitchToCombat: XLua.DelegateBridge;
         }
-        export interface SkillState {
+        export interface SkillState
+          extends Torappu.Battle.Character.States.BasicState {
           // m_remainingEscapeTime: Torappu.FP;
           // m_coroutine: Torappu.Battle.CoroutineId;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -26516,18 +27193,21 @@ export namespace Torappu {
           // __Hotfix0__PlayBeginAnimation: XLua.DelegateBridge;
           // __Hotfix0__DoStartSkill: XLua.DelegateBridge;
         }
-        export interface StunState {
+        export interface StunState
+          extends Torappu.Battle.Character.States.BasicState {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnEnter: XLua.DelegateBridge;
           // __Hotfix0_OnTick: XLua.DelegateBridge;
           // __Hotfix0_OnExit: XLua.DelegateBridge;
           // __Hotfix0_CheckSwitchOut: XLua.DelegateBridge;
         }
-        export interface DisappearState {
+        export interface DisappearState
+          extends Torappu.Battle.Character.States.BasicState {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnTick: XLua.DelegateBridge;
         }
-        export interface FreezeState {
+        export interface FreezeState
+          extends Torappu.Battle.Character.States.BasicState {
           animatorState: Torappu.Battle.UnitAnimator.CurrentAniState;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_attributeMask: XLua.DelegateBridge;
@@ -26595,14 +27275,25 @@ export namespace Torappu {
           // m_blinkUseAnimTime: System.Boolean;
           // <owner>k__BackingField: Torappu.Battle.Enemy;
         }
-        export interface EnemyStateMachine {
+        export interface EnemyStateMachine
+          extends Torappu.HierachyStateMachine<
+            Torappu.Battle.Enemy.States.State,
+            Torappu.Battle.Enemy,
+            Torappu.Battle.Enemy.States.Blackboard
+          > {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnTick: XLua.DelegateBridge;
         }
-        export interface BasicState {
+        export interface BasicState
+          extends Torappu.HierachyStateMachine.StateNode<
+            Torappu.Battle.Enemy.States.State,
+            Torappu.Battle.Enemy,
+            Torappu.Battle.Enemy.States.Blackboard
+          > {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
         }
-        export interface BornState {
+        export interface BornState
+          extends Torappu.Battle.Enemy.States.BasicState {
           BORN_ANIMATION_TIME: System.Single;
           // m_remainingTime: Torappu.FP;
           // m_effect: Torappu.ObjectPtr<Torappu.Battle.Effects.Effect>;
@@ -26613,7 +27304,8 @@ export namespace Torappu {
           // __Hotfix0_OnTick: XLua.DelegateBridge;
           // __Hotfix0__PlayAnimation: XLua.DelegateBridge;
         }
-        export interface MoveState {
+        export interface MoveState
+          extends Torappu.Battle.Enemy.States.BasicState {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_isHanging: XLua.DelegateBridge;
           // __Hotfix0_set_isHanging: XLua.DelegateBridge;
@@ -26622,13 +27314,15 @@ export namespace Torappu {
           // __Hotfix0_OnTick: XLua.DelegateBridge;
           // __Hotfix0_UpdateMoveAnimation: XLua.DelegateBridge;
         }
-        export interface AttackState {
+        export interface AttackState
+          extends Torappu.Battle.Enemy.States.BasicState {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnEnter: XLua.DelegateBridge;
           // __Hotfix0_OnTick: XLua.DelegateBridge;
           // __Hotfix0_OnExit: XLua.DelegateBridge;
         }
-        export interface DeadState {
+        export interface DeadState
+          extends Torappu.Battle.Enemy.States.BasicState {
           // m_tween: DG.Tweening.Tween;
           // <>f__am$cache0: DG.Tweening.Core.DOGetter<System.Single>;
           // <>f__am$cache1: DG.Tweening.Core.DOSetter<System.Single>;
@@ -26640,7 +27334,8 @@ export namespace Torappu {
           // __Hotfix0_CheckSwitchOut: XLua.DelegateBridge;
           // __Hotfix0__PlayAnimation: XLua.DelegateBridge;
         }
-        export interface ReachExitState {
+        export interface ReachExitState
+          extends Torappu.Battle.Enemy.States.BasicState {
           // m_tween: DG.Tweening.Tween;
           // <>f__am$cache0: DG.Tweening.Core.DOGetter<System.Single>;
           // <>f__am$cache1: DG.Tweening.Core.DOGetter<System.Single>;
@@ -26650,19 +27345,22 @@ export namespace Torappu {
           // __Hotfix0_CheckSwitchOut: XLua.DelegateBridge;
           // __Hotfix0__PlayAnimation: XLua.DelegateBridge;
         }
-        export interface CombatState {
+        export interface CombatState
+          extends Torappu.Battle.Enemy.States.BasicState {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnEnter: XLua.DelegateBridge;
           // __Hotfix0_OnTick: XLua.DelegateBridge;
           // __Hotfix0_OnExit: XLua.DelegateBridge;
         }
-        export interface StunState {
+        export interface StunState
+          extends Torappu.Battle.Enemy.States.BasicState {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnEnter: XLua.DelegateBridge;
           // __Hotfix0_OnTick: XLua.DelegateBridge;
           // __Hotfix0_CheckSwitchOut: XLua.DelegateBridge;
         }
-        export interface UnbalanceState {
+        export interface UnbalanceState
+          extends Torappu.Battle.Enemy.States.BasicState {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_get_attributeMask: XLua.DelegateBridge;
           // __Hotfix0_get_abnormalFlagMask: XLua.DelegateBridge;
@@ -26677,7 +27375,8 @@ export namespace Torappu {
           // __Hotfix0__UpdateFriction: XLua.DelegateBridge;
           // __Hotfix0__UpdatePullSources: XLua.DelegateBridge;
         }
-        export interface FallDownState {
+        export interface FallDownState
+          extends Torappu.Battle.Enemy.States.BasicState {
           FALLDOWN_TIME: System.Single;
           FALLDOWN_HEIGHT_OFFSET: System.Single;
           FALLDOWN_SHRINK_SCALE: System.Single;
@@ -26691,7 +27390,8 @@ export namespace Torappu {
           // __Hotfix0_CheckSwitchOut: XLua.DelegateBridge;
           // __Hotfix0__PlayAnimation: XLua.DelegateBridge;
         }
-        export interface DisappearState {
+        export interface DisappearState
+          extends Torappu.Battle.Enemy.States.BasicState {
           DISAPPEAR_TIME: System.Single;
           APPEAR_TIME: System.Single;
           // m_coroutine: Torappu.Battle.CoroutineId;
@@ -26711,7 +27411,8 @@ export namespace Torappu {
           // __Hotfix0__DoDisappear: XLua.DelegateBridge;
           // __Hotfix0__DoAppear: XLua.DelegateBridge;
         }
-        export interface BlinkState {
+        export interface BlinkState
+          extends Torappu.Battle.Enemy.States.BasicState {
           BLINK_BEGIN_TIME: System.Single;
           BLINK_END_TIME: System.Single;
           // m_coroutine: Torappu.Battle.CoroutineId;
@@ -26728,7 +27429,8 @@ export namespace Torappu {
           // __Hotfix0_CheckSwitchOut: XLua.DelegateBridge;
           // __Hotfix0__PlayAnimation: XLua.DelegateBridge;
         }
-        export interface RebornState {
+        export interface RebornState
+          extends Torappu.Battle.Enemy.States.BasicState {
           // m_remainingTime: Torappu.FP;
           // m_data: Torappu.Battle.Unit.RebornData;
           // m_tween: Torappu.ITweenHandler;
@@ -26820,16 +27522,19 @@ export namespace Torappu {
       }
     }
     export namespace DevelopTools {
-      export interface BatchLevelBaker {
+      export interface BatchLevelBaker
+        extends Torappu.Battle.DevelopTools.LevelBaker {
         BAKER_SCENE_PATH: System.String;
         _outputFolder: System.String;
         _levelGroups: System.Collections.Generic.List<Torappu.Battle.DevelopTools.BatchLevelBaker.LevelGroup>;
       }
-      export interface CurrentSceneBaker {
+      export interface CurrentSceneBaker
+        extends Torappu.Battle.DevelopTools.LevelBaker {
         _outputFolder: System.String;
         _name: System.String;
       }
-      export interface DebugLevelBaker {
+      export interface DebugLevelBaker
+        extends Torappu.Battle.DevelopTools.LevelBaker {
         _levelId: System.String;
         _graphicPrefab: Torappu.Battle.MapGraphic;
         // _levelJson: UnityEngine.TextAsset;
@@ -26840,14 +27545,16 @@ export namespace Torappu {
       export interface SpineReplacer {
         // _skeleton: Spine.Unity.SkeletonAnimation;
       }
-      export interface TestMoveController {
+      export interface TestMoveController
+        extends Torappu.Battle.MoveController {
         _moveSpeed: System.Single;
       }
       export interface AudioEmitterLog {
         // _numText: UnityEngine.UI.Text;
         // m_startTime: System.Single;
       }
-      export interface AudioEmitterLogPanel {
+      export interface AudioEmitterLogPanel
+        extends Torappu.Battle.DevelopTools.PanelTemplate {
         _sourceTypeToggles: Torappu.Battle.DevelopTools.AudioEmitterLogPanel.SourceTypeToggle[];
         _logTypeToggles: Torappu.Battle.DevelopTools.AudioEmitterLogPanel.LogTypeToggle[];
         _logTypeColorButtons: System.Collections.Generic.List<Torappu.Battle.DevelopTools.AudioEmitterLogPanel.LogTypeButton>;
@@ -26910,7 +27617,8 @@ export namespace Torappu {
       }
       export namespace MapEditor {
         export interface GizmosHelper {}
-        export interface MapEditor {
+        export interface MapEditor
+          extends Torappu.SingletonMonoBehaviour<Torappu.Battle.DevelopTools.MapEditor.MapEditor> {
           _factory: Torappu.Battle.BattleFactory;
           _mapId: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -26925,7 +27633,8 @@ export namespace Torappu {
         export interface BattleLineupRecorder {
           // _lineupFile: UnityEngine.TextAsset;
         }
-        export interface BattleReplayLoader {
+        export interface BattleReplayLoader
+          extends Torappu.Battle.AbstractBattleLoader {
           _replaySettings: Torappu.Battle.DevelopTools.Tester.BattleReplaySettings;
           _collector: Torappu.Battle.ResourceCollector;
           _replayFile: System.String;
@@ -26941,12 +27650,14 @@ export namespace Torappu {
         export interface BattleReplaySettings {
           // _runeTableJson: UnityEngine.TextAsset;
         }
-        export interface DevLevelLauncher {
+        export interface DevLevelLauncher
+          extends Torappu.Battle.BattleLauncher {
           _dataSource: Torappu.Battle.DevelopTools.Tester.DevLevelLauncher.DataSource;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_LoadLevelData: XLua.DelegateBridge;
         }
-        export interface TestBattleLoader {
+        export interface TestBattleLoader
+          extends Torappu.Battle.AbstractBattleLoader {
           _useSpecificScene: System.Boolean;
           _nextScene: System.String;
           _levelId: System.String;
@@ -27149,7 +27860,7 @@ export namespace Torappu {
         // __Hotfix0_get_param: XLua.DelegateBridge;
         // __Hotfix0_OnCompleted: XLua.DelegateBridge;
       }
-      export interface CameraShake {
+      export interface CameraShake extends Torappu.Battle.Opera.OperaNode {
         _duration: System.Single;
         // _strength: UnityEngine.Vector3;
         _vibrato: System.Int32;
@@ -27158,7 +27869,7 @@ export namespace Torappu {
         // __Hotfix0_get_postProcessType: XLua.DelegateBridge;
         // __Hotfix0_DoExecute: XLua.DelegateBridge;
       }
-      export interface ColorGrading {
+      export interface ColorGrading extends Torappu.Battle.Opera.OperaNode {
         _fadeInTime: System.Single;
         _keepTime: System.Single;
         _fadeOutTime: System.Single;
@@ -27173,7 +27884,7 @@ export namespace Torappu {
         // __Hotfix0_DoExecute: XLua.DelegateBridge;
         // __Hotfix0_OnCompleted: XLua.DelegateBridge;
       }
-      export interface GlobalAudio {
+      export interface GlobalAudio extends Torappu.Battle.Opera.OperaNode {
         _signal: System.String;
         // _position: UnityEngine.Vector3;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -27181,7 +27892,7 @@ export namespace Torappu {
         // __Hotfix0_DoExecute: XLua.DelegateBridge;
         // __Hotfix0_GatherAudio: XLua.DelegateBridge;
       }
-      export interface PlayEffect {
+      export interface PlayEffect extends Torappu.Battle.Opera.OperaNode {
         _effectKey: System.String;
         _postProcessType: Torappu.Battle.CameraController.PostprocessMask;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -27189,7 +27900,7 @@ export namespace Torappu {
         // __Hotfix0_DoExecute: XLua.DelegateBridge;
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
       }
-      export interface PlayScreenEffect {
+      export interface PlayScreenEffect extends Torappu.Battle.Opera.OperaNode {
         _effectKey: System.String;
         _holdEffect: System.Boolean;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -27197,7 +27908,8 @@ export namespace Torappu {
         // __Hotfix0_DoExecute: XLua.DelegateBridge;
         // __Hotfix0_GatherEffects: XLua.DelegateBridge;
       }
-      export interface FinishHoldEffectIfExist {
+      export interface FinishHoldEffectIfExist
+        extends Torappu.Battle.Opera.OperaNode {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_get_postProcessType: XLua.DelegateBridge;
         // __Hotfix0_DoExecute: XLua.DelegateBridge;
@@ -27219,12 +27931,23 @@ export namespace Torappu {
       }
     }
     export namespace BuffTemplate {
-      export interface EventToAction {}
-      export interface EventToActionMap {}
+      export interface EventToAction
+        extends Torappu.ActionKV<Torappu.Battle.Buff.Event> {}
+      export interface EventToActionMap
+        extends Torappu.ActionDict<
+          Torappu.Battle.Buff.Event,
+          Torappu.Battle.BuffTemplate.EventToAction
+        > {}
     }
     export namespace TNodeBuffTemplate {
-      export interface IDToNodeDataAction {}
-      export interface IDToTNodeDataActionMap {}
+      export interface IDToNodeDataAction
+        extends Torappu.Battle.Action.TNodeAction
+          .TNodeDataActionKV<System.String> {}
+      export interface IDToTNodeDataActionMap
+        extends Torappu.Battle.Action.TNodeAction.TNodeDataActionDict<
+          System.String,
+          Torappu.Battle.TNodeBuffTemplate.IDToNodeDataAction
+        > {}
     }
     export namespace FixedEventHandler {
       export interface PendingEvent<T> {
@@ -27258,7 +27981,8 @@ export namespace Torappu {
     }
   }
   export namespace AiriSDK {
-    export interface AiriSDKBridge {
+    export interface AiriSDKBridge
+      extends Torappu.Singleton<Torappu.AiriSDK.AiriSDKBridge> {
       // CLEAR_OTHER_RET_TYPES: System.Type[];
       // m_isInited: System.Boolean;
       // m_hasCalledInitFunc: System.Boolean;
@@ -27623,7 +28347,8 @@ export namespace Torappu {
     }
   }
   export namespace Appetizer {
-    export interface AppetizerTrace {
+    export interface AppetizerTrace
+      extends Torappu.Singleton<Torappu.Appetizer.AppetizerTrace> {
       // m_HGLoginMethod: System.String;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_NotifyHGLoginWithPhone: XLua.DelegateBridge;
@@ -27677,7 +28402,8 @@ export namespace Torappu {
       // __Hotfix0_AudioSystemSignal: XLua.DelegateBridge;
       // __Hotfix0__TryParseCombinedSignals: XLua.DelegateBridge;
     }
-    export interface AudioOptions {
+    export interface AudioOptions
+      extends Torappu.SingletonScriptableObject<Torappu.Audio.AudioOptions> {
       // mainMixer: UnityEngine.Audio.AudioMixer;
       // musicGroup: UnityEngine.Audio.AudioMixerGroup;
       // voiceGroup: UnityEngine.Audio.AudioMixerGroup;
@@ -27852,7 +28578,8 @@ export namespace Torappu {
         // <bank>k__BackingField: Torappu.Audio.Middleware.Data.Bank;
         // <name>k__BackingField: System.String;
       }
-      export interface TorappuAudioMiddleware {
+      export interface TorappuAudioMiddleware
+        extends Torappu.Audio.Middleware.AudioMiddleware {
         // m_banks: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.List<Torappu.Audio.Middleware.Data.Bank>>;
         // m_bankList: Torappu.Audio.Middleware.Data.Bank[];
       }
@@ -27862,7 +28589,11 @@ export namespace Torappu {
           ALPHABET_SIZE: System.Int32;
           // m_root: Torappu.Audio.Middleware.Data.BankTrieMap.TrieNode;
         }
-        export interface TorappuAudioDB {
+        export interface TorappuAudioDB
+          extends Torappu.DB.ConstTable<
+            Torappu.Audio.Middleware.Data.TorappuAudioData,
+            Torappu.Audio.Middleware.Data.TorappuAudioDB
+          > {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_GetBanks: XLua.DelegateBridge;
           // __Hotfix0__TryAddBank: XLua.DelegateBridge;
@@ -27879,7 +28610,7 @@ export namespace Torappu {
           // m_middleware: Torappu.Audio.Middleware.TorappuAudioMiddleware;
           // m_activeAtoms: System.Collections.Generic.List<Torappu.Audio.Middleware.AudioAtom>;
         }
-        export interface BGMBank {
+        export interface BGMBank extends Torappu.Audio.Middleware.Data.Bank {
           intro: System.String;
           loop: System.String;
           volume: System.Single;
@@ -27887,8 +28618,10 @@ export namespace Torappu {
           delay: System.Single;
           // m_bgmAtom: Torappu.Audio.Middleware.Data.BGMAudioAtom;
         }
-        export interface BGMAudioAtom {}
-        export interface SoundFXBank {
+        export interface BGMAudioAtom
+          extends Torappu.Audio.Middleware.AudioAtom {}
+        export interface SoundFXBank
+          extends Torappu.Audio.Middleware.Data.Bank {
           sounds: Torappu.Audio.Middleware.Data.SoundFXBank.SoundFX[];
           maxSoundAllowed: System.Int32;
           popOldest: System.Boolean;
@@ -27897,14 +28630,17 @@ export namespace Torappu {
           // m_totalWeight: System.Single;
           // m_fxCategory: Torappu.AudioManager.FXCategory;
         }
-        export interface SoundFXAudioAtom {}
-        export interface SoundFXCtrlBank {
+        export interface SoundFXAudioAtom
+          extends Torappu.Audio.Middleware.AudioAtom {}
+        export interface SoundFXCtrlBank
+          extends Torappu.Audio.Middleware.Data.Bank {
           targetBank: System.String;
           ctrlStop: System.Boolean;
           ctrlStopFadetime: System.Single;
           // m_targetBank: Torappu.Audio.Middleware.Data.Bank;
         }
-        export interface SnapshotBank {
+        export interface SnapshotBank
+          extends Torappu.Audio.Middleware.Data.Bank {
           targetSnapshot: System.String;
           hookSoundFxBank: System.String;
           delay: System.Single;
@@ -27918,7 +28654,8 @@ export namespace Torappu {
           // __Hotfix0_ReverseSnapshot: XLua.DelegateBridge;
           // __Hotfix0__InitTargetBank: XLua.DelegateBridge;
         }
-        export interface SnapshotAudioAtom {
+        export interface SnapshotAudioAtom
+          extends Torappu.Audio.Middleware.AudioAtom {
           snapshotBank: Torappu.Audio.Middleware.Data.SnapshotBank;
           // m_listenBegin: System.Boolean;
           // m_poped: System.Boolean;
@@ -27999,7 +28736,8 @@ export namespace Torappu {
     }
   }
   export namespace AVG {
-    export interface AVG {
+    export interface AVG
+      extends Torappu.SingletonMonoBehaviour<Torappu.AVG.AVG> {
       // _prefab: UnityEngine.Object;
       // _onStoryEndCB: System.Action<Torappu.AVG.Story>;
       _assetLoader: Torappu.Resource.DirectAssetLoader;
@@ -28018,7 +28756,8 @@ export namespace Torappu {
       // __Hotfix0__OnStoryFailed: XLua.DelegateBridge;
       // __Hotfix0_OnInit: XLua.DelegateBridge;
     }
-    export interface AVGAssetLoader {}
+    export interface AVGAssetLoader
+      extends Torappu.Resource.DirectAssetLoader {}
     export interface AVGComponent {
       // <controller>k__BackingField: Torappu.AVG.AVGController;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -28031,7 +28770,8 @@ export namespace Torappu {
       // __Hotfix0_OnStoryEnd: XLua.DelegateBridge;
       // __Hotfix0_OnReset: XLua.DelegateBridge;
     }
-    export interface AVGController {
+    export interface AVGController
+      extends Torappu.SingletonMonoBehaviour<Torappu.AVG.AVGController> {
       SCENECAMERA_DEPTH: System.Int32;
       UICAMERA_DEPTH: System.Int32;
       // _avgSceneCamera: UnityEngine.Camera;
@@ -28211,7 +28951,7 @@ export namespace Torappu {
       // m_finishCb: System.Action<Torappu.AVG.ICommandExecutor>;
       // <command>k__BackingField: System.String;
     }
-    export interface ExecutorComponent {
+    export interface ExecutorComponent extends Torappu.AVG.AVGComponent {
       // m_executorWrappers: Torappu.AVG.ICommandExecutor[];
       // m_finishCb: System.Action;
       // m_executors: System.Collections.Generic.Dictionary<System.String,Torappu.AVG.ExecutorComponent.Executor>;
@@ -28228,7 +28968,7 @@ export namespace Torappu {
       // __Hotfix0_OnFinish: XLua.DelegateBridge;
       // __Hotfix0_FinishCommand: XLua.DelegateBridge;
     }
-    export interface AVGBlockerPanel {
+    export interface AVGBlockerPanel extends Torappu.AVG.ExecutorComponent {
       // _blocker: UnityEngine.UI.Image;
       _defaultFadetime: System.Single;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -28254,7 +28994,7 @@ export namespace Torappu {
       // __Hotfix0_Update: XLua.DelegateBridge;
       // __Hotfix0_OnPointerDown: XLua.DelegateBridge;
     }
-    export interface AVGCameraEffect {
+    export interface AVGCameraEffect extends Torappu.AVG.ExecutorComponent {
       // _sceneCamera: UnityEngine.Camera;
       // _sceneRoot: UnityEngine.RectTransform;
       _defaultFadetime: System.Single;
@@ -28272,7 +29012,8 @@ export namespace Torappu {
       // __Hotfix0_CalculateFadetime: XLua.DelegateBridge;
       // __Hotfix0_NeedSkipAnimation: XLua.DelegateBridge;
     }
-    export interface AVGCharacterCutinPanel {
+    export interface AVGCharacterCutinPanel
+      extends Torappu.AVG.ExecutorComponent {
       _slotPool: Torappu.ObjectPool.GameObjectPoolComponent;
       _slots: System.Collections.Generic.Dictionary<
         System.String,
@@ -28286,7 +29027,7 @@ export namespace Torappu {
       // __Hotfix0__Reset: XLua.DelegateBridge;
       // __Hotfix0_ForceCommandEnd: XLua.DelegateBridge;
     }
-    export interface AVGGotoLabel {
+    export interface AVGGotoLabel extends Torappu.AVG.ExecutorComponent {
       PARAM_NAME_NAME: System.String;
       COMMAND_NAME_LABEL: System.String;
       COMMAND_NAME_GOTO: System.String;
@@ -28299,7 +29040,7 @@ export namespace Torappu {
       // __Hotfix0_OnFinish: XLua.DelegateBridge;
       // __Hotfix0_ForceCommandEnd: XLua.DelegateBridge;
     }
-    export interface AVGImagePanel {
+    export interface AVGImagePanel extends Torappu.AVG.ExecutorComponent {
       // SCREEN_ADAPT_FUNCTION_MAP: System.Collections.Generic.Dictionary<System.String,System.Func<UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2>>;
       // _foreImage: UnityEngine.UI.Image;
       // _backImage: UnityEngine.UI.Image;
@@ -28349,7 +29090,7 @@ export namespace Torappu {
       _quickPlayPanel: Torappu.AVG.AVGQuickPlay;
       // m_isSelected: System.Boolean;
     }
-    export interface AVGShowItemPanel {
+    export interface AVGShowItemPanel extends Torappu.AVG.ExecutorComponent {
       _slotStyles: Torappu.AVG.AVGShowItemPanel.SlotStyle[];
       _slotInUse: Torappu.AVG.AVGShowItemSlot;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -28368,7 +29109,7 @@ export namespace Torappu {
       CAN_SKIP = "CAN_SKIP",
       FIRST_CANNOT_SKIP = "FIRST_CANNOT_SKIP",
     }
-    export interface AVGSkipLabel {
+    export interface AVGSkipLabel extends Torappu.AVG.ExecutorComponent {
       PARAM_NAME_SKIP_MODE: System.String;
       COMMAND_NAME_SKIP_NODE: System.String;
       MODE_NAME_FIRST_CANNOT_SKIP: System.String;
@@ -28421,7 +29162,7 @@ export namespace Torappu {
       // __Hotfix0_ResetHasSkipNode: XLua.DelegateBridge;
       // __Hotfix0_SetClickRecord: XLua.DelegateBridge;
     }
-    export interface AVGTheaterLabel {
+    export interface AVGTheaterLabel extends Torappu.AVG.ExecutorComponent {
       COMMAND_NAME_THREATER_MODE: System.String;
       _avgController: Torappu.AVG.AVGController;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -28429,7 +29170,7 @@ export namespace Torappu {
       // __Hotfix0__ExecuteTheaterNode: XLua.DelegateBridge;
       // __Hotfix0_ForceCommandEnd: XLua.DelegateBridge;
     }
-    export interface AVGTutorialPanel {
+    export interface AVGTutorialPanel extends Torappu.AVG.ExecutorComponent {
       DEFAULT_ANCHOR: Torappu.AVG.AVGTutorialPanel.AnchorType;
       _fakeBtn: Torappu.AVG.AVGFakeButton;
       // _fakeGraphic: UnityEngine.UI.Graphic;
@@ -28469,7 +29210,7 @@ export namespace Torappu {
       // __Hotfix0_CalculateFadetime: XLua.DelegateBridge;
       // __Hotfix0_NeedSkipAnimation: XLua.DelegateBridge;
     }
-    export interface AVGVideoPanel {
+    export interface AVGVideoPanel extends Torappu.AVG.ExecutorComponent {
       // _mediaPlayer: RenderHeads.Media.AVProVideo.MediaPlayer;
       _hideDuration: System.Single;
       // _hideEase: DG.Tweening.Ease;
@@ -28484,13 +29225,13 @@ export namespace Torappu {
       // __Hotfix0_OnFinish: XLua.DelegateBridge;
       // __Hotfix0__SetHiddenInternal: XLua.DelegateBridge;
     }
-    export interface BackgroundPanel {
+    export interface BackgroundPanel extends Torappu.AVG.AVGImagePanel {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_GetExecutors: XLua.DelegateBridge;
       // __Hotfix0_DontInvoke_PlzImplInternalResRefCollector: XLua.DelegateBridge;
       // __Hotfix0__LoadSprite: XLua.DelegateBridge;
     }
-    export interface CharacterPanel {
+    export interface CharacterPanel extends Torappu.AVG.ExecutorComponent {
       HORIZONTAL_OUTSCREEN_DELTA: System.Single;
       VERTICAL_OUTSCREEN_DELTA: System.Single;
       LEFT_CHAR_HORIZONAL_DELTA: System.Single;
@@ -28515,7 +29256,7 @@ export namespace Torappu {
       // __Hotfix0_CalculateFadetime: XLua.DelegateBridge;
       // __Hotfix0_NeedSkipAnimation: XLua.DelegateBridge;
     }
-    export interface CommonExecutors {
+    export interface CommonExecutors extends Torappu.AVG.AVGComponent {
       _clickAutoDelay: System.Single;
       _soundDefaultFadeTime: System.Single;
       // m_onStoryEnd: System.Action;
@@ -28551,7 +29292,7 @@ export namespace Torappu {
       // __Hotfix0__TryGetRouteTargetFromGotoDest: XLua.DelegateBridge;
       // __Hotfix0_DontInvoke_PlzImplInternalResRefCollector: XLua.DelegateBridge;
     }
-    export interface DecisionPanel {
+    export interface DecisionPanel extends Torappu.AVG.ExecutorComponent {
       PARAM_NAME_OPTIONS: System.String;
       PARAM_NAME_VALUES: System.String;
       PARAM_NAME_REFERENCES: System.String;
@@ -28575,7 +29316,7 @@ export namespace Torappu {
       // __Hotfix0_ForceCommandEnd: XLua.DelegateBridge;
       // __Hotfix0_Awake: XLua.DelegateBridge;
     }
-    export interface DialogPanel {
+    export interface DialogPanel extends Torappu.AVG.ExecutorComponent {
       MESSAGE_ASIDE_X_POS: System.Single;
       // _name: UnityEngine.UI.Text;
       _typeWriter: Torappu.AVG.AVGTypeWriterText;
@@ -28611,7 +29352,8 @@ export namespace Torappu {
       // __Hotfix0__SetHiddenInternal: XLua.DelegateBridge;
       // __Hotfix0_Awake: XLua.DelegateBridge;
     }
-    export interface LargeBackgroundPanel {
+    export interface LargeBackgroundPanel
+      extends Torappu.AVG.ExecutorComponent {
       // _images: System.Collections.Generic.List<UnityEngine.UI.Image>;
       // _offset: UnityEngine.RectTransform;
       // _fadeEase: DG.Tweening.Ease;
@@ -28626,7 +29368,7 @@ export namespace Torappu {
       // __Hotfix0__ResetImage: XLua.DelegateBridge;
       // __Hotfix0__LoadImage: XLua.DelegateBridge;
     }
-    export interface PlaybackPanel {
+    export interface PlaybackPanel extends Torappu.AVG.ExecutorComponent {
       PARAM_NAME_OPTIONS: System.String;
       COMMAND_NAME_DECISION: System.String;
       COMMAND_NAME_PREDICATE: System.String;
@@ -28677,7 +29419,7 @@ export namespace Torappu {
       // __Hotfix0_OnCloseBtnClicked: XLua.DelegateBridge;
       // __Hotfix0_OnConfirmBtnClicked: XLua.DelegateBridge;
     }
-    export interface SubtitlePanel {
+    export interface SubtitlePanel extends Torappu.AVG.ExecutorComponent {
       SCREEN_WIDTH: System.Single;
       SCREEN_HEIGHT: System.Single;
       _typeWriter: Torappu.AVG.AVGTypeWriterText;
@@ -28910,13 +29652,13 @@ export namespace Torappu {
       // _options: UnityEngine.GameObject;
       // _optionsChosen: UnityEngine.UI.Image[];
     }
-    export interface AVGShowItemCutinSlot {
+    export interface AVGShowItemCutinSlot extends Torappu.AVG.AVGShowItemSlot {
       _defaultFadeTime: System.Single;
       // _offsetTransform: UnityEngine.RectTransform;
       // _maskRectTransform: UnityEngine.RectTransform;
       _showFadeStyle: Torappu.AVG.AVGShowItemCutinSlot.FadeStyle;
     }
-    export interface AVGShowItemPhotoSlot {
+    export interface AVGShowItemPhotoSlot extends Torappu.AVG.AVGShowItemSlot {
       _defaultFadeTime: System.Single;
     }
     export interface AVGShowItemSlot {
@@ -29080,7 +29822,8 @@ export namespace Torappu {
     }
     export namespace AVGCameraEffect {}
     export namespace AVGCharacterCutinPanel {
-      export interface InternalResRefCollector {
+      export interface InternalResRefCollector
+        extends Torappu.AVG.AbstractResRefCollecter {
         // m_regex: RegExp;
       }
     }
@@ -29091,7 +29834,8 @@ export namespace Torappu {
       }
     }
     export namespace AVGImagePanel {
-      export interface InternalResRefCollector {}
+      export interface InternalResRefCollector
+        extends Torappu.AVG.AbstractResRefCollecter {}
     }
     export namespace AVGQuickPlay {
       export enum State {
@@ -29101,7 +29845,8 @@ export namespace Torappu {
       }
     }
     export namespace AVGShowItemPanel {
-      export interface InternalResRefCollector {}
+      export interface InternalResRefCollector
+        extends Torappu.AVG.AbstractResRefCollecter {}
       export interface SlotStyle {
         styleKey: System.String;
         // slotPrefab: UnityEngine.Object;
@@ -29138,16 +29883,20 @@ export namespace Torappu {
       }
     }
     export namespace BackgroundPanel {
-      export interface InternalResRefCollector {}
+      export interface InternalResRefCollector
+        extends Torappu.AVG.AbstractResRefCollecter {}
     }
     export namespace CharacterPanel {
-      export interface InternalResRefCollector {
+      export interface InternalResRefCollector
+        extends Torappu.AVG.AbstractResRefCollecter {
         // m_regex: RegExp;
       }
     }
     export namespace CommonExecutors {
-      export interface InternalSoundRefCollector {}
-      export interface InternalMusicRefCollector {}
+      export interface InternalSoundRefCollector
+        extends Torappu.AVG.AbstractResRefCollecter {}
+      export interface InternalMusicRefCollector
+        extends Torappu.AVG.AbstractResRefCollecter {}
     }
     export namespace DecisionPanel {
       export interface DesicionCommandPrecidator {
@@ -29156,7 +29905,8 @@ export namespace Torappu {
       }
     }
     export namespace LargeBackgroundPanel {
-      export interface InternalResRefCollector {}
+      export interface InternalResRefCollector
+        extends Torappu.AVG.AbstractResRefCollecter {}
     }
     export namespace Demo {
       export interface AVGDemo {
@@ -29364,7 +30114,8 @@ export namespace Torappu {
     export interface BuildingContextProvider {
       // s_dynamicContext: Torappu.Building.DynamicBuildingContext;
     }
-    export interface BuildingController {
+    export interface BuildingController
+      extends Torappu.SingletonMonoBehaviour<Torappu.Building.BuildingController> {
       _blueprintMode: Torappu.Building.BP.BlueprintMode;
       _architecture: Torappu.Building.BP.BuildingArchitecture;
       _vaultMode: Torappu.Building.Vault.VaultMode;
@@ -29467,7 +30218,7 @@ export namespace Torappu {
       // __Hotfix0_Update: XLua.DelegateBridge;
     }
     export interface IBuildingMode {}
-    export interface BuildingMode<T> {
+    export interface BuildingMode<T> extends Torappu.SingletonMonoBehaviour<T> {
       // <stateMachine>k__BackingField: Torappu.Building.BuildingStateMachine;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_isActiveNode: XLua.DelegateBridge;
@@ -29484,7 +30235,7 @@ export namespace Torappu {
       // __Hotfix0_HideCoroutine: XLua.DelegateBridge;
     }
     export interface BuildingModuleHolder {}
-    export interface BuildingStateMachine {
+    export interface BuildingStateMachine extends Torappu.TypeStateMachine {
       // m_isTransiting: System.Boolean;
       // <controller>k__BackingField: Torappu.Building.BuildingController;
     }
@@ -29726,7 +30477,7 @@ export namespace Torappu {
       visitResponse: Torappu.VisitBuildingResponse;
       visitContext: Torappu.BuildingVisitContext;
     }
-    export interface BuildingAVGAdapter {
+    export interface BuildingAVGAdapter extends Torappu.AVG.ExecutorComponent {
       // m_bRoomTutorialBtn: UnityEngine.UI.Button;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_GetExecutors: XLua.DelegateBridge;
@@ -29763,7 +30514,8 @@ export namespace Torappu {
       // m_internalFinal: System.Action;
       // <broadcastChange>k__BackingField: System.Boolean;
     }
-    export interface BuildingUIBridge {
+    export interface BuildingUIBridge
+      extends Torappu.SingletonMonoBehaviour<Torappu.Building.BuildingUIBridge> {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_RegisterListeners: XLua.DelegateBridge;
     }
@@ -29866,7 +30618,11 @@ export namespace Torappu {
       // __Hotfix0_IsEmpty: XLua.DelegateBridge;
       // __Hotfix0_LoadData: XLua.DelegateBridge;
     }
-    export interface TradingInfoViewProperty {}
+    export interface TradingInfoViewProperty
+      extends Torappu.DataBind.DynamicBindProperty<
+        Torappu.Building.TradingInfoViewProperty,
+        Torappu.Building.TradingInfoViewStruct
+      > {}
     export interface TradingGainOrderSnapshot {
       EMPTY: Torappu.Building.TradingGainOrderSnapshot;
       // m_isEmpty: System.Boolean;
@@ -30019,7 +30775,8 @@ export namespace Torappu {
     }
     export namespace BP {
       export interface BuildingArchitecture {}
-      export interface BCameraController {
+      export interface BCameraController
+        extends Torappu.SingletonMonoBehaviour<Torappu.Building.BP.BCameraController> {
         // _touchCamera: BitBenderGames.MobileTouchCamera;
         // m_tanFOV: System.Nullable<System.Single>;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -30062,7 +30819,9 @@ export namespace Torappu {
         // m_hilightedSlots: System.Collections.Generic.List<Torappu.Building.BP.BRoomHilightContainer>;
         // m_pendingHilightChange: Torappu.Building.BP.BRoomHilightViewModel;
       }
-      export interface BlueprintMode {
+      export interface BlueprintMode
+        extends Torappu.Building
+          .BuildingMode<Torappu.Building.BP.BlueprintMode> {
         CAM_TWEEN_DUR: System.Single;
         _layout: Torappu.Building.BP.BLayoutManager;
         // _camera: UnityEngine.Camera;
@@ -30106,7 +30865,7 @@ export namespace Torappu {
         // m_roomSlotModel: Torappu.Building.RoomSlotModel;
         // m_inArchitecture: System.Boolean;
       }
-      export interface BRoomSlot {
+      export interface BRoomSlot extends Torappu.Building.AbstractRoomSlot {
         NAME_DUMMY_TUTORIAL_BTN: System.String;
         // _roomContainer: UnityEngine.RectTransform;
         // _selectEffect: UnityEngine.GameObject;
@@ -30143,33 +30902,33 @@ export namespace Torappu {
         stationedNum: System.Int32;
         maxStationedChars: System.Int32;
       }
-      export interface BControlRoom {
+      export interface BControlRoom extends Torappu.Building.BP.BRoom {
         // _textLevel: UnityEngine.UI.Text;
         // _textLevelShadow: UnityEngine.UI.Text;
       }
-      export interface BCorridorRoom {}
-      export interface BCustomRoom {
+      export interface BCorridorRoom extends Torappu.Building.BP.BRoom {}
+      export interface BCustomRoom extends Torappu.Building.BP.BRoom {
         // _textRoomCategory: UnityEngine.UI.Text;
       }
-      export interface BDormRoom {
+      export interface BDormRoom extends Torappu.Building.BP.BCustomRoom {
         // _panelLevel: Torappu.UI.SimpleLayoutContent;
         // _textCharNum: UnityEngine.UI.Text;
         // _textCharLimit: UnityEngine.UI.Text;
         // _textState: UnityEngine.UI.Text;
         // m_levelAdapter: Torappu.Building.BP.BRoomLevelAdapter;
       }
-      export interface BElevatorRoom {
+      export interface BElevatorRoom extends Torappu.Building.BP.BRoom {
         // _armLeft: UnityEngine.GameObject;
         // _armUp: UnityEngine.GameObject;
         // _armRight: UnityEngine.GameObject;
         // _armDown: UnityEngine.GameObject;
       }
-      export interface BEmptyRoom {
+      export interface BEmptyRoom extends Torappu.Building.BP.BRoom {
         // _infoPanel: UnityEngine.GameObject;
         // _categoryLabel: UnityEngine.UI.Text;
         _categoryLabelMap: Torappu.Building.BP.BEmptyRoom.CategoryLabelMapEntry[];
       }
-      export interface BFunctionRoom {
+      export interface BFunctionRoom extends Torappu.Building.BP.BRoom {
         // _textStationNum: UnityEngine.UI.Text;
         // _textStationLimit: UnityEngine.UI.Text;
         // _levelContent: Torappu.UI.SimpleLayoutContent;
@@ -30177,24 +30936,25 @@ export namespace Torappu {
         // _textRoomCategory: UnityEngine.UI.Text;
         // m_levelAdapter: Torappu.Building.BP.BRoomLevelAdapter;
       }
-      export interface BHireRoom {
+      export interface BHireRoom extends Torappu.Building.BP.BFunctionRoom {
         // _textState: UnityEngine.UI.Text;
         // _progressBar: Torappu.UI.PiecewiseProgressBar;
         // m_hiringViewModel: Torappu.PlayerBuildingHire;
         // m_hireSnapshot: Torappu.Building.UI.Hire.HiringSnapshot;
         // m_countDown: Torappu.CountDownTask;
       }
-      export interface BManufactureRoom {
+      export interface BManufactureRoom
+        extends Torappu.Building.BP.BOutputRoom {
         // _iconProduct: UnityEngine.GameObject;
         // m_countDown: Torappu.CountDownTask;
         // m_manufactModel: Torappu.Building.ManufactInfoViewModel;
         // m_isHarvestable: System.Boolean;
       }
-      export interface BMeetingRoom {
+      export interface BMeetingRoom extends Torappu.Building.BP.BFunctionRoom {
         // _clueHintMark: UnityEngine.GameObject;
         // m_session: Torappu.Building.UI.Meeting.BuildingMeetingSession;
       }
-      export interface BOutputRoom {
+      export interface BOutputRoom extends Torappu.Building.BP.BRoom {
         EFFECT_WORK_ANIM_DUR: System.Single;
         // _textRoomState: UnityEngine.UI.Text;
         // _stateHilightColor: UnityEngine.Color;
@@ -30215,25 +30975,25 @@ export namespace Torappu {
         // <>f__am$cache0: DG.Tweening.Core.DOGetter<System.Single>;
         // <>f__am$cache1: System.Action<Torappu.Building.UI.BuildingUIResMenu.AsyncSettleInfo>;
       }
-      export interface BPowerRoom {
+      export interface BPowerRoom extends Torappu.Building.BP.BOutputRoom {
         TWEEN_DURATION: System.Single;
         // m_progressTween: DG.Tweening.Tweener;
         // <>f__am$cache0: DG.Tweening.Core.DOGetter<System.Single>;
       }
-      export interface BShopRoom {
+      export interface BShopRoom extends Torappu.Building.BP.BOutputRoom {
         // _iconProduct: UnityEngine.GameObject;
         // m_countDowns: Torappu.CountDownTask[];
         // m_snapshots: Torappu.Building.ShopStockSnapshot[];
         // m_shopModel: Torappu.Building.ShopInfoViewModel;
         // m_isHarvestable: System.Boolean;
       }
-      export interface BTradingRoom {
+      export interface BTradingRoom extends Torappu.Building.BP.BOutputRoom {
         NOTIFY_INTERVAL: System.Single;
         // _iconOrders: UnityEngine.GameObject;
         // m_tradingInfo: Torappu.Building.TradingInfoViewStruct;
         // m_isDelivertable: System.Boolean;
       }
-      export interface BTrainingRoom {
+      export interface BTrainingRoom extends Torappu.Building.BP.BFunctionRoom {
         // _progressBar: Torappu.UI.PiecewiseProgressBar;
         // _isFinish: UnityEngine.GameObject;
         // _stateText: UnityEngine.UI.Text;
@@ -30244,10 +31004,11 @@ export namespace Torappu {
         // m_trainSnapshot: Torappu.Building.UI.Train.LevelUpSnapshot;
         // m_countDown: Torappu.CountDownTask;
       }
-      export interface BUncleanedRoom {
+      export interface BUncleanedRoom extends Torappu.Building.BP.BRoom {
         // _infoPanel: UnityEngine.GameObject;
       }
-      export interface BWorkshopRoom {}
+      export interface BWorkshopRoom
+        extends Torappu.Building.BP.BFunctionRoom {}
       export interface BRoomLevelAdapter {
         // m_level: System.Int32;
         // mainColor: UnityEngine.Color;
@@ -30392,13 +31153,13 @@ export namespace Torappu {
         weight: System.Single;
         // <gridPos>k__BackingField: Torappu.GridPosition;
       }
-      export interface GridNode {
+      export interface GridNode extends Torappu.Building.GridMap.Node {
         // <state>k__BackingField: Torappu.Building.GridMap.GridNode.State;
         edges: Torappu.Building.GridMap.EdgeNode[];
         objectId: System.UInt32;
         objectRef: System.Object;
       }
-      export interface EdgeNode {
+      export interface EdgeNode extends Torappu.Building.GridMap.Node {
         occupyGrids: System.Collections.Generic.List<Torappu.Building.GridMap.GridNode>;
         // <dir>k__BackingField: Torappu.SharedConsts.Direction;
       }
@@ -30451,7 +31212,7 @@ export namespace Torappu {
         // m_obstacleAvoidTicker: Torappu.PeriodicTicker;
         // <mover>k__BackingField: Torappu.Building.Vault.IMovable;
       }
-      export interface VCharacter {
+      export interface VCharacter extends Torappu.Building.Vault.VRoom.Object {
         HEAD_ANCHOR_NAME: System.String;
         SHADOW_OBJ_NAME: System.String;
         INIT_FADEIN_DURATION: System.Single;
@@ -30487,10 +31248,11 @@ export namespace Torappu {
         // m_furnitures: System.Collections.Generic.List<Torappu.Building.Vault.VFurnitureBridge>;
         // m_slots: System.Collections.Generic.List<Torappu.Building.Vault.VFurnitureBridge.InteractSlot>;
       }
-      export interface VBackwallPlane {
+      export interface VBackwallPlane
+        extends Torappu.Building.Vault.VGridPlane {
         _obstacleRects: Torappu.BuildingData.ObstacleRect[];
       }
-      export interface VFloorPlane {
+      export interface VFloorPlane extends Torappu.Building.Vault.VGridPlane {
         _obstacleRects: Torappu.BuildingData.ObstacleRect[];
       }
       export interface VGridPlane {
@@ -30518,7 +31280,8 @@ export namespace Torappu {
         // <inited>k__BackingField: System.Boolean;
         // <roomSize>k__BackingField: Torappu.GridPosition;
       }
-      export interface VRoomMeshGraphic {
+      export interface VRoomMeshGraphic
+        extends Torappu.Building.Vault.VRoomGraphic {
         NAME_LDOOR: System.String;
         NAME_RDOOR: System.String;
         DEFAULT_DOOR_ID: System.String;
@@ -30532,7 +31295,7 @@ export namespace Torappu {
         // _rightDoorPlaceholder: UnityEngine.Transform;
         // _animator: UnityEngine.Animator;
       }
-      export interface VDIYRoom {
+      export interface VDIYRoom extends Torappu.Building.Vault.VRoom {
         _diyRoom: Torappu.Building.DIY.DIYRoom;
         _reflectFadeHeight: System.Single;
         // m_reflectCamera: Torappu.GraphicEffect.Reflection.ReflectCamera;
@@ -30551,7 +31314,7 @@ export namespace Torappu {
         // __Hotfix0_OnVCharacterToDestroy: XLua.DelegateBridge;
         // __Hotfix0__SetupInternalDIYRoom: XLua.DelegateBridge;
       }
-      export interface VElevatorRoom {
+      export interface VElevatorRoom extends Torappu.Building.Vault.VRoom {
         _graphicNotOnTop: Torappu.Building.Vault.VRoomGraphic;
         // m_graphicInUse: Torappu.Building.Vault.VRoomGraphic;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -30559,7 +31322,7 @@ export namespace Torappu {
         // __Hotfix0_OnDestroyRoom: XLua.DelegateBridge;
         // __Hotfix0__CheckThisIsTopElevator: XLua.DelegateBridge;
       }
-      export interface VOutputRoom {
+      export interface VOutputRoom extends Torappu.Building.Vault.VRoom {
         // m_isWorking: System.Boolean;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_get_isWorking: XLua.DelegateBridge;
@@ -30635,7 +31398,7 @@ export namespace Torappu {
         // __Hotfix0__FindStayCharByInstId: XLua.DelegateBridge;
         // __Hotfix0__FindStayCharByCharId: XLua.DelegateBridge;
       }
-      export interface VRoomSlot {
+      export interface VRoomSlot extends Torappu.Building.AbstractRoomSlot {
         HIGHLIGHT_OFFSET_Z: System.Single;
         // _highlight: UnityEngine.SpriteRenderer;
         // m_clickHandler: Torappu.DragCancellableClickHandler;
@@ -30649,7 +31412,9 @@ export namespace Torappu {
         // <rightSlot>k__BackingField: Torappu.Building.Vault.VRoomSlot;
         // <layout>k__BackingField: Torappu.Building.Vault.VLayoutManager;
       }
-      export interface VaultMode {
+      export interface VaultMode
+        extends Torappu.Building
+          .BuildingMode<Torappu.Building.Vault.VaultMode> {
         _layout: Torappu.Building.Vault.VLayoutManager;
         // _camera: UnityEngine.Camera;
         // _raycastBlocker: UnityEngine.Transform;
@@ -30684,7 +31449,8 @@ export namespace Torappu {
         // __Hotfix0__UpdateReflectCamera: XLua.DelegateBridge;
         // __Hotfix0_Awake: XLua.DelegateBridge;
       }
-      export interface VCameraController {
+      export interface VCameraController
+        extends Torappu.SingletonMonoBehaviour<Torappu.Building.Vault.VCameraController> {
         MAX_LOD: System.Int32;
         // _touchCamera: BitBenderGames.MobileTouchCamera;
         _lodDists: System.Single[];
@@ -30733,7 +31499,8 @@ export namespace Torappu {
         // __Hotfix0_Start: XLua.DelegateBridge;
         // __Hotfix0_Update: XLua.DelegateBridge;
       }
-      export interface VCharacterManager {
+      export interface VCharacterManager
+        extends Torappu.Singleton<Torappu.Building.Vault.VCharacter> {
         // m_list: System.Collections.Generic.List<Torappu.Building.Vault.VCharacter>;
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
         // __Hotfix0_Register: XLua.DelegateBridge;
@@ -30771,7 +31538,8 @@ export namespace Torappu {
         // m_generator: Torappu.EasyMeshGenerator;
       }
       export namespace VCharacter {
-        export interface Options {
+        export interface Options
+          extends Torappu.StateMachine.DefaultBlackboard {
           // idleTimeRange: UnityEngine.Vector2;
           moveSpeed: System.Single;
           moveAnimScale: System.Single;
@@ -30792,20 +31560,51 @@ export namespace Torappu {
             SPECIAL = "SPECIAL",
             TERMINAL = "TERMINAL",
           }
-          export interface IdleState {
+          export interface IdleState
+            extends Torappu.HierachyStateMachine.StateNode<
+              Torappu.Building.Vault.VCharacter.States.State,
+              Torappu.Building.Vault.VCharacter,
+              Torappu.Building.Vault.VCharacter.Options
+            > {
             // m_remainingTime: System.Single;
           }
-          export interface SpecialState {
+          export interface SpecialState
+            extends Torappu.HierachyStateMachine.StateNode<
+              Torappu.Building.Vault.VCharacter.States.State,
+              Torappu.Building.Vault.VCharacter,
+              Torappu.Building.Vault.VCharacter.Options
+            > {
             // m_waitTime: System.Single;
           }
-          export interface MoveState {
+          export interface MoveState
+            extends Torappu.HierachyStateMachine.StateNode<
+              Torappu.Building.Vault.VCharacter.States.State,
+              Torappu.Building.Vault.VCharacter,
+              Torappu.Building.Vault.VCharacter.Options
+            > {
             // <>f__am$cache0: System.Func<Torappu.Building.GridMap,Torappu.Building.GridMap.Node,System.Boolean>;
           }
-          export interface InteractState {
+          export interface InteractState
+            extends Torappu.HierachyStateMachine.StateNode<
+              Torappu.Building.Vault.VCharacter.States.State,
+              Torappu.Building.Vault.VCharacter,
+              Torappu.Building.Vault.VCharacter.Options
+            > {
             // m_waitTime: System.Single;
           }
-          export interface SleepState {}
-          export interface FurnitureState {}
+          export interface SleepState
+            extends Torappu.HierachyStateMachine.StateNode<
+              Torappu.Building.Vault.VCharacter.States.State,
+              Torappu.Building.Vault.VCharacter,
+              Torappu.Building.Vault.VCharacter.Options
+            > {}
+          export interface FurnitureState
+            extends Torappu.HierachyStateMachine.SubStateMachineNode<
+              Torappu.Building.Vault.VCharacter.States.State,
+              Torappu.Building.Vault.VCharacter,
+              Torappu.Building.Vault.VCharacter.Options,
+              Torappu.Building.Vault.VCharacter.States.FurnitureState.SubState
+            > {}
           export namespace FurnitureState {
             export enum SubState {
               DEFAULT = "DEFAULT",
@@ -30813,8 +31612,22 @@ export namespace Torappu {
               INTERACT = "INTERACT",
               TERMINAL = "TERMINAL",
             }
-            export interface MoveState {}
-            export interface InteractState {
+            export interface MoveState
+              extends Torappu.HierachyStateMachine.SubStateMachineNode
+                .SubStateNode<
+                Torappu.Building.Vault.VCharacter.States.State,
+                Torappu.Building.Vault.VCharacter,
+                Torappu.Building.Vault.VCharacter.Options,
+                Torappu.Building.Vault.VCharacter.States.FurnitureState.SubState
+              > {}
+            export interface InteractState
+              extends Torappu.HierachyStateMachine.SubStateMachineNode
+                .SubStateNode<
+                Torappu.Building.Vault.VCharacter.States.State,
+                Torappu.Building.Vault.VCharacter,
+                Torappu.Building.Vault.VCharacter.Options,
+                Torappu.Building.Vault.VCharacter.States.FurnitureState.SubState
+              > {
               // m_isAnimationFinished: System.Boolean;
               // m_coroutine: UnityEngine.Coroutine;
               // m_tween: DG.Tweening.Tween;
@@ -31616,7 +32429,8 @@ export namespace Torappu {
         export interface FurnitureInteractPatchHub {
           _patchDB: System.Collections.Generic.List<Torappu.Building.DIY.Test.FurnitureInteractPatch>;
         }
-        export interface InteractCheck {
+        export interface InteractCheck
+          extends Torappu.SingletonMonoBehaviour<Torappu.Building.DIY.Test.InteractCheck> {
           _characterScale: System.Single;
           // _characterDefaultPosition: UnityEngine.Transform;
           characterFolderPath: System.String;
@@ -32030,7 +32844,8 @@ export namespace Torappu {
       voiceId: System.String;
       voiceType: Torappu.SkinVoiceType;
     }
-    export interface VoiceManager {
+    export interface VoiceManager
+      extends Torappu.Singleton<Torappu.CharWord.VoiceManager> {
       AUDIO_CHANNEL_VOICE: System.String;
       CROSSFADE_DURATION: System.Single;
       // m_avaliableDict: System.Collections.Generic.Dictionary<System.String,System.Boolean>;
@@ -32096,7 +32911,8 @@ export namespace Torappu {
       // __Hotfix0_CheckDataValidStatus: XLua.DelegateBridge;
       // __Hotfix0_UpdateData: XLua.DelegateBridge;
     }
-    export interface DataFromServerStorage {
+    export interface DataFromServerStorage
+      extends Torappu.Singleton<Torappu.DataFromServer.DataFromServerStorage> {
       // m_storage: System.Collections.Generic.Dictionary<System.String,Torappu.DataFromServer.DataFromServerStorage.DataChunk>;
       // m_sharedList: System.Collections.Generic.List<System.String>;
       // <>f__am$cache0: System.Func<System.Collections.Generic.KeyValuePair<System.String,Torappu.DataFromServer.DataFromServerStorage.DataChunk>,System.Boolean>;
@@ -32209,7 +33025,8 @@ export namespace Torappu {
       // m_oriCameraPosition: UnityEngine.Vector3;
       // m_oriAimPosition: UnityEngine.Vector3;
     }
-    export interface GyroInput {
+    export interface GyroInput
+      extends Torappu.SingletonMonoBehaviour<Torappu.Gyro.GyroInput> {
       BOUNCE_BACK_SPEED: System.Double;
       MIN_ROTATE_SPEED: System.Single;
       _updateInterval: System.Single;
@@ -32245,7 +33062,8 @@ export namespace Torappu {
   export namespace SafeArea {
     export namespace Core {
       export interface SafeAreaImpl {}
-      export interface SafeAreaImplAndroid {
+      export interface SafeAreaImplAndroid
+        extends Torappu.SafeArea.Core.SafeAreaImpl {
         // m_mainActivity: UnityEngine.AndroidJavaObject;
         // m_clsSafeAreaController: UnityEngine.AndroidJavaClass;
       }
@@ -32450,7 +33268,8 @@ export namespace Torappu {
     }
   }
   export namespace Config {
-    export interface DynamicConfig {
+    export interface DynamicConfig
+      extends Torappu.Singleton<Torappu.Config.DynamicConfig> {
       // m_config: Torappu.Config.DynamicConfig.InternalConfig;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_disableLuaTick: XLua.DelegateBridge;
@@ -32498,7 +33317,8 @@ export namespace Torappu {
       // __Hotfix0_get_enableManyUIUUA: XLua.DelegateBridge;
       // __Hotfix0_Load: XLua.DelegateBridge;
     }
-    export interface RemoteConfig {
+    export interface RemoteConfig
+      extends Torappu.Singleton<Torappu.Config.RemoteConfig> {
       // m_config: Torappu.Config.RemoteConfig.InternalConfig;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_enableAssetMigrate: XLua.DelegateBridge;
@@ -32678,18 +33498,19 @@ export namespace Torappu {
       // m_settings: Newtonsoft.Json.JsonSerializerSettings;
       // m_serializer: Newtonsoft.Json.JsonSerializer;
     }
-    export interface CrypticConverter_A {
+    export interface CrypticConverter_A extends Torappu.DB.CrypticConverter {
       KEY_LENGTH: System.Int32;
       IV_LENGTH: System.Int32;
       // m_token: System.String;
     }
-    export interface CrypticConverter_B {
+    export interface CrypticConverter_B extends Torappu.DB.CrypticConverter {
       MOD: System.UInt64;
       SEED_HASH_STR: System.String;
       // m_seed: System.UInt32;
       // random: SharpNeatLib.Maths.FastRandom;
     }
-    export interface CrypticConverter_WithSign {
+    export interface CrypticConverter_WithSign
+      extends Torappu.DB.CrypticConverter_A {
       SIGN_HEADER_LENGTH: System.Int32;
       // m_signPubKey: System.String;
     }
@@ -32708,13 +33529,15 @@ export namespace Torappu {
       // s_asyncLoadTask: Torappu.DB.DBLoader.AsyncLoadTask;
       // <>f__am$cache0: System.Action;
     }
-    export interface DBOptions {
+    export interface DBOptions
+      extends Torappu.SingletonScriptableObject<Torappu.DB.DBOptions> {
       mode: Torappu.DB.DBOptions.Mode;
       defaultEncryptType: Torappu.DB.ConverterFactory.ConverterType;
       excelEncryptType: Torappu.DB.ConverterFactory.ConverterType;
       tableAssets: Torappu.DB.AbstractTable[];
     }
-    export interface AbstractKVTable<TValue, TSingleton> {
+    export interface AbstractKVTable<TValue, TSingleton>
+      extends Torappu.DB.SingletonAbstractTable<TSingleton> {
       // m_sharedList: System.Collections.Generic.List<TValue>;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_System.Collections.IEnumerable.GetEnumerator: XLua.DelegateBridge;
@@ -32747,14 +33570,16 @@ export namespace Torappu {
       // __Hotfix0_GetConfig: XLua.DelegateBridge;
       // __Hotfix0_CreateDeserializeTask: XLua.DelegateBridge;
     }
-    export interface SingletonAbstractTable<T> {
+    export interface SingletonAbstractTable<T>
+      extends Torappu.DB.AbstractTable {
       // s_instance: T;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_instance: XLua.DelegateBridge;
       // __Hotfix0_OnEnable: XLua.DelegateBridge;
       // __Hotfix0_OnDisable: XLua.DelegateBridge;
     }
-    export interface ConstTable<TValue, TSingleton> {
+    export interface ConstTable<TValue, TSingleton>
+      extends Torappu.DB.SingletonAbstractTable<TSingleton> {
       // m_inited: System.Boolean;
       // m_data: TValue;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -32770,7 +33595,8 @@ export namespace Torappu {
       // __Hotfix0_GetDebugString: XLua.DelegateBridge;
       // __Hotfix0_OnInit: XLua.DelegateBridge;
     }
-    export interface LRUKVTable<TValue, TSingleton> {
+    export interface LRUKVTable<TValue, TSingleton>
+      extends Torappu.DB.AbstractKVTable<TValue, TSingleton> {
       _lruCapacity: System.Int32;
       // m_inited: System.Boolean;
       // m_rawBytesMap: System.Collections.Generic.Dictionary<System.String,System.Byte[]>;
@@ -32788,7 +33614,8 @@ export namespace Torappu {
       // __Hotfix0_TryGetValue: XLua.DelegateBridge;
       // __Hotfix0_GetEnumerator: XLua.DelegateBridge;
     }
-    export interface SimpleKVTable<TValue, TSingleton> {
+    export interface SimpleKVTable<TValue, TSingleton>
+      extends Torappu.DB.AbstractKVTable<TValue, TSingleton> {
       // m_inited: System.Boolean;
       // m_dataMap: System.Collections.Generic.Dictionary<System.String,TValue>;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -32877,7 +33704,11 @@ export namespace Torappu {
           System.Object
         >;
       }
-      export interface SettingsTable {
+      export interface SettingsTable
+        extends Torappu.DB.ConstTable<
+          Torappu.DB.Test.SettingsDef,
+          Torappu.DB.Test.SettingsTable
+        > {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
       }
       export interface ElementInfo {
@@ -32915,7 +33746,11 @@ export namespace Torappu {
         elementInfo: Torappu.DB.Test.ElementInfo;
         actualSkillId: System.String;
       }
-      export interface SkillTable {
+      export interface SkillTable
+        extends Torappu.DB.LRUKVTable<
+          Torappu.DB.Test.SkillData,
+          Torappu.DB.Test.SkillTable
+        > {
         // _c__Hotfix0_ctor: XLua.DelegateBridge;
       }
     }
@@ -32942,7 +33777,8 @@ export namespace Torappu {
       _ten: Torappu.Gacha.GachaDemo.GachaConfig[];
       // <>f__am$cache0: System.Action<Torappu.Gacha.GachaController.Output>;
     }
-    export interface GachaController {
+    export interface GachaController
+      extends Torappu.PersistentSingleton<Torappu.Gacha.GachaController> {
       AUTO_EXIT_DELAY_NORMAL: System.Single;
       AUTO_EXIT_DELAY_SKIP: System.Single;
       _fadeTime: System.Single;
@@ -33077,7 +33913,8 @@ export namespace Torappu {
       _skins: Torappu.Gacha.FolderMultiSkin.SkinSource[];
       _placeholders: Torappu.Gacha.FolderMultiSkin.SkinPlaceholder[];
     }
-    export interface GachaPhase0 {
+    export interface GachaPhase0
+      extends Torappu.Gacha.GachaController.GachaPhase {
       CAMERA_ANIMATION_CROSSFADE: System.Single;
       BAG_ANIMATION_START: System.String;
       BAG_ANIMATION_OPEN: System.String;
@@ -33115,7 +33952,8 @@ export namespace Torappu {
       // __Hotfix0_OnDisable: XLua.DelegateBridge;
       // __Hotfix0_Update: XLua.DelegateBridge;
     }
-    export interface GachaPhase1 {
+    export interface GachaPhase1
+      extends Torappu.Gacha.GachaController.GachaPhase {
       MASK_TEXTURE: System.String;
       FORWARD_PARTICLE_SYSTEM_SIMULATE_TIME_ON_SKIP: System.Single;
       _playTime: System.Single;
@@ -33152,7 +33990,8 @@ export namespace Torappu {
       // __Hotfix0__ResetPopStars: XLua.DelegateBridge;
       // __Hotfix0_OnDisposeForReuse: XLua.DelegateBridge;
     }
-    export interface LEGACY_GachaPhase0 {
+    export interface LEGACY_GachaPhase0
+      extends Torappu.Gacha.GachaController.GachaPhase {
       _earlyExitTime: System.Single;
       _delayToDisable: System.Single;
       // _skeleton: Spine.Unity.SkeletonGraphic;
@@ -33241,7 +34080,7 @@ export namespace Torappu {
       }
     }
     export namespace GachaPhase0 {
-      export interface Options {
+      export interface Options extends Torappu.StateMachine.DefaultBlackboard {
         zipperSpeed: System.Single;
         zipperAutoThreshold: System.Single;
         zipperAutoFlyCriteria: System.Single;
@@ -33271,8 +34110,18 @@ export namespace Torappu {
           FOLDER = "FOLDER",
           TERMINAL = "TERMINAL",
         }
-        export interface DropState {}
-        export interface UnpackState {
+        export interface DropState
+          extends Torappu.HierachyStateMachine.StateNode<
+            Torappu.Gacha.GachaPhase0.States.State,
+            Torappu.Gacha.GachaPhase0,
+            Torappu.Gacha.GachaPhase0.Options
+          > {}
+        export interface UnpackState
+          extends Torappu.HierachyStateMachine.StateNode<
+            Torappu.Gacha.GachaPhase0.States.State,
+            Torappu.Gacha.GachaPhase0,
+            Torappu.Gacha.GachaPhase0.Options
+          > {
           // m_isAuto: System.Boolean;
           // m_isZipperSePlaying: System.Boolean;
           // m_animState: UnityEngine.AnimationState;
@@ -33281,7 +34130,12 @@ export namespace Torappu {
           // m_cachedCurProgress: System.Single;
           // m_cachedLastProgress: System.Single;
         }
-        export interface FolderState {}
+        export interface FolderState
+          extends Torappu.HierachyStateMachine.StateNode<
+            Torappu.Gacha.GachaPhase0.States.State,
+            Torappu.Gacha.GachaPhase0,
+            Torappu.Gacha.GachaPhase0.Options
+          > {}
         export namespace FolderState {}
       }
     }
@@ -33341,7 +34195,8 @@ export namespace Torappu {
       KEYWROD_WATER_REFL: System.String;
       KEYWORD_WATER_DISTORT: System.String;
     }
-    export interface HGSceneWaterEffect {
+    export interface HGSceneWaterEffect
+      extends Torappu.Rendering.BaseSceneEffect {
       _DistortOn: System.Boolean;
       // _depthShader: UnityEngine.Shader;
       // _underwaterOpaqueList: System.Collections.Generic.List<UnityEngine.MeshRenderer>;
@@ -33600,7 +34455,8 @@ export namespace Torappu {
     }
   }
   export namespace Lua {
-    export interface LuaBattleMgr {
+    export interface LuaBattleMgr
+      extends Torappu.Singleton<Torappu.Lua.LuaBattleMgr> {
       // m_luaCallback: Torappu.Lua.LuaBattleMgr.ILuaServiceCallback;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_isCallbackReady: XLua.DelegateBridge;
@@ -33615,7 +34471,8 @@ export namespace Torappu {
       driveUpdate: System.Boolean;
       // Update: System.Action<System.Single>;
     }
-    export interface LuaManager {
+    export interface LuaManager
+      extends Torappu.Singleton<Torappu.Lua.LuaManager> {
       TICK_INTERVAL: System.Single;
       MOCK_EXTENSION: System.String;
       // m_inited: System.Boolean;
@@ -33646,7 +34503,8 @@ export namespace Torappu {
       // __Hotfix0__DoDisposeLuaEnv: XLua.DelegateBridge;
       // __Hotfix0__CallLuaDisposeInAnotherStackFrame: XLua.DelegateBridge;
     }
-    export interface LuaOptions {
+    export interface LuaOptions
+      extends Torappu.SingletonScriptableObject<Torappu.Lua.LuaOptions> {
       cryptType: Torappu.DB.ConverterFactory.ConverterType;
       luaFolder: System.String;
       entryFile: System.String;
@@ -33654,7 +34512,8 @@ export namespace Torappu {
     export interface Util {
       MESSAGE_FORMAT: System.String;
     }
-    export interface LuaSender {
+    export interface LuaSender
+      extends Torappu.Singleton<Torappu.Lua.LuaSender> {
       // m_requestCount: System.Int64;
       // m_luaCallback: Torappu.Lua.LuaSender.ILuaServiceCallback;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -33673,7 +34532,8 @@ export namespace Torappu {
       // __Hotfix0__ReplaceEmptyObj2Ary: XLua.DelegateBridge;
       // __Hotfix1__ReplaceEmptyObj2Ary: XLua.DelegateBridge;
     }
-    export interface LuaActivityEntry {
+    export interface LuaActivityEntry
+      extends Torappu.Activity.ActivityCommonEntry {
       _mainDialog: System.String;
       _activityId: System.String;
       _dlgPath: System.String;
@@ -33794,7 +34654,7 @@ export namespace Torappu {
     export interface MockDataContext {}
   }
   export namespace Multiplayer {
-    export interface BattlePhase {
+    export interface BattlePhase extends Torappu.Multiplayer.MultiBattlePhase {
       INITIAL_PRESERVE_CNT: System.Int32;
       // m_cachedSteps: System.Collections.Generic.Queue<Torappu.Multiplayer.StepData>;
       // m_preserveCnt: System.Int32;
@@ -33832,7 +34692,7 @@ export namespace Torappu {
       // __Hotfix0_OnGUI: XLua.DelegateBridge;
       // __Hotfix0_OnNetStateChanged: XLua.DelegateBridge;
     }
-    export interface PreparePhase {
+    export interface PreparePhase extends Torappu.Multiplayer.MultiBattlePhase {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_Enter: XLua.DelegateBridge;
       // __Hotfix0_Leave: XLua.DelegateBridge;
@@ -34042,7 +34902,8 @@ export namespace Torappu {
       Discard = "Discard",
       AfterBattle = "AfterBattle",
     }
-    export interface MultiplayerDriver {
+    export interface MultiplayerDriver
+      extends Torappu.SingletonMonoBehaviour<Torappu.Multiplayer.MultiplayerDriver> {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_OnInit: XLua.DelegateBridge;
       // __Hotfix0_Update: XLua.DelegateBridge;
@@ -34076,7 +34937,8 @@ export namespace Torappu {
       // m_complete: System.Action<System.Boolean>;
       // m_uploading: UnityEngine.Networking.UnityWebRequestAsyncOperation;
     }
-    export interface MultiplayerBattleLogMgr {
+    export interface MultiplayerBattleLogMgr
+      extends Torappu.Singleton<Torappu.Multiplayer.MultiplayerBattleLogMgr> {
       // m_cur: Torappu.Multiplayer.MultiplayerBattleLogMgr.LogItem;
       // m_waitForUpload: System.Collections.Generic.List<Torappu.Multiplayer.MultiplayerBattleLogMgr.LogItem>;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -34104,7 +34966,8 @@ export namespace Torappu {
     export interface MultiPlayerDataUtil {
       // __Hotfix0_ConvertToCharCardModel: XLua.DelegateBridge;
     }
-    export interface MultiplayerLogUploader {
+    export interface MultiplayerLogUploader
+      extends Torappu.SingletonMonoBehaviour<Torappu.Multiplayer.MultiplayerLogUploader> {
       // s_closedByServer: System.Boolean;
       MAX_LOG_LENGTH: System.Int32;
       // m_uploader: Torappu.Multiplayer.HttpUpload;
@@ -34248,7 +35111,7 @@ export namespace Torappu {
     }
     export namespace Servers {
       export interface IBattleClient {}
-      export interface BattleServer {
+      export interface BattleServer extends Torappu.Multiplayer.Servers.Server {
         // m_client: Torappu.Multiplayer.Servers.IBattleClient;
         // m_entry: Torappu.Multiplayer.Servers.BattleEntry;
         // m_already: System.Boolean;
@@ -34341,7 +35204,7 @@ export namespace Torappu {
         svrAddress: System.String;
         token: System.String;
       }
-      export interface TeamServer {
+      export interface TeamServer extends Torappu.Multiplayer.Servers.Server {
         // m_team: Torappu.Multiplayer.Servers.TeamInst;
         // <teamInfo>k__BackingField: Torappu.Multiplayer.TeamInfo;
         // m_client: Torappu.Multiplayer.Servers.ITeamClient;
@@ -34452,7 +35315,7 @@ export namespace Torappu {
       }
       export interface UploadLogResponse {}
       export namespace BattleProtocol {
-        export interface SceneJoin {
+        export interface SceneJoin extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           uid: System.String;
           sceneID: System.String;
@@ -34460,7 +35323,7 @@ export namespace Torappu {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnWrite: XLua.DelegateBridge;
         }
-        export interface SceneJoinRet {
+        export interface SceneJoinRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           code: Torappu.Multiplayer.Servers.GeneralProtocol.RetCode;
           createTs: System.Int32;
@@ -34475,46 +35338,46 @@ export namespace Torappu {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnRead: XLua.DelegateBridge;
         }
-        export interface SceneReady {
+        export interface SceneReady extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
         }
-        export interface SceneReadyRet {
+        export interface SceneReadyRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
         }
-        export interface SceneEnd {
+        export interface SceneEnd extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
         }
-        export interface SceneEndRet {
+        export interface SceneEndRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           reason: Torappu.Multiplayer.Servers.BattleProtocol.SceneEndReason;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnRead: XLua.DelegateBridge;
         }
-        export interface GameAction {
+        export interface GameAction extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           list: System.Collections.Generic.List<Torappu.Multiplayer.PlayerOprtData>;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnWrite: XLua.DelegateBridge;
           // __Hotfix0_OnRecycle: XLua.DelegateBridge;
         }
-        export interface GameActionRet {
+        export interface GameActionRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
         }
-        export interface GameStep {
+        export interface GameStep extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
         }
-        export interface GameStepRet {
+        export interface GameStepRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           step: Torappu.Multiplayer.StepData;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnRead: XLua.DelegateBridge;
         }
-        export interface GameCheck {
+        export interface GameCheck extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           seq: System.Int32;
           checksum: System.UInt32;
@@ -34522,13 +35385,13 @@ export namespace Torappu {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnWrite: XLua.DelegateBridge;
         }
-        export interface GameCheckRet {
+        export interface GameCheckRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           failSeq: System.Int32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnRead: XLua.DelegateBridge;
         }
-        export interface GameSettle {
+        export interface GameSettle extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           oprt: System.Int32;
           checkSum: System.UInt32;
@@ -34538,38 +35401,40 @@ export namespace Torappu {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnWrite: XLua.DelegateBridge;
         }
-        export interface GameSettleRet {
+        export interface GameSettleRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           info: Torappu.Multiplayer.Servers.BattleProtocol.GameSettleInfo;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnRead: XLua.DelegateBridge;
         }
-        export interface GameActionHistory {
+        export interface GameActionHistory
+          extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           seq: System.UInt32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnWrite: XLua.DelegateBridge;
         }
-        export interface GameActionHistoryRet {
+        export interface GameActionHistoryRet
+          extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           steps: System.Collections.Generic.List<Torappu.Multiplayer.StepData>;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnRead: XLua.DelegateBridge;
         }
-        export interface GamePause {
+        export interface GamePause extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           opr: Torappu.Multiplayer.GamePauseParam;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnWrite: XLua.DelegateBridge;
         }
-        export interface GamePauseRet {
+        export interface GamePauseRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           uid: System.String;
           opr: Torappu.Multiplayer.GamePauseParam;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnRead: XLua.DelegateBridge;
         }
-        export interface GameMapMark {
+        export interface GameMapMark extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           opr: System.SByte;
           row: System.Int32;
@@ -34577,7 +35442,7 @@ export namespace Torappu {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnWrite: XLua.DelegateBridge;
         }
-        export interface GameMapMarkRet {
+        export interface GameMapMarkRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           uid: System.String;
           opr: System.SByte;
@@ -34586,11 +35451,13 @@ export namespace Torappu {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnRead: XLua.DelegateBridge;
         }
-        export interface GamePlayerStatus {
+        export interface GamePlayerStatus
+          extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
         }
-        export interface GamePlayerStatusRet {
+        export interface GamePlayerStatusRet
+          extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           uid: System.String;
           status: Torappu.Multiplayer.BattlePlayerStatus;
@@ -34642,21 +35509,21 @@ export namespace Torappu {
         }
       }
       export namespace GeneralProtocol {
-        export interface HeartBeat {
+        export interface HeartBeat extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           seq: System.UInt32;
           time: System.Int64;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnWrite: XLua.DelegateBridge;
         }
-        export interface HeartBeatRet {
+        export interface HeartBeatRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           seq: System.UInt32;
           time: System.Int64;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnRead: XLua.DelegateBridge;
         }
-        export interface MsgNotifyRet {
+        export interface MsgNotifyRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           msg: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -34675,7 +35542,7 @@ export namespace Torappu {
         }
       }
       export namespace TeamProtocol {
-        export interface TeamJoin {
+        export interface TeamJoin extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           uid: System.String;
           teamID: System.String;
@@ -34684,49 +35551,50 @@ export namespace Torappu {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnWrite: XLua.DelegateBridge;
         }
-        export interface TeamJoinRet {
+        export interface TeamJoinRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           retCode: Torappu.Multiplayer.Servers.GeneralProtocol.RetCode;
           reason: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnRead: XLua.DelegateBridge;
         }
-        export interface TeamLeave {
+        export interface TeamLeave extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
         }
-        export interface TeamLeaveRet {
+        export interface TeamLeaveRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
         }
-        export interface TeamReady {
+        export interface TeamReady extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           ready: System.Boolean;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnWrite: XLua.DelegateBridge;
         }
-        export interface TeamSetting {
+        export interface TeamSetting extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           stageID: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnWrite: XLua.DelegateBridge;
         }
-        export interface TeamSceneStart {
+        export interface TeamSceneStart extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
         }
-        export interface TeamSceneStartRet {
+        export interface TeamSceneStartRet
+          extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           retCode: Torappu.Multiplayer.Servers.GeneralProtocol.RetCode;
           sceneInfo: Torappu.Multiplayer.Servers.TeamProtocol.SceneInfo;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnRead: XLua.DelegateBridge;
         }
-        export interface TeamStatus {
+        export interface TeamStatus extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
         }
-        export interface TeamStatusRet {
+        export interface TeamStatusRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           state: Torappu.Multiplayer.Servers.TeamProtocol.TeamState;
           stageID: System.String;
@@ -34737,7 +35605,8 @@ export namespace Torappu {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnRead: XLua.DelegateBridge;
         }
-        export interface TeamSquadChange {
+        export interface TeamSquadChange
+          extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           opr: System.SByte;
           index: System.SByte;
@@ -34745,18 +35614,19 @@ export namespace Torappu {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnWrite: XLua.DelegateBridge;
         }
-        export interface TeamSquadChangeRet {
+        export interface TeamSquadChangeRet
+          extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
         }
-        export interface TeamChat {
+        export interface TeamChat extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           opr: Torappu.Multiplayer.Servers.TeamProtocol.TeamChat.Oprt;
           param1: System.Int32;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnWrite: XLua.DelegateBridge;
         }
-        export interface TeamChatRet {
+        export interface TeamChatRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           uid: System.String;
           opr: Torappu.Multiplayer.Servers.TeamProtocol.TeamChat.Oprt;
@@ -34764,13 +35634,13 @@ export namespace Torappu {
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnRead: XLua.DelegateBridge;
         }
-        export interface TeamKick {
+        export interface TeamKick extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           uid: System.String;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
           // __Hotfix0_OnWrite: XLua.DelegateBridge;
         }
-        export interface TeamKickRet {
+        export interface TeamKickRet extends Torappu.SocketNetwork.Protocol {
           ID: System.UInt32;
           opr: Torappu.Multiplayer.Servers.TeamProtocol.TeamKickRet.Oprt;
           // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -34945,7 +35815,8 @@ export namespace Torappu {
       NETWORK_ROUTER = "NETWORK_ROUTER",
       HIGHEST = "HIGHEST",
     }
-    export interface Networker {
+    export interface Networker
+      extends Torappu.SingletonMonoBehaviour<Torappu.Network.Networker> {
       CONTENT_TYPE_JSON: System.String;
       CUSTOM_ERROR_CODE_TIMEOUT: System.Int64;
       CUSTOM_ERROR_CODE_SECURE_BASE: System.Int32;
@@ -35064,7 +35935,8 @@ export namespace Torappu {
       // onCanceled: System.Action;
       forceNotSecured: System.Boolean;
     }
-    export interface NetworkOptions {
+    export interface NetworkOptions
+      extends Torappu.SingletonScriptableObject<Torappu.Network.NetworkOptions> {
       serverType: Torappu.Network.NetworkOptions.ServerType;
       routers: System.Collections.Generic.List<Torappu.Network.NetworkOptions.RouteConfig>;
       DEV_SERVER: Torappu.Network.Networker.Configuration;
@@ -35076,7 +35948,8 @@ export namespace Torappu {
       MOCK_SERVER: Torappu.Network.Networker.Configuration;
     }
     export interface NetworkConfigException {}
-    export interface NetworkRouter {
+    export interface NetworkRouter
+      extends Torappu.Singleton<Torappu.Network.NetworkRouter> {
       // m_networkConfigVersion: System.String;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_get_networkConfigVersion: XLua.DelegateBridge;
@@ -35497,7 +36370,8 @@ export namespace Torappu {
       crossThisBundleVersionToExpire: System.String;
       resRegex: System.String;
     }
-    export interface HotUpdateMgr {
+    export interface HotUpdateMgr
+      extends Torappu.Singleton<Torappu.Resource.HotUpdateMgr> {
       // m_typeInfos: System.Collections.Generic.Dictionary<System.String,System.String>;
       // m_status: System.Collections.Generic.Dictionary<System.String,System.Boolean>;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -35637,11 +36511,13 @@ export namespace Torappu {
       // m_cached: System.Boolean;
       // m_assetLoader: Torappu.Resource.AbstractAssetLoader;
     }
-    export interface CachedAssetLoader {
+    export interface CachedAssetLoader
+      extends Torappu.Resource.AbstractAssetLoader {
       // m_cachedAssets: System.Collections.Generic.Dictionary<System.String,System.Collections.Generic.HashSet<UnityEngine.Object>>;
       // m_instanceIdToName: System.Collections.Generic.Dictionary<System.Int32,System.String>;
     }
-    export interface DirectAssetLoader {
+    export interface DirectAssetLoader
+      extends Torappu.Resource.AbstractAssetLoader {
       // m_instanceIds: System.Collections.Generic.List<System.Int32>;
     }
     export interface AsyncResource {
@@ -35651,7 +36527,8 @@ export namespace Torappu {
       // m_abRequest: UnityEngine.AssetBundleRequest;
       // m_isLoaded: System.Boolean;
     }
-    export interface AsyncComponent<TComp> {}
+    export interface AsyncComponent<TComp>
+      extends Torappu.Resource.AsyncResource {}
     export interface IResourceManager {}
     export interface RawResManager {
       ROOT_DIR_PATH: System.String;
@@ -35702,7 +36579,8 @@ export namespace Torappu {
       bundles: System.Collections.Generic.List<Torappu.Resource.ResourceIndex.BundleMeta>;
       assetToBundleList: System.Collections.Generic.List<Torappu.Resource.ResourceIndex.AssetToBundleMeta>;
     }
-    export interface ResourceOptions {
+    export interface ResourceOptions
+      extends Torappu.SingletonScriptableObject<Torappu.Resource.ResourceOptions> {
       _mode: Torappu.Resource.ResourceOptions.Mode;
       _resourcePath: System.String;
       _initialAssetsPath: System.String;
@@ -35851,7 +36729,8 @@ export namespace Torappu {
     }
     export namespace AbstractAssetLoader {}
     export namespace AB {
-      export interface ABResourceManager {
+      export interface ABResourceManager
+        extends Torappu.PersistentSingleton<Torappu.Resource.AB.ABResourceManager> {
         // m_inited: System.Boolean;
         // m_assetNameToBundleInfoMap: System.Collections.Generic.Dictionary<System.String,Torappu.Resource.AB.ABResourceManager.BundleInfo>;
         // m_loadedAssetInstanceIdMap: System.Collections.Generic.Dictionary<System.Int32,Torappu.Resource.AB.ABResourceManager.LoadedAssetEntry>;
@@ -35920,7 +36799,7 @@ export namespace Torappu {
         // __Hotfix0__LogWhenLoadBundleFailed: XLua.DelegateBridge;
         // __Hotfix0__IsAuditMode: XLua.DelegateBridge;
       }
-      export interface BundleHolder {
+      export interface BundleHolder extends Torappu.Resource.AB.BundleRef {
         // m_cachedAssets: UnityEngine.Object[];
         // m_cachedAssetsWithSubAssets: UnityEngine.Object[][];
         // <ab>k__BackingField: UnityEngine.AssetBundle;
@@ -35959,7 +36838,8 @@ export namespace Torappu {
       }
     }
     export namespace Local {
-      export interface LocalResourceManager {
+      export interface LocalResourceManager
+        extends Torappu.PersistentSingleton<Torappu.Resource.Local.LocalResourceManager> {
         // m_loadedAssets: System.Collections.Generic.Dictionary<System.Int32,System.String>;
         // m_listeners: Torappu.ListSet<Torappu.Resource.IResourceListener>;
         // m_resLangFolder: System.String;
@@ -36078,7 +36958,7 @@ export namespace Torappu {
   }
   export namespace SDK {
     export interface ISDKBase {}
-    export interface SDKBase<T> {
+    export interface SDKBase<T> extends Torappu.SingletonMonoBehaviour<T> {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
     }
     export interface SDKConsts {
@@ -36098,7 +36978,8 @@ export namespace Torappu {
       U8_SET_DATA_CLIP_BOARD: System.Int32;
       U8_SET_DATA_WEIBO_ROLE: System.Int32;
     }
-    export interface SDKExtraInfoBridge {
+    export interface SDKExtraInfoBridge
+      extends Torappu.Singleton<Torappu.SDK.SDKExtraInfoBridge> {
       // m_callbackMap: System.Collections.Generic.Dictionary<System.Type,System.Object>;
       // m_isInited: System.Boolean;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -36110,7 +36991,8 @@ export namespace Torappu {
       // __Hotfix0__BindCallback: XLua.DelegateBridge;
       // __Hotfix0_Dispose: XLua.DelegateBridge;
     }
-    export interface SDKExtraInfoHandler {
+    export interface SDKExtraInfoHandler
+      extends Torappu.Singleton<Torappu.SDK.SDKExtraInfoHandler> {
       // m_tpHeartBeat: System.String;
       // m_warnings: System.Collections.Generic.Dictionary<System.Int32,System.String>;
       // eventGT3Message: System.Action<Torappu.SDK.SDKExtraInfoHandler.GT3Message>;
@@ -36126,7 +37008,8 @@ export namespace Torappu {
       // __Hotfix0_GenExtraInfoToLog: XLua.DelegateBridge;
       // __Hotfix0__GenHeartBeat: XLua.DelegateBridge;
     }
-    export interface SDKGameBI {
+    export interface SDKGameBI
+      extends Torappu.Singleton<Torappu.SDK.SDKGameBI> {
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
       // __Hotfix0_U8Login: XLua.DelegateBridge;
       // __Hotfix0_GSLogin: XLua.DelegateBridge;
@@ -36141,7 +37024,8 @@ export namespace Torappu {
       HGSDK = "HGSDK",
       YOSTAR = "YOSTAR",
     }
-    export interface SDKHolder {
+    export interface SDKHolder
+      extends Torappu.SingletonScriptableObject<Torappu.SDK.SDKHolder> {
       _curType: Torappu.SDK.SDKType;
       // _curSDKObj: UnityEngine.GameObject;
       _SDKs: System.Collections.Generic.List<Torappu.SDK.SDKHolder.SDKConfig>;
@@ -36153,7 +37037,8 @@ export namespace Torappu {
     export interface InjectShopOptions {
       // panelShop: UnityEngine.Transform;
     }
-    export interface SDKInstLoader {
+    export interface SDKInstLoader
+      extends Torappu.SingletonMonoBehaviour<Torappu.SDK.SDKInstLoader> {
       _sdkHolder: Torappu.SDK.SDKHolder;
       // m_sdkGameObj: UnityEngine.GameObject;
       // m_sdkInst: Torappu.SDK.ISDKBase;
@@ -36173,7 +37058,8 @@ export namespace Torappu {
       // __Hotfix0_TryToCallLogin: XLua.DelegateBridge;
       // __Hotfix0_TryToCallLogout: XLua.DelegateBridge;
     }
-    export interface SDKOptions {
+    export interface SDKOptions
+      extends Torappu.SingletonScriptableObject<Torappu.SDK.SDKOptions> {
       mode: Torappu.SDK.SDKOptions.Mode;
       u8Options: Torappu.SDK.U8Options;
       dev: Torappu.SDK.SDKOptions.Configuration;
@@ -36218,7 +37104,7 @@ export namespace Torappu {
       code: Torappu.SDK.SDKExtraType;
       msg: Newtonsoft.Json.Linq.JObject;
     }
-    export interface U8ExternalTools {
+    export interface U8ExternalTools extends U8.SDK.SDKExternalTools {
       RESPONSE_STATE_SUC: System.Int32;
       PAY_CONFIRM_RETRY_INTERVALS: System.Int32[];
       // s_isInited: System.Boolean;
@@ -36405,7 +37291,8 @@ export namespace Torappu {
       BUTTON_ANIM: System.String;
       TAB_ANIM: System.String;
     }
-    export interface SettingManager {
+    export interface SettingManager
+      extends Torappu.Singleton<Torappu.Setting.SettingManager> {
       // m_commonSettingData: Torappu.Setting.SettingManager.CommonSettingData;
       // m_personalSettingData: Torappu.Setting.SettingManager.PersonalSettingData;
       // instantSettingAction: System.Action<Torappu.Setting.SettingConstVars.SettingType>;
@@ -36626,13 +37513,15 @@ export namespace Torappu {
       isCheat: System.String;
       completeTime: System.Int64;
     }
-    export interface BattleDataInRequest {
+    export interface BattleDataInRequest
+      extends Torappu.CommonFinishBattleRequest.BattleDataInternal {
       stats: System.Collections.Generic.Dictionary<
         System.String,
         System.String
       >;
     }
-    export interface BattleData {
+    export interface BattleData
+      extends Torappu.CommonFinishBattleRequest.BattleDataInternal {
       stats: Torappu.Battle.BattleLogger.BattleStats;
     }
   }
@@ -37110,8 +37999,8 @@ export namespace Torappu {
   }
   export namespace MissionPlayerData {
     export enum MissionGroupState {
-      Uncomplete = "Uncomplete",
-      Complete = "Complete",
+      Uncomplete = 0,
+      Complete = 1,
     }
   }
   export namespace PlayerCrisisSocialInfo {
@@ -37900,63 +38789,74 @@ export namespace Torappu {
     export interface RoomBean<TParam> {
       phases: System.Collections.Generic.List<TParam>;
     }
-    export interface ControlRoomBean {
+    export interface ControlRoomBean
+      extends Torappu.BuildingData
+        .RoomBean<Torappu.BuildingData.ControlRoomPhase> {
       basicCostBuff: System.Int32;
     }
-    export interface ControlRoomPhase {}
-    export interface ManufactRoomBean {
+    export interface ControlRoomPhase
+      extends Torappu.BuildingData.RoomBeanParam {}
+    export interface ManufactRoomBean
+      extends Torappu.BuildingData
+        .RoomBean<Torappu.BuildingData.ManufactPhase> {
       basicSpeedBuff: System.Single;
     }
-    export interface ManufactPhase {
+    export interface ManufactPhase extends Torappu.BuildingData.RoomBeanParam {
       speed: System.Single;
       outputCapacity: System.Int32;
     }
-    export interface ShopPhase {
+    export interface ShopPhase extends Torappu.BuildingData.RoomBeanParam {
       counterNum: System.Int32;
       speed: System.Single;
       moneyCapacity: System.Int32;
     }
-    export interface HireRoomBean {
+    export interface HireRoomBean
+      extends Torappu.BuildingData.RoomBean<Torappu.BuildingData.HirePhase> {
       basicSpeedBuff: System.Single;
     }
-    export interface HirePhase {
+    export interface HirePhase extends Torappu.BuildingData.RoomBeanParam {
       economizeRate: System.Single;
       resSpeed: System.Int32;
       refreshTimes: System.Int32;
     }
-    export interface DormPhase {
+    export interface DormPhase extends Torappu.BuildingData.RoomBeanParam {
       manpowerRecover: System.Int32;
       decorationLimit: System.Int32;
     }
-    export interface MeetingRoomBean {
+    export interface MeetingRoomBean
+      extends Torappu.BuildingData.RoomBean<Torappu.BuildingData.MeetingPhase> {
       basicSpeedBuff: System.Single;
     }
-    export interface MeetingPhase {
+    export interface MeetingPhase extends Torappu.BuildingData.RoomBeanParam {
       friendSlotInc: System.Int32;
       maxVisitorNum: System.Int32;
       gatheringSpeed: System.Int32;
     }
-    export interface TradingRoomBean {
+    export interface TradingRoomBean
+      extends Torappu.BuildingData.RoomBean<Torappu.BuildingData.TradingPhase> {
       basicSpeedBuff: System.Single;
     }
-    export interface TradingPhase {
+    export interface TradingPhase extends Torappu.BuildingData.RoomBeanParam {
       orderSpeed: System.Single;
       orderLimit: System.Int32;
       orderRarity: System.Int32;
     }
-    export interface WorkshopPhase {
+    export interface WorkshopPhase extends Torappu.BuildingData.RoomBeanParam {
       manpowerFactor: System.Single;
     }
-    export interface TrainingBean {
+    export interface TrainingBean
+      extends Torappu.BuildingData
+        .RoomBean<Torappu.BuildingData.TrainingPhase> {
       basicSpeedBuff: System.Single;
     }
-    export interface TrainingPhase {
+    export interface TrainingPhase extends Torappu.BuildingData.RoomBeanParam {
       specSkillLvlLimit: System.Int32;
     }
-    export interface PowerRoomBean {
+    export interface PowerRoomBean
+      extends Torappu.BuildingData.RoomBean<Torappu.BuildingData.PowerPhase> {
       basicSpeedBuff: System.Single;
     }
-    export interface PowerPhase {}
+    export interface PowerPhase extends Torappu.BuildingData.RoomBeanParam {}
     export interface CustomData {
       furnitures: System.Collections.Generic.Dictionary<
         System.String,
@@ -38711,16 +39611,19 @@ export namespace Torappu {
       }
     }
     export namespace PredefinedData {
-      export interface PredefinedInst {
+      export interface PredefinedInst extends Torappu.CharacterInst {
         hidden: System.Boolean;
         alias: System.String;
       }
-      export interface PredefinedCharacter {
+      export interface PredefinedCharacter
+        extends Torappu.LevelData.PredefinedData.PredefinedInst {
         position: Torappu.GridPosition;
         direction: Torappu.SharedConsts.Direction;
       }
-      export interface PredefinedCard {}
-      export interface PredefinedTokenCard {
+      export interface PredefinedCard
+        extends Torappu.LevelData.PredefinedData.PredefinedInst {}
+      export interface PredefinedTokenCard
+        extends Torappu.LevelData.PredefinedData.PredefinedCard {
         initialCnt: System.Int32;
       }
     }
@@ -39000,7 +39903,8 @@ export namespace Torappu {
       id: System.String;
       dropType: Torappu.StageDropType;
     }
-    export interface DisplayDetailRewards {
+    export interface DisplayDetailRewards
+      extends Torappu.StageData.DisplayRewards {
       occPercent: Torappu.OccPer;
       GetPercent: System.Single;
       CannotGetPercent: System.Single;
@@ -39228,7 +40132,8 @@ export namespace Torappu {
         // __Hotfix0_ProcHeartBeatRet: XLua.DelegateBridge;
         // __Hotfix0__GetTicks: XLua.DelegateBridge;
       }
-      export interface TCPConnection {
+      export interface TCPConnection
+        extends Torappu.SocketNetwork.Connections.Connection {
         // m_socket: System.Net.Sockets.Socket;
         // m_asyncSendBuff: Torappu.DataStream.ByteArray;
         // m_asyncRevBuff: Torappu.DataStream.ByteArray;
@@ -39300,7 +40205,8 @@ export namespace Torappu {
       // m_isDirty: System.Boolean;
       // m_value: T;
     }
-    export interface DynamicBindProperty<TProp, TValue> {
+    export interface DynamicBindProperty<TProp, TValue>
+      extends Torappu.DataBind.BindProperty<TValue> {
       // m_dynamicBinders: System.Collections.Generic.List<Torappu.DataBind.DataBinder>;
       // m_isLocked: System.Boolean;
     }
@@ -39309,7 +40215,8 @@ export namespace Torappu {
       // __Hotfix0_GetPropertyType: XLua.DelegateBridge;
       // __Hotfix0_OnValueChanged: XLua.DelegateBridge;
     }
-    export interface DataBindSystem {
+    export interface DataBindSystem
+      extends Torappu.SingletonMonoBehaviour<Torappu.DataBind.DataBindSystem> {
       // m_dirtyProps: System.Collections.Generic.List<Torappu.DataBind.IBindProperty>;
       // m_propsBuffer: System.Collections.Generic.List<Torappu.DataBind.IBindProperty>;
       // _c__Hotfix0_ctor: XLua.DelegateBridge;
@@ -39342,7 +40249,8 @@ export namespace Torappu {
       // m_constructor: System.Func<T>;
       // m_pendingObjsToAutoReuse: System.Collections.Generic.Queue<T>;
     }
-    export interface PoolManager {
+    export interface PoolManager
+      extends Torappu.SingletonMonoBehaviour<Torappu.ObjectPool.PoolManager> {
       NON_RESOURCE_PREFIX: System.String;
       _usePoolManager: System.Boolean;
       _keepInNextScene: System.Boolean;
@@ -39461,7 +40369,11 @@ export namespace Torappu {
       DataType,
       BlackboardType,
       SubStateType,
-    > {
+    > extends Torappu.HierachyStateMachine<
+        SubStateType,
+        DataType,
+        BlackboardType
+      > {
       parent: Torappu.HierachyStateMachine<StateType, DataType, BlackboardType>;
     }
     export interface SubStateMachineNode<
@@ -39469,7 +40381,11 @@ export namespace Torappu {
       DataType,
       BlackboardType,
       SubStateType,
-    > {
+    > extends Torappu.HierachyStateMachine.StateNode<
+        StateType,
+        DataType,
+        BlackboardType
+      > {
       // <subStateMachine>k__BackingField: Torappu.HierachyStateMachine.SubStateMachine<StateType,DataType,BlackboardType,SubStateType>;
     }
     export namespace SubStateMachineNode {
@@ -39478,7 +40394,11 @@ export namespace Torappu {
         DataType,
         BlackboardType,
         SubStateType,
-      > {
+      > extends Torappu.HierachyStateMachine.StateNode<
+          SubStateType,
+          DataType,
+          BlackboardType
+        > {
         // <parentState>k__BackingField: Torappu.HierachyStateMachine.SubStateMachineNode<StateType,DataType,BlackboardType,SubStateType>;
       }
     }
@@ -39587,7 +40507,7 @@ export namespace Torappu {
     export interface ParticleSystemUpgradeAdapter {}
   }
   export namespace PostEffect {
-    export interface MobileBloom {
+    export interface MobileBloom extends Torappu.PostEffect.PostEffectBase {
       SHADER_NAME: System.String;
       KEYWORD_FASTEST_BLUR_ON: System.String;
       _settings: Torappu.PostEffect.MobileBloom.Settings;
@@ -39602,7 +40522,7 @@ export namespace Torappu {
       // __Hotfix0_OnInit: XLua.DelegateBridge;
       // __Hotfix0_OnPostEffect: XLua.DelegateBridge;
     }
-    export interface MobileBlur {
+    export interface MobileBlur extends Torappu.PostEffect.PostEffectBase {
       SHADER_NAME: System.String;
       _settings: Torappu.PostEffect.MobileBlur.Settings;
       // m_parameterShaderId: System.Int32;
@@ -39852,12 +40772,12 @@ export namespace U8 {
       code: System.Int32;
       msg: System.String;
     }
-    export interface SDKInterfaceAndroid {
+    export interface SDKInterfaceAndroid extends U8.SDK.U8SDKInterface {
       // jo: UnityEngine.AndroidJavaObject;
       packageName: System.String;
       // packageInfo: UnityEngine.AndroidJavaObject;
     }
-    export interface SDKInterfaceDefault {}
+    export interface SDKInterfaceDefault extends U8.SDK.U8SDKInterface {}
     export interface SDKMeta {
       appID: System.String;
       appKey: System.String;
@@ -39882,8 +40802,8 @@ export namespace U8 {
   }
 }
 export namespace HgSDK {
-  export interface U8PluginAndroid {}
-  export interface HGStoreKit {
+  export interface U8PluginAndroid extends HgSDK.U8Plugin {}
+  export interface HGStoreKit extends Torappu.Singleton<HgSDK.HGStoreKit> {
     DEFAULT_PRODUCT_QUALITY: System.Int32;
     // m_isInited: System.Boolean;
     // m_handler: HgSDK.HGStoreKit.HGStoreKitHandler;
@@ -39902,7 +40822,7 @@ export namespace HgSDK {
     // m_pluginPayParam: U8.SDK.ExternalPluginPayParams;
     // m_payFailMsg: System.Object;
   }
-  export interface U8PluginDefault {}
+  export interface U8PluginDefault extends HgSDK.U8Plugin {}
   export interface HGConsts {
     CONFIRM_ORDER_RESULT_SUC: System.Int32;
     CONFIRM_ORDER_RESULT_NOT_YET: System.Int32;
@@ -39928,7 +40848,7 @@ export namespace HgSDK {
     code: HgSDK.ResultCode;
     error: System.String;
   }
-  export interface HGSDK {
+  export interface HGSDK extends Torappu.SDK.SDKBase<HgSDK.HGSDK> {
     VERSION: System.String;
     TYPE_LOGIN: System.Int32;
     TYPE_LOGOUT: System.Int32;
@@ -40481,24 +41401,27 @@ export namespace HgSDK {
       // onSuc: System.Action<RequestResponce>;
       // onFail: System.Action;
     }
-    export interface LoginParam {
+    export interface LoginParam extends HgSDK.HGSDK.RequestWithMessageParam {
       accout: System.String;
       password: System.String;
     }
-    export interface SendSmsCodeParam {
+    export interface SendSmsCodeParam
+      extends HgSDK.HGSDK.RequestWithMessageParam {
       phoneNumber: System.String;
       act: System.Int32;
     }
-    export interface RegisterParam {
+    export interface RegisterParam extends HgSDK.HGSDK.RequestWithMessageParam {
       account: System.String;
       password: System.String;
       smsCode: System.String;
     }
-    export interface SmsCodeLoginParam {
+    export interface SmsCodeLoginParam
+      extends HgSDK.HGSDK.RequestWithMessageParam {
       account: System.String;
       smsCode: System.String;
     }
-    export interface UserIdentityAuthParam {
+    export interface UserIdentityAuthParam
+      extends HgSDK.HGSDK.RequestWithMessageParam {
       name: System.String;
       cardNum: System.String;
     }
@@ -40516,7 +41439,8 @@ export namespace HgSDK {
     export namespace HandleMessageRequest {}
   }
   export namespace Test {
-    export interface DebugAccountMgr {
+    export interface DebugAccountMgr
+      extends Torappu.Singleton<HgSDK.Test.DebugAccountMgr> {
       STORAGE_FILE: System.String;
       // m_history: System.Collections.Generic.List<HgSDK.Test.DebugAccountMgr.AccountInfo>;
       // m_sdk: HgSDK.HGSDK;

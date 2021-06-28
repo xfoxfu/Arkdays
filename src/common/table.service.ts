@@ -122,7 +122,7 @@ export class TableService {
   public get charword_table(): unknown {
     return this.store.get("gamedata/charword_table.json");
   }
-  public get checkin_table(): unknown {
+  public get checkin_table(): Torappu.CheckInTable {
     return this.store.get("gamedata/checkin_table.json");
   }
   public get clue_data(): unknown {
@@ -161,7 +161,7 @@ export class TableService {
   public get medal_table(): unknown {
     return this.store.get("gamedata/medal_table.json");
   }
-  public get mission_table(): unknown {
+  public get mission_table(): Torappu.MissionTable {
     return this.store.get("gamedata/mission_table.json");
   }
   public get open_server_table(): unknown {

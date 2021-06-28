@@ -73,10 +73,7 @@ export class DeltaInterceptor<T> implements NestInterceptor<T, ApiResponse<T>> {
         if (!req.user) throw new Error("user is not attached to request");
         await this.sGameData.Set(req.uid, req.user);
 
-        const playerDataDelta = computeDelta(
-          original as unknown as Record<string, unknown>,
-          req.user as unknown as Record<string, unknown>,
-        ) as Torappu.PlayerDeltaResponse["playerDataDelta"];
+        const playerDataDelta = computeDelta(original, req.user);
         return convertBoolean(
           convertDate({ playerDataDelta, ...data }),
         ) as ApiResponse<T>;
