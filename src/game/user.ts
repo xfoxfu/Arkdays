@@ -11,6 +11,7 @@ import { computeDelta } from "../common/diff";
 import { GameDataService, TokenService } from "../common/entity";
 import { Torappu } from "../types";
 import { Observable, from } from "rxjs";
+import { convertBoolean, convertDate } from "../common/convert-type";
 
 declare module "express-serve-static-core" {
   interface Request {
@@ -76,8 +77,9 @@ export class DeltaInterceptor<T> implements NestInterceptor<T, ApiResponse<T>> {
           original as unknown as Record<string, unknown>,
           req.user as unknown as Record<string, unknown>,
         ) as Torappu.PlayerDeltaResponse["playerDataDelta"];
-        console.log(playerDataDelta, { playerDataDelta, ...data });
-        return { playerDataDelta, ...data };
+        return convertBoolean(
+          convertDate({ playerDataDelta, ...data }),
+        ) as ApiResponse<T>;
       })(),
     );
   }

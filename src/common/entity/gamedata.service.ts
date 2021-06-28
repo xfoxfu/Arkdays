@@ -4,6 +4,7 @@ import { StoreService } from "../store.service";
 import { TableService } from "../table.service";
 import { last } from "lodash";
 import { getUnixTime } from "date-fns";
+import { Logger } from "nestjs-pino";
 
 const STORE_PREFIX = "gamedata:";
 const getKey = (account: string): string => `${STORE_PREFIX}${account}`;
@@ -13,6 +14,7 @@ export class GameDataService {
   public constructor(
     private readonly store: StoreService,
     private readonly tables: TableService,
+    private readonly logger: Logger,
   ) {}
 
   public async Exists(account: string): Promise<boolean> {
@@ -34,6 +36,7 @@ export class GameDataService {
 
   public async Initialize(account: string): Promise<void> {
     if (await this.store.exists(getKey(account))) return;
+    this.logger.log(`initialized PlayerData on user ${account}`);
     const playerData: Torappu.PlayerDataModel = this.tables.playerInit;
 
     playerData.status.flags = Object.fromEntries(
@@ -66,7 +69,7 @@ export class GameDataService {
     playerData.skin.characterSkins = Object.fromEntries(
       Object.entries(this.tables.skin_table.charSkins).map(([k, _]) => [
         k,
-        1 as unknown as boolean,
+        true,
       ]),
     );
     playerData.troop.troopCapacity = Object.keys(

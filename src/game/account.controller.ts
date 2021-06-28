@@ -15,13 +15,13 @@ export class AccountController {
   ) {}
 
   @Post(Routes.LOGIN)
-  public Login(
+  public async Login(
     @Body() req: Torappu.LoginRequest & Torappu.LoginRequestV002,
-    @Req() rawReq: Request,
-  ): Omit<Torappu.LoginResponse, "playerDataDelta"> {
+  ): Promise<Omit<Torappu.LoginResponse, "playerDataDelta">> {
+    const uid = await this.tokenSvc.GetAccount(req.token);
     return {
       result: 0,
-      uid: (rawReq as unknown as { uid?: string }).uid ?? "INVALID_USER",
+      uid,
       secret: req.token,
       serviceLicenseVersion: 0,
     };
@@ -31,7 +31,7 @@ export class AccountController {
   public SyncData(
     @User() user: Torappu.PlayerDataModel,
   ): Torappu.SyncDataResponse {
-    user.status.lastRefreshTs = getUnixTime(new Date()) as unknown as Date;
+    user.status.lastRefreshTs = new Date();
     return {
       result: 0,
       ts: getUnixTime(new Date()),
@@ -44,7 +44,7 @@ export class AccountController {
     @Body() _: Torappu.PlayerSyncStatusRequest,
     @User() user: Torappu.PlayerDataModel,
   ): Torappu.PlayerSyncStatusResponse {
-    user.status.lastRefreshTs = getUnixTime(new Date()) as unknown as Date;
+    user.status.lastRefreshTs = new Date();
     return {
       ts: getUnixTime(new Date()),
       result: {},
