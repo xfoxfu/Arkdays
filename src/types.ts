@@ -4735,7 +4735,7 @@ export namespace Torappu {
   }
   export interface RequestSquadSlot {
     charInstId: System.Int32;
-    S_skillIndex: System.Int32;
+    skillIndex: System.Int32;
     S_currentTmpl: System.String;
     S_tmpl: Torappu.ListDict<System.String, Torappu.RequestSquadSlot.Patch>;
   }
@@ -4958,9 +4958,9 @@ export namespace Torappu {
     gainTime: System.Int64;
     // currentTmpl: System.String;
     // tmpl: Torappu.ListDict<System.String,Torappu.PlayerCharPatch>;
-    // m_skills: Torappu.PlayerCharSkill[];
-    // m_defaultSkillIndex: System.Int32;
-    // m_skinId: System.String;
+    skills: Torappu.PlayerCharSkill[];
+    defaultSkillIndex: System.Int32;
+    skin: System.String;
     // _c__Hotfix0_ctor: XLua.DelegateBridge;
     // __Hotfix0_GetFinalSkillLvl: XLua.DelegateBridge;
     // __Hotfix0_SafeTmpl: XLua.DelegateBridge;
@@ -9328,8 +9328,8 @@ export namespace Torappu {
     charId: System.String;
     potentialRank: System.Int32;
     // m_skillIndex: System.Int32;
-    // m_skinId: System.String;
-    // m_skills: Torappu.SharedCharData.SharedCharSkillData[];
+    skinId: System.String;
+    skills: Torappu.SharedCharData.SharedCharSkillData[];
     mainSkillLvl: System.Int32;
     evolvePhase: System.Int32;
     level: System.Int32;
@@ -19697,7 +19697,7 @@ export namespace Torappu {
       // m_createdTime: Torappu.FP;
       // m_delayToRecycle: System.Single;
       // m_hostUid: System.UInt32;
-      // m_skills: System.Collections.Generic.List<Torappu.Battle.EnemySkill>;
+      skills: System.Collections.Generic.List<Torappu.Battle.EnemySkill>;
       // m_currentSubTiles: System.Collections.Generic.List<Torappu.Battle.Tile>;
       // m_attackAbilityCasted: Torappu.Battle.Ability;
       // m_combatAbilityCasted: Torappu.Battle.Ability;

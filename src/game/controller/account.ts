@@ -1,18 +1,13 @@
-import { Body, Controller, Headers, Post, Req } from "@nestjs/common";
-import { TokenService } from "../common/entity/token.service";
-import { GameDataService } from "../common/entity/gamedata.service";
-import { Routes, ServerDomains } from "../consts";
-import type { Torappu } from "../types";
+import { Body, Controller, Post } from "@nestjs/common";
+import { TokenService } from "../../common/entity/token.service";
+import { Routes, ServerDomains } from "../../consts";
+import type { Torappu } from "../../types";
 import { getUnixTime } from "date-fns";
-import { User } from "./user";
-import { Request } from "express";
+import { User } from "../user";
 
 @Controller({ host: [ServerDomains.GameServer] })
 export class AccountController {
-  constructor(
-    private readonly tokenSvc: TokenService,
-    private readonly sGameData: GameDataService,
-  ) {}
+  constructor(private readonly tokenSvc: TokenService) {}
 
   @Post(Routes.LOGIN)
   public async Login(

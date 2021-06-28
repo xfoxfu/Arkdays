@@ -90,6 +90,11 @@ const write = (layer: IExport, indent = ""): string => {
     if (klass.type !== "enum") {
       result += indent + `  export interface ${name} {\n`;
       for (const prop of klass.fields) {
+        if (
+          ["m_skills", "m_defaultSkillIndex", "m_skinId"].includes(prop.name)
+        ) {
+          prop.name = prop.name.replace("m_", "");
+        }
         let comment = "";
         if (
           prop.name.includes("__Hotfix") ||
@@ -158,6 +163,18 @@ const write = (layer: IExport, indent = ""): string => {
           prop.name === "campaign"
         ) {
           prop.name = "campaignV2";
+        }
+        if (
+          klass.name === "Torappu.PlayerCharacter" &&
+          prop.name === "skinId"
+        ) {
+          prop.name = "skin";
+        }
+        if (
+          klass.name === "Torappu.RequestSquadSlot" &&
+          prop.name === "S_skillIndex"
+        ) {
+          prop.name = "skillIndex";
         }
 
         result += indent + `    ${comment}${prop.name}: ${prop.type};\n`;
